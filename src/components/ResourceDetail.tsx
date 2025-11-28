@@ -252,9 +252,10 @@ export const ResourceDetail = ({
               </Button>
               <Button
                 onClick={() => {
+                  const wasBookmarked = isBookmarked(resource);
                   toggleBookmark(resource);
                   toast({
-                    title: isBookmarked(resource) ? bookmarkedText : bookmarkText,
+                    title: wasBookmarked ? bookmarkText : bookmarkedText,
                     duration: 2000,
                   });
                 }}

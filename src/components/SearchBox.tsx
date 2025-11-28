@@ -26,6 +26,8 @@ export const SearchBox = ({
   const [voiceStatus, setVoiceStatus] = useState('');
   const [voiceError, setVoiceError] = useState('');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [voiceMatchedIndex, setVoiceMatchedIndex] = useState<number | null>(null);
+  const [isVoiceMatch, setIsVoiceMatch] = useState(false);
 
   useEffect(() => {
     if (!searchValue) {
@@ -78,6 +80,37 @@ export const SearchBox = ({
       const transcript = event.results[0][0].transcript;
       setSearchValue(transcript);
       setVoiceError('');
+      setIsVoiceMatch(true);
+      
+      // Find best match and highlight it
+      const val = transcript.toLowerCase();
+      const matches = resources.filter(
+        (r) =>
+          r.title.toLowerCase().includes(val) ||
+          r.keywords.some((k) => k.toLowerCase().includes(val))
+      );
+      
+      if (matches.length > 0) {
+        // Highlight the first (best) match
+        setVoiceMatchedIndex(0);
+        
+        // Auto-select if there's only one match after a brief delay
+        if (matches.length === 1) {
+          setTimeout(() => {
+            onSelectResource(matches[0]);
+            setSearchValue('');
+            setSuggestions([]);
+            setVoiceMatchedIndex(null);
+            setIsVoiceMatch(false);
+          }, 1500);
+        } else {
+          // Clear highlight after 3 seconds if multiple matches
+          setTimeout(() => {
+            setVoiceMatchedIndex(null);
+            setIsVoiceMatch(false);
+          }, 3000);
+        }
+      }
     };
 
     recognition.onerror = (event: any) => {
@@ -161,8 +194,21 @@ export const SearchBox = ({
         </div>
         
         {voiceStatus && (
-          <div className="text-xs text-primary mt-2 min-h-[18px]" role="status" aria-live="polite">
+          <div className="text-xs text-primary mt-2 min-h-[18px] font-medium animate-pulse" role="status" aria-live="polite">
             {voiceStatus}
+          </div>
+        )}
+        
+        {isVoiceMatch && suggestions.length > 0 && (
+          <div className="text-xs text-primary mt-2 font-medium" role="status" aria-live="polite">
+            {currentLang === 'zh' 
+              ? `找到 ${suggestions.length} 個匹配項${suggestions.length === 1 ? ' - 自動選擇...' : ''}`
+              : currentLang === 'tl'
+              ? `${suggestions.length} tugma natagpuan${suggestions.length === 1 ? ' - Kusang pipiliin...' : ''}`
+              : currentLang === 'id'
+              ? `${suggestions.length} kecocokan ditemukan${suggestions.length === 1 ? ' - Memilih otomatis...' : ''}`
+              : `${suggestions.length} match${suggestions.length !== 1 ? 'es' : ''} found${suggestions.length === 1 ? ' - Auto-selecting...' : ''}`
+            }
           </div>
         )}
         
@@ -183,13 +229,17 @@ export const SearchBox = ({
                   setSearchValue('');
                   setSuggestions([]);
                   setHoveredIndex(null);
+                  setVoiceMatchedIndex(null);
+                  setIsVoiceMatch(false);
                 }}
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 className={`w-full px-4 py-3 text-left flex items-center gap-3 transition-all duration-200 border-b border-border last:border-0 ${
-                  hoveredIndex === idx 
+                  voiceMatchedIndex === idx && isVoiceMatch
+                    ? 'bg-primary/10 shadow-md scale-[1.05] ring-2 ring-primary animate-pulse'
+                    : hoveredIndex === idx 
                     ? 'bg-accent shadow-sm scale-[1.02]' 
-                    : hoveredIndex !== null 
+                    : hoveredIndex !== null || (voiceMatchedIndex !== null && voiceMatchedIndex !== idx)
                     ? 'opacity-30' 
                     : 'hover:bg-accent hover:shadow-sm'
                 } focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset focus-visible:outline-none`}

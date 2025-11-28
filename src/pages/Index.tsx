@@ -7,6 +7,7 @@ import { ResourceDetail } from '@/components/ResourceDetail';
 import { ResourceMap } from '@/components/ResourceMap';
 import { NewsBanner } from '@/components/NewsBanner';
 import { FeedbackForm } from '@/components/FeedbackForm';
+import { InstallPrompt } from '@/components/InstallPrompt';
 import { Language, translations, resources, Resource } from '@/lib/translations';
 import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -30,6 +31,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background pb-20">
+      <InstallPrompt />
       <Header
         title={t.title}
         subtitle={t.subtitle}

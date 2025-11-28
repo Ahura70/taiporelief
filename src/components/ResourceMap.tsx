@@ -1,8 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Resource } from '@/lib/translations';
 import { openDirections } from '@/lib/mapsHelper';
+import { isResourceOpen } from '@/lib/hoursHelper';
+import { Button } from '@/components/ui/button';
+import { Filter } from 'lucide-react';
 
 // Fix default marker icon issue with Leaflet + Vite
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -16,11 +19,15 @@ interface ResourceMapProps {
   resources: Resource[];
   onResourceClick?: (resource: Resource) => void;
   mapTitle: string;
+  showOpenOnlyText: string;
+  currentLang: string;
 }
 
-export const ResourceMap = ({ resources, onResourceClick, mapTitle }: ResourceMapProps) => {
+export const ResourceMap = ({ resources, onResourceClick, mapTitle, showOpenOnlyText, currentLang }: ResourceMapProps) => {
   const mapRef = useRef<L.Map | null>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
+  const [showOpenOnly, setShowOpenOnly] = useState(false);
+  const markersRef = useRef<Map<string, L.Marker>>(new Map());
 
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current) return;
@@ -36,9 +43,10 @@ export const ResourceMap = ({ resources, onResourceClick, mapTitle }: ResourceMa
     }).addTo(map);
 
     // Add markers for resources with coordinates
-    resources.forEach((resource) => {
+    resources.forEach((resource, index) => {
       if (resource.coordinates) {
         const marker = L.marker(resource.coordinates).addTo(map);
+        markersRef.current.set(`${resource.title}-${index}`, marker);
         
         // Create popup content with directions button
         const popupContent = document.createElement('div');
@@ -77,13 +85,47 @@ export const ResourceMap = ({ resources, onResourceClick, mapTitle }: ResourceMa
     return () => {
       map.remove();
       mapRef.current = null;
+      markersRef.current.clear();
     };
   }, [resources, onResourceClick]);
 
+  // Filter markers based on open/closed status
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    resources.forEach((resource, index) => {
+      const markerKey = `${resource.title}-${index}`;
+      const marker = markersRef.current.get(markerKey);
+      
+      if (marker && resource.coordinates) {
+        const isOpen = isResourceOpen(resource);
+        
+        if (showOpenOnly && !isOpen) {
+          // Hide closed resources when filter is on
+          marker.remove();
+        } else {
+          // Show all resources when filter is off, or open resources when filter is on
+          if (!mapRef.current.hasLayer(marker)) {
+            marker.addTo(mapRef.current);
+          }
+        }
+      }
+    });
+  }, [showOpenOnly, resources]);
+
   return (
     <div className="w-full bg-card rounded-lg shadow-lg overflow-hidden border border-border">
-      <div className="p-4 bg-muted/50 border-b border-border">
+      <div className="p-4 bg-muted/50 border-b border-border flex items-center justify-between">
         <h2 className="text-xl font-bold text-foreground">🗺️ {mapTitle}</h2>
+        <Button
+          variant={showOpenOnly ? "default" : "outline"}
+          size="sm"
+          onClick={() => setShowOpenOnly(!showOpenOnly)}
+          className="gap-2"
+        >
+          <Filter className="w-4 h-4" />
+          {showOpenOnlyText}
+        </Button>
       </div>
       <div 
         ref={mapContainerRef} 

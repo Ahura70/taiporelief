@@ -33,6 +33,12 @@ export const translations = {
     shareLink: '複製連結',
     linkCopied: '連結已複製！',
     getDirections: '取得路線',
+    showOpenOnly: '只顯示營業中',
+    open: '營業中',
+    closed: '已關閉',
+    opensAt: '開放時間',
+    closesAt: '關閉時間',
+    open24h: '24小時營業',
     feedback: '提交反饋',
     feedbackTitle: '反饋及建議',
     feedbackType: '反饋類型',
@@ -79,6 +85,12 @@ export const translations = {
     shareLink: 'Copy Link',
     linkCopied: 'Link Copied!',
     getDirections: 'Get Directions',
+    showOpenOnly: 'Show Open Only',
+    open: 'Open',
+    closed: 'Closed',
+    opensAt: 'Opens at',
+    closesAt: 'Closes at',
+    open24h: 'Open 24/7',
     feedback: 'Submit Feedback',
     feedbackTitle: 'Feedback & Suggestions',
     feedbackType: 'Feedback Type',
@@ -125,6 +137,12 @@ export const translations = {
     shareLink: 'Kopya Link',
     linkCopied: 'Nakopya ang Link!',
     getDirections: 'Kunin ang Direksyon',
+    showOpenOnly: 'Ipakita Lang ang Bukas',
+    open: 'Bukas',
+    closed: 'Sarado',
+    opensAt: 'Bubukas sa',
+    closesAt: 'Magsasara sa',
+    open24h: 'Bukas 24/7',
     feedback: 'Magpadala ng Feedback',
     feedbackTitle: 'Feedback at Mungkahi',
     feedbackType: 'Uri ng Feedback',
@@ -171,6 +189,12 @@ export const translations = {
     shareLink: 'Salin Link',
     linkCopied: 'Link Disalin!',
     getDirections: 'Dapatkan Arah',
+    showOpenOnly: 'Tampilkan Hanya yang Buka',
+    open: 'Buka',
+    closed: 'Tutup',
+    opensAt: 'Buka jam',
+    closesAt: 'Tutup jam',
+    open24h: 'Buka 24/7',
     feedback: 'Kirim Masukan',
     feedbackTitle: 'Masukan & Saran',
     feedbackType: 'Jenis Masukan',
@@ -203,6 +227,11 @@ export interface Resource {
   contacts: Array<{ l: string; v: string }>;
   info?: string[];
   coordinates?: [number, number]; // [latitude, longitude]
+  hours?: {
+    open: string; // e.g., "08:30"
+    close: string; // e.g., "18:30"
+    days?: string; // e.g., "Mon-Fri", "Daily", "24/7"
+  };
 }
 
 export const resources: Record<Language, Resource[]> = {
@@ -227,7 +256,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: '地點', v: '教大 E 座室內運動場' },
         { l: '開放時間', v: '08:30 - 18:30' }
       ],
-      coordinates: [22.4366, 114.1781] // EdUHK
+      coordinates: [22.4366, 114.1781], // EdUHK
+      hours: { open: '08:30', close: '18:30', days: 'Daily' }
     },
     {
       icon: '❤️',
@@ -277,7 +307,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: '熱線', v: '5181 5501' }
       ],
-      info: ['每晚 8:00-11:00 提供服務', '由受訓創傷治療人士負責']
+      info: ['每晚 8:00-11:00 提供服務', '由受訓創傷治療人士負責'],
+      hours: { open: '20:00', close: '23:00', days: 'Daily' }
     },
     {
       icon: '🏘️',
@@ -302,7 +333,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Now TV', v: '1833 888' }
       ],
       info: ['csl 大埔門市 24 小時開放至 11 月 30 日', '提供免費數據卡、充電、路由器借用'],
-      coordinates: [22.4498, 114.1655] // CSL Tai Po Shop
+      coordinates: [22.4498, 114.1655], // CSL Tai Po Shop
+      hours: { open: '00:00', close: '23:59', days: '24/7' }
     },
     {
       icon: '🏠',
@@ -363,7 +395,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Location', v: 'EdUHK Block E Sports Hall' },
         { l: 'Hours', v: '08:30 - 18:30' }
       ],
-      coordinates: [22.4366, 114.1781]
+      coordinates: [22.4366, 114.1781],
+      hours: { open: '08:30', close: '18:30', days: 'Daily' }
     },
     {
       icon: '❤️',
@@ -413,7 +446,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'Hotline', v: '5181 5501' }
       ],
-      info: ['Available 8:00-11:00 PM daily', 'Staffed by trained trauma counselors']
+      info: ['Available 8:00-11:00 PM daily', 'Staffed by trained trauma counselors'],
+      hours: { open: '20:00', close: '23:00', days: 'Daily' }
     },
     {
       icon: '🏘️',
@@ -438,7 +472,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Now TV', v: '1833 888' }
       ],
       info: ['csl Tai Po Store 24/7 until Nov 30', 'Free SIM cards, charging, router loan'],
-      coordinates: [22.4498, 114.1655]
+      coordinates: [22.4498, 114.1655],
+      hours: { open: '00:00', close: '23:59', days: '24/7' }
     },
     {
       icon: '🏠',
@@ -499,7 +534,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Lokasyon', v: 'EdUHK Block E Sports Hall' },
         { l: 'Oras', v: '08:30 - 18:30' }
       ],
-      coordinates: [22.4366, 114.1781]
+      coordinates: [22.4366, 114.1781],
+      hours: { open: '08:30', close: '18:30', days: 'Daily' }
     },
     {
       icon: '❤️',
@@ -549,7 +585,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'Hotline', v: '5181 5501' }
       ],
-      info: ['Bukas 8:00-11:00 PM araw-araw', 'May mga trained trauma counselors']
+      info: ['Bukas 8:00-11:00 PM araw-araw', 'May mga trained trauma counselors'],
+      hours: { open: '20:00', close: '23:00', days: 'Daily' }
     },
     {
       icon: '🏘️',
@@ -574,7 +611,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Now TV', v: '1833 888' }
       ],
       info: ['csl Tai Po Store 24/7 hanggang Nov 30', 'Libreng SIM, charging, router'],
-      coordinates: [22.4498, 114.1655]
+      coordinates: [22.4498, 114.1655],
+      hours: { open: '00:00', close: '23:59', days: '24/7' }
     },
     {
       icon: '🏠',
@@ -635,7 +673,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Lokasi', v: 'EdUHK Block E Sports Hall' },
         { l: 'Jam', v: '08:30 - 18:30' }
       ],
-      coordinates: [22.4366, 114.1781]
+      coordinates: [22.4366, 114.1781],
+      hours: { open: '08:30', close: '18:30', days: 'Daily' }
     },
     {
       icon: '❤️',
@@ -685,7 +724,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'Hotline', v: '5181 5501' }
       ],
-      info: ['Tersedia 8:00-11:00 PM setiap hari', 'Dilayani konselor trauma terlatih']
+      info: ['Tersedia 8:00-11:00 PM setiap hari', 'Dilayani konselor trauma terlatih'],
+      hours: { open: '20:00', close: '23:00', days: 'Daily' }
     },
     {
       icon: '🏘️',
@@ -710,7 +750,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Now TV', v: '1833 888' }
       ],
       info: ['Toko csl Tai Po 24/7 hingga 30 Nov', 'SIM gratis, charging, pinjaman router'],
-      coordinates: [22.4498, 114.1655]
+      coordinates: [22.4498, 114.1655],
+      hours: { open: '00:00', close: '23:59', days: '24/7' }
     },
     {
       icon: '🏠',

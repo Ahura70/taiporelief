@@ -68,7 +68,8 @@ export const OptimizedImage = ({ src, alt, className = '', fallback }: Optimized
         decoding="async"
         style={{
           objectFit: 'contain',
-          display: hasError && fallback ? 'none' : 'block'
+          display: hasError && fallback ? 'none' : 'block',
+          filter: 'grayscale(100%)'
         }}
       />
       {hasError && fallback && (

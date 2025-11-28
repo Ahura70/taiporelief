@@ -13,15 +13,22 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      'mapbox-gl': 'mapbox-gl/dist/mapbox-gl.js'
     },
+    dedupe: ['react', 'react-dom']
   },
   optimizeDeps: {
     include: ['react', 'react-dom', '@radix-ui/react-tooltip'],
-    force: true
+    exclude: ['mapbox-gl'],
+    force: true,
+    esbuildOptions: {
+      target: 'esnext'
+    }
   },
   build: {
     commonjsOptions: {
-      include: [/react/, /react-dom/]
+      include: [/react/, /react-dom/, /node_modules/],
+      transformMixedEsModules: true
     }
   }
 }));

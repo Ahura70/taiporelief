@@ -253,10 +253,148 @@ export const resources: Record<Language, Resource[]> = {
       ]
     }
   ],
-  tl: [],
-  id: []
+  tl: [
+    {
+      icon: '💰',
+      title: 'Pondo ng Gobyerno',
+      desc: 'Direktang donasyon sa mga biktima',
+      keywords: ['donasyon', 'pera', 'pondo'],
+      contacts: [
+        { l: 'HKD Account', v: 'Bank of China 012-875-2-190159-7' },
+        { l: 'Ibang Currency', v: 'Bank of China 012-875-2-190160-7' }
+      ]
+    },
+    {
+      icon: '🎓',
+      title: 'EdUHK Support Centre',
+      desc: 'Suporta para sa mga estudyante at pamilya',
+      keywords: ['eduhk', 'estudyante', 'unibersidad'],
+      contacts: [
+        { l: 'Lokasyon', v: 'EdUHK Block E Sports Hall' },
+        { l: 'Oras', v: '08:30 - 18:30' }
+      ]
+    },
+    {
+      icon: '❤️',
+      title: 'Red Cross',
+      desc: 'Emerhensiya at Suportang Pangkalusugan',
+      keywords: ['red cross', 'tulong'],
+      contacts: [
+        { l: 'FPS ID', v: '164279317' },
+        { l: 'Email', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🏠',
+      title: 'Pansamantalang Tirahan',
+      desc: 'Silungan para sa mga pamilya',
+      keywords: ['tirahan', 'hotel', 'shelter'],
+      contacts: [
+        { l: 'SHKP', v: '160 Libreng Hotel Rooms' },
+        { l: 'ImpactHK', v: '5341 6670' }
+      ]
+    },
+    {
+      icon: '📦',
+      title: 'Donasyon ng Supplies',
+      desc: 'Damit, Kumot, Pangangailangan',
+      keywords: ['supplies', 'damit', 'pagkain'],
+      info: ['⚠️ Maraming collection points ay puno na'],
+      contacts: [{ l: 'Govt Hotline', v: '9213 2388' }]
+    },
+    {
+      icon: '👷‍♀️',
+      title: 'Suporta para sa Helper',
+      desc: 'Multilingual na Tulong',
+      keywords: ['helper', 'fdh', 'katulong'],
+      contacts: [
+        { l: 'HELP Hotline', v: '2523 4020' },
+        { l: 'Labour Dept', v: '2157 9537' },
+        { l: 'WhatsApp Support', v: '+852 5936 3780' }
+      ]
+    },
+    {
+      icon: '🚨',
+      title: 'Emergency Lines',
+      desc: 'Tanong sa Casualty at Mental Health',
+      keywords: ['tulong', 'emergency'],
+      contacts: [
+        { l: 'Casualty', v: '1878 999' },
+        { l: 'Mental Health', v: '18111' },
+        { l: 'SWD', v: '2343 2255' }
+      ]
+    }
+  ],
+  id: [
+    {
+      icon: '💰',
+      title: 'Dana Bantuan Pemerintah',
+      desc: 'Donasi langsung untuk korban',
+      keywords: ['donasi', 'uang', 'dana'],
+      contacts: [
+        { l: 'Akun HKD', v: 'Bank of China 012-875-2-190159-7' },
+        { l: 'Mata Uang Lain', v: 'Bank of China 012-875-2-190160-7' }
+      ]
+    },
+    {
+      icon: '🎓',
+      title: 'Pusat Dukungan EdUHK',
+      desc: 'Dukungan untuk siswa dan keluarga',
+      keywords: ['eduhk', 'siswa', 'universitas'],
+      contacts: [
+        { l: 'Lokasi', v: 'EdUHK Block E Sports Hall' },
+        { l: 'Jam Buka', v: '08:30 - 18:30' }
+      ]
+    },
+    {
+      icon: '❤️',
+      title: 'Palang Merah',
+      desc: 'Dukungan Darurat & Psikologis',
+      keywords: ['palang merah', 'bantuan'],
+      contacts: [
+        { l: 'FPS ID', v: '164279317' },
+        { l: 'Email', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🏠',
+      title: 'Tempat Tinggal Sementara',
+      desc: 'Tempat berlindung untuk keluarga',
+      keywords: ['perumahan', 'hotel', 'shelter'],
+      contacts: [
+        { l: 'SHKP', v: '160 Kamar Hotel Gratis' },
+        { l: 'ImpactHK', v: '5341 6670' }
+      ]
+    },
+    {
+      icon: '📦',
+      title: 'Donasi Persediaan',
+      desc: 'Pakaian, Selimut, Kebutuhan',
+      keywords: ['persediaan', 'pakaian', 'makanan'],
+      info: ['⚠️ Banyak titik pengumpulan penuh'],
+      contacts: [{ l: 'Hotline Pemerintah', v: '9213 2388' }]
+    },
+    {
+      icon: '👷‍♀️',
+      title: 'Dukungan untuk Helper',
+      desc: 'Bantuan Multibahasa',
+      keywords: ['helper', 'fdh', 'pembantu'],
+      contacts: [
+        { l: 'HELP Hotline', v: '2523 4020' },
+        { l: 'Dept Tenaga Kerja', v: '2157 9537' },
+        { l: 'Dukungan WhatsApp', v: '+852 5936 3780' }
+      ]
+    },
+    {
+      icon: '🚨',
+      title: 'Jalur Darurat',
+      desc: 'Pertanyaan Korban & Kesehatan Mental',
+      keywords: ['bantuan', 'darurat'],
+      contacts: [
+        { l: 'Korban', v: '1878 999' },
+        { l: 'Kesehatan Mental', v: '18111' },
+        { l: 'SWD', v: '2343 2255' }
+      ]
+    }
+  ]
 };
-
-// Tagalog and Indonesian use English resources
-resources.tl = resources.en;
-resources.id = resources.en;

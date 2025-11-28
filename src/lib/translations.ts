@@ -1,3 +1,6 @@
+import hkRedCrossLogo from '@/assets/hk-red-cross.jpg';
+import caritasLogo from '@/assets/caritas-logo.png';
+
 export type Language = 'zh' | 'en' | 'tl' | 'id';
 
 export const languages = {
@@ -289,7 +292,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
-      iconImage: '/src/assets/hk-red-cross.jpg',
+      iconImage: hkRedCrossLogo,
       title: '紅十字會',
       desc: '緊急現金援助及心理支援',
       keywords: ['紅十字會', '急救', '現金', '心理'],
@@ -304,7 +307,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: '/src/assets/caritas-logo.jpeg',
+      iconImage: caritasLogo,
       title: '明愛',
       desc: '全面災民支援服務',
       keywords: ['明愛', 'caritas', '支援'],
@@ -428,7 +431,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
-      iconImage: '/src/assets/hk-red-cross.jpg',
+      iconImage: hkRedCrossLogo,
       title: 'Red Cross',
       desc: 'Emergency Cash Aid & Psychological Support',
       keywords: ['red cross', 'help', 'cash', 'mental health'],
@@ -443,7 +446,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: '/src/assets/caritas-logo.jpeg',
+      iconImage: caritasLogo,
       title: 'Caritas Hong Kong',
       desc: 'Comprehensive Victim Support',
       keywords: ['caritas', 'support', 'help'],
@@ -567,7 +570,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
-      iconImage: '/src/assets/hk-red-cross.jpg',
+      iconImage: hkRedCrossLogo,
       title: 'Pula na Krus',
       desc: 'Tulong sa Cash at Suportang Sikolohikal',
       keywords: ['red cross', 'tulong', 'pera', 'mental health'],
@@ -582,7 +585,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: '/src/assets/caritas-logo.jpeg',
+      iconImage: caritasLogo,
       title: 'Caritas Hong Kong',
       desc: 'Kumpletong Suporta sa Biktima',
       keywords: ['caritas', 'suporta', 'tulong'],
@@ -706,7 +709,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
-      iconImage: '/src/assets/hk-red-cross.jpg',
+      iconImage: hkRedCrossLogo,
       title: 'Palang Merah',
       desc: 'Bantuan Tunai Darurat & Dukungan Psikologis',
       keywords: ['red cross', 'bantuan', 'uang', 'mental'],
@@ -721,7 +724,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: '/src/assets/caritas-logo.jpeg',
+      iconImage: caritasLogo,
       title: 'Caritas Hong Kong',
       desc: 'Dukungan Korban Komprehensif',
       keywords: ['caritas', 'dukungan', 'bantuan'],

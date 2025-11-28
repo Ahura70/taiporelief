@@ -1,12 +1,61 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from 'react';
+import { Header } from '@/components/Header';
+import { EmergencyBanner } from '@/components/EmergencyBanner';
+import { SearchBox } from '@/components/SearchBox';
+import { QuickActions } from '@/components/QuickActions';
+import { ResourceDetail } from '@/components/ResourceDetail';
+import { Language, translations, resources, Resource } from '@/lib/translations';
 
 const Index = () => {
+  const [currentLang, setCurrentLang] = useState<Language>('zh');
+  const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
+
+  useEffect(() => {
+    // Auto-detect language
+    const userLang = navigator.language || (navigator as any).userLanguage;
+    if (userLang.includes('en')) setCurrentLang('en');
+    else if (userLang.includes('zh')) setCurrentLang('zh');
+    else if (userLang.includes('tl') || userLang.includes('fil')) setCurrentLang('tl');
+    else if (userLang.includes('id')) setCurrentLang('id');
+  }, []);
+
+  const t = translations[currentLang];
+  const currentResources = resources[currentLang];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background pb-20">
+      <Header
+        title={t.title}
+        subtitle={t.subtitle}
+        currentLang={currentLang}
+        onLanguageChange={setCurrentLang}
+      />
+      <EmergencyBanner text={t.emergency} />
+
+      <main className="max-w-4xl mx-auto px-5 py-6">
+        <SearchBox
+          label={t.label}
+          placeholder={t.placeholder}
+          resources={currentResources}
+          onSelectResource={setSelectedResource}
+          currentLang={currentLang}
+          listeningText={t.listening}
+        />
+
+        <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
+
+        <div className="text-center mt-6 text-xs text-muted-foreground">{t.lastUpdate}</div>
+      </main>
+
+      {selectedResource && (
+        <ResourceDetail
+          resource={selectedResource}
+          onClose={() => setSelectedResource(null)}
+          copyText={t.copy}
+          copiedText={t.copied}
+          closeText={t.close}
+        />
+      )}
     </div>
   );
 };

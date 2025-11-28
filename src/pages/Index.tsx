@@ -55,6 +55,8 @@ const Index = () => {
             resources={currentResources} 
             onResourceClick={setSelectedResource}
             mapTitle={t.mapTitle}
+            showOpenOnlyText={t.showOpenOnly}
+            currentLang={currentLang}
           />
         </div>
       </main>

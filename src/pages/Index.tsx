@@ -5,11 +5,15 @@ import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { ResourceDetail } from '@/components/ResourceDetail';
 import { NewsBanner } from '@/components/NewsBanner';
+import { FeedbackForm } from '@/components/FeedbackForm';
 import { Language, translations, resources, Resource } from '@/lib/translations';
+import { MessageSquare } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
   const [currentLang, setCurrentLang] = useState<Language>('zh');
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
+  const [showFeedbackForm, setShowFeedbackForm] = useState(false);
 
   useEffect(() => {
     // Auto-detect language
@@ -53,6 +57,17 @@ const Index = () => {
           <div>{t.lastUpdate}</div>
           <div>{t.wcagCompliance}</div>
         </div>
+
+        <div className="mt-6 flex justify-center">
+          <Button
+            onClick={() => setShowFeedbackForm(true)}
+            variant="outline"
+            className="gap-2"
+          >
+            <MessageSquare className="w-4 h-4" />
+            {t.feedback}
+          </Button>
+        </div>
       </div>
 
       {selectedResource && (
@@ -67,6 +82,34 @@ const Index = () => {
           shareSMSText={t.shareSMS}
           shareLinkText={t.shareLink}
           linkCopiedText={t.linkCopied}
+        />
+      )}
+
+      {showFeedbackForm && (
+        <FeedbackForm
+          onClose={() => setShowFeedbackForm(false)}
+          translations={{
+            feedbackTitle: t.feedbackTitle,
+            feedbackType: t.feedbackType,
+            feedbackTypeUpdate: t.feedbackTypeUpdate,
+            feedbackTypeNew: t.feedbackTypeNew,
+            feedbackTypeGeneral: t.feedbackTypeGeneral,
+            resourceName: t.resourceName,
+            resourceNamePlaceholder: t.resourceNamePlaceholder,
+            category: t.category,
+            categoryPlaceholder: t.categoryPlaceholder,
+            contactInfo: t.contactInfo,
+            contactInfoPlaceholder: t.contactInfoPlaceholder,
+            description: t.description,
+            descriptionPlaceholder: t.descriptionPlaceholder,
+            yourName: t.yourName,
+            yourEmail: t.yourEmail,
+            submit: t.submit,
+            submitting: t.submitting,
+            close: t.close,
+            feedbackSuccess: t.feedbackSuccess,
+            feedbackSuccessDesc: t.feedbackSuccessDesc,
+          }}
         />
       )}
     </div>

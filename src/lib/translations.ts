@@ -61,7 +61,16 @@ export const translations = {
       { label: '半程達成' },
       { label: '接近目標' },
       { label: '目標達成' }
-    ]
+    ],
+    mapTitle: '🗺️ 支援地點地圖',
+    mapApiKeyPlaceholder: '輸入您的 Mapbox Token',
+    mapEnterApiKey: '輸入 Mapbox API Key 以查看地圖',
+    mapSetApiKey: '設定',
+    mapFilterAll: '全部',
+    mapFilterSupport: '支援中心',
+    mapFilterHousing: '臨時住宿',
+    mapFilterCollection: '物資收集點',
+    mapFilterMedical: '醫療設施'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -116,7 +125,16 @@ export const translations = {
       { label: 'Halfway There' },
       { label: 'Almost There' },
       { label: 'Goal Reached' }
-    ]
+    ],
+    mapTitle: '🗺️ Support Locations Map',
+    mapApiKeyPlaceholder: 'Enter your Mapbox Token',
+    mapEnterApiKey: 'Enter Mapbox API Key to view map',
+    mapSetApiKey: 'Set Key',
+    mapFilterAll: 'All',
+    mapFilterSupport: 'Support Centers',
+    mapFilterHousing: 'Temporary Housing',
+    mapFilterCollection: 'Collection Points',
+    mapFilterMedical: 'Medical Facilities'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -171,7 +189,16 @@ export const translations = {
       { label: 'Kalahati Na' },
       { label: 'Malapit Na' },
       { label: 'Target Naabot' }
-    ]
+    ],
+    mapTitle: '🗺️ Mapa ng mga Lokasyon',
+    mapApiKeyPlaceholder: 'Ilagay ang Mapbox Token',
+    mapEnterApiKey: 'Ilagay ang Mapbox API Key para tingnan ang mapa',
+    mapSetApiKey: 'I-set',
+    mapFilterAll: 'Lahat',
+    mapFilterSupport: 'Support Centers',
+    mapFilterHousing: 'Pansamantalang Tirahan',
+    mapFilterCollection: 'Collection Points',
+    mapFilterMedical: 'Medikal na Pasilidad'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -226,7 +253,16 @@ export const translations = {
       { label: 'Setengah Jalan' },
       { label: 'Hampir Sampai' },
       { label: 'Target Tercapai' }
-    ]
+    ],
+    mapTitle: '🗺️ Peta Lokasi Dukungan',
+    mapApiKeyPlaceholder: 'Masukkan Mapbox Token Anda',
+    mapEnterApiKey: 'Masukkan Mapbox API Key untuk melihat peta',
+    mapSetApiKey: 'Set Key',
+    mapFilterAll: 'Semua',
+    mapFilterSupport: 'Pusat Dukungan',
+    mapFilterHousing: 'Tempat Tinggal Sementara',
+    mapFilterCollection: 'Titik Pengumpulan',
+    mapFilterMedical: 'Fasilitas Medis'
   }
 };
 
@@ -265,11 +301,19 @@ export const resources: Record<Language, Resource[]> = {
       icon: '🏥',
       title: '香港紅十字會',
       desc: '緊急心理支援及物資',
-      keywords: ['紅十字會', '急救'],
+      keywords: ['紅十字會', '急救', '捐款', '銀行'],
       contacts: [
         { l: 'FPS 轉數快', v: '164279317' },
-        { l: '查詢', v: 'relief@redcross.org.hk' }
-      ]
+        { l: 'HSBC 匯豐', v: '567-650155-023' },
+        { l: 'HASE 恒生', v: '267-175123-002' },
+        { l: 'BOC 中銀', v: '012-806-00003231' },
+        { l: 'BEA 東亞', v: '015-514-40-472999' },
+        { l: '支票抬頭', v: '"Hong Kong Red Cross Care For Our Local"' },
+        { l: '支票背面註明', v: '"9900"' },
+        { l: '郵寄地址', v: '九龍西海庭道19號 紅十字會總部' },
+        { l: '電郵', v: 'relief@redcross.org.hk' }
+      ],
+      info: ['如需收據，請將交易紀錄截圖連同姓名、電話、地址、捐款者編號（如有）及註明"9900"電郵至 relief@redcross.org.hk']
     },
     {
       icon: '🏠',
@@ -350,11 +394,19 @@ export const resources: Record<Language, Resource[]> = {
       icon: '🏥',
       title: 'HK Red Cross',
       desc: 'Emergency & Psych Support',
-      keywords: ['red cross', 'help'],
+      keywords: ['red cross', 'help', 'donation', 'bank'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
+        { l: 'HSBC', v: '567-650155-023' },
+        { l: 'HASE', v: '267-175123-002' },
+        { l: 'BOC', v: '012-806-00003231' },
+        { l: 'BEA', v: '015-514-40-472999' },
+        { l: 'Cheque Payable to', v: '"Hong Kong Red Cross Care For Our Local"' },
+        { l: 'Mark on Cheque', v: '"9900"' },
+        { l: 'Mail Address', v: '19 Hoi Ting Road, West Kowloon, HK' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
-      ]
+      ],
+      info: ['For donation receipt, send transaction screenshot with name, phone, address, donor ID (if any) and mark "9900" to relief@redcross.org.hk']
     },
     {
       icon: '🏠',
@@ -435,11 +487,19 @@ export const resources: Record<Language, Resource[]> = {
       icon: '🏥',
       title: 'HK Red Cross',
       desc: 'Emergency at Psychological Support',
-      keywords: ['red cross', 'tulong'],
+      keywords: ['red cross', 'tulong', 'donasyon', 'bangko'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
+        { l: 'HSBC', v: '567-650155-023' },
+        { l: 'HASE', v: '267-175123-002' },
+        { l: 'BOC', v: '012-806-00003231' },
+        { l: 'BEA', v: '015-514-40-472999' },
+        { l: 'Cheque Payable sa', v: '"Hong Kong Red Cross Care For Our Local"' },
+        { l: 'Markahan ang Cheque', v: '"9900"' },
+        { l: 'Mail Address', v: '19 Hoi Ting Road, West Kowloon, HK' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
-      ]
+      ],
+      info: ['Para sa resibo, ipadala ang screenshot ng transaksyon kasama ang pangalan, telepono, address, donor ID (kung mayroon) at markahan "9900" sa relief@redcross.org.hk']
     },
     {
       icon: '🏠',
@@ -520,11 +580,19 @@ export const resources: Record<Language, Resource[]> = {
       icon: '🏥',
       title: 'Palang Merah HK',
       desc: 'Darurat & Dukungan Psikologis',
-      keywords: ['palang merah', 'bantuan'],
+      keywords: ['palang merah', 'bantuan', 'donasi', 'bank'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
+        { l: 'HSBC', v: '567-650155-023' },
+        { l: 'HASE', v: '267-175123-002' },
+        { l: 'BOC', v: '012-806-00003231' },
+        { l: 'BEA', v: '015-514-40-472999' },
+        { l: 'Cek Dibayarkan ke', v: '"Hong Kong Red Cross Care For Our Local"' },
+        { l: 'Tandai di Cek', v: '"9900"' },
+        { l: 'Alamat Surat', v: '19 Hoi Ting Road, West Kowloon, HK' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
-      ]
+      ],
+      info: ['Untuk tanda terima donasi, kirim tangkapan layar transaksi dengan nama, telepon, alamat, ID donor (jika ada) dan tandai "9900" ke relief@redcross.org.hk']
     },
     {
       icon: '🏠',

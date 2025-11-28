@@ -11,6 +11,7 @@ import { NotificationToggle } from '@/components/NotificationToggle';
 import { SkipToContent } from '@/components/SkipToContent';
 import { FeedbackForm } from '@/components/FeedbackForm';
 import { DonationTracker } from '@/components/DonationTracker';
+import { Map } from '@/components/Map';
 import { Language, translations, resources, Resource } from '@/lib/translations';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
@@ -96,6 +97,20 @@ const Index = () => {
             goal={t.donationGoal}
             currency={t.donationCurrency}
             milestones={t.donationMilestones}
+          />
+        </div>
+
+        <div className="mt-6">
+          <h2 className="text-xl font-bold text-foreground mb-4">{t.mapTitle}</h2>
+          <Map
+            apiKeyPlaceholder={t.mapApiKeyPlaceholder}
+            filterAll={t.mapFilterAll}
+            filterSupport={t.mapFilterSupport}
+            filterHousing={t.mapFilterHousing}
+            filterCollection={t.mapFilterCollection}
+            filterMedical={t.mapFilterMedical}
+            enterApiKey={t.mapEnterApiKey}
+            setApiKey={t.mapSetApiKey}
           />
         </div>
 

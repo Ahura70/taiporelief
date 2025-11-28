@@ -30,7 +30,14 @@ export const translations = {
     whatsapp: 'WhatsApp',
     sms: '短訊',
     copyLink: '複製內容',
-    offlineMode: '🔌 離線模式 - 正在顯示快取內容'
+    offlineMode: '🔌 離線模式 - 正在顯示快取內容',
+    notifyEnable: '啟用通知',
+    notifyDisable: '停用通知',
+    notifyEnabled: '通知已啟用',
+    notifyDisabled: '通知已停用',
+    notifyDenied: '通知已被封鎖。請在瀏覽器設定中啟用',
+    notifyTestTitle: '宏福苑援助',
+    notifyTestBody: '緊急通知測試成功！'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -54,7 +61,14 @@ export const translations = {
     whatsapp: 'WhatsApp',
     sms: 'SMS',
     copyLink: 'Copy Info',
-    offlineMode: '🔌 Offline Mode - Viewing Cached Content'
+    offlineMode: '🔌 Offline Mode - Viewing Cached Content',
+    notifyEnable: 'Enable Alerts',
+    notifyDisable: 'Disable Alerts',
+    notifyEnabled: 'Alerts Enabled',
+    notifyDisabled: 'Alerts Disabled',
+    notifyDenied: 'Notifications blocked. Please enable in browser settings',
+    notifyTestTitle: 'Wang Fuk Relief',
+    notifyTestBody: 'Emergency alerts test successful!'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -78,7 +92,14 @@ export const translations = {
     whatsapp: 'WhatsApp',
     sms: 'SMS',
     copyLink: 'Kopyahin',
-    offlineMode: '🔌 Offline Mode - Nakikita ang Cached Content'
+    offlineMode: '🔌 Offline Mode - Nakikita ang Cached Content',
+    notifyEnable: 'Paganahin ang Alerto',
+    notifyDisable: 'I-disable ang Alerto',
+    notifyEnabled: 'Alerto Naka-on',
+    notifyDisabled: 'Alerto Naka-off',
+    notifyDenied: 'Naka-block ang notipikasyon. Paganahin sa browser settings',
+    notifyTestTitle: 'Wang Fuk Relief',
+    notifyTestBody: 'Matagumpay ang emergency alerts test!'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -102,7 +123,14 @@ export const translations = {
     whatsapp: 'WhatsApp',
     sms: 'SMS',
     copyLink: 'Salin Info',
-    offlineMode: '🔌 Mode Offline - Melihat Konten Cache'
+    offlineMode: '🔌 Mode Offline - Melihat Konten Cache',
+    notifyEnable: 'Aktifkan Peringatan',
+    notifyDisable: 'Nonaktifkan Peringatan',
+    notifyEnabled: 'Peringatan Aktif',
+    notifyDisabled: 'Peringatan Nonaktif',
+    notifyDenied: 'Notifikasi diblokir. Aktifkan di pengaturan browser',
+    notifyTestTitle: 'Wang Fuk Relief',
+    notifyTestBody: 'Tes peringatan darurat berhasil!'
   }
 };
 

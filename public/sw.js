@@ -68,3 +68,53 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   }
 });
+
+// Handle push notifications
+self.addEventListener('push', (event) => {
+  console.log('Push notification received:', event);
+  
+  let notificationData = {
+    title: 'Tai Po Relief Alert',
+    body: 'New emergency information available',
+    icon: '/manifest.json',
+    badge: '/manifest.json',
+    tag: 'taipo-relief',
+    requireInteraction: true,
+    data: {
+      url: '/'
+    }
+  };
+
+  if (event.data) {
+    try {
+      const data = event.data.json();
+      notificationData = {
+        ...notificationData,
+        ...data
+      };
+    } catch (e) {
+      notificationData.body = event.data.text();
+    }
+  }
+
+  event.waitUntil(
+    self.registration.showNotification(notificationData.title, {
+      body: notificationData.body,
+      icon: notificationData.icon,
+      badge: notificationData.badge,
+      tag: notificationData.tag,
+      requireInteraction: notificationData.requireInteraction,
+      data: notificationData.data
+    })
+  );
+});
+
+// Handle notification clicks
+self.addEventListener('notificationclick', (event) => {
+  console.log('Notification clicked:', event);
+  event.notification.close();
+
+  event.waitUntil(
+    clients.openWindow(event.notification.data?.url || '/')
+  );
+});

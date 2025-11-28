@@ -7,6 +7,7 @@ import { ResourceDetail } from '@/components/ResourceDetail';
 import { NewsBanner } from '@/components/NewsBanner';
 import { PWAInstallPrompt } from '@/components/PWAInstallPrompt';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
+import { NotificationToggle } from '@/components/NotificationToggle';
 import { Language, translations, resources, Resource } from '@/lib/translations';
 
 const Index = () => {
@@ -47,6 +48,18 @@ const Index = () => {
         />
 
         <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
+
+        <div className="mt-6">
+          <NotificationToggle
+            enableText={t.notifyEnable}
+            disableText={t.notifyDisable}
+            enabledText={t.notifyEnabled}
+            disabledText={t.notifyDisabled}
+            permissionDeniedText={t.notifyDenied}
+            testNotificationTitle={t.notifyTestTitle}
+            testNotificationBody={t.notifyTestBody}
+          />
+        </div>
       </main>
 
       <NewsBanner title={t.newsTitle} />

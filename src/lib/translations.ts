@@ -58,7 +58,14 @@ export const translations = {
     submit: '提交',
     submitting: '提交中...',
     feedbackSuccess: '感謝您的反饋！',
-    feedbackSuccessDesc: '我們已收到您的意見，會盡快審核。'
+    feedbackSuccessDesc: '我們已收到您的意見，會盡快審核。',
+    bookmark: '收藏',
+    bookmarked: '已收藏',
+    qrCode: 'QR 碼分享',
+    skipToContent: '跳至主要內容',
+    legendOpen: '營業中',
+    legendClosed: '已關閉',
+    legendNoHours: '全天候服務'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -110,7 +117,14 @@ export const translations = {
     submit: 'Submit',
     submitting: 'Submitting...',
     feedbackSuccess: 'Thank you for your feedback!',
-    feedbackSuccessDesc: 'We have received your submission and will review it soon.'
+    feedbackSuccessDesc: 'We have received your submission and will review it soon.',
+    bookmark: 'Bookmark',
+    bookmarked: 'Bookmarked',
+    qrCode: 'QR Code Share',
+    skipToContent: 'Skip to main content',
+    legendOpen: 'Open Now',
+    legendClosed: 'Closed',
+    legendNoHours: 'Always Available'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -162,7 +176,14 @@ export const translations = {
     submit: 'Ipasa',
     submitting: 'Isinusumite...',
     feedbackSuccess: 'Salamat sa iyong feedback!',
-    feedbackSuccessDesc: 'Natanggap namin ang iyong submission at susuriin ito.'
+    feedbackSuccessDesc: 'Natanggap namin ang iyong submission at susuriin ito.',
+    bookmark: 'Bookmark',
+    bookmarked: 'Na-bookmark',
+    qrCode: 'QR Code Share',
+    skipToContent: 'Tumalon sa pangunahing nilalaman',
+    legendOpen: 'Bukas Ngayon',
+    legendClosed: 'Sarado',
+    legendNoHours: 'Palaging Bukas'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -214,7 +235,14 @@ export const translations = {
     submit: 'Kirim',
     submitting: 'Mengirim...',
     feedbackSuccess: 'Terima kasih atas masukan Anda!',
-    feedbackSuccessDesc: 'Kami telah menerima kiriman Anda dan akan meninjaunya.'
+    feedbackSuccessDesc: 'Kami telah menerima kiriman Anda dan akan meninjaunya.',
+    bookmark: 'Bookmark',
+    bookmarked: 'Ditandai',
+    qrCode: 'Bagikan QR Code',
+    skipToContent: 'Langsung ke konten utama',
+    legendOpen: 'Buka Sekarang',
+    legendClosed: 'Tutup',
+    legendNoHours: 'Selalu Tersedia'
   }
 };
 

@@ -4,6 +4,7 @@ import { EmergencyBanner } from '@/components/EmergencyBanner';
 import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { ResourceDetail } from '@/components/ResourceDetail';
+import { NewsBanner } from '@/components/NewsBanner';
 import { Language, translations, resources, Resource } from '@/lib/translations';
 
 const Index = () => {
@@ -31,6 +32,7 @@ const Index = () => {
         onLanguageChange={setCurrentLang}
       />
       <EmergencyBanner text={t.emergency} />
+      <NewsBanner title={t.newsTitle} />
 
       <main className="max-w-4xl mx-auto px-5 py-6">
         <SearchBox
@@ -44,7 +46,10 @@ const Index = () => {
 
         <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
 
-        <div className="text-center mt-6 text-xs text-muted-foreground">{t.lastUpdate}</div>
+        <div className="text-center mt-6 text-xs text-muted-foreground space-y-1">
+          <div>{t.lastUpdate}</div>
+          <div>{t.wcagCompliance}</div>
+        </div>
       </main>
 
       {selectedResource && (

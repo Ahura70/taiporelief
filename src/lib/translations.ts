@@ -1,3 +1,6 @@
+import redCrossLogo from '@/assets/hk-red-cross-logo.gif';
+import caritasLogo from '@/assets/caritas-logo.png';
+
 export type Language = 'zh' | 'en' | 'tl' | 'id';
 
 export const languages = {
@@ -104,6 +107,7 @@ export const translations = {
 
 export interface Resource {
   icon: string;
+  logo?: string; // Optional logo image path
   title: string;
   desc: string;
   keywords: string[];
@@ -135,12 +139,24 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
+      logo: redCrossLogo,
       title: '紅十字會',
       desc: '緊急心理支援及物資',
       keywords: ['紅十字會', '急救'],
       contacts: [
         { l: 'FPS 轉數快', v: '164279317' },
         { l: '查詢', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🏥',
+      logo: caritasLogo,
+      title: '明愛香港',
+      desc: '社會服務及緊急援助',
+      keywords: ['明愛', 'caritas', '社會服務'],
+      contacts: [
+        { l: '總部', v: '2339 3777' },
+        { l: '緊急熱線', v: '18288' }
       ]
     },
     {
@@ -204,12 +220,24 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
+      logo: redCrossLogo,
       title: 'Red Cross',
       desc: 'Emergency & Psych Support',
       keywords: ['red cross', 'help'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🏥',
+      logo: caritasLogo,
+      title: 'Caritas Hong Kong',
+      desc: 'Social Services & Emergency Aid',
+      keywords: ['caritas', 'social', 'aid'],
+      contacts: [
+        { l: 'Headquarters', v: '2339 3777' },
+        { l: 'Emergency', v: '18288' }
       ]
     },
     {
@@ -276,12 +304,24 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
+      logo: redCrossLogo,
       title: 'Red Cross',
       desc: 'Emerhensiya at Suportang Pangkalusugan',
       keywords: ['red cross', 'tulong'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🏥',
+      logo: caritasLogo,
+      title: 'Caritas Hong Kong',
+      desc: 'Social Services at Emergency Aid',
+      keywords: ['caritas', 'social', 'tulong'],
+      contacts: [
+        { l: 'Headquarters', v: '2339 3777' },
+        { l: 'Emergency', v: '18288' }
       ]
     },
     {
@@ -348,12 +388,24 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
+      logo: redCrossLogo,
       title: 'Palang Merah',
       desc: 'Dukungan Darurat & Psikologis',
       keywords: ['palang merah', 'bantuan'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🏥',
+      logo: caritasLogo,
+      title: 'Caritas Hong Kong',
+      desc: 'Layanan Sosial & Bantuan Darurat',
+      keywords: ['caritas', 'sosial', 'bantuan'],
+      contacts: [
+        { l: 'Kantor Pusat', v: '2339 3777' },
+        { l: 'Darurat', v: '18288' }
       ]
     },
     {

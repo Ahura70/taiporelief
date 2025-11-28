@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Resource } from '@/lib/translations';
-import { X } from 'lucide-react';
+import { X, Share2, MessageSquare, Copy, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
 
 interface ResourceDetailProps {
   resource: Resource | null;
@@ -9,6 +10,10 @@ interface ResourceDetailProps {
   copyText: string;
   copiedText: string;
   closeText: string;
+  shareText?: string;
+  whatsappText?: string;
+  smsText?: string;
+  copyLinkText?: string;
 }
 
 export const ResourceDetail = ({
@@ -16,9 +21,15 @@ export const ResourceDetail = ({
   onClose,
   copyText,
   copiedText,
-  closeText
+  closeText,
+  shareText = 'Share',
+  whatsappText = 'WhatsApp',
+  smsText = 'SMS',
+  copyLinkText = 'Copy Link'
 }: ResourceDetailProps) => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const [linkCopied, setLinkCopied] = useState(false);
+  const { toast } = useToast();
 
   if (!resource) return null;
 
@@ -55,10 +66,44 @@ export const ResourceDetail = ({
     return { type: 'text', href: null, display: value };
   };
 
+  const handleShareWhatsApp = () => {
+    const shareText = `${resource.title}\n${resource.desc}\n\n${resource.contacts.map(c => `${c.l}: ${c.v}`).join('\n')}\n\n${window.location.href}`;
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleShareSMS = () => {
+    const shareText = `${resource.title}: ${resource.desc}\n\n${resource.contacts.map(c => `${c.l}: ${c.v}`).join('\n')}\n\n${window.location.href}`;
+    const smsUrl = `sms:?body=${encodeURIComponent(shareText)}`;
+    window.location.href = smsUrl;
+  };
+
+  const handleCopyLink = async () => {
+    try {
+      const shareText = `${resource.title}\n${resource.desc}\n\n${resource.contacts.map(c => `${c.l}: ${c.v}`).join('\n')}\n\n${window.location.href}`;
+      await navigator.clipboard.writeText(shareText);
+      setLinkCopied(true);
+      toast({
+        title: "Copied!",
+        description: "Resource information copied to clipboard",
+        duration: 2000,
+      });
+      setTimeout(() => setLinkCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+      toast({
+        title: "Error",
+        description: "Failed to copy to clipboard",
+        variant: "destructive",
+        duration: 2000,
+      });
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 p-0 sm:p-4 animate-in fade-in duration-200">
       <div className="bg-card w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[90vh] overflow-auto animate-in slide-in-from-bottom sm:slide-in-from-bottom-0 duration-300">
-        <div className="sticky top-0 bg-card border-b border-border px-6 py-4 flex items-start justify-between">
+        <div className="sticky top-0 bg-card border-b border-border px-6 py-4 flex items-start justify-between z-10">
           <div className="flex items-center gap-3 flex-1">
             <div className="text-4xl">{resource.icon}</div>
             <div>
@@ -68,13 +113,54 @@ export const ResourceDetail = ({
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-secondary rounded-full transition-colors"
+            className="p-2 hover:bg-secondary rounded-full transition-colors flex-shrink-0"
+            aria-label="Close"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4">
+        <div className="px-6 pt-4 pb-2">
+          <div className="flex items-center gap-2 mb-2">
+            <Share2 className="w-4 h-4 text-muted-foreground" />
+            <span className="text-sm font-semibold text-foreground">{shareText}</span>
+          </div>
+          <div className="flex gap-2">
+            <Button
+              onClick={handleShareWhatsApp}
+              variant="outline"
+              size="sm"
+              className="flex-1 gap-2"
+            >
+              <MessageSquare className="w-4 h-4" />
+              {whatsappText}
+            </Button>
+            <Button
+              onClick={handleShareSMS}
+              variant="outline"
+              size="sm"
+              className="flex-1 gap-2"
+            >
+              <MessageSquare className="w-4 h-4" />
+              {smsText}
+            </Button>
+            <Button
+              onClick={handleCopyLink}
+              variant="outline"
+              size="sm"
+              className="flex-1 gap-2"
+            >
+              {linkCopied ? (
+                <Check className="w-4 h-4" />
+              ) : (
+                <Copy className="w-4 h-4" />
+              )}
+              {linkCopied ? copiedText : copyLinkText}
+            </Button>
+          </div>
+        </div>
+
+        <div className="p-6 pt-2 space-y-4">
           {resource.info && (
             <div className="bg-warning/20 border border-warning/30 rounded-xl p-4 text-sm">
               {resource.info.map((info, idx) => (

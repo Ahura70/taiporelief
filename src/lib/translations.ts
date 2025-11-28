@@ -23,7 +23,9 @@ export const translations = {
     copy: '複製',
     copied: '已複製',
     lastUpdate: '最後更新：2025年11月29日',
-    listening: '聆聽中...'
+    listening: '聆聽中...',
+    newsTitle: '📰 最新消息',
+    wcagCompliance: '本網站符合 WCAG 2.2 無障礙標準'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -40,7 +42,9 @@ export const translations = {
     copy: 'COPY',
     copied: 'COPIED',
     lastUpdate: 'Last Updated: Nov 29, 2025',
-    listening: 'Listening...'
+    listening: 'Listening...',
+    newsTitle: '📰 Latest News',
+    wcagCompliance: 'WCAG 2.2 Compliant'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -57,7 +61,9 @@ export const translations = {
     copy: 'KOPYA',
     copied: 'KINOPYA',
     lastUpdate: 'Huling Update: Nov 29, 2025',
-    listening: 'Nakikinig...'
+    listening: 'Nakikinig...',
+    newsTitle: '📰 Latest News',
+    wcagCompliance: 'WCAG 2.2 Compliant'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -74,7 +80,9 @@ export const translations = {
     copy: 'SALIN',
     copied: 'DISALIN',
     lastUpdate: 'Terakhir Diperbarui: 29 Nov 2025',
-    listening: 'Mendengarkan...'
+    listening: 'Mendengarkan...',
+    newsTitle: '📰 Latest News',
+    wcagCompliance: 'WCAG 2.2 Compliant'
   }
 };
 
@@ -144,7 +152,8 @@ export const resources: Record<Language, Resource[]> = {
       keywords: ['外傭', '工人', 'helper'],
       contacts: [
         { l: 'HELP Hotline', v: '2523 4020' },
-        { l: '勞工處', v: '2157 9537' }
+        { l: '勞工處', v: '2157 9537' },
+        { l: 'WhatsApp 支援', v: '+852 5936 3780' }
       ]
     },
     {
@@ -212,7 +221,8 @@ export const resources: Record<Language, Resource[]> = {
       keywords: ['helper', 'fdh', 'maid'],
       contacts: [
         { l: 'HELP Hotline', v: '2523 4020' },
-        { l: 'Labour Dept', v: '2157 9537' }
+        { l: 'Labour Dept', v: '2157 9537' },
+        { l: 'WhatsApp Support', v: '+852 5936 3780' }
       ]
     },
     {

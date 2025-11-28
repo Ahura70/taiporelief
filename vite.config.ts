@@ -15,4 +15,13 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  optimizeDeps: {
+    include: ['react', 'react-dom', '@radix-ui/react-tooltip'],
+    force: true
+  },
+  build: {
+    commonjsOptions: {
+      include: [/react/, /react-dom/]
+    }
+  }
 }));

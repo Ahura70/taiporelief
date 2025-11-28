@@ -71,6 +71,42 @@ export type Database = {
         }
         Relationships: []
       }
+      feedback: {
+        Row: {
+          category: string | null
+          contact_info: string | null
+          created_at: string
+          description: string
+          feedback_type: string
+          id: string
+          resource_name: string | null
+          submitter_email: string | null
+          submitter_name: string | null
+        }
+        Insert: {
+          category?: string | null
+          contact_info?: string | null
+          created_at?: string
+          description: string
+          feedback_type: string
+          id?: string
+          resource_name?: string | null
+          submitter_email?: string | null
+          submitter_name?: string | null
+        }
+        Update: {
+          category?: string | null
+          contact_info?: string | null
+          created_at?: string
+          description?: string
+          feedback_type?: string
+          id?: string
+          resource_name?: string | null
+          submitter_email?: string | null
+          submitter_name?: string | null
+        }
+        Relationships: []
+      }
       volunteer_registrations: {
         Row: {
           availability: string | null

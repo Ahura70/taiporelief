@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Globe } from 'lucide-react';
 import { Language, languages } from '@/lib/translations';
 
 interface HeaderProps {
@@ -7,6 +8,13 @@ interface HeaderProps {
   currentLang: Language;
   onLanguageChange: (lang: Language) => void;
 }
+
+const languageIcons: Record<Language, string> = {
+  zh: '中',
+  en: 'EN',
+  tl: 'TL',
+  id: 'ID'
+};
 
 export const Header = ({ title, subtitle, currentLang, onLanguageChange }: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -33,13 +41,14 @@ export const Header = ({ title, subtitle, currentLang, onLanguageChange }: Heade
         <div className="relative" ref={menuRef}>
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className="flex items-center gap-2 bg-background/15 text-background px-3 py-1.5 rounded-full text-sm font-semibold transition-colors hover:bg-background/25"
+            className="flex items-center justify-center gap-1.5 bg-background/15 text-background px-3 py-2 rounded-full transition-colors hover:bg-background/25"
+            aria-label="Change language"
           >
-            <span>{languages[currentLang].name}</span>
-            <span className="text-xs">▾</span>
+            <Globe size={20} strokeWidth={2.5} />
+            <span className="text-base font-bold">{languageIcons[currentLang]}</span>
           </button>
           {showMenu && (
-            <div className="absolute top-full right-0 mt-2 bg-card rounded-xl shadow-2xl overflow-hidden w-44 border border-border">
+            <div className="absolute top-full right-0 mt-2 bg-card rounded-2xl shadow-2xl p-2 border-2 border-border flex gap-2">
               {Object.entries(languages).map(([code, lang]) => (
                 <button
                   key={code}
@@ -47,13 +56,15 @@ export const Header = ({ title, subtitle, currentLang, onLanguageChange }: Heade
                     onLanguageChange(code as Language);
                     setShowMenu(false);
                   }}
-                  className={`w-full px-4 py-3 text-left text-sm border-b border-border last:border-0 transition-colors ${
+                  className={`flex flex-col items-center justify-center gap-1 px-4 py-3 rounded-xl transition-all min-w-[60px] ${
                     currentLang === code
-                      ? 'bg-accent text-primary font-bold'
-                      : 'text-card-foreground hover:bg-secondary'
+                      ? 'bg-primary text-primary-foreground font-bold shadow-md scale-105'
+                      : 'bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:scale-105'
                   }`}
+                  aria-label={lang.name}
                 >
-                  {lang.name}
+                  <span className="text-2xl font-bold">{languageIcons[code as Language]}</span>
+                  <span className="text-[10px] uppercase tracking-wide">{lang.name}</span>
                 </button>
               ))}
             </div>

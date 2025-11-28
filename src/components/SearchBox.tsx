@@ -92,12 +92,11 @@ export const SearchBox = ({
           />
           <button
             onClick={handleVoiceSearch}
-            className={`p-3 rounded-xl transition-all min-w-[44px] min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
+            className={`p-3 rounded-xl transition-all ${
               isListening
                 ? 'bg-primary text-primary-foreground animate-pulse'
                 : 'bg-secondary text-foreground hover:bg-accent'
             }`}
-            aria-label={isListening ? listeningText : "Start voice search"}
           >
             <Mic className="w-5 h-5" />
           </button>

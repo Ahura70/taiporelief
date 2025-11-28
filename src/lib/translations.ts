@@ -30,38 +30,7 @@ export const translations = {
     whatsapp: 'WhatsApp',
     sms: '短訊',
     copyLink: '複製內容',
-    offlineMode: '🔌 離線模式 - 正在顯示快取內容',
-    notifyEnable: '啟用通知',
-    notifyDisable: '停用通知',
-    notifyEnabled: '通知已啟用',
-    notifyDisabled: '通知已停用',
-    notifyDenied: '通知已被封鎖。請在瀏覽器設定中啟用',
-    notifyTestTitle: '宏福苑援助',
-    notifyTestBody: '緊急通知測試成功！',
-    skipToContent: '跳至主要內容',
-    feedbackTitle: '意見反饋',
-    feedbackPlaceholder: '請告訴我們您的意見或建議...',
-    feedbackSubmit: '提交',
-    feedbackSuccess: '意見已提交',
-    feedbackClose: '關閉',
-    feedbackReport: '報告問題',
-    feedbackSuggest: '建議資源',
-    popular: '熱門',
-    newsLinks: [
-      { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: '最新報導' },
-      { name: '政府資訊', url: 'https://www.info.gov.hk/', desc: '官方更新' },
-      { name: '醫管局', url: 'https://www.ha.org.hk/', desc: '醫療更新' }
-    ],
-    donationTitle: '💰 救災基金進度',
-    donationRaised: '已籌得',
-    donationGoal: '達成目標',
-    donationCurrency: 'HK$',
-    donationMilestones: [
-      { label: '初步目標' },
-      { label: '半程達成' },
-      { label: '接近目標' },
-      { label: '目標達成' }
-    ]
+    offlineMode: '🔌 離線模式 - 正在顯示快取內容'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -85,38 +54,7 @@ export const translations = {
     whatsapp: 'WhatsApp',
     sms: 'SMS',
     copyLink: 'Copy Info',
-    offlineMode: '🔌 Offline Mode - Viewing Cached Content',
-    notifyEnable: 'Enable Alerts',
-    notifyDisable: 'Disable Alerts',
-    notifyEnabled: 'Alerts Enabled',
-    notifyDisabled: 'Alerts Disabled',
-    notifyDenied: 'Notifications blocked. Please enable in browser settings',
-    notifyTestTitle: 'Wang Fuk Relief',
-    notifyTestBody: 'Emergency alerts test successful!',
-    skipToContent: 'Skip to main content',
-    feedbackTitle: 'Feedback',
-    feedbackPlaceholder: 'Share your feedback or suggestions...',
-    feedbackSubmit: 'Submit',
-    feedbackSuccess: 'Feedback submitted',
-    feedbackClose: 'Close',
-    feedbackReport: 'Report Issue',
-    feedbackSuggest: 'Suggest Resource',
-    popular: 'Popular',
-    newsLinks: [
-      { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: 'Latest News Coverage' },
-      { name: 'Govt Info', url: 'https://www.info.gov.hk/', desc: 'Official Updates' },
-      { name: 'Hospital Authority', url: 'https://www.ha.org.hk/', desc: 'Medical Updates' }
-    ],
-    donationTitle: '💰 Relief Fund Progress',
-    donationRaised: 'Raised',
-    donationGoal: 'of Goal',
-    donationCurrency: 'HK$',
-    donationMilestones: [
-      { label: 'Initial Target' },
-      { label: 'Halfway There' },
-      { label: 'Almost There' },
-      { label: 'Goal Reached' }
-    ]
+    offlineMode: '🔌 Offline Mode - Viewing Cached Content'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -140,38 +78,7 @@ export const translations = {
     whatsapp: 'WhatsApp',
     sms: 'SMS',
     copyLink: 'Kopyahin',
-    offlineMode: '🔌 Offline Mode - Nakikita ang Cached Content',
-    notifyEnable: 'Paganahin ang Alerto',
-    notifyDisable: 'I-disable ang Alerto',
-    notifyEnabled: 'Alerto Naka-on',
-    notifyDisabled: 'Alerto Naka-off',
-    notifyDenied: 'Naka-block ang notipikasyon. Paganahin sa browser settings',
-    notifyTestTitle: 'Wang Fuk Relief',
-    notifyTestBody: 'Matagumpay ang emergency alerts test!',
-    skipToContent: 'Tumalon sa pangunahing nilalaman',
-    feedbackTitle: 'Feedback',
-    feedbackPlaceholder: 'Ibahagi ang iyong feedback o mungkahi...',
-    feedbackSubmit: 'Ipasa',
-    feedbackSuccess: 'Naipadala ang feedback',
-    feedbackClose: 'Isara',
-    feedbackReport: 'Iulat ang Isyu',
-    feedbackSuggest: 'Imungkahi ang Resource',
-    popular: 'Sikat',
-    newsLinks: [
-      { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: 'Pinakabagong Balita' },
-      { name: 'Govt Info', url: 'https://www.info.gov.hk/', desc: 'Opisyal na Update' },
-      { name: 'Hospital Authority', url: 'https://www.ha.org.hk/', desc: 'Medikal na Update' }
-    ],
-    donationTitle: '💰 Progress ng Relief Fund',
-    donationRaised: 'Nakolekta',
-    donationGoal: 'ng Target',
-    donationCurrency: 'HK$',
-    donationMilestones: [
-      { label: 'Unang Target' },
-      { label: 'Kalahati Na' },
-      { label: 'Malapit Na' },
-      { label: 'Target Naabot' }
-    ]
+    offlineMode: '🔌 Offline Mode - Nakikita ang Cached Content'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -195,38 +102,7 @@ export const translations = {
     whatsapp: 'WhatsApp',
     sms: 'SMS',
     copyLink: 'Salin Info',
-    offlineMode: '🔌 Mode Offline - Melihat Konten Cache',
-    notifyEnable: 'Aktifkan Peringatan',
-    notifyDisable: 'Nonaktifkan Peringatan',
-    notifyEnabled: 'Peringatan Aktif',
-    notifyDisabled: 'Peringatan Nonaktif',
-    notifyDenied: 'Notifikasi diblokir. Aktifkan di pengaturan browser',
-    notifyTestTitle: 'Wang Fuk Relief',
-    notifyTestBody: 'Tes peringatan darurat berhasil!',
-    skipToContent: 'Lewati ke konten utama',
-    feedbackTitle: 'Masukan',
-    feedbackPlaceholder: 'Bagikan masukan atau saran Anda...',
-    feedbackSubmit: 'Kirim',
-    feedbackSuccess: 'Masukan terkirim',
-    feedbackClose: 'Tutup',
-    feedbackReport: 'Laporkan Masalah',
-    feedbackSuggest: 'Sarankan Resource',
-    popular: 'Populer',
-    newsLinks: [
-      { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: 'Berita Terbaru' },
-      { name: 'Info Pemerintah', url: 'https://www.info.gov.hk/', desc: 'Pembaruan Resmi' },
-      { name: 'Hospital Authority', url: 'https://www.ha.org.hk/', desc: 'Pembaruan Medis' }
-    ],
-    donationTitle: '💰 Progress Dana Bantuan',
-    donationRaised: 'Terkumpul',
-    donationGoal: 'dari Target',
-    donationCurrency: 'HK$',
-    donationMilestones: [
-      { label: 'Target Awal' },
-      { label: 'Setengah Jalan' },
-      { label: 'Hampir Sampai' },
-      { label: 'Target Tercapai' }
-    ]
+    offlineMode: '🔌 Mode Offline - Melihat Konten Cache'
   }
 };
 
@@ -262,8 +138,8 @@ export const resources: Record<Language, Resource[]> = {
       ]
     },
     {
-      icon: '🏥',
-      title: '香港紅十字會',
+      icon: '❤️',
+      title: '紅十字會',
       desc: '緊急心理支援及物資',
       keywords: ['紅十字會', '急救'],
       contacts: [
@@ -310,22 +186,6 @@ export const resources: Record<Language, Resource[]> = {
         { l: '情緒支援', v: '18111' },
         { l: '社署', v: '2343 2255' }
       ]
-    },
-    {
-      icon: '🙏',
-      title: '明愛香港',
-      desc: '綜合支援服務',
-      keywords: ['明愛', 'caritas', '輔導', '支援'],
-      contacts: [
-        { l: '24小時危機熱線', v: '18288' },
-        { l: '荃灣康怡中心', v: '3105 5337' },
-        { l: '北區康怡中心', v: '2278 1016' },
-        { l: '護老者支援', v: '3892 0100' },
-        { l: '大埔富亨護老中心', v: '2660 6125' },
-        { l: '殮葬援助計劃', v: '5239 1035' },
-        { l: '電腦工場', v: '2716 6875' },
-        { l: 'WhatsApp', v: '5520 9507' }
-      ]
     }
   ],
   en: [
@@ -347,8 +207,8 @@ export const resources: Record<Language, Resource[]> = {
       ]
     },
     {
-      icon: '🏥',
-      title: 'HK Red Cross',
+      icon: '❤️',
+      title: 'Red Cross',
       desc: 'Emergency & Psych Support',
       keywords: ['red cross', 'help'],
       contacts: [
@@ -395,22 +255,6 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Mental Health', v: '18111' },
         { l: 'SWD', v: '2343 2255' }
       ]
-    },
-    {
-      icon: '🙏',
-      title: 'Caritas Hong Kong',
-      desc: 'Comprehensive Support Services',
-      keywords: ['caritas', 'counselling', 'support'],
-      contacts: [
-        { l: '24-Hour Crisis Line', v: '18288' },
-        { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
-        { l: 'Wellness Link - North District', v: '2278 1016' },
-        { l: 'Carer Support Centre', v: '3892 0100' },
-        { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
-        { l: 'Funeral Assistance', v: '5239 1035' },
-        { l: 'Computer Workshop', v: '2716 6875' },
-        { l: 'WhatsApp', v: '5520 9507' }
-      ]
     }
   ],
   tl: [
@@ -432,8 +276,8 @@ export const resources: Record<Language, Resource[]> = {
       ]
     },
     {
-      icon: '🏥',
-      title: 'HK Red Cross',
+      icon: '❤️',
+      title: 'Red Cross',
       desc: 'Emergency at Psychological Support',
       keywords: ['red cross', 'tulong'],
       contacts: [
@@ -480,22 +324,6 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Mental Health', v: '18111' },
         { l: 'SWD', v: '2343 2255' }
       ]
-    },
-    {
-      icon: '🙏',
-      title: 'Caritas Hong Kong',
-      desc: 'Komprehensibong Serbisyong Suporta',
-      keywords: ['caritas', 'counselling', 'suporta'],
-      contacts: [
-        { l: '24-Oras Crisis Line', v: '18288' },
-        { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
-        { l: 'Wellness Link - North District', v: '2278 1016' },
-        { l: 'Carer Support Centre', v: '3892 0100' },
-        { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
-        { l: 'Tulong sa Libing', v: '5239 1035' },
-        { l: 'Computer Workshop', v: '2716 6875' },
-        { l: 'WhatsApp', v: '5520 9507' }
-      ]
     }
   ],
   id: [
@@ -517,8 +345,8 @@ export const resources: Record<Language, Resource[]> = {
       ]
     },
     {
-      icon: '🏥',
-      title: 'Palang Merah HK',
+      icon: '❤️',
+      title: 'Palang Merah',
       desc: 'Darurat & Dukungan Psikologis',
       keywords: ['palang merah', 'bantuan'],
       contacts: [
@@ -564,22 +392,6 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Korban', v: '1878 999' },
         { l: 'Kesehatan Mental', v: '18111' },
         { l: 'SWD', v: '2343 2255' }
-      ]
-    },
-    {
-      icon: '🙏',
-      title: 'Caritas Hong Kong',
-      desc: 'Layanan Dukungan Komprehensif',
-      keywords: ['caritas', 'konseling', 'dukungan'],
-      contacts: [
-        { l: 'Saluran Krisis 24 Jam', v: '18288' },
-        { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
-        { l: 'Wellness Link - North District', v: '2278 1016' },
-        { l: 'Pusat Dukungan Pengasuh', v: '3892 0100' },
-        { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
-        { l: 'Bantuan Pemakaman', v: '5239 1035' },
-        { l: 'Computer Workshop', v: '2716 6875' },
-        { l: 'WhatsApp', v: '5520 9507' }
       ]
     }
   ]

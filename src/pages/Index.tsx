@@ -12,6 +12,7 @@ import { SkipToContent } from '@/components/SkipToContent';
 import { FeedbackForm } from '@/components/FeedbackForm';
 import { DonationTracker } from '@/components/DonationTracker';
 import { Map } from '@/components/Map';
+import { LiveUpdatesFeed } from '@/components/LiveUpdatesFeed';
 import { Language, translations, resources, Resource } from '@/lib/translations';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
@@ -111,6 +112,20 @@ const Index = () => {
             filterMedical={t.mapFilterMedical}
             enterApiKey={t.mapEnterApiKey}
             setApiKey={t.mapSetApiKey}
+          />
+        </div>
+
+        <div className="mt-6">
+          <LiveUpdatesFeed
+            title={t.liveUpdatesTitle}
+            donationType={t.liveUpdatesDonation}
+            volunteerType={t.liveUpdatesVolunteer}
+            alertType={t.liveUpdatesAlert}
+            timeAgo={{
+              justNow: t.liveUpdatesTimeJustNow,
+              minutesAgo: t.liveUpdatesTimeMinutes,
+              hoursAgo: t.liveUpdatesTimeHours,
+            }}
           />
         </div>
 

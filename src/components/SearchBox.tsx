@@ -78,12 +78,79 @@ export const SearchBox = ({
 
     recognition.onresult = (event: any) => {
       const transcript = event.results[0][0].transcript;
+      const val = transcript.toLowerCase().trim();
+      
+      // Define voice command shortcuts (multilingual)
+      const commandMap: Record<string, string[]> = {
+        // Donation commands
+        'donate': ['donate', 'donation', '捐款', '捐贈', 'magbigay', 'donasyon', 'donasi', 'menyumbang'],
+        'red cross': ['red cross', 'redcross', '紅十字', '红十字', 'pulang krus', 'palang merah'],
+        'caritas': ['caritas', '明愛', '明爱', 'caritas'],
+        
+        // Volunteer commands
+        'volunteer': ['volunteer', 'help out', '義工', '义工', '志願者', 'boluntaryo', 'sukarelawan', 'relawan'],
+        
+        // Support commands
+        'help': ['help', 'support', 'assistance', '幫助', '帮助', '支援', 'tulong', 'bantuan'],
+        'shelter': ['shelter', 'housing', '住宿', '庇護', '临时住所', 'tirahan', 'tempat tinggal'],
+        'food': ['food', 'meal', '食物', '膳食', 'pagkain', 'makanan'],
+        'counseling': ['counseling', 'mental health', 'therapy', '輔導', '心理', 'konsultasyon', 'konseling'],
+        
+        // Emergency commands
+        'emergency': ['emergency', 'urgent', '緊急', '紧急', 'emerhensya', 'darurat'],
+        'hotline': ['hotline', 'call', '熱線', '热线', 'telepono', 'saluran'],
+      };
+      
+      // Check if the transcript matches any command
+      let matchedResource: Resource | null = null;
+      let commandMatch = false;
+      
+      for (const [commandType, keywords] of Object.entries(commandMap)) {
+        if (keywords.some(keyword => val.includes(keyword))) {
+          // Find resource that matches this command type
+          const resource = resources.find(r => 
+            r.keywords.some(k => k.toLowerCase().includes(commandType)) ||
+            r.title.toLowerCase().includes(commandType)
+          );
+          
+          if (resource) {
+            matchedResource = resource;
+            commandMatch = true;
+            break;
+          }
+        }
+      }
+      
+      // If direct command match found, execute immediately
+      if (commandMatch && matchedResource) {
+        const commandText = currentLang === 'zh' 
+          ? '✓ 語音指令已識別'
+          : currentLang === 'tl'
+          ? '✓ Nakita ang voice command'
+          : currentLang === 'id'
+          ? '✓ Perintah suara terdeteksi'
+          : '✓ Voice command recognized';
+          
+        setVoiceStatus(commandText);
+        setSearchValue('');
+        setIsVoiceMatch(false);
+        
+        // Execute command immediately
+        setTimeout(() => {
+          onSelectResource(matchedResource!);
+          setVoiceStatus('');
+          setVoiceMatchedIndex(null);
+        }, 800);
+        
+        return;
+      }
+      
+      // Otherwise, proceed with normal search
       setSearchValue(transcript);
       setVoiceError('');
       setIsVoiceMatch(true);
       
       // Find best match and highlight it
-      const val = transcript.toLowerCase();
       const matches = resources.filter(
         (r) =>
           r.title.toLowerCase().includes(val) ||

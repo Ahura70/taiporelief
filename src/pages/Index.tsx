@@ -4,6 +4,7 @@ import { MemorialBanner } from '@/components/MemorialBanner';
 import { EmergencyBanner } from '@/components/EmergencyBanner';
 import { EmergencyDialButton } from '@/components/EmergencyDialButton';
 import { AccessibilityMenu } from '@/components/AccessibilityMenu';
+import { LanguageNotification } from '@/components/LanguageNotification';
 import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { ResourceDetail } from '@/components/ResourceDetail';
@@ -175,6 +176,11 @@ const Index = () => {
         mentalHealthLabel={t.mentalHealthSupport}
         emergencyTitle={t.emergencyDialTitle}
         emergencyDescription={t.emergencyDialDescription}
+      />
+      
+      <LanguageNotification 
+        message={t.languageNotification}
+        currentLang={currentLang}
       />
     </div>
   );

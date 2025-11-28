@@ -75,7 +75,8 @@ export const translations = {
     fontSizeLabel: '字體大小',
     highContrastLabel: '高對比度',
     reduceMotionLabel: '減少動畫',
-    lineSpacingLabel: '行距'
+    lineSpacingLabel: '行距',
+    languageNotification: '我們已根據您的瀏覽器設定自動選擇語言。您可以隨時使用右上角的語言選擇器更改語言。'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -144,7 +145,8 @@ export const translations = {
     fontSizeLabel: 'Text Size',
     highContrastLabel: 'High Contrast',
     reduceMotionLabel: 'Reduce Motion',
-    lineSpacingLabel: 'Line Spacing'
+    lineSpacingLabel: 'Line Spacing',
+    languageNotification: 'We automatically selected your language based on your browser settings. You can change it anytime using the language selector in the top right.'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -213,7 +215,8 @@ export const translations = {
     fontSizeLabel: 'Laki ng Text',
     highContrastLabel: 'Mataas na Contrast',
     reduceMotionLabel: 'Bawasan ang Galaw',
-    lineSpacingLabel: 'Espasyo ng Linya'
+    lineSpacingLabel: 'Espasyo ng Linya',
+    languageNotification: 'Awtomatiko naming pinili ang iyong wika batay sa iyong browser settings. Maaari mo itong baguhin anumang oras gamit ang language selector sa kanang itaas.'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -282,7 +285,8 @@ export const translations = {
     fontSizeLabel: 'Ukuran Teks',
     highContrastLabel: 'Kontras Tinggi',
     reduceMotionLabel: 'Kurangi Gerakan',
-    lineSpacingLabel: 'Spasi Baris'
+    lineSpacingLabel: 'Spasi Baris',
+    languageNotification: 'Kami secara otomatis memilih bahasa Anda berdasarkan pengaturan browser. Anda dapat mengubahnya kapan saja menggunakan pemilih bahasa di kanan atas.'
   }
 };
 

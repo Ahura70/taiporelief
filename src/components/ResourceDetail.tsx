@@ -6,6 +6,7 @@ import { useToast } from '@/hooks/use-toast';
 import { openDirections } from '@/lib/mapsHelper';
 import { QRCodeShare } from './QRCodeShare';
 import { useBookmarks } from '@/hooks/useBookmarks';
+import { OptimizedImage } from './OptimizedImage';
 
 interface ResourceDetailProps {
   resource: Resource | null;
@@ -120,9 +121,14 @@ export const ResourceDetail = ({
         <div className="sticky top-0 bg-card border-b border-border px-6 py-4 flex items-start justify-between">
           <div className="flex items-center gap-3 flex-1">
             {resource.iconImage ? (
-              <img src={resource.iconImage} alt="" className="w-12 h-12 object-contain" aria-hidden="true" />
+              <OptimizedImage
+                src={resource.iconImage}
+                alt=""
+                className="w-12 h-12 flex-shrink-0"
+                fallback={resource.icon}
+              />
             ) : (
-              <div className="text-4xl" aria-hidden="true">{resource.icon}</div>
+              <div className="text-4xl flex-shrink-0" aria-hidden="true">{resource.icon}</div>
             )}
             <div>
               <h2 id="resource-title" className="text-xl font-bold text-card-foreground">{resource.title}</h2>
@@ -131,7 +137,7 @@ export const ResourceDetail = ({
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-secondary rounded-full transition-colors"
+            className="p-2 hover:bg-secondary rounded-full transition-colors flex-shrink-0"
             aria-label={closeText}
           >
             <X className="w-5 h-5" aria-hidden="true" />

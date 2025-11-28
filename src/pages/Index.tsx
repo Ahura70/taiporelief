@@ -10,11 +10,15 @@ import { FeedbackForm } from '@/components/FeedbackForm';
 import { InstallPrompt } from '@/components/InstallPrompt';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
+import { ConnectionStatus } from '@/components/ConnectionStatus';
 import { translations, resources, Resource } from '@/lib/translations';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
+import { preloadImages } from '@/lib/imageOptimization';
 import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import hkRedCrossLogo from '@/assets/hk-red-cross.jpg';
+import caritasLogo from '@/assets/caritas-logo.png';
 
 const Index = () => {
   const { currentLang, changeLanguage } = useLanguage();
@@ -41,6 +45,15 @@ const Index = () => {
     }
   ]);
 
+  // Preload critical images on component mount
+  useEffect(() => {
+    // Preload organization logos for better UX
+    const criticalImages = [hkRedCrossLogo, caritasLogo];
+    preloadImages(criticalImages).catch(err => {
+      console.warn('Failed to preload images:', err);
+    });
+  }, []);
+
   const t = translations[currentLang];
   const currentResources = resources[currentLang];
 
@@ -50,6 +63,7 @@ const Index = () => {
         {t.skipToContent}
       </a>
       <OfflineIndicator />
+      <ConnectionStatus />
       <InstallPrompt />
       <Header
         title={t.title}

@@ -253,10 +253,142 @@ export const resources: Record<Language, Resource[]> = {
       ]
     }
   ],
-  tl: [],
-  id: []
+  tl: [
+    {
+      icon: '💰',
+      title: 'Govt Relief Fund',
+      desc: 'Tuwirang donasyon sa mga biktima',
+      keywords: ['donasyon', 'pera', 'pondo'],
+      contacts: [{ l: 'HKD Account', v: 'Bank of China 012-875-2-190159-7' }]
+    },
+    {
+      icon: '🎓',
+      title: 'EdUHK Support Centre',
+      desc: 'Suporta para sa mga apektadong estudyante at pamilya',
+      keywords: ['eduhk', 'estudyante', 'unibersidad'],
+      contacts: [
+        { l: 'Lokasyon', v: 'EdUHK Block E Sports Hall' },
+        { l: 'Oras', v: '08:30 - 18:30' }
+      ]
+    },
+    {
+      icon: '❤️',
+      title: 'Red Cross',
+      desc: 'Emergency at Psychological Support',
+      keywords: ['red cross', 'tulong'],
+      contacts: [
+        { l: 'FPS ID', v: '164279317' },
+        { l: 'Email', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🏠',
+      title: 'Pansamantalang Tirahan',
+      desc: 'Shelter para sa mga pamilya',
+      keywords: ['tirahan', 'hotel', 'shelter'],
+      contacts: [
+        { l: 'SHKP', v: '160 Libreng Hotel Rooms' },
+        { l: 'ImpactHK', v: '5341 6670' }
+      ]
+    },
+    {
+      icon: '📦',
+      title: 'Mag-donate ng Supplies',
+      desc: 'Damit, Kumot',
+      keywords: ['supplies', 'pagkain'],
+      info: ['⚠️ Maraming collection points puno na'],
+      contacts: [{ l: 'Govt Hotline', v: '9213 2388' }]
+    },
+    {
+      icon: '👷‍♀️',
+      title: 'Helper Support',
+      desc: 'Multilingual Assistance',
+      keywords: ['helper', 'fdh', 'katulong'],
+      contacts: [
+        { l: 'HELP Hotline', v: '2523 4020' },
+        { l: 'Labour Dept', v: '2157 9537' },
+        { l: 'WhatsApp Support', v: '+852 5936 3780' }
+      ]
+    },
+    {
+      icon: '🚨',
+      title: 'Emergency Lines',
+      desc: 'Casualty at Mental Health',
+      keywords: ['tulong', 'emergency'],
+      contacts: [
+        { l: 'Casualty', v: '1878 999' },
+        { l: 'Mental Health', v: '18111' },
+        { l: 'SWD', v: '2343 2255' }
+      ]
+    }
+  ],
+  id: [
+    {
+      icon: '💰',
+      title: 'Dana Bantuan Pemerintah',
+      desc: 'Donasi langsung untuk korban',
+      keywords: ['donasi', 'uang', 'dana'],
+      contacts: [{ l: 'Akun HKD', v: 'Bank of China 012-875-2-190159-7' }]
+    },
+    {
+      icon: '🎓',
+      title: 'Pusat Dukungan EdUHK',
+      desc: 'Dukungan untuk siswa dan keluarga yang terkena dampak',
+      keywords: ['eduhk', 'siswa', 'universitas'],
+      contacts: [
+        { l: 'Lokasi', v: 'EdUHK Block E Sports Hall' },
+        { l: 'Jam', v: '08:30 - 18:30' }
+      ]
+    },
+    {
+      icon: '❤️',
+      title: 'Palang Merah',
+      desc: 'Darurat & Dukungan Psikologis',
+      keywords: ['palang merah', 'bantuan'],
+      contacts: [
+        { l: 'FPS ID', v: '164279317' },
+        { l: 'Email', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🏠',
+      title: 'Tempat Tinggal Sementara',
+      desc: 'Penampungan untuk keluarga',
+      keywords: ['perumahan', 'hotel', 'shelter'],
+      contacts: [
+        { l: 'SHKP', v: '160 Kamar Hotel Gratis' },
+        { l: 'ImpactHK', v: '5341 6670' }
+      ]
+    },
+    {
+      icon: '📦',
+      title: 'Donasi Perlengkapan',
+      desc: 'Pakaian, Selimut',
+      keywords: ['perlengkapan', 'makanan'],
+      info: ['⚠️ Banyak titik pengumpulan penuh'],
+      contacts: [{ l: 'Hotline Pemerintah', v: '9213 2388' }]
+    },
+    {
+      icon: '👷‍♀️',
+      title: 'Dukungan Helper',
+      desc: 'Bantuan Multibahasa',
+      keywords: ['helper', 'pembantu', 'asisten'],
+      contacts: [
+        { l: 'HELP Hotline', v: '2523 4020' },
+        { l: 'Dept Tenaga Kerja', v: '2157 9537' },
+        { l: 'Dukungan WhatsApp', v: '+852 5936 3780' }
+      ]
+    },
+    {
+      icon: '🚨',
+      title: 'Jalur Darurat',
+      desc: 'Korban & Kesehatan Mental',
+      keywords: ['bantuan', 'darurat'],
+      contacts: [
+        { l: 'Korban', v: '1878 999' },
+        { l: 'Kesehatan Mental', v: '18111' },
+        { l: 'SWD', v: '2343 2255' }
+      ]
+    }
+  ]
 };
-
-// Tagalog and Indonesian use English resources
-resources.tl = resources.en;
-resources.id = resources.en;

@@ -61,23 +61,7 @@ export const translations = {
       { label: '半程達成' },
       { label: '接近目標' },
       { label: '目標達成' }
-    ],
-    mapTitle: '🗺️ 支援地點地圖',
-    mapApiKeyPlaceholder: '輸入您的 Mapbox Token',
-    mapEnterApiKey: '輸入 Mapbox API Key 以查看地圖',
-    mapSetApiKey: '設定',
-    mapFilterAll: '全部',
-    mapFilterSupport: '支援中心',
-    mapFilterHousing: '臨時住宿',
-    mapFilterCollection: '物資收集點',
-    mapFilterMedical: '醫療設施',
-    liveUpdatesTitle: '📡 即時更新',
-    liveUpdatesDonation: '捐款',
-    liveUpdatesVolunteer: '義工',
-    liveUpdatesAlert: '緊急通知',
-    liveUpdatesTimeJustNow: '剛剛',
-    liveUpdatesTimeMinutes: '分鐘前',
-    liveUpdatesTimeHours: '小時前'
+    ]
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -132,23 +116,7 @@ export const translations = {
       { label: 'Halfway There' },
       { label: 'Almost There' },
       { label: 'Goal Reached' }
-    ],
-    mapTitle: '🗺️ Support Locations Map',
-    mapApiKeyPlaceholder: 'Enter your Mapbox Token',
-    mapEnterApiKey: 'Enter Mapbox API Key to view map',
-    mapSetApiKey: 'Set Key',
-    mapFilterAll: 'All',
-    mapFilterSupport: 'Support Centers',
-    mapFilterHousing: 'Temporary Housing',
-    mapFilterCollection: 'Collection Points',
-    mapFilterMedical: 'Medical Facilities',
-    liveUpdatesTitle: '📡 Live Updates',
-    liveUpdatesDonation: 'Donation',
-    liveUpdatesVolunteer: 'Volunteer',
-    liveUpdatesAlert: 'Alert',
-    liveUpdatesTimeJustNow: 'Just now',
-    liveUpdatesTimeMinutes: 'mins ago',
-    liveUpdatesTimeHours: 'hrs ago'
+    ]
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -203,23 +171,7 @@ export const translations = {
       { label: 'Kalahati Na' },
       { label: 'Malapit Na' },
       { label: 'Target Naabot' }
-    ],
-    mapTitle: '🗺️ Mapa ng mga Lokasyon',
-    mapApiKeyPlaceholder: 'Ilagay ang Mapbox Token',
-    mapEnterApiKey: 'Ilagay ang Mapbox API Key para tingnan ang mapa',
-    mapSetApiKey: 'I-set',
-    mapFilterAll: 'Lahat',
-    mapFilterSupport: 'Support Centers',
-    mapFilterHousing: 'Pansamantalang Tirahan',
-    mapFilterCollection: 'Collection Points',
-    mapFilterMedical: 'Medikal na Pasilidad',
-    liveUpdatesTitle: '📡 Live Updates',
-    liveUpdatesDonation: 'Donasyon',
-    liveUpdatesVolunteer: 'Boluntaryo',
-    liveUpdatesAlert: 'Alerto',
-    liveUpdatesTimeJustNow: 'Ngayon lang',
-    liveUpdatesTimeMinutes: 'mins nakaraan',
-    liveUpdatesTimeHours: 'oras nakaraan'
+    ]
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -274,29 +226,12 @@ export const translations = {
       { label: 'Setengah Jalan' },
       { label: 'Hampir Sampai' },
       { label: 'Target Tercapai' }
-    ],
-    mapTitle: '🗺️ Peta Lokasi Dukungan',
-    mapApiKeyPlaceholder: 'Masukkan Mapbox Token Anda',
-    mapEnterApiKey: 'Masukkan Mapbox API Key untuk melihat peta',
-    mapSetApiKey: 'Set Key',
-    mapFilterAll: 'Semua',
-    mapFilterSupport: 'Pusat Dukungan',
-    mapFilterHousing: 'Tempat Tinggal Sementara',
-    mapFilterCollection: 'Titik Pengumpulan',
-    mapFilterMedical: 'Fasilitas Medis',
-    liveUpdatesTitle: '📡 Update Langsung',
-    liveUpdatesDonation: 'Donasi',
-    liveUpdatesVolunteer: 'Relawan',
-    liveUpdatesAlert: 'Peringatan',
-    liveUpdatesTimeJustNow: 'Baru saja',
-    liveUpdatesTimeMinutes: 'menit lalu',
-    liveUpdatesTimeHours: 'jam lalu'
+    ]
   }
 };
 
 export interface Resource {
   icon: string;
-  iconImage?: string; // Optional image path for custom icons
   title: string;
   desc: string;
   keywords: string[];
@@ -328,22 +263,13 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🏥',
-      iconImage: '/src/assets/hk-red-cross.gif',
       title: '香港紅十字會',
       desc: '緊急心理支援及物資',
-      keywords: ['紅十字會', '急救', '捐款', '銀行'],
+      keywords: ['紅十字會', '急救'],
       contacts: [
         { l: 'FPS 轉數快', v: '164279317' },
-        { l: 'HSBC 匯豐', v: '567-650155-023' },
-        { l: 'HASE 恒生', v: '267-175123-002' },
-        { l: 'BOC 中銀', v: '012-806-00003231' },
-        { l: 'BEA 東亞', v: '015-514-40-472999' },
-        { l: '支票抬頭', v: '"Hong Kong Red Cross Care For Our Local"' },
-        { l: '支票背面註明', v: '"9900"' },
-        { l: '郵寄地址', v: '九龍西海庭道19號 紅十字會總部' },
-        { l: '電郵', v: 'relief@redcross.org.hk' }
-      ],
-      info: ['如需收據，請將交易紀錄截圖連同姓名、電話、地址、捐款者編號（如有）及註明"9900"電郵至 relief@redcross.org.hk']
+        { l: '查詢', v: 'relief@redcross.org.hk' }
+      ]
     },
     {
       icon: '🏠',
@@ -387,7 +313,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: '/src/assets/caritas-hk.png',
       title: '明愛香港',
       desc: '綜合支援服務',
       keywords: ['明愛', 'caritas', '輔導', '支援'],
@@ -423,22 +348,13 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🏥',
-      iconImage: '/src/assets/hk-red-cross.gif',
       title: 'HK Red Cross',
       desc: 'Emergency & Psych Support',
-      keywords: ['red cross', 'help', 'donation', 'bank'],
+      keywords: ['red cross', 'help'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
-        { l: 'HSBC', v: '567-650155-023' },
-        { l: 'HASE', v: '267-175123-002' },
-        { l: 'BOC', v: '012-806-00003231' },
-        { l: 'BEA', v: '015-514-40-472999' },
-        { l: 'Cheque Payable to', v: '"Hong Kong Red Cross Care For Our Local"' },
-        { l: 'Mark on Cheque', v: '"9900"' },
-        { l: 'Mail Address', v: '19 Hoi Ting Road, West Kowloon, HK' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
-      ],
-      info: ['For donation receipt, send transaction screenshot with name, phone, address, donor ID (if any) and mark "9900" to relief@redcross.org.hk']
+      ]
     },
     {
       icon: '🏠',
@@ -482,7 +398,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: '/src/assets/caritas-hk.png',
       title: 'Caritas Hong Kong',
       desc: 'Comprehensive Support Services',
       keywords: ['caritas', 'counselling', 'support'],
@@ -518,22 +433,13 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🏥',
-      iconImage: '/src/assets/hk-red-cross.gif',
       title: 'HK Red Cross',
       desc: 'Emergency at Psychological Support',
-      keywords: ['red cross', 'tulong', 'donasyon', 'bangko'],
+      keywords: ['red cross', 'tulong'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
-        { l: 'HSBC', v: '567-650155-023' },
-        { l: 'HASE', v: '267-175123-002' },
-        { l: 'BOC', v: '012-806-00003231' },
-        { l: 'BEA', v: '015-514-40-472999' },
-        { l: 'Cheque Payable sa', v: '"Hong Kong Red Cross Care For Our Local"' },
-        { l: 'Markahan ang Cheque', v: '"9900"' },
-        { l: 'Mail Address', v: '19 Hoi Ting Road, West Kowloon, HK' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
-      ],
-      info: ['Para sa resibo, ipadala ang screenshot ng transaksyon kasama ang pangalan, telepono, address, donor ID (kung mayroon) at markahan "9900" sa relief@redcross.org.hk']
+      ]
     },
     {
       icon: '🏠',
@@ -577,7 +483,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: '/src/assets/caritas-hk.png',
       title: 'Caritas Hong Kong',
       desc: 'Komprehensibong Serbisyong Suporta',
       keywords: ['caritas', 'counselling', 'suporta'],
@@ -613,22 +518,13 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🏥',
-      iconImage: '/src/assets/hk-red-cross.gif',
       title: 'Palang Merah HK',
       desc: 'Darurat & Dukungan Psikologis',
-      keywords: ['palang merah', 'bantuan', 'donasi', 'bank'],
+      keywords: ['palang merah', 'bantuan'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
-        { l: 'HSBC', v: '567-650155-023' },
-        { l: 'HASE', v: '267-175123-002' },
-        { l: 'BOC', v: '012-806-00003231' },
-        { l: 'BEA', v: '015-514-40-472999' },
-        { l: 'Cek Dibayarkan ke', v: '"Hong Kong Red Cross Care For Our Local"' },
-        { l: 'Tandai di Cek', v: '"9900"' },
-        { l: 'Alamat Surat', v: '19 Hoi Ting Road, West Kowloon, HK' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
-      ],
-      info: ['Untuk tanda terima donasi, kirim tangkapan layar transaksi dengan nama, telepon, alamat, ID donor (jika ada) dan tandai "9900" ke relief@redcross.org.hk']
+      ]
     },
     {
       icon: '🏠',
@@ -672,7 +568,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: '/src/assets/caritas-hk.png',
       title: 'Caritas Hong Kong',
       desc: 'Layanan Dukungan Komprehensif',
       keywords: ['caritas', 'konseling', 'dukungan'],

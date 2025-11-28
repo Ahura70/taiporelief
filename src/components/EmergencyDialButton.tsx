@@ -30,7 +30,7 @@ export const EmergencyDialButton = ({
     <Dialog>
       <DialogTrigger asChild>
         <Button 
-          className="fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full shadow-lg bg-red-600 hover:bg-red-700 text-white"
+          className="fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full shadow-lg bg-destructive hover:bg-destructive/90 text-destructive-foreground"
           aria-label={emergencyTitle}
         >
           <Phone className="h-6 w-6" />
@@ -38,7 +38,7 @@ export const EmergencyDialButton = ({
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-2 text-red-600">
+          <DialogTitle className="flex items-center gap-2">
             <AlertCircle className="h-5 w-5" />
             {emergencyTitle}
           </DialogTitle>
@@ -49,16 +49,16 @@ export const EmergencyDialButton = ({
         <div className="space-y-3 py-4">
           <button
             onClick={() => handleDial('1878999')}
-            className="w-full flex items-center gap-3 p-4 bg-card border-2 border-red-600 rounded-xl hover:bg-red-50 transition-all text-left group"
+            className="w-full flex items-center gap-3 p-4 bg-card border-2 border-destructive rounded-xl hover:bg-destructive/10 transition-all text-left group"
           >
-            <div className="flex-shrink-0 w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-              <AlertCircle className="h-6 w-6 text-white" />
+            <div className="flex-shrink-0 w-12 h-12 bg-destructive rounded-full flex items-center justify-center">
+              <AlertCircle className="h-6 w-6 text-destructive-foreground" />
             </div>
             <div className="flex-1">
               <div className="font-semibold text-card-foreground">{casualtyLabel}</div>
-              <div className="text-2xl font-bold text-red-600">1878 999</div>
+              <div className="text-2xl font-bold">1878 999</div>
             </div>
-            <Phone className="h-5 w-5 text-muted-foreground group-hover:text-red-600 transition-colors" />
+            <Phone className="h-5 w-5 text-muted-foreground group-hover:text-destructive transition-colors" />
           </button>
 
           <button

@@ -30,6 +30,8 @@ export const SearchBox = ({
   const [voiceMatchedIndex, setVoiceMatchedIndex] = useState<number | null>(null);
   const [isVoiceMatch, setIsVoiceMatch] = useState(false);
   const [showCommandsHelp, setShowCommandsHelp] = useState(false);
+  const [currentHint, setCurrentHint] = useState(0);
+  const [showHint, setShowHint] = useState(true);
 
   // Voice commands for tooltip
   const getVoiceCommandsHelp = () => {
@@ -79,6 +81,50 @@ export const SearchBox = ({
 
   const commandsHelp = getVoiceCommandsHelp();
 
+  // Animated hints for voice commands
+  const getVoiceHints = () => {
+    switch (currentLang) {
+      case 'zh':
+        return [
+          '試試說："捐款"',
+          '試試說："紅十字"',
+          '試試說："義工"',
+          '試試說："幫助"',
+          '試試說："緊急"',
+          '試試說："住宿"'
+        ];
+      case 'tl':
+        return [
+          'Subukan: "donate"',
+          'Subukan: "red cross"',
+          'Subukan: "volunteer"',
+          'Subukan: "help"',
+          'Subukan: "emergency"',
+          'Subukan: "shelter"'
+        ];
+      case 'id':
+        return [
+          'Coba: "donasi"',
+          'Coba: "palang merah"',
+          'Coba: "sukarelawan"',
+          'Coba: "bantuan"',
+          'Coba: "darurat"',
+          'Coba: "tempat tinggal"'
+        ];
+      default:
+        return [
+          'Try saying: "donate"',
+          'Try saying: "red cross"',
+          'Try saying: "volunteer"',
+          'Try saying: "help"',
+          'Try saying: "emergency"',
+          'Try saying: "shelter"'
+        ];
+    }
+  };
+
+  const hints = getVoiceHints();
+
   useEffect(() => {
     if (!searchValue) {
       setSuggestions([]);
@@ -93,6 +139,37 @@ export const SearchBox = ({
     );
     setSuggestions(matches);
   }, [searchValue, resources]);
+
+  // Animated hints rotation
+  useEffect(() => {
+    // Only show hints when idle (no search value, no suggestions, not listening, no voice match)
+    const isIdle = !searchValue && suggestions.length === 0 && !isListening && !isVoiceMatch;
+    
+    if (!isIdle) {
+      setShowHint(false);
+      return;
+    }
+
+    // Initial delay before showing first hint
+    const initialDelay = setTimeout(() => {
+      setShowHint(true);
+    }, 1000);
+
+    // Rotate hints every 4 seconds
+    const interval = setInterval(() => {
+      setShowHint(false);
+      
+      setTimeout(() => {
+        setCurrentHint((prev) => (prev + 1) % hints.length);
+        setShowHint(true);
+      }, 300); // Brief pause during transition
+    }, 4000);
+
+    return () => {
+      clearTimeout(initialDelay);
+      clearInterval(interval);
+    };
+  }, [searchValue, suggestions.length, isListening, isVoiceMatch, hints.length]);
 
   const handleVoiceSearch = () => {
     setVoiceError('');
@@ -367,6 +444,21 @@ export const SearchBox = ({
             <Mic className="w-5 h-5" />
           </button>
         </div>
+        
+        {/* Animated Voice Command Hints */}
+        {!searchValue && suggestions.length === 0 && !isListening && !isVoiceMatch && (
+          <div 
+            className={`mt-3 flex items-center gap-2 text-xs text-muted-foreground transition-all duration-300 ${
+              showHint ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+            }`}
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <Mic className="w-3.5 h-3.5 flex-shrink-0" />
+            <span className="font-medium">{hints[currentHint]}</span>
+          </div>
+        )}
         
         {voiceStatus && (
           <div className="text-xs text-primary mt-2 min-h-[18px] font-medium animate-pulse" role="status" aria-live="polite">

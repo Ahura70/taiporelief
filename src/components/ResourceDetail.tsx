@@ -60,7 +60,11 @@ export const ResourceDetail = ({
       <div className="bg-card w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[90vh] overflow-auto animate-in slide-in-from-bottom sm:slide-in-from-bottom-0 duration-300">
         <div className="sticky top-0 bg-card border-b border-border px-6 py-4 flex items-start justify-between">
           <div className="flex items-center gap-3 flex-1">
-            <div className="text-4xl">{resource.icon}</div>
+            {resource.iconImage ? (
+              <img src={resource.iconImage} alt={resource.title} className="w-12 h-12 object-contain" />
+            ) : (
+              <div className="text-4xl">{resource.icon}</div>
+            )}
             <div>
               <h2 className="text-xl font-bold text-card-foreground">{resource.title}</h2>
               <p className="text-sm text-muted-foreground">{resource.desc}</p>

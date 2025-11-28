@@ -88,6 +88,7 @@ export const translations = {
 
 export interface Resource {
   icon: string;
+  iconImage?: string;
   title: string;
   desc: string;
   keywords: string[];
@@ -119,12 +120,37 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
+      iconImage: '/src/assets/hk-red-cross.gif',
       title: '紅十字會',
       desc: '緊急心理支援及物資',
       keywords: ['紅十字會', '急救'],
       contacts: [
         { l: 'FPS 轉數快', v: '164279317' },
         { l: '查詢', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🙏',
+      iconImage: '/src/assets/caritas-logo.png',
+      title: '明愛',
+      desc: '全面災民支援服務',
+      keywords: ['明愛', 'caritas', '支援'],
+      contacts: [
+        { l: '24小時家庭危機熱線', v: '18288' },
+        { l: '心晴坊 - 荃灣', v: '3105 5337' },
+        { l: '心晴坊 - 北區', v: '2278 1016' },
+        { l: '護老者資源及支援中心', v: '3892 0100' },
+        { l: '富亨長者宿舍', v: '2660 6125' },
+        { l: '寧安計劃', v: '5239 1035' },
+        { l: '電腦工場', v: '2716 6875' },
+        { l: 'WhatsApp 電腦工場', v: '5520 9507' },
+        { l: '查詢', v: '2843 4638' }
+      ],
+      info: [
+        '提供情緒支援、輔導、長者照顧、外傭協助、殯葬援助、電腦支援、家居安置等服務',
+        '網上捐款：https://www.caritas.org.hk/en/e_donation',
+        '支票抬頭：Caritas - Hong Kong',
+        '直接存款：ICBC 072-721-010001-606 或 HSBC 004-502-476914-001'
       ]
     },
     {
@@ -188,12 +214,37 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
+      iconImage: '/src/assets/hk-red-cross.gif',
       title: 'Red Cross',
       desc: 'Emergency & Psych Support',
       keywords: ['red cross', 'help'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🙏',
+      iconImage: '/src/assets/caritas-logo.png',
+      title: 'Caritas Hong Kong',
+      desc: 'Comprehensive Victim Support',
+      keywords: ['caritas', 'support', 'help'],
+      contacts: [
+        { l: '24-Hour Crisis Line', v: '18288' },
+        { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
+        { l: 'Wellness Link - North District', v: '2278 1016' },
+        { l: 'Carers Support Centre', v: '3892 0100' },
+        { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
+        { l: 'Ning An Scheme', v: '5239 1035' },
+        { l: 'Computer Workshop', v: '2716 6875' },
+        { l: 'WhatsApp Computer Workshop', v: '5520 9507' },
+        { l: 'General Enquiry', v: '2843 4638' }
+      ],
+      info: [
+        'Services: Emotional support, elderly care, helper assistance, funeral aid, computers, home setup',
+        'Online Donation: https://www.caritas.org.hk/en/e_donation',
+        'Cheque to: Caritas - Hong Kong',
+        'Bank: ICBC 072-721-010001-606 or HSBC 004-502-476914-001'
       ]
     },
     {
@@ -237,10 +288,188 @@ export const resources: Record<Language, Resource[]> = {
       ]
     }
   ],
-  tl: [],
-  id: []
+  tl: [
+    {
+      icon: '💰',
+      title: 'Govt Relief Fund',
+      desc: 'Direktang donasyon sa biktima',
+      keywords: ['donate', 'pera', 'fund'],
+      contacts: [{ l: 'HKD Account', v: 'Bank of China 012-875-2-190159-7' }]
+    },
+    {
+      icon: '🎓',
+      title: 'EdUHK Support Centre',
+      desc: 'Suporta para sa mga estudyante/pamilya',
+      keywords: ['eduhk', 'estudyante', 'unibersidad'],
+      contacts: [
+        { l: 'Lokasyon', v: 'EdUHK Block E Sports Hall' },
+        { l: 'Oras', v: '08:30 - 18:30' }
+      ]
+    },
+    {
+      icon: '❤️',
+      iconImage: '/src/assets/hk-red-cross.gif',
+      title: 'Red Cross',
+      desc: 'Emergency & Psych Support',
+      keywords: ['red cross', 'tulong'],
+      contacts: [
+        { l: 'FPS ID', v: '164279317' },
+        { l: 'Email', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🙏',
+      iconImage: '/src/assets/caritas-logo.png',
+      title: 'Caritas Hong Kong',
+      desc: 'Komprehensibong Suporta',
+      keywords: ['caritas', 'suporta', 'tulong'],
+      contacts: [
+        { l: '24-Hour Crisis Line', v: '18288' },
+        { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
+        { l: 'Wellness Link - North District', v: '2278 1016' },
+        { l: 'Carers Support Centre', v: '3892 0100' },
+        { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
+        { l: 'Ning An Scheme', v: '5239 1035' },
+        { l: 'Computer Workshop', v: '2716 6875' },
+        { l: 'WhatsApp Computer Workshop', v: '5520 9507' },
+        { l: 'General Enquiry', v: '2843 4638' }
+      ],
+      info: [
+        'Serbisyo: Emosyonal na suporta, pag-aalaga sa matatanda, tulong sa katulong, tulong sa libing, computer, pag-setup ng bahay',
+        'Online Donation: https://www.caritas.org.hk/en/e_donation'
+      ]
+    },
+    {
+      icon: '🏠',
+      title: 'Temporary Housing',
+      desc: 'Tirahan para sa pamilya',
+      keywords: ['tirahan', 'hotel', 'shelter'],
+      contacts: [
+        { l: 'SHKP', v: '160 Libreng Hotel Room' },
+        { l: 'ImpactHK', v: '5341 6670' }
+      ]
+    },
+    {
+      icon: '📦',
+      title: 'Donate Supplies',
+      desc: 'Damit, Kumot',
+      keywords: ['supplies', 'pagkain'],
+      info: ['⚠️ Maraming koleksyon punuan na'],
+      contacts: [{ l: 'Govt Hotline', v: '9213 2388' }]
+    },
+    {
+      icon: '👷‍♀️',
+      title: 'Helper Support',
+      desc: 'Multilingual Assistance',
+      keywords: ['helper', 'fdh', 'katulong'],
+      contacts: [
+        { l: 'HELP Hotline', v: '2523 4020' },
+        { l: 'Labour Dept', v: '2157 9537' },
+        { l: 'WhatsApp Support', v: '+852 5936 3780' }
+      ]
+    },
+    {
+      icon: '🚨',
+      title: 'Emergency Lines',
+      desc: 'Casualty & Mental Health',
+      keywords: ['tulong', 'emergency'],
+      contacts: [
+        { l: 'Casualty', v: '1878 999' },
+        { l: 'Mental Health', v: '18111' },
+        { l: 'SWD', v: '2343 2255' }
+      ]
+    }
+  ],
+  id: [
+    {
+      icon: '💰',
+      title: 'Govt Relief Fund',
+      desc: 'Donasi langsung untuk korban',
+      keywords: ['donasi', 'uang', 'dana'],
+      contacts: [{ l: 'HKD Account', v: 'Bank of China 012-875-2-190159-7' }]
+    },
+    {
+      icon: '🎓',
+      title: 'EdUHK Support Centre',
+      desc: 'Dukungan untuk mahasiswa/keluarga',
+      keywords: ['eduhk', 'mahasiswa', 'universitas'],
+      contacts: [
+        { l: 'Lokasi', v: 'EdUHK Block E Sports Hall' },
+        { l: 'Jam', v: '08:30 - 18:30' }
+      ]
+    },
+    {
+      icon: '❤️',
+      iconImage: '/src/assets/hk-red-cross.gif',
+      title: 'Red Cross',
+      desc: 'Dukungan Darurat & Psikologis',
+      keywords: ['red cross', 'bantuan'],
+      contacts: [
+        { l: 'FPS ID', v: '164279317' },
+        { l: 'Email', v: 'relief@redcross.org.hk' }
+      ]
+    },
+    {
+      icon: '🙏',
+      iconImage: '/src/assets/caritas-logo.png',
+      title: 'Caritas Hong Kong',
+      desc: 'Dukungan Korban Komprehensif',
+      keywords: ['caritas', 'dukungan', 'bantuan'],
+      contacts: [
+        { l: '24-Hour Crisis Line', v: '18288' },
+        { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
+        { l: 'Wellness Link - North District', v: '2278 1016' },
+        { l: 'Carers Support Centre', v: '3892 0100' },
+        { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
+        { l: 'Ning An Scheme', v: '5239 1035' },
+        { l: 'Computer Workshop', v: '2716 6875' },
+        { l: 'WhatsApp Computer Workshop', v: '5520 9507' },
+        { l: 'General Enquiry', v: '2843 4638' }
+      ],
+      info: [
+        'Layanan: Dukungan emosional, perawatan lansia, bantuan pembantu, bantuan pemakaman, komputer, setup rumah',
+        'Donasi Online: https://www.caritas.org.hk/en/e_donation'
+      ]
+    },
+    {
+      icon: '🏠',
+      title: 'Temporary Housing',
+      desc: 'Tempat tinggal untuk keluarga',
+      keywords: ['perumahan', 'hotel', 'shelter'],
+      contacts: [
+        { l: 'SHKP', v: '160 Kamar Hotel Gratis' },
+        { l: 'ImpactHK', v: '5341 6670' }
+      ]
+    },
+    {
+      icon: '📦',
+      title: 'Donate Supplies',
+      desc: 'Pakaian, Selimut',
+      keywords: ['persediaan', 'makanan'],
+      info: ['⚠️ Banyak titik pengumpulan penuh'],
+      contacts: [{ l: 'Govt Hotline', v: '9213 2388' }]
+    },
+    {
+      icon: '👷‍♀️',
+      title: 'Helper Support',
+      desc: 'Bantuan Multibahasa',
+      keywords: ['helper', 'fdh', 'pembantu'],
+      contacts: [
+        { l: 'HELP Hotline', v: '2523 4020' },
+        { l: 'Labour Dept', v: '2157 9537' },
+        { l: 'WhatsApp Support', v: '+852 5936 3780' }
+      ]
+    },
+    {
+      icon: '🚨',
+      title: 'Emergency Lines',
+      desc: 'Korban & Kesehatan Mental',
+      keywords: ['bantuan', 'darurat'],
+      contacts: [
+        { l: 'Casualty', v: '1878 999' },
+        { l: 'Mental Health', v: '18111' },
+        { l: 'SWD', v: '2343 2255' }
+      ]
+    }
+  ]
 };
-
-// Tagalog and Indonesian use English resources
-resources.tl = resources.en;
-resources.id = resources.en;

@@ -13,7 +13,7 @@ export const NewsBanner = ({ title }: NewsBannerProps) => {
     },
     {
       name: 'Govt Info',
-      url: 'https://www.info.gov.hk/',
+      url: 'http://www.gov.hk/en/residents/',
       desc: 'Official Updates'
     },
     {

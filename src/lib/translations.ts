@@ -70,7 +70,14 @@ export const translations = {
     mapFilterSupport: '支援中心',
     mapFilterHousing: '臨時住宿',
     mapFilterCollection: '物資收集點',
-    mapFilterMedical: '醫療設施'
+    mapFilterMedical: '醫療設施',
+    liveUpdatesTitle: '📡 即時更新',
+    liveUpdatesDonation: '捐款',
+    liveUpdatesVolunteer: '義工',
+    liveUpdatesAlert: '緊急通知',
+    liveUpdatesTimeJustNow: '剛剛',
+    liveUpdatesTimeMinutes: '分鐘前',
+    liveUpdatesTimeHours: '小時前'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -134,7 +141,14 @@ export const translations = {
     mapFilterSupport: 'Support Centers',
     mapFilterHousing: 'Temporary Housing',
     mapFilterCollection: 'Collection Points',
-    mapFilterMedical: 'Medical Facilities'
+    mapFilterMedical: 'Medical Facilities',
+    liveUpdatesTitle: '📡 Live Updates',
+    liveUpdatesDonation: 'Donation',
+    liveUpdatesVolunteer: 'Volunteer',
+    liveUpdatesAlert: 'Alert',
+    liveUpdatesTimeJustNow: 'Just now',
+    liveUpdatesTimeMinutes: 'mins ago',
+    liveUpdatesTimeHours: 'hrs ago'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -198,7 +212,14 @@ export const translations = {
     mapFilterSupport: 'Support Centers',
     mapFilterHousing: 'Pansamantalang Tirahan',
     mapFilterCollection: 'Collection Points',
-    mapFilterMedical: 'Medikal na Pasilidad'
+    mapFilterMedical: 'Medikal na Pasilidad',
+    liveUpdatesTitle: '📡 Live Updates',
+    liveUpdatesDonation: 'Donasyon',
+    liveUpdatesVolunteer: 'Boluntaryo',
+    liveUpdatesAlert: 'Alerto',
+    liveUpdatesTimeJustNow: 'Ngayon lang',
+    liveUpdatesTimeMinutes: 'mins nakaraan',
+    liveUpdatesTimeHours: 'oras nakaraan'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -262,7 +283,14 @@ export const translations = {
     mapFilterSupport: 'Pusat Dukungan',
     mapFilterHousing: 'Tempat Tinggal Sementara',
     mapFilterCollection: 'Titik Pengumpulan',
-    mapFilterMedical: 'Fasilitas Medis'
+    mapFilterMedical: 'Fasilitas Medis',
+    liveUpdatesTitle: '📡 Update Langsung',
+    liveUpdatesDonation: 'Donasi',
+    liveUpdatesVolunteer: 'Relawan',
+    liveUpdatesAlert: 'Peringatan',
+    liveUpdatesTimeJustNow: 'Baru saja',
+    liveUpdatesTimeMinutes: 'menit lalu',
+    liveUpdatesTimeHours: 'jam lalu'
   }
 };
 

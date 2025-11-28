@@ -222,12 +222,15 @@ export const resources: Record<Language, Resource[]> = {
       icon: '❤️',
       iconImage: '/src/assets/hk-red-cross.jpg',
       title: '紅十字會',
-      desc: '緊急心理支援及物資',
-      keywords: ['紅十字會', '急救'],
+      desc: '緊急現金援助及心理支援',
+      keywords: ['紅十字會', '急救', '現金', '心理'],
       contacts: [
         { l: 'FPS 轉數快', v: '164279317' },
-        { l: '查詢', v: 'relief@redcross.org.hk' }
-      ]
+        { l: 'WhatsApp 支援', v: '9175 1433' },
+        { l: '電話查詢', v: '3488 4933' },
+        { l: '電郵', v: 'relief@redcross.org.hk' }
+      ],
+      info: ['提供即時慰問金及每月生活津貼', '透過 Shall We Talk 提供心理支援服務']
     },
     {
       icon: '🙏',
@@ -252,6 +255,39 @@ export const resources: Record<Language, Resource[]> = {
         '支票抬頭：Caritas - Hong Kong',
         '直接存款：ICBC 072-721-010001-606 或 HSBC 004-502-476914-001'
       ]
+    },
+    {
+      icon: '🧠',
+      title: '災後心理輔導熱線',
+      desc: '免費災後心理支援及輔導',
+      keywords: ['心理', '輔導', '情緒', '創傷'],
+      contacts: [
+        { l: '熱線', v: '5181 5501' }
+      ],
+      info: ['每晚 8:00-11:00 提供服務', '由受訓創傷治療人士負責']
+    },
+    {
+      icon: '🏘️',
+      title: '東華三院過渡性房屋',
+      desc: '緊急住宿單位及物資支援',
+      keywords: ['住宿', '過渡性房屋', '東華'],
+      contacts: [
+        { l: '緊急熱線', v: '6503 9730' }
+      ],
+      info: ['即時提供住宿', '設於樂禾東寓及啟德東寓']
+    },
+    {
+      icon: '📱',
+      title: '香港電訊支援',
+      desc: '免費數據、充電及網絡服務',
+      keywords: ['電訊', '電話', '數據', '上網'],
+      contacts: [
+        { l: 'csl', v: '2512 3123' },
+        { l: '1O1O', v: '2888 1010' },
+        { l: '網上行/HKT', v: '1000' },
+        { l: 'Now TV', v: '1833 888' }
+      ],
+      info: ['csl 大埔門市 24 小時開放至 11 月 30 日', '提供免費數據卡、充電、路由器借用']
     },
     {
       icon: '🏠',
@@ -316,12 +352,15 @@ export const resources: Record<Language, Resource[]> = {
       icon: '❤️',
       iconImage: '/src/assets/hk-red-cross.jpg',
       title: 'Red Cross',
-      desc: 'Emergency & Psych Support',
-      keywords: ['red cross', 'help'],
+      desc: 'Emergency Cash Aid & Psychological Support',
+      keywords: ['red cross', 'help', 'cash', 'mental health'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
+        { l: 'WhatsApp Support', v: '9175 1433' },
+        { l: 'Phone', v: '3488 4933' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
-      ]
+      ],
+      info: ['Immediate relief funds + monthly living allowance', 'Shall We Talk psychological support service']
     },
     {
       icon: '🙏',
@@ -346,6 +385,39 @@ export const resources: Record<Language, Resource[]> = {
         'Cheque to: Caritas - Hong Kong',
         'Bank: ICBC 072-721-010001-606 or HSBC 004-502-476914-001'
       ]
+    },
+    {
+      icon: '🧠',
+      title: 'Post-Disaster Counseling Hotline',
+      desc: 'Free psychological support & counseling',
+      keywords: ['mental', 'counseling', 'trauma', 'support'],
+      contacts: [
+        { l: 'Hotline', v: '5181 5501' }
+      ],
+      info: ['Available 8:00-11:00 PM daily', 'Staffed by trained trauma counselors']
+    },
+    {
+      icon: '🏘️',
+      title: 'Tung Wah Transitional Housing',
+      desc: 'Emergency accommodation & supplies',
+      keywords: ['housing', 'shelter', 'transitional'],
+      contacts: [
+        { l: 'Emergency Hotline', v: '6503 9730' }
+      ],
+      info: ['Immediate accommodation available', 'Joyful & Kai Tak Dwellings projects']
+    },
+    {
+      icon: '📱',
+      title: 'HKT Telecom Support',
+      desc: 'Free data, charging & network services',
+      keywords: ['telecom', 'phone', 'data', 'internet'],
+      contacts: [
+        { l: 'csl', v: '2512 3123' },
+        { l: '1O1O', v: '2888 1010' },
+        { l: 'Netvigator/HKT', v: '1000' },
+        { l: 'Now TV', v: '1833 888' }
+      ],
+      info: ['csl Tai Po Store 24/7 until Nov 30', 'Free SIM cards, charging, router loan']
     },
     {
       icon: '🏠',
@@ -410,12 +482,15 @@ export const resources: Record<Language, Resource[]> = {
       icon: '❤️',
       iconImage: '/src/assets/hk-red-cross.jpg',
       title: 'Pula na Krus',
-      desc: 'Emerhensya at Suportang Sikolohikal',
-      keywords: ['red cross', 'tulong'],
+      desc: 'Tulong sa Cash at Suportang Sikolohikal',
+      keywords: ['red cross', 'tulong', 'pera', 'mental health'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
+        { l: 'WhatsApp Support', v: '9175 1433' },
+        { l: 'Telepono', v: '3488 4933' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
-      ]
+      ],
+      info: ['Agarang tulong pinansyal + buwanang allowance', 'Shall We Talk serbisyong sikolohikal']
     },
     {
       icon: '🙏',
@@ -440,6 +515,39 @@ export const resources: Record<Language, Resource[]> = {
         'Tseke: Caritas - Hong Kong',
         'Bangko: ICBC 072-721-010001-606 o HSBC 004-502-476914-001'
       ]
+    },
+    {
+      icon: '🧠',
+      title: 'Hotline ng Counseling',
+      desc: 'Libreng suportang sikolohikal',
+      keywords: ['mental', 'counseling', 'trauma'],
+      contacts: [
+        { l: 'Hotline', v: '5181 5501' }
+      ],
+      info: ['Bukas 8:00-11:00 PM araw-araw', 'May mga trained trauma counselors']
+    },
+    {
+      icon: '🏘️',
+      title: 'Tung Wah Transitional Housing',
+      desc: 'Emergency na tirahan at supplies',
+      keywords: ['tirahan', 'shelter'],
+      contacts: [
+        { l: 'Emergency Hotline', v: '6503 9730' }
+      ],
+      info: ['Kaagad na accommodations', 'Joyful & Kai Tak Dwellings']
+    },
+    {
+      icon: '📱',
+      title: 'HKT Telecom Support',
+      desc: 'Libreng data, charging at network',
+      keywords: ['telecom', 'phone', 'data'],
+      contacts: [
+        { l: 'csl', v: '2512 3123' },
+        { l: '1O1O', v: '2888 1010' },
+        { l: 'Netvigator/HKT', v: '1000' },
+        { l: 'Now TV', v: '1833 888' }
+      ],
+      info: ['csl Tai Po Store 24/7 hanggang Nov 30', 'Libreng SIM, charging, router']
     },
     {
       icon: '🏠',
@@ -504,12 +612,15 @@ export const resources: Record<Language, Resource[]> = {
       icon: '❤️',
       iconImage: '/src/assets/hk-red-cross.jpg',
       title: 'Palang Merah',
-      desc: 'Dukungan Darurat & Psikologis',
-      keywords: ['red cross', 'bantuan'],
+      desc: 'Bantuan Tunai Darurat & Dukungan Psikologis',
+      keywords: ['red cross', 'bantuan', 'uang', 'mental'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
+        { l: 'WhatsApp Support', v: '9175 1433' },
+        { l: 'Telepon', v: '3488 4933' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
-      ]
+      ],
+      info: ['Dana bantuan segera + tunjangan bulanan', 'Layanan dukungan psikologis Shall We Talk']
     },
     {
       icon: '🙏',
@@ -534,6 +645,39 @@ export const resources: Record<Language, Resource[]> = {
         'Cek: Caritas - Hong Kong',
         'Bank: ICBC 072-721-010001-606 atau HSBC 004-502-476914-001'
       ]
+    },
+    {
+      icon: '🧠',
+      title: 'Hotline Konseling Pasca-Bencana',
+      desc: 'Dukungan psikologis gratis',
+      keywords: ['mental', 'konseling', 'trauma'],
+      contacts: [
+        { l: 'Hotline', v: '5181 5501' }
+      ],
+      info: ['Tersedia 8:00-11:00 PM setiap hari', 'Dilayani konselor trauma terlatih']
+    },
+    {
+      icon: '🏘️',
+      title: 'Perumahan Transisi Tung Wah',
+      desc: 'Akomodasi darurat & persediaan',
+      keywords: ['perumahan', 'shelter'],
+      contacts: [
+        { l: 'Hotline Darurat', v: '6503 9730' }
+      ],
+      info: ['Akomodasi tersedia segera', 'Proyek Joyful & Kai Tak Dwellings']
+    },
+    {
+      icon: '📱',
+      title: 'Dukungan HKT Telecom',
+      desc: 'Data gratis, charging & jaringan',
+      keywords: ['telecom', 'telepon', 'data'],
+      contacts: [
+        { l: 'csl', v: '2512 3123' },
+        { l: '1O1O', v: '2888 1010' },
+        { l: 'Netvigator/HKT', v: '1000' },
+        { l: 'Now TV', v: '1833 888' }
+      ],
+      info: ['Toko csl Tai Po 24/7 hingga 30 Nov', 'SIM gratis, charging, pinjaman router']
     },
     {
       icon: '🏠',

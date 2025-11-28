@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Resource } from '@/lib/translations';
-import { X } from 'lucide-react';
+import { X, Share2, MessageCircle, Mail, Link2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
 
 interface ResourceDetailProps {
   resource: Resource | null;
@@ -9,6 +10,11 @@ interface ResourceDetailProps {
   copyText: string;
   copiedText: string;
   closeText: string;
+  shareText: string;
+  shareWhatsAppText: string;
+  shareSMSText: string;
+  shareLinkText: string;
+  linkCopiedText: string;
 }
 
 export const ResourceDetail = ({
@@ -16,9 +22,15 @@ export const ResourceDetail = ({
   onClose,
   copyText,
   copiedText,
-  closeText
+  closeText,
+  shareText,
+  shareWhatsAppText,
+  shareSMSText,
+  shareLinkText,
+  linkCopiedText
 }: ResourceDetailProps) => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const { toast } = useToast();
 
   if (!resource) return null;
 
@@ -29,6 +41,35 @@ export const ResourceDetail = ({
       setTimeout(() => setCopiedIndex(null), 1500);
     } catch (err) {
       console.error('Failed to copy:', err);
+    }
+  };
+
+  const createShareText = () => {
+    const contactsList = resource.contacts
+      .map(c => `${c.l}: ${c.v}`)
+      .join('\n');
+    return `${resource.title}\n${resource.desc}\n\n${contactsList}\n\n${window.location.href}`;
+  };
+
+  const handleShareWhatsApp = () => {
+    const text = encodeURIComponent(createShareText());
+    window.open(`https://wa.me/?text=${text}`, '_blank');
+  };
+
+  const handleShareSMS = () => {
+    const text = encodeURIComponent(createShareText());
+    window.location.href = `sms:?body=${text}`;
+  };
+
+  const handleShareLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      toast({
+        title: linkCopiedText,
+        duration: 2000,
+      });
+    } catch (err) {
+      console.error('Failed to copy link:', err);
     }
   };
 
@@ -124,6 +165,39 @@ export const ResourceDetail = ({
               </div>
             );
           })}
+
+          <div className="border-t border-border pt-4 mt-4">
+            <div className="text-sm font-semibold text-muted-foreground mb-3 flex items-center gap-2">
+              <Share2 className="w-4 h-4" />
+              {shareText}
+            </div>
+            <div className="grid grid-cols-3 gap-2 mb-4">
+              <Button
+                onClick={handleShareWhatsApp}
+                variant="outline"
+                className="flex flex-col items-center gap-1 h-auto py-3"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span className="text-xs">{shareWhatsAppText}</span>
+              </Button>
+              <Button
+                onClick={handleShareSMS}
+                variant="outline"
+                className="flex flex-col items-center gap-1 h-auto py-3"
+              >
+                <Mail className="w-5 h-5" />
+                <span className="text-xs">{shareSMSText}</span>
+              </Button>
+              <Button
+                onClick={handleShareLink}
+                variant="outline"
+                className="flex flex-col items-center gap-1 h-auto py-3"
+              >
+                <Link2 className="w-5 h-5" />
+                <span className="text-xs">{shareLinkText}</span>
+              </Button>
+            </div>
+          </div>
 
           <Button onClick={onClose} variant="secondary" className="w-full">
             {closeText}

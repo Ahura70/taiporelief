@@ -25,7 +25,12 @@ export const translations = {
     lastUpdate: '最後更新：2025年11月29日',
     listening: '聆聽中...',
     newsTitle: '📰 最新消息',
-    wcagCompliance: '本網站符合 WCAG 2.2 無障礙標準'
+    wcagCompliance: '本網站符合 WCAG 2.2 無障礙標準',
+    share: '分享',
+    shareWhatsApp: 'WhatsApp',
+    shareSMS: '短訊',
+    shareLink: '複製連結',
+    linkCopied: '連結已複製！'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -44,7 +49,12 @@ export const translations = {
     lastUpdate: 'Last Updated: Nov 29, 2025',
     listening: 'Listening...',
     newsTitle: '📰 Latest News',
-    wcagCompliance: 'WCAG 2.2 Compliant'
+    wcagCompliance: 'WCAG 2.2 Compliant',
+    share: 'Share',
+    shareWhatsApp: 'WhatsApp',
+    shareSMS: 'SMS',
+    shareLink: 'Copy Link',
+    linkCopied: 'Link Copied!'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -63,7 +73,12 @@ export const translations = {
     lastUpdate: 'Huling Update: Nov 29, 2025',
     listening: 'Nakikinig...',
     newsTitle: '📰 Latest News',
-    wcagCompliance: 'WCAG 2.2 Compliant'
+    wcagCompliance: 'WCAG 2.2 Compliant',
+    share: 'Ibahagi',
+    shareWhatsApp: 'WhatsApp',
+    shareSMS: 'SMS',
+    shareLink: 'Kopya Link',
+    linkCopied: 'Nakopya ang Link!'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -82,7 +97,12 @@ export const translations = {
     lastUpdate: 'Terakhir Diperbarui: 29 Nov 2025',
     listening: 'Mendengarkan...',
     newsTitle: '📰 Latest News',
-    wcagCompliance: 'WCAG 2.2 Compliant'
+    wcagCompliance: 'WCAG 2.2 Compliant',
+    share: 'Bagikan',
+    shareWhatsApp: 'WhatsApp',
+    shareSMS: 'SMS',
+    shareLink: 'Salin Link',
+    linkCopied: 'Link Disalin!'
   }
 };
 

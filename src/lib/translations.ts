@@ -46,7 +46,12 @@ export const translations = {
     feedbackClose: '關閉',
     feedbackReport: '報告問題',
     feedbackSuggest: '建議資源',
-    popular: '熱門'
+    popular: '熱門',
+    newsLinks: [
+      { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: '最新報導' },
+      { name: '政府資訊', url: 'https://www.info.gov.hk/', desc: '官方更新' },
+      { name: '醫管局', url: 'https://www.ha.org.hk/', desc: '醫療更新' }
+    ]
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -86,7 +91,12 @@ export const translations = {
     feedbackClose: 'Close',
     feedbackReport: 'Report Issue',
     feedbackSuggest: 'Suggest Resource',
-    popular: 'Popular'
+    popular: 'Popular',
+    newsLinks: [
+      { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: 'Latest News Coverage' },
+      { name: 'Govt Info', url: 'https://www.info.gov.hk/', desc: 'Official Updates' },
+      { name: 'Hospital Authority', url: 'https://www.ha.org.hk/', desc: 'Medical Updates' }
+    ]
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -126,7 +136,12 @@ export const translations = {
     feedbackClose: 'Isara',
     feedbackReport: 'Iulat ang Isyu',
     feedbackSuggest: 'Imungkahi ang Resource',
-    popular: 'Sikat'
+    popular: 'Sikat',
+    newsLinks: [
+      { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: 'Pinakabagong Balita' },
+      { name: 'Govt Info', url: 'https://www.info.gov.hk/', desc: 'Opisyal na Update' },
+      { name: 'Hospital Authority', url: 'https://www.ha.org.hk/', desc: 'Medikal na Update' }
+    ]
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -166,7 +181,12 @@ export const translations = {
     feedbackClose: 'Tutup',
     feedbackReport: 'Laporkan Masalah',
     feedbackSuggest: 'Sarankan Resource',
-    popular: 'Populer'
+    popular: 'Populer',
+    newsLinks: [
+      { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: 'Berita Terbaru' },
+      { name: 'Info Pemerintah', url: 'https://www.info.gov.hk/', desc: 'Pembaruan Resmi' },
+      { name: 'Hospital Authority', url: 'https://www.ha.org.hk/', desc: 'Pembaruan Medis' }
+    ]
   }
 };
 
@@ -202,8 +222,8 @@ export const resources: Record<Language, Resource[]> = {
       ]
     },
     {
-      icon: '❤️',
-      title: '紅十字會',
+      icon: '🏥',
+      title: '香港紅十字會',
       desc: '緊急心理支援及物資',
       keywords: ['紅十字會', '急救'],
       contacts: [
@@ -250,6 +270,22 @@ export const resources: Record<Language, Resource[]> = {
         { l: '情緒支援', v: '18111' },
         { l: '社署', v: '2343 2255' }
       ]
+    },
+    {
+      icon: '🙏',
+      title: '明愛香港',
+      desc: '綜合支援服務',
+      keywords: ['明愛', 'caritas', '輔導', '支援'],
+      contacts: [
+        { l: '24小時危機熱線', v: '18288' },
+        { l: '荃灣康怡中心', v: '3105 5337' },
+        { l: '北區康怡中心', v: '2278 1016' },
+        { l: '護老者支援', v: '3892 0100' },
+        { l: '大埔富亨護老中心', v: '2660 6125' },
+        { l: '殮葬援助計劃', v: '5239 1035' },
+        { l: '電腦工場', v: '2716 6875' },
+        { l: 'WhatsApp', v: '5520 9507' }
+      ]
     }
   ],
   en: [
@@ -271,8 +307,8 @@ export const resources: Record<Language, Resource[]> = {
       ]
     },
     {
-      icon: '❤️',
-      title: 'Red Cross',
+      icon: '🏥',
+      title: 'HK Red Cross',
       desc: 'Emergency & Psych Support',
       keywords: ['red cross', 'help'],
       contacts: [
@@ -319,6 +355,22 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Mental Health', v: '18111' },
         { l: 'SWD', v: '2343 2255' }
       ]
+    },
+    {
+      icon: '🙏',
+      title: 'Caritas Hong Kong',
+      desc: 'Comprehensive Support Services',
+      keywords: ['caritas', 'counselling', 'support'],
+      contacts: [
+        { l: '24-Hour Crisis Line', v: '18288' },
+        { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
+        { l: 'Wellness Link - North District', v: '2278 1016' },
+        { l: 'Carer Support Centre', v: '3892 0100' },
+        { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
+        { l: 'Funeral Assistance', v: '5239 1035' },
+        { l: 'Computer Workshop', v: '2716 6875' },
+        { l: 'WhatsApp', v: '5520 9507' }
+      ]
     }
   ],
   tl: [
@@ -340,8 +392,8 @@ export const resources: Record<Language, Resource[]> = {
       ]
     },
     {
-      icon: '❤️',
-      title: 'Red Cross',
+      icon: '🏥',
+      title: 'HK Red Cross',
       desc: 'Emergency at Psychological Support',
       keywords: ['red cross', 'tulong'],
       contacts: [
@@ -388,6 +440,22 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Mental Health', v: '18111' },
         { l: 'SWD', v: '2343 2255' }
       ]
+    },
+    {
+      icon: '🙏',
+      title: 'Caritas Hong Kong',
+      desc: 'Komprehensibong Serbisyong Suporta',
+      keywords: ['caritas', 'counselling', 'suporta'],
+      contacts: [
+        { l: '24-Oras Crisis Line', v: '18288' },
+        { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
+        { l: 'Wellness Link - North District', v: '2278 1016' },
+        { l: 'Carer Support Centre', v: '3892 0100' },
+        { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
+        { l: 'Tulong sa Libing', v: '5239 1035' },
+        { l: 'Computer Workshop', v: '2716 6875' },
+        { l: 'WhatsApp', v: '5520 9507' }
+      ]
     }
   ],
   id: [
@@ -409,8 +477,8 @@ export const resources: Record<Language, Resource[]> = {
       ]
     },
     {
-      icon: '❤️',
-      title: 'Palang Merah',
+      icon: '🏥',
+      title: 'Palang Merah HK',
       desc: 'Darurat & Dukungan Psikologis',
       keywords: ['palang merah', 'bantuan'],
       contacts: [
@@ -456,6 +524,22 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Korban', v: '1878 999' },
         { l: 'Kesehatan Mental', v: '18111' },
         { l: 'SWD', v: '2343 2255' }
+      ]
+    },
+    {
+      icon: '🙏',
+      title: 'Caritas Hong Kong',
+      desc: 'Layanan Dukungan Komprehensif',
+      keywords: ['caritas', 'konseling', 'dukungan'],
+      contacts: [
+        { l: 'Saluran Krisis 24 Jam', v: '18288' },
+        { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
+        { l: 'Wellness Link - North District', v: '2278 1016' },
+        { l: 'Pusat Dukungan Pengasuh', v: '3892 0100' },
+        { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
+        { l: 'Bantuan Pemakaman', v: '5239 1035' },
+        { l: 'Computer Workshop', v: '2716 6875' },
+        { l: 'WhatsApp', v: '5520 9507' }
       ]
     }
   ]

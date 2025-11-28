@@ -101,7 +101,7 @@ const Index = () => {
         </div>
       </main>
 
-      <NewsBanner title={t.newsTitle} />
+      <NewsBanner title={t.newsTitle} newsLinks={t.newsLinks} />
 
       <div className="max-w-4xl mx-auto px-5">
         <div className="text-center mt-6 text-xs text-muted-foreground space-y-1">

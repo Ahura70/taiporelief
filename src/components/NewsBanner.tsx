@@ -1,27 +1,17 @@
 import { ExternalLink } from 'lucide-react';
 
-interface NewsBannerProps {
-  title: string;
+interface NewsLink {
+  name: string;
+  url: string;
+  desc: string;
 }
 
-export const NewsBanner = ({ title }: NewsBannerProps) => {
-  const newsLinks = [
-    {
-      name: 'SCMP',
-      url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article',
-      desc: 'Latest News Coverage'
-    },
-    {
-      name: 'Govt Info',
-      url: 'https://www.info.gov.hk/',
-      desc: 'Official Updates'
-    },
-    {
-      name: 'Hospital Authority',
-      url: 'https://www.ha.org.hk/',
-      desc: 'Medical Updates'
-    }
-  ];
+interface NewsBannerProps {
+  title: string;
+  newsLinks: NewsLink[];
+}
+
+export const NewsBanner = ({ title, newsLinks }: NewsBannerProps) => {
 
   return (
     <div className="bg-card border-b border-border px-5 py-4">

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Resource } from '@/lib/translations';
-import { X, Share2, MessageSquare, Copy, Check } from 'lucide-react';
+import { X, Share2, MessageSquare, Copy, Check, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { QuickCopyButton } from '@/components/QuickCopyButton';
 import { useToast } from '@/hooks/use-toast';
 
 interface ResourceDetailProps {
@@ -14,6 +15,7 @@ interface ResourceDetailProps {
   whatsappText?: string;
   smsText?: string;
   copyLinkText?: string;
+  callText?: string;
 }
 
 export const ResourceDetail = ({
@@ -25,7 +27,8 @@ export const ResourceDetail = ({
   shareText = 'Share',
   whatsappText = 'WhatsApp',
   smsText = 'SMS',
-  copyLinkText = 'Copy Link'
+  copyLinkText = 'Copy Link',
+  callText = 'Call',
 }: ResourceDetailProps) => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [linkCopied, setLinkCopied] = useState(false);
@@ -47,23 +50,23 @@ export const ResourceDetail = ({
     // Phone numbers - enable tel: links
     if (/^\d{4}\s?\d{3,4}$/.test(value) || /^\+?\d{3,4}\s?\d{4}\s?\d{4}$/.test(value)) {
       const cleanNumber = value.replace(/\s/g, '');
-      return { type: 'tel', href: `tel:${cleanNumber}`, display: value };
+      return { type: 'tel', href: `tel:${cleanNumber}`, display: value, isPhone: true };
     }
     
     // WhatsApp numbers (check label or format)
-    if (label.toLowerCase().includes('whatsapp') || label.toLowerCase().includes('fps')) {
+    if (label.toLowerCase().includes('whatsapp')) {
       const cleanNumber = value.replace(/\s/g, '').replace('+', '');
-      return { type: 'whatsapp', href: `https://wa.me/${cleanNumber}`, display: value };
+      return { type: 'whatsapp', href: `https://wa.me/${cleanNumber}`, display: value, isPhone: false };
     }
     
     // Telegram numbers (check label)
     if (label.toLowerCase().includes('telegram')) {
       const cleanNumber = value.replace(/\s/g, '').replace('+', '');
-      return { type: 'telegram', href: `https://t.me/${cleanNumber}`, display: value };
+      return { type: 'telegram', href: `https://t.me/${cleanNumber}`, display: value, isPhone: false };
     }
     
     // Default - no link
-    return { type: 'text', href: null, display: value };
+    return { type: 'text', href: null, display: value, isPhone: false };
   };
 
   const handleShareWhatsApp = () => {
@@ -184,24 +187,47 @@ export const ResourceDetail = ({
                         href={linkInfo.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-card-foreground hover:text-primary underline"
+                        className="font-semibold text-card-foreground hover:text-primary underline break-all"
                       >
                         {linkInfo.display}
                       </a>
                     ) : (
-                      <div className="font-semibold text-card-foreground">{linkInfo.display}</div>
+                      <div className="font-semibold text-card-foreground break-all">{linkInfo.display}</div>
                     )}
                   </div>
-                  <button
-                    onClick={() => handleCopy(contact.v, idx)}
-                    className={`text-sm font-bold px-3 py-1 rounded-full transition-colors ${
-                      copiedIndex === idx
-                        ? 'bg-success text-white'
-                        : 'bg-primary text-primary-foreground'
-                    }`}
-                  >
-                    {copiedIndex === idx ? copiedText : copyText}
-                  </button>
+                  <div className="flex gap-2">
+                    {linkInfo.isPhone && (
+                      <a
+                        href={linkInfo.href!}
+                        className="inline-flex items-center justify-center gap-2 px-3 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors min-h-[44px]"
+                        aria-label={`${callText} ${contact.v}`}
+                      >
+                        <Phone className="w-4 h-4" />
+                        <span className="font-bold text-sm">{callText}</span>
+                      </a>
+                    )}
+                    <button
+                      onClick={() => handleCopy(contact.v, idx)}
+                      className={`inline-flex items-center justify-center gap-1 text-sm font-bold px-3 py-2 rounded-full transition-colors min-h-[44px] ${
+                        copiedIndex === idx
+                          ? 'bg-success text-white'
+                          : 'bg-primary text-primary-foreground hover:bg-primary/90'
+                      }`}
+                      aria-label={`Copy ${contact.l}`}
+                    >
+                      {copiedIndex === idx ? (
+                        <>
+                          <Check className="w-4 h-4" />
+                          <span>{copiedText}</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-4 h-4" />
+                          <span>{copyText}</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
             );

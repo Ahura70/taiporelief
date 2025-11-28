@@ -196,7 +196,12 @@ export const SearchBox = ({
                 role="option"
                 aria-selected={hoveredIndex === idx}
               >
-                <span className="text-2xl" aria-hidden="true">{suggestion.icon}</span>
+                <span 
+                  className={`text-2xl ${suggestion.icon === '✚' ? 'text-red-600' : ''}`} 
+                  aria-hidden="true"
+                >
+                  {suggestion.icon}
+                </span>
                 <span className="text-sm font-medium">{suggestion.title}</span>
               </button>
             ))}

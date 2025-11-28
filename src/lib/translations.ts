@@ -391,8 +391,8 @@ export const resources: Record<Language, Resource[]> = {
   tl: [
     {
       icon: '💰',
-      title: 'Govt Relief Fund',
-      desc: 'Direktang donasyon sa biktima',
+      title: 'Pondo ng Gobyerno',
+      desc: 'Direktang donasyon sa mga biktima',
       keywords: ['donate', 'pera', 'fund'],
       contacts: [{ l: 'HKD Account', v: 'Bank of China 012-875-2-190159-7' }]
     },
@@ -409,8 +409,8 @@ export const resources: Record<Language, Resource[]> = {
     {
       icon: '❤️',
       iconImage: '/src/assets/hk-red-cross.jpg',
-      title: 'Red Cross',
-      desc: 'Emergency & Psych Support',
+      title: 'Pula na Krus',
+      desc: 'Emerhensya at Suportang Sikolohikal',
       keywords: ['red cross', 'tulong'],
       contacts: [
         { l: 'FPS ID', v: '164279317' },
@@ -421,10 +421,10 @@ export const resources: Record<Language, Resource[]> = {
       icon: '🙏',
       iconImage: '/src/assets/caritas-logo.jpeg',
       title: 'Caritas Hong Kong',
-      desc: 'Komprehensibong Suporta',
+      desc: 'Kumpletong Suporta sa Biktima',
       keywords: ['caritas', 'suporta', 'tulong'],
       contacts: [
-        { l: '24-Hour Crisis Line', v: '18288' },
+        { l: '24-Oras Crisis Line', v: '18288' },
         { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
         { l: 'Wellness Link - North District', v: '2278 1016' },
         { l: 'Carers Support Centre', v: '3892 0100' },
@@ -432,17 +432,19 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Ning An Scheme', v: '5239 1035' },
         { l: 'Computer Workshop', v: '2716 6875' },
         { l: 'WhatsApp Computer Workshop', v: '5520 9507' },
-        { l: 'General Enquiry', v: '2843 4638' }
+        { l: 'Pangkalahatang Tanong', v: '2843 4638' }
       ],
       info: [
-        'Serbisyo: Emosyonal na suporta, pag-aalaga sa matatanda, tulong sa katulong, tulong sa libing, computer, pag-setup ng bahay',
-        'Online Donation: https://www.caritas.org.hk/en/e_donation'
+        'Serbisyo: Emosyonal na suporta, pag-aalaga sa matatanda, tulong sa katulong, tulong sa libing, kompyuter, pag-setup ng bahay',
+        'Online na Donasyon: https://www.caritas.org.hk/en/e_donation',
+        'Tseke: Caritas - Hong Kong',
+        'Bangko: ICBC 072-721-010001-606 o HSBC 004-502-476914-001'
       ]
     },
     {
       icon: '🏠',
-      title: 'Temporary Housing',
-      desc: 'Tirahan para sa pamilya',
+      title: 'Pansamantalang Tirahan',
+      desc: 'Kanlungan para sa mga pamilya',
       keywords: ['tirahan', 'hotel', 'shelter'],
       contacts: [
         { l: 'SHKP', v: '160 Libreng Hotel Room' },
@@ -451,7 +453,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '📦',
-      title: 'Donate Supplies',
+      title: 'Mag-donate ng Supplies',
       desc: 'Damit, Kumot',
       keywords: ['supplies', 'pagkain'],
       info: ['⚠️ Maraming koleksyon punuan na'],
@@ -459,8 +461,8 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '👷‍♀️',
-      title: 'Helper Support',
-      desc: 'Multilingual Assistance',
+      title: 'Suporta para sa Helper',
+      desc: 'Tulong sa Maraming Wika',
       keywords: ['helper', 'fdh', 'katulong'],
       contacts: [
         { l: 'HELP Hotline', v: '2523 4020' },
@@ -471,7 +473,7 @@ export const resources: Record<Language, Resource[]> = {
     {
       icon: '🚨',
       title: 'Emergency Lines',
-      desc: 'Casualty & Mental Health',
+      desc: 'Tanong sa Casualty at Mental Health',
       keywords: ['tulong', 'emergency'],
       contacts: [
         { l: 'Casualty', v: '1878 999' },
@@ -483,14 +485,14 @@ export const resources: Record<Language, Resource[]> = {
   id: [
     {
       icon: '💰',
-      title: 'Govt Relief Fund',
+      title: 'Dana Bantuan Pemerintah',
       desc: 'Donasi langsung untuk korban',
       keywords: ['donasi', 'uang', 'dana'],
-      contacts: [{ l: 'HKD Account', v: 'Bank of China 012-875-2-190159-7' }]
+      contacts: [{ l: 'Rekening HKD', v: 'Bank of China 012-875-2-190159-7' }]
     },
     {
       icon: '🎓',
-      title: 'EdUHK Support Centre',
+      title: 'Pusat Dukungan EdUHK',
       desc: 'Dukungan untuk mahasiswa/keluarga',
       keywords: ['eduhk', 'mahasiswa', 'universitas'],
       contacts: [
@@ -501,7 +503,7 @@ export const resources: Record<Language, Resource[]> = {
     {
       icon: '❤️',
       iconImage: '/src/assets/hk-red-cross.jpg',
-      title: 'Red Cross',
+      title: 'Palang Merah',
       desc: 'Dukungan Darurat & Psikologis',
       keywords: ['red cross', 'bantuan'],
       contacts: [
@@ -516,24 +518,26 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Dukungan Korban Komprehensif',
       keywords: ['caritas', 'dukungan', 'bantuan'],
       contacts: [
-        { l: '24-Hour Crisis Line', v: '18288' },
+        { l: 'Crisis Line 24-Jam', v: '18288' },
         { l: 'Wellness Link - Tsuen Wan', v: '3105 5337' },
         { l: 'Wellness Link - North District', v: '2278 1016' },
-        { l: 'Carers Support Centre', v: '3892 0100' },
+        { l: 'Pusat Dukungan Pengasuh', v: '3892 0100' },
         { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
         { l: 'Ning An Scheme', v: '5239 1035' },
-        { l: 'Computer Workshop', v: '2716 6875' },
-        { l: 'WhatsApp Computer Workshop', v: '5520 9507' },
-        { l: 'General Enquiry', v: '2843 4638' }
+        { l: 'Bengkel Komputer', v: '2716 6875' },
+        { l: 'WhatsApp Bengkel Komputer', v: '5520 9507' },
+        { l: 'Pertanyaan Umum', v: '2843 4638' }
       ],
       info: [
         'Layanan: Dukungan emosional, perawatan lansia, bantuan pembantu, bantuan pemakaman, komputer, setup rumah',
-        'Donasi Online: https://www.caritas.org.hk/en/e_donation'
+        'Donasi Online: https://www.caritas.org.hk/en/e_donation',
+        'Cek: Caritas - Hong Kong',
+        'Bank: ICBC 072-721-010001-606 atau HSBC 004-502-476914-001'
       ]
     },
     {
       icon: '🏠',
-      title: 'Temporary Housing',
+      title: 'Perumahan Sementara',
       desc: 'Tempat tinggal untuk keluarga',
       keywords: ['perumahan', 'hotel', 'shelter'],
       contacts: [
@@ -543,31 +547,31 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '📦',
-      title: 'Donate Supplies',
+      title: 'Donasi Persediaan',
       desc: 'Pakaian, Selimut',
       keywords: ['persediaan', 'makanan'],
       info: ['⚠️ Banyak titik pengumpulan penuh'],
-      contacts: [{ l: 'Govt Hotline', v: '9213 2388' }]
+      contacts: [{ l: 'Hotline Pemerintah', v: '9213 2388' }]
     },
     {
       icon: '👷‍♀️',
-      title: 'Helper Support',
+      title: 'Dukungan Helper',
       desc: 'Bantuan Multibahasa',
       keywords: ['helper', 'fdh', 'pembantu'],
       contacts: [
         { l: 'HELP Hotline', v: '2523 4020' },
-        { l: 'Labour Dept', v: '2157 9537' },
-        { l: 'WhatsApp Support', v: '+852 5936 3780' }
+        { l: 'Dept Tenaga Kerja', v: '2157 9537' },
+        { l: 'Dukungan WhatsApp', v: '+852 5936 3780' }
       ]
     },
     {
       icon: '🚨',
-      title: 'Emergency Lines',
+      title: 'Jalur Darurat',
       desc: 'Korban & Kesehatan Mental',
       keywords: ['bantuan', 'darurat'],
       contacts: [
-        { l: 'Casualty', v: '1878 999' },
-        { l: 'Mental Health', v: '18111' },
+        { l: 'Korban', v: '1878 999' },
+        { l: 'Kesehatan Mental', v: '18111' },
         { l: 'SWD', v: '2343 2255' }
       ]
     }

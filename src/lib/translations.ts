@@ -37,7 +37,16 @@ export const translations = {
     notifyDisabled: '通知已停用',
     notifyDenied: '通知已被封鎖。請在瀏覽器設定中啟用',
     notifyTestTitle: '宏福苑援助',
-    notifyTestBody: '緊急通知測試成功！'
+    notifyTestBody: '緊急通知測試成功！',
+    skipToContent: '跳至主要內容',
+    feedbackTitle: '意見反饋',
+    feedbackPlaceholder: '請告訴我們您的意見或建議...',
+    feedbackSubmit: '提交',
+    feedbackSuccess: '意見已提交',
+    feedbackClose: '關閉',
+    feedbackReport: '報告問題',
+    feedbackSuggest: '建議資源',
+    popular: '熱門'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -68,7 +77,16 @@ export const translations = {
     notifyDisabled: 'Alerts Disabled',
     notifyDenied: 'Notifications blocked. Please enable in browser settings',
     notifyTestTitle: 'Wang Fuk Relief',
-    notifyTestBody: 'Emergency alerts test successful!'
+    notifyTestBody: 'Emergency alerts test successful!',
+    skipToContent: 'Skip to main content',
+    feedbackTitle: 'Feedback',
+    feedbackPlaceholder: 'Share your feedback or suggestions...',
+    feedbackSubmit: 'Submit',
+    feedbackSuccess: 'Feedback submitted',
+    feedbackClose: 'Close',
+    feedbackReport: 'Report Issue',
+    feedbackSuggest: 'Suggest Resource',
+    popular: 'Popular'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -99,7 +117,16 @@ export const translations = {
     notifyDisabled: 'Alerto Naka-off',
     notifyDenied: 'Naka-block ang notipikasyon. Paganahin sa browser settings',
     notifyTestTitle: 'Wang Fuk Relief',
-    notifyTestBody: 'Matagumpay ang emergency alerts test!'
+    notifyTestBody: 'Matagumpay ang emergency alerts test!',
+    skipToContent: 'Tumalon sa pangunahing nilalaman',
+    feedbackTitle: 'Feedback',
+    feedbackPlaceholder: 'Ibahagi ang iyong feedback o mungkahi...',
+    feedbackSubmit: 'Ipasa',
+    feedbackSuccess: 'Naipadala ang feedback',
+    feedbackClose: 'Isara',
+    feedbackReport: 'Iulat ang Isyu',
+    feedbackSuggest: 'Imungkahi ang Resource',
+    popular: 'Sikat'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -130,7 +157,16 @@ export const translations = {
     notifyDisabled: 'Peringatan Nonaktif',
     notifyDenied: 'Notifikasi diblokir. Aktifkan di pengaturan browser',
     notifyTestTitle: 'Wang Fuk Relief',
-    notifyTestBody: 'Tes peringatan darurat berhasil!'
+    notifyTestBody: 'Tes peringatan darurat berhasil!',
+    skipToContent: 'Lewati ke konten utama',
+    feedbackTitle: 'Masukan',
+    feedbackPlaceholder: 'Bagikan masukan atau saran Anda...',
+    feedbackSubmit: 'Kirim',
+    feedbackSuccess: 'Masukan terkirim',
+    feedbackClose: 'Tutup',
+    feedbackReport: 'Laporkan Masalah',
+    feedbackSuggest: 'Sarankan Resource',
+    popular: 'Populer'
   }
 };
 

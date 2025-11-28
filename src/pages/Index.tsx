@@ -8,11 +8,15 @@ import { NewsBanner } from '@/components/NewsBanner';
 import { PWAInstallPrompt } from '@/components/PWAInstallPrompt';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { NotificationToggle } from '@/components/NotificationToggle';
+import { SkipToContent } from '@/components/SkipToContent';
+import { FeedbackForm } from '@/components/FeedbackForm';
 import { Language, translations, resources, Resource } from '@/lib/translations';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 const Index = () => {
   const [currentLang, setCurrentLang] = useState<Language>('zh');
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
+  const { trackResourceView, getMostAccessed } = useAnalytics();
 
   useEffect(() => {
     // Auto-detect language
@@ -25,9 +29,16 @@ const Index = () => {
 
   const t = translations[currentLang];
   const currentResources = resources[currentLang];
+  const popularResources = getMostAccessed(currentResources, 3);
+
+  const handleSelectResource = (resource: Resource) => {
+    trackResourceView(resource);
+    setSelectedResource(resource);
+  };
 
   return (
     <div className="min-h-screen bg-background pb-20">
+      <SkipToContent text={t.skipToContent} />
       <OfflineIndicator text={t.offlineMode} />
       <Header
         title={t.title}
@@ -37,17 +48,45 @@ const Index = () => {
       />
       <EmergencyBanner text={t.emergency} />
 
-      <main className="max-w-4xl mx-auto px-5 py-6">
+      <main id="main-content" className="max-w-4xl mx-auto px-5 py-6" tabIndex={-1}>
         <SearchBox
           label={t.label}
           placeholder={t.placeholder}
           resources={currentResources}
-          onSelectResource={setSelectedResource}
+          onSelectResource={handleSelectResource}
           currentLang={currentLang}
           listeningText={t.listening}
         />
 
-        <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
+        {popularResources.length > 0 && (
+          <div className="mt-6">
+            <h2 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">
+              ⭐ {t.popular}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {popularResources.map((resource, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => handleSelectResource(resource)}
+                  className="bg-card hover:bg-accent border border-primary/20 rounded-xl p-4 transition-all text-left group focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 min-h-[44px]"
+                  aria-label={`${resource.title}: ${resource.desc}`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{resource.icon}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {resource.title}
+                      </div>
+                      <div className="text-xs text-muted-foreground line-clamp-1">{resource.desc}</div>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <QuickActions resources={currentResources} onSelectResource={handleSelectResource} />
 
         <div className="mt-6">
           <NotificationToggle
@@ -89,6 +128,16 @@ const Index = () => {
         installText={t.installTitle}
         installDesc={t.installDesc}
         installBtn={t.installBtn}
+      />
+
+      <FeedbackForm
+        title={t.feedbackTitle}
+        placeholder={t.feedbackPlaceholder}
+        submitText={t.feedbackSubmit}
+        successText={t.feedbackSuccess}
+        closeText={t.feedbackClose}
+        reportText={t.feedbackReport}
+        suggestText={t.feedbackSuggest}
       />
     </div>
   );

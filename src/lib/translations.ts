@@ -77,7 +77,82 @@ export const translations = {
     liveUpdatesAlert: '緊急通知',
     liveUpdatesTimeJustNow: '剛剛',
     liveUpdatesTimeMinutes: '分鐘前',
-    liveUpdatesTimeHours: '小時前'
+    liveUpdatesTimeHours: '小時前',
+    organizationsTitle: '🏛️ 捐款機構資訊',
+    organizationsHeaders: {
+      organization: '機構名稱',
+      purpose: '用途',
+      donationMethods: '捐款方式',
+      deadline: '截止日期/備註'
+    },
+    organizations: [
+      {
+        name: '香港紅十字會 (大埔火災緊急救援)',
+        purpose: '急救、心理支援、日常必需品（寢具及衛生用品）支援 1,900+ 受影響家庭',
+        donationMethods: [
+          '網上：redcross.org.hk/en/Activity/TPFEA.html 使用 PayMe、Alipay、FPS',
+          '銀行轉帳/支票：註明「9900」並電郵詳情至 relief@redcross.org.hk',
+          '親身：7-Eleven 收據或總部投遞（九龍西海庭道19號）'
+        ],
+        deadline: '至 2025年12月10日。所有款項專用於此災難',
+        link: 'https://redcross.org.hk/en/Activity/TPFEA.html'
+      },
+      {
+        name: 'Feeding Hong Kong',
+        purpose: '為流離失所家庭提供緊急食品包、膳食/超市券及個人護理用品',
+        donationMethods: [
+          '網上：feedinghk.org/tai-po/（安全捐款平台）'
+        ],
+        deadline: '持續進行；專注於服務不足的需求',
+        link: 'https://feedinghk.org/tai-po/'
+      },
+      {
+        name: '聖公會 – 1126 火災支援基金',
+        purpose: '為個人/家庭提供日常開支、醫療費用及臨時住宿的現金資助',
+        donationMethods: [
+          '網上：透過其捐款頁面'
+        ],
+        deadline: '持續進行；100% 款項用於救援',
+        link: 'https://www.hkskh.org/'
+      },
+      {
+        name: '保良局',
+        purpose: '為受傷者及死者家屬提供經濟援助',
+        donationMethods: [
+          '網上/銀行：polungkuk.org.hk（註明「大埔火災救援」）',
+          '已從慈善基金撥款港幣 300 萬元'
+        ],
+        deadline: '持續進行',
+        link: 'https://www.poleungkuk.org.hk/'
+      },
+      {
+        name: '香港社會服務聯會 (HKCSS)',
+        purpose: '協調社區救援，通過地方合作夥伴提供現金及物資',
+        donationMethods: [
+          '網上：hkcss.org.hk（指定用於大埔火災）'
+        ],
+        deadline: '持續進行；分配予資源緊絀的小型機構',
+        link: 'https://www.hkcss.org.hk/'
+      },
+      {
+        name: '鄰舍輔導會 (NAAC)',
+        purpose: '地區性大埔救援，包括庇護所及輔導',
+        donationMethods: [
+          '網上：naac.org.hk（指定大埔救援）'
+        ],
+        deadline: '持續進行',
+        link: 'https://www.naac.org.hk/'
+      },
+      {
+        name: '仁濟醫院',
+        purpose: '為低收入家庭提供殮葬及醫療援助',
+        donationMethods: [
+          '網上/銀行：ych.org.hk（註明火災救援基金）'
+        ],
+        deadline: '持續進行',
+        link: 'https://www.ych.org.hk/'
+      }
+    ]
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -148,7 +223,82 @@ export const translations = {
     liveUpdatesAlert: 'Alert',
     liveUpdatesTimeJustNow: 'Just now',
     liveUpdatesTimeMinutes: 'mins ago',
-    liveUpdatesTimeHours: 'hrs ago'
+    liveUpdatesTimeHours: 'hrs ago',
+    organizationsTitle: '🏛️ Donation Organizations',
+    organizationsHeaders: {
+      organization: 'Organization',
+      purpose: 'Purpose',
+      donationMethods: 'Donation Methods',
+      deadline: 'Deadline/Notes'
+    },
+    organizations: [
+      {
+        name: 'Hong Kong Red Cross (Tai Po Fire Emergency Appeal)',
+        purpose: 'First aid, psychological support, daily necessities like bedding and hygiene items for 1,900+ affected families',
+        donationMethods: [
+          'Online: redcross.org.hk/en/Activity/TPFEA.html using PayMe, Alipay, FPS',
+          'Bank Transfer/Cheque: Mark "9900" and send details to relief@redcross.org.hk',
+          'In-person: 7-Eleven receipts or HQ drop-off (19 Hoi Ting Road, West Kowloon)'
+        ],
+        deadline: 'Until December 10, 2025. All funds exclusive to this disaster',
+        link: 'https://redcross.org.hk/en/Activity/TPFEA.html'
+      },
+      {
+        name: 'Feeding Hong Kong',
+        purpose: 'Emergency food packs, meal/supermarket vouchers, and personal care items for displaced families',
+        donationMethods: [
+          'Online: feedinghk.org/tai-po/ (secure portal for financial contributions)'
+        ],
+        deadline: 'Ongoing; focuses on underserved needs',
+        link: 'https://feedinghk.org/tai-po/'
+      },
+      {
+        name: 'Sheng Kung Hui (Hong Kong Anglican Church) – Act of Love 1126 Fire Disaster Support Fund',
+        purpose: 'Cash grants for daily needs, medical costs, and temporary accommodation',
+        donationMethods: [
+          'Online: Via their donation page'
+        ],
+        deadline: 'Ongoing; 100% of donations used for relief',
+        link: 'https://www.hkskh.org/'
+      },
+      {
+        name: 'Po Leung Kuk',
+        purpose: 'Financial relief for injured victims and families of the deceased',
+        donationMethods: [
+          'Online/Bank: polungkuk.org.hk (specify "Tai Po Fire Relief")',
+          'HK$3 million already allocated from their charity fund'
+        ],
+        deadline: 'Ongoing',
+        link: 'https://www.poleungkuk.org.hk/'
+      },
+      {
+        name: 'Hong Kong Council of Social Service (HKCSS)',
+        purpose: 'Coordinates community relief, including cash and supplies via local partners',
+        donationMethods: [
+          'Online: hkcss.org.hk (designate for Tai Po fire)'
+        ],
+        deadline: 'Ongoing; channels to smaller orgs with tight resources',
+        link: 'https://www.hkcss.org.hk/'
+      },
+      {
+        name: 'Neighbourhood Advice-Action Council (NAAC)',
+        purpose: 'Local Tai Po-focused aid, including shelter and counseling',
+        donationMethods: [
+          'Online: naac.org.hk (donation form; specify Tai Po relief)'
+        ],
+        deadline: 'Ongoing',
+        link: 'https://www.naac.org.hk/'
+      },
+      {
+        name: 'Yan Chai Hospital',
+        purpose: 'Emergency assistance for funerary and medical needs of low-income families',
+        donationMethods: [
+          'Online/Bank: ych.org.hk (mark for fire relief fund)'
+        ],
+        deadline: 'Ongoing',
+        link: 'https://www.ych.org.hk/'
+      }
+    ]
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -219,7 +369,82 @@ export const translations = {
     liveUpdatesAlert: 'Alerto',
     liveUpdatesTimeJustNow: 'Ngayon lang',
     liveUpdatesTimeMinutes: 'mins nakaraan',
-    liveUpdatesTimeHours: 'oras nakaraan'
+    liveUpdatesTimeHours: 'oras nakaraan',
+    organizationsTitle: '🏛️ Mga Organisasyon para sa Donasyon',
+    organizationsHeaders: {
+      organization: 'Organisasyon',
+      purpose: 'Layunin',
+      donationMethods: 'Paraan ng Donasyon',
+      deadline: 'Deadline/Mga Tala'
+    },
+    organizations: [
+      {
+        name: 'Hong Kong Red Cross (Tai Po Fire Emergency Appeal)',
+        purpose: 'First aid, psychological support, pangangailangan sa araw-araw para sa 1,900+ apektadong pamilya',
+        donationMethods: [
+          'Online: redcross.org.hk/en/Activity/TPFEA.html gamit ang PayMe, Alipay, FPS',
+          'Bank Transfer/Cheque: Markahan "9900" at ipadala sa relief@redcross.org.hk',
+          'Personal: 7-Eleven receipts o HQ drop-off'
+        ],
+        deadline: 'Hanggang Disyembre 10, 2025. Lahat ng pondo para sa sakuna',
+        link: 'https://redcross.org.hk/en/Activity/TPFEA.html'
+      },
+      {
+        name: 'Feeding Hong Kong',
+        purpose: 'Emergency food packs, meal vouchers, at personal care items',
+        donationMethods: [
+          'Online: feedinghk.org/tai-po/'
+        ],
+        deadline: 'Patuloy; nakatuon sa mga pangangailangan',
+        link: 'https://feedinghk.org/tai-po/'
+      },
+      {
+        name: 'Sheng Kung Hui – 1126 Fire Disaster Support Fund',
+        purpose: 'Cash grants para sa pang-araw-araw, medical, at temporary accommodation',
+        donationMethods: [
+          'Online: Sa kanilang donation page'
+        ],
+        deadline: 'Patuloy; 100% para sa relief',
+        link: 'https://www.hkskh.org/'
+      },
+      {
+        name: 'Po Leung Kuk',
+        purpose: 'Financial relief para sa mga nasugatan at pamilya ng namatay',
+        donationMethods: [
+          'Online/Bank: polungkuk.org.hk (tukuyin "Tai Po Fire Relief")',
+          'HK$3 million nakaallot na'
+        ],
+        deadline: 'Patuloy',
+        link: 'https://www.poleungkuk.org.hk/'
+      },
+      {
+        name: 'Hong Kong Council of Social Service (HKCSS)',
+        purpose: 'Koordinasyon ng community relief',
+        donationMethods: [
+          'Online: hkcss.org.hk (itakda para sa Tai Po fire)'
+        ],
+        deadline: 'Patuloy',
+        link: 'https://www.hkcss.org.hk/'
+      },
+      {
+        name: 'Neighbourhood Advice-Action Council (NAAC)',
+        purpose: 'Lokal na tulong sa Tai Po, kasama ang shelter at counseling',
+        donationMethods: [
+          'Online: naac.org.hk (tukuyin Tai Po relief)'
+        ],
+        deadline: 'Patuloy',
+        link: 'https://www.naac.org.hk/'
+      },
+      {
+        name: 'Yan Chai Hospital',
+        purpose: 'Emergency assistance para sa funerary at medical needs',
+        donationMethods: [
+          'Online/Bank: ych.org.hk (markahan para sa fire relief fund)'
+        ],
+        deadline: 'Patuloy',
+        link: 'https://www.ych.org.hk/'
+      }
+    ]
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -290,7 +515,82 @@ export const translations = {
     liveUpdatesAlert: 'Peringatan',
     liveUpdatesTimeJustNow: 'Baru saja',
     liveUpdatesTimeMinutes: 'menit lalu',
-    liveUpdatesTimeHours: 'jam lalu'
+    liveUpdatesTimeHours: 'jam lalu',
+    organizationsTitle: '🏛️ Organisasi Donasi',
+    organizationsHeaders: {
+      organization: 'Organisasi',
+      purpose: 'Tujuan',
+      donationMethods: 'Metode Donasi',
+      deadline: 'Batas Waktu/Catatan'
+    },
+    organizations: [
+      {
+        name: 'Hong Kong Red Cross (Tai Po Fire Emergency Appeal)',
+        purpose: 'Pertolongan pertama, dukungan psikologis, kebutuhan sehari-hari untuk 1,900+ keluarga terdampak',
+        donationMethods: [
+          'Online: redcross.org.hk/en/Activity/TPFEA.html menggunakan PayMe, Alipay, FPS',
+          'Transfer Bank/Cek: Tandai "9900" dan kirim detail ke relief@redcross.org.hk',
+          'Langsung: Tanda terima 7-Eleven atau kantor pusat'
+        ],
+        deadline: 'Hingga 10 Desember 2025. Semua dana khusus bencana ini',
+        link: 'https://redcross.org.hk/en/Activity/TPFEA.html'
+      },
+      {
+        name: 'Feeding Hong Kong',
+        purpose: 'Paket makanan darurat, voucher makan/supermarket, dan barang perawatan pribadi',
+        donationMethods: [
+          'Online: feedinghk.org/tai-po/ (portal aman untuk kontribusi)'
+        ],
+        deadline: 'Berkelanjutan; fokus pada kebutuhan yang kurang terlayani',
+        link: 'https://feedinghk.org/tai-po/'
+      },
+      {
+        name: 'Sheng Kung Hui – Dana Dukungan Bencana Kebakaran 1126',
+        purpose: 'Hibah tunai untuk kebutuhan sehari-hari, biaya medis, dan akomodasi sementara',
+        donationMethods: [
+          'Online: Melalui halaman donasi mereka'
+        ],
+        deadline: 'Berkelanjutan; 100% donasi untuk bantuan',
+        link: 'https://www.hkskh.org/'
+      },
+      {
+        name: 'Po Leung Kuk',
+        purpose: 'Bantuan keuangan untuk korban luka dan keluarga almarhum',
+        donationMethods: [
+          'Online/Bank: polungkuk.org.hk (tentukan "Bantuan Kebakaran Tai Po")',
+          'HK$3 juta sudah dialokasikan dari dana amal'
+        ],
+        deadline: 'Berkelanjutan',
+        link: 'https://www.poleungkuk.org.hk/'
+      },
+      {
+        name: 'Hong Kong Council of Social Service (HKCSS)',
+        purpose: 'Koordinasi bantuan komunitas termasuk uang tunai dan persediaan',
+        donationMethods: [
+          'Online: hkcss.org.hk (tentukan untuk kebakaran Tai Po)'
+        ],
+        deadline: 'Berkelanjutan',
+        link: 'https://www.hkcss.org.hk/'
+      },
+      {
+        name: 'Neighbourhood Advice-Action Council (NAAC)',
+        purpose: 'Bantuan lokal Tai Po termasuk tempat tinggal dan konseling',
+        donationMethods: [
+          'Online: naac.org.hk (formulir donasi; tentukan bantuan Tai Po)'
+        ],
+        deadline: 'Berkelanjutan',
+        link: 'https://www.naac.org.hk/'
+      },
+      {
+        name: 'Yan Chai Hospital',
+        purpose: 'Bantuan darurat untuk kebutuhan pemakaman dan medis keluarga berpenghasilan rendah',
+        donationMethods: [
+          'Online/Bank: ych.org.hk (tandai untuk dana bantuan kebakaran)'
+        ],
+        deadline: 'Berkelanjutan',
+        link: 'https://www.ych.org.hk/'
+      }
+    ]
   }
 };
 

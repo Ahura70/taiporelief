@@ -24,7 +24,17 @@ export const QuickActions = ({ resources, onSelectResource, currentLang }: Quick
           >
             {currentLang.toUpperCase()}
           </Badge>
-          <div className="text-4xl mt-2">{resource.icon}</div>
+          {resource.logo ? (
+            <div className="w-16 h-16 flex items-center justify-center mt-2">
+              <img 
+                src={resource.logo} 
+                alt={resource.title}
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+          ) : (
+            <div className="text-4xl mt-2">{resource.icon}</div>
+          )}
           <div className="text-xs font-semibold text-center leading-tight text-card-foreground">
             {resource.title}
           </div>

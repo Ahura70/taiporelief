@@ -43,11 +43,7 @@ const Index = () => {
           listeningText={t.listening}
         />
 
-        <QuickActions 
-          resources={currentResources} 
-          onSelectResource={setSelectedResource}
-          currentLang={currentLang}
-        />
+        <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
       </main>
 
       <NewsBanner title={t.newsTitle} />

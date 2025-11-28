@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Resource } from '@/lib/translations';
 import { OptimizedImage } from './OptimizedImage';
 
@@ -7,13 +8,23 @@ interface QuickActionsProps {
 }
 
 export const QuickActions = ({ resources, onSelectResource }: QuickActionsProps) => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mt-6">
       {resources.map((resource, idx) => (
         <button
           key={idx}
           onClick={() => onSelectResource(resource)}
-          className="flex flex-col items-center gap-2 p-4 bg-card rounded-xl shadow hover:shadow-md transition-all hover:scale-105 active:scale-95"
+          onMouseEnter={() => setHoveredIndex(idx)}
+          onMouseLeave={() => setHoveredIndex(null)}
+          className={`flex flex-col items-center gap-2 p-4 bg-card rounded-xl shadow transition-all ${
+            hoveredIndex === idx 
+              ? 'shadow-md scale-105' 
+              : hoveredIndex !== null 
+              ? 'opacity-40 scale-95' 
+              : 'hover:shadow-md hover:scale-105'
+          } active:scale-95`}
           aria-label={resource.title}
         >
           {resource.iconImage ? (

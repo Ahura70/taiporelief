@@ -14,7 +14,6 @@ import { DonationTracker } from '@/components/DonationTracker';
 import { Map } from '@/components/Map';
 import { LiveUpdatesFeed } from '@/components/LiveUpdatesFeed';
 import { OrganizationsTable } from '@/components/OrganizationsTable';
-import { FloatingActionBar } from '@/components/FloatingActionBar';
 import { Language, translations, resources, Resource } from '@/lib/translations';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
@@ -61,9 +60,6 @@ const Index = () => {
           onSelectResource={handleSelectResource}
           currentLang={currentLang}
           listeningText={t.listening}
-          voiceSearchNotSupported={t.voiceSearchNotSupported}
-          micPermissionDenied={t.micPermissionDenied}
-          voiceSearchError={t.voiceSearchError}
         />
 
         {popularResources.length > 0 && (
@@ -175,7 +171,6 @@ const Index = () => {
           whatsappText={t.whatsapp}
           smsText={t.sms}
           copyLinkText={t.copyLink}
-          callText={t.call}
         />
       )}
 
@@ -193,12 +188,6 @@ const Index = () => {
         closeText={t.feedbackClose}
         reportText={t.feedbackReport}
         suggestText={t.feedbackSuggest}
-      />
-
-      <FloatingActionBar
-        emergencyLabel={t.floatingEmergency}
-        mentalHealthLabel={t.floatingMentalHealth}
-        donateLabel={t.floatingDonate}
       />
     </div>
   );

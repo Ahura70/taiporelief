@@ -52,7 +52,7 @@ export const DonationTracker = ({
   };
 
   return (
-    <div className="bg-gradient-to-br from-primary/5 via-background to-accent/5 border border-border rounded-2xl p-6 animate-fade-in" data-donation-tracker>
+    <div className="bg-gradient-to-br from-primary/5 via-background to-accent/5 border border-border rounded-2xl p-6 animate-fade-in">
       <div className="mb-6">
         <h2 className="text-xl font-bold text-foreground mb-2">{title}</h2>
         {loading ? (

@@ -35,7 +35,12 @@ export const QuickActions = ({ resources, onSelectResource }: QuickActionsProps)
               fallback={resource.icon}
             />
           ) : (
-            <div className="text-4xl" aria-hidden="true">{resource.icon}</div>
+            <div 
+              className={`text-4xl ${resource.icon === '✚' ? 'text-red-600' : ''}`} 
+              aria-hidden="true"
+            >
+              {resource.icon}
+            </div>
           )}
           <div className="text-xs font-semibold text-center leading-tight text-card-foreground">
             {resource.title}

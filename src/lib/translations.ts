@@ -65,7 +65,8 @@ export const translations = {
     skipToContent: '跳至主要內容',
     legendOpen: '營業中',
     legendClosed: '已關閉',
-    legendNoHours: '全天候服務'
+    legendNoHours: '全天候服務',
+    memorialMessage: '謹此向所有受影響的人士致以最深切的慰問。願逝者安息，生者堅強。'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -124,7 +125,8 @@ export const translations = {
     skipToContent: 'Skip to main content',
     legendOpen: 'Open Now',
     legendClosed: 'Closed',
-    legendNoHours: 'Always Available'
+    legendNoHours: 'Always Available',
+    memorialMessage: 'Our deepest condolences to all those affected. May the departed rest in peace and the survivors find strength.'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -183,7 +185,8 @@ export const translations = {
     skipToContent: 'Tumalon sa pangunahing nilalaman',
     legendOpen: 'Bukas Ngayon',
     legendClosed: 'Sarado',
-    legendNoHours: 'Palaging Bukas'
+    legendNoHours: 'Palaging Bukas',
+    memorialMessage: 'Ang aming taos-pusong pakikiramay sa lahat ng naapektuhan. Nawa ang mga yumaong ay makapahinga nang payapa at ang mga nakaligtas ay magkaroon ng lakas.'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -242,7 +245,8 @@ export const translations = {
     skipToContent: 'Langsung ke konten utama',
     legendOpen: 'Buka Sekarang',
     legendClosed: 'Tutup',
-    legendNoHours: 'Selalu Tersedia'
+    legendNoHours: 'Selalu Tersedia',
+    memorialMessage: 'Belasungkawa terdalam kami kepada semua yang terkena dampak. Semoga yang telah tiada beristirahat dengan tenang dan yang selamat menemukan kekuatan.'
   }
 };
 

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
+import { MemorialBanner } from '@/components/MemorialBanner';
 import { EmergencyBanner } from '@/components/EmergencyBanner';
 import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
@@ -62,6 +63,7 @@ const Index = () => {
       <div className="fixed top-20 right-5 z-40">
         <DarkModeToggle />
       </div>
+      <MemorialBanner message={t.memorialMessage} />
       <EmergencyBanner text={t.emergency} />
 
       <main id="main-content" className="max-w-4xl mx-auto px-5 py-6">

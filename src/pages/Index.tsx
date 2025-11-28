@@ -32,7 +32,6 @@ const Index = () => {
         onLanguageChange={setCurrentLang}
       />
       <EmergencyBanner text={t.emergency} />
-      <NewsBanner title={t.newsTitle} />
 
       <main className="max-w-4xl mx-auto px-5 py-6">
         <SearchBox
@@ -45,12 +44,16 @@ const Index = () => {
         />
 
         <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
+      </main>
 
+      <NewsBanner title={t.newsTitle} />
+
+      <div className="max-w-4xl mx-auto px-5">
         <div className="text-center mt-6 text-xs text-muted-foreground space-y-1">
           <div>{t.lastUpdate}</div>
           <div>{t.wcagCompliance}</div>
         </div>
-      </main>
+      </div>
 
       {selectedResource && (
         <ResourceDetail

@@ -1,14 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Clock, Heart, Users, AlertTriangle } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-
-interface Update {
-  id: string;
-  type: 'donation' | 'volunteer' | 'alert';
-  message: string;
-  timestamp: Date;
-  amount?: string;
-}
+import { useRealtimeUpdates } from '@/hooks/useRealtimeUpdates';
 
 interface LiveUpdatesFeedProps {
   title: string;
@@ -29,87 +22,15 @@ export const LiveUpdatesFeed = ({
   alertType,
   timeAgo,
 }: LiveUpdatesFeedProps) => {
-  const [updates, setUpdates] = useState<Update[]>([]);
+  const { updates, loading } = useRealtimeUpdates();
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Simulate real-time updates - in production, this would connect to a real API/WebSocket
-  const generateMockUpdate = (): Update => {
-    const types: Array<'donation' | 'volunteer' | 'alert'> = ['donation', 'volunteer', 'alert'];
-    const type = types[Math.floor(Math.random() * types.length)];
-    
-    const donations = [
-      { message: 'Anonymous donated', amount: 'HK$50,000' },
-      { message: 'Corporate sponsor contributed', amount: 'HK$100,000' },
-      { message: 'Community fundraiser raised', amount: 'HK$25,000' },
-      { message: 'Online campaign collected', amount: 'HK$75,000' },
-    ];
-
-    const volunteers = [
-      { message: '5 volunteers signed up for meal distribution' },
-      { message: '3 medical professionals joined the support team' },
-      { message: '10 translators registered for hotline support' },
-      { message: '8 volunteers helping with temporary housing setup' },
-    ];
-
-    const alerts = [
-      { message: 'New collection point opened at Tai Po Sports Ground' },
-      { message: 'Extended support center hours: Now open until 20:00' },
-      { message: 'Emergency counseling available 24/7' },
-      { message: 'Temporary housing allocation updated' },
-    ];
-
-    let update: Update;
-
-    switch (type) {
-      case 'donation':
-        const donation = donations[Math.floor(Math.random() * donations.length)];
-        update = {
-          id: Date.now().toString(),
-          type: 'donation',
-          message: donation.message,
-          amount: donation.amount,
-          timestamp: new Date(),
-        };
-        break;
-      case 'volunteer':
-        const volunteer = volunteers[Math.floor(Math.random() * volunteers.length)];
-        update = {
-          id: Date.now().toString(),
-          type: 'volunteer',
-          message: volunteer.message,
-          timestamp: new Date(),
-        };
-        break;
-      case 'alert':
-        const alert = alerts[Math.floor(Math.random() * alerts.length)];
-        update = {
-          id: Date.now().toString(),
-          type: 'alert',
-          message: alert.message,
-          timestamp: new Date(),
-        };
-        break;
-    }
-
-    return update;
-  };
-
   useEffect(() => {
-    // Initialize with some updates
-    const initialUpdates = Array.from({ length: 3 }, () => generateMockUpdate());
-    setUpdates(initialUpdates);
-
-    // Add new update every 8-15 seconds
-    const interval = setInterval(() => {
-      const newUpdate = generateMockUpdate();
+    if (updates.length > 0) {
       setIsAnimating(true);
-      setUpdates((prev) => [newUpdate, ...prev.slice(0, 9)]); // Keep last 10 updates
-      
       setTimeout(() => setIsAnimating(false), 500);
-    }, Math.random() * 7000 + 8000); // Random between 8-15 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+    }
+  }, [updates.length]);
 
   const getUpdateIcon = (type: string) => {
     switch (type) {
@@ -174,8 +95,21 @@ export const LiveUpdatesFeed = ({
         <h2 className="text-xl font-bold text-foreground">{title}</h2>
       </div>
 
-      <div className="space-y-3 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
-        {updates.map((update, index) => (
+      {loading ? (
+        <div className="space-y-3">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="p-4 rounded-xl border border-border bg-secondary/50 animate-pulse">
+              <div className="h-4 bg-secondary rounded w-3/4 mb-2"></div>
+              <div className="h-3 bg-secondary rounded w-1/2"></div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="space-y-3 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
+          {updates.length === 0 ? (
+            <p className="text-center text-muted-foreground py-8">No updates yet</p>
+          ) : (
+            updates.map((update, index) => (
           <div
             key={update.id}
             className={`p-4 rounded-xl border transition-all duration-500 ${getUpdateColor(update.type)} ${
@@ -200,10 +134,12 @@ export const LiveUpdatesFeed = ({
                   )}
                 </p>
               </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
+      )}
 
       <div className="mt-4 pt-4 border-t border-border/50">
         <p className="text-xs text-center text-muted-foreground">

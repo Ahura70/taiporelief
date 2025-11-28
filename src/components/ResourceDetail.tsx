@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Resource } from '@/lib/translations';
-import { X, Share2, MessageCircle, Mail, Link2, Navigation } from 'lucide-react';
+import { X, Share2, MessageCircle, Mail, Link2, Navigation, QrCode, Bookmark } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { openDirections } from '@/lib/mapsHelper';
+import { QRCodeShare } from './QRCodeShare';
+import { useBookmarks } from '@/hooks/useBookmarks';
 
 interface ResourceDetailProps {
   resource: Resource | null;
@@ -17,6 +19,9 @@ interface ResourceDetailProps {
   shareLinkText: string;
   linkCopiedText: string;
   getDirectionsText: string;
+  bookmarkText: string;
+  bookmarkedText: string;
+  qrCodeText: string;
 }
 
 export const ResourceDetail = ({
@@ -30,10 +35,15 @@ export const ResourceDetail = ({
   shareSMSText,
   shareLinkText,
   linkCopiedText,
-  getDirectionsText
+  getDirectionsText,
+  bookmarkText,
+  bookmarkedText,
+  qrCodeText
 }: ResourceDetailProps) => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const [showQR, setShowQR] = useState(false);
   const { toast } = useToast();
+  const { isBookmarked, toggleBookmark } = useBookmarks();
 
   if (!resource) return null;
 
@@ -100,25 +110,31 @@ export const ResourceDetail = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 p-0 sm:p-4 animate-in fade-in duration-200">
+    <div 
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 p-0 sm:p-4 animate-in fade-in duration-200"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="resource-title"
+    >
       <div className="bg-card w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[90vh] overflow-auto animate-in slide-in-from-bottom sm:slide-in-from-bottom-0 duration-300">
         <div className="sticky top-0 bg-card border-b border-border px-6 py-4 flex items-start justify-between">
           <div className="flex items-center gap-3 flex-1">
             {resource.iconImage ? (
-              <img src={resource.iconImage} alt={resource.title} className="w-12 h-12 object-contain" />
+              <img src={resource.iconImage} alt="" className="w-12 h-12 object-contain" aria-hidden="true" />
             ) : (
-              <div className="text-4xl">{resource.icon}</div>
+              <div className="text-4xl" aria-hidden="true">{resource.icon}</div>
             )}
             <div>
-              <h2 className="text-xl font-bold text-card-foreground">{resource.title}</h2>
+              <h2 id="resource-title" className="text-xl font-bold text-card-foreground">{resource.title}</h2>
               <p className="text-sm text-muted-foreground">{resource.desc}</p>
             </div>
           </div>
           <button
             onClick={onClose}
             className="p-2 hover:bg-secondary rounded-full transition-colors"
+            aria-label={closeText}
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5" aria-hidden="true" />
           </button>
         </div>
 
@@ -184,33 +200,63 @@ export const ResourceDetail = ({
 
           <div className="border-t border-border pt-4 mt-4">
             <div className="text-sm font-semibold text-muted-foreground mb-3 flex items-center gap-2">
-              <Share2 className="w-4 h-4" />
+              <Share2 className="w-4 h-4" aria-hidden="true" />
               {shareText}
             </div>
-            <div className="grid grid-cols-3 gap-2 mb-4">
+            <div className="grid grid-cols-3 gap-2 mb-3">
               <Button
                 onClick={handleShareWhatsApp}
                 variant="outline"
                 className="flex flex-col items-center gap-1 h-auto py-3"
+                aria-label={`Share via ${shareWhatsAppText}`}
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5" aria-hidden="true" />
                 <span className="text-xs">{shareWhatsAppText}</span>
               </Button>
               <Button
                 onClick={handleShareSMS}
                 variant="outline"
                 className="flex flex-col items-center gap-1 h-auto py-3"
+                aria-label={`Share via ${shareSMSText}`}
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-5 h-5" aria-hidden="true" />
                 <span className="text-xs">{shareSMSText}</span>
               </Button>
               <Button
                 onClick={handleShareLink}
                 variant="outline"
                 className="flex flex-col items-center gap-1 h-auto py-3"
+                aria-label={shareLinkText}
               >
-                <Link2 className="w-5 h-5" />
+                <Link2 className="w-5 h-5" aria-hidden="true" />
                 <span className="text-xs">{shareLinkText}</span>
+              </Button>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <Button
+                onClick={() => setShowQR(true)}
+                variant="outline"
+                className="flex items-center gap-2"
+                aria-label={qrCodeText}
+              >
+                <QrCode className="w-4 h-4" aria-hidden="true" />
+                <span className="text-sm">{qrCodeText}</span>
+              </Button>
+              <Button
+                onClick={() => {
+                  toggleBookmark(resource);
+                  toast({
+                    title: isBookmarked(resource) ? bookmarkedText : bookmarkText,
+                    duration: 2000,
+                  });
+                }}
+                variant={isBookmarked(resource) ? "default" : "outline"}
+                className="flex items-center gap-2"
+                aria-label={isBookmarked(resource) ? bookmarkedText : bookmarkText}
+                aria-pressed={isBookmarked(resource)}
+              >
+                <Bookmark className="w-4 h-4" aria-hidden="true" fill={isBookmarked(resource) ? "currentColor" : "none"} />
+                <span className="text-sm">{isBookmarked(resource) ? bookmarkedText : bookmarkText}</span>
               </Button>
             </div>
           </div>
@@ -220,6 +266,15 @@ export const ResourceDetail = ({
           </Button>
         </div>
       </div>
+      
+      {resource && (
+        <QRCodeShare
+          resource={resource}
+          isOpen={showQR}
+          onClose={() => setShowQR(false)}
+          title={qrCodeText}
+        />
+      )}
     </div>
   );
 };

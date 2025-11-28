@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { EmergencyBanner } from '@/components/EmergencyBanner';
 import { SearchBox } from '@/components/SearchBox';
@@ -8,47 +8,71 @@ import { ResourceMap } from '@/components/ResourceMap';
 import { NewsBanner } from '@/components/NewsBanner';
 import { FeedbackForm } from '@/components/FeedbackForm';
 import { InstallPrompt } from '@/components/InstallPrompt';
-import { Language, translations, resources, Resource } from '@/lib/translations';
+import { OfflineIndicator } from '@/components/OfflineIndicator';
+import { DarkModeToggle } from '@/components/DarkModeToggle';
+import { translations, resources, Resource } from '@/lib/translations';
+import { useLanguage } from '@/hooks/useLanguage';
+import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Index = () => {
-  const [currentLang, setCurrentLang] = useState<Language>('zh');
+  const { currentLang, changeLanguage } = useLanguage();
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+  const searchBoxRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // Auto-detect language
-    const userLang = navigator.language || (navigator as any).userLanguage;
-    if (userLang.includes('en')) setCurrentLang('en');
-    else if (userLang.includes('zh')) setCurrentLang('zh');
-    else if (userLang.includes('tl') || userLang.includes('fil')) setCurrentLang('tl');
-    else if (userLang.includes('id')) setCurrentLang('id');
-  }, []);
+  // Keyboard shortcuts
+  useKeyboardShortcuts([
+    {
+      key: '/',
+      callback: () => {
+        searchBoxRef.current?.querySelector('input')?.focus();
+      },
+      description: 'Focus search box'
+    },
+    {
+      key: 'Escape',
+      callback: () => {
+        if (selectedResource) setSelectedResource(null);
+        if (showFeedbackForm) setShowFeedbackForm(false);
+      },
+      description: 'Close modals'
+    }
+  ]);
 
   const t = translations[currentLang];
   const currentResources = resources[currentLang];
 
   return (
     <div className="min-h-screen bg-background pb-20">
+      <a href="#main-content" className="skip-link">
+        {t.skipToContent}
+      </a>
+      <OfflineIndicator />
       <InstallPrompt />
       <Header
         title={t.title}
         subtitle={t.subtitle}
         currentLang={currentLang}
-        onLanguageChange={setCurrentLang}
+        onLanguageChange={changeLanguage}
       />
+      <div className="fixed top-20 right-5 z-40">
+        <DarkModeToggle />
+      </div>
       <EmergencyBanner text={t.emergency} />
 
-      <main className="max-w-4xl mx-auto px-5 py-6">
-        <SearchBox
-          label={t.label}
-          placeholder={t.placeholder}
-          resources={currentResources}
-          onSelectResource={setSelectedResource}
-          currentLang={currentLang}
-          listeningText={t.listening}
-        />
+      <main id="main-content" className="max-w-4xl mx-auto px-5 py-6">
+        <div ref={searchBoxRef}>
+          <SearchBox
+            label={t.label}
+            placeholder={t.placeholder}
+            resources={currentResources}
+            onSelectResource={setSelectedResource}
+            currentLang={currentLang}
+            listeningText={t.listening}
+          />
+        </div>
 
         <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
 
@@ -59,6 +83,9 @@ const Index = () => {
             mapTitle={t.mapTitle}
             showOpenOnlyText={t.showOpenOnly}
             currentLang={currentLang}
+            legendOpen={t.legendOpen}
+            legendClosed={t.legendClosed}
+            legendNoHours={t.legendNoHours}
           />
         </div>
       </main>
@@ -96,6 +123,9 @@ const Index = () => {
           shareLinkText={t.shareLink}
           linkCopiedText={t.linkCopied}
           getDirectionsText={t.getDirections}
+          bookmarkText={t.bookmark}
+          bookmarkedText={t.bookmarked}
+          qrCodeText={t.qrCode}
         />
       )}
 

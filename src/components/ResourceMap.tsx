@@ -6,6 +6,7 @@ import { openDirections } from '@/lib/mapsHelper';
 import { isResourceOpen, getStatusText } from '@/lib/hoursHelper';
 import { Button } from '@/components/ui/button';
 import { Filter } from 'lucide-react';
+import { MapLegend } from './MapLegend';
 
 // Create custom marker icons with status badges
 const createCustomIcon = (isOpen: boolean, hasHours: boolean) => {
@@ -53,9 +54,21 @@ interface ResourceMapProps {
   mapTitle: string;
   showOpenOnlyText: string;
   currentLang: string;
+  legendOpen?: string;
+  legendClosed?: string;
+  legendNoHours?: string;
 }
 
-export const ResourceMap = ({ resources, onResourceClick, mapTitle, showOpenOnlyText, currentLang }: ResourceMapProps) => {
+export const ResourceMap = ({ 
+  resources, 
+  onResourceClick, 
+  mapTitle, 
+  showOpenOnlyText, 
+  currentLang,
+  legendOpen = 'Open Now',
+  legendClosed = 'Closed',
+  legendNoHours = 'Always Available'
+}: ResourceMapProps) => {
   const mapRef = useRef<L.Map | null>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const [showOpenOnly, setShowOpenOnly] = useState(false);
@@ -179,22 +192,36 @@ export const ResourceMap = ({ resources, onResourceClick, mapTitle, showOpenOnly
   return (
     <div className="w-full bg-card rounded-lg shadow-lg overflow-hidden border border-border">
       <div className="p-4 bg-muted/50 border-b border-border flex items-center justify-between">
-        <h2 className="text-xl font-bold text-foreground">🗺️ {mapTitle}</h2>
+        <h2 className="text-xl font-bold text-foreground" id="map-title">🗺️ {mapTitle}</h2>
         <Button
           variant={showOpenOnly ? "default" : "outline"}
           size="sm"
           onClick={() => setShowOpenOnly(!showOpenOnly)}
           className="gap-2"
+          aria-pressed={showOpenOnly}
+          aria-label={`Filter: ${showOpenOnlyText}`}
         >
-          <Filter className="w-4 h-4" />
+          <Filter className="w-4 h-4" aria-hidden="true" />
           {showOpenOnlyText}
         </Button>
       </div>
-      <div 
-        ref={mapContainerRef} 
-        className="w-full h-[500px]"
-        style={{ background: 'hsl(var(--muted))' }}
-      />
+      <div className="relative">
+        <div 
+          ref={mapContainerRef} 
+          className="w-full h-[500px]"
+          style={{ background: 'hsl(var(--muted))' }}
+          role="application"
+          aria-label="Interactive map of emergency resources"
+          aria-describedby="map-title"
+        />
+        <div className="absolute bottom-4 right-4 z-[1000]">
+          <MapLegend 
+            openText={legendOpen}
+            closedText={legendClosed}
+            noHoursText={legendNoHours}
+          />
+        </div>
+      </div>
     </div>
   );
 };

@@ -91,6 +91,7 @@ const Index = () => {
           shareSMSText={t.shareSMS}
           shareLinkText={t.shareLink}
           linkCopiedText={t.linkCopied}
+          getDirectionsText={t.getDirections}
         />
       )}
 

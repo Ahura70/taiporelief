@@ -60,6 +60,9 @@ const Index = () => {
           onSelectResource={handleSelectResource}
           currentLang={currentLang}
           listeningText={t.listening}
+          voiceSearchNotSupported={t.voiceSearchNotSupported}
+          micPermissionDenied={t.micPermissionDenied}
+          voiceSearchError={t.voiceSearchError}
         />
 
         {popularResources.length > 0 && (
@@ -171,6 +174,7 @@ const Index = () => {
           whatsappText={t.whatsapp}
           smsText={t.sms}
           copyLinkText={t.copyLink}
+          callText={t.call}
         />
       )}
 

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { MemorialBanner } from '@/components/MemorialBanner';
 import { EmergencyBanner } from '@/components/EmergencyBanner';
+import { EmergencyDialButton } from '@/components/EmergencyDialButton';
 import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { ResourceDetail } from '@/components/ResourceDetail';
@@ -160,6 +161,13 @@ const Index = () => {
           }}
         />
       )}
+      
+      <EmergencyDialButton
+        casualtyLabel={t.casualtyEnquiry}
+        mentalHealthLabel={t.mentalHealthSupport}
+        emergencyTitle={t.emergencyDialTitle}
+        emergencyDescription={t.emergencyDialDescription}
+      />
     </div>
   );
 };

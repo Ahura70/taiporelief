@@ -66,7 +66,11 @@ export const translations = {
     legendOpen: '營業中',
     legendClosed: '已關閉',
     legendNoHours: '全天候服務',
-    memorialMessage: '謹此向所有受影響的人士致以最深切的慰問。願逝者安息，生者堅強。'
+    memorialMessage: '謹此向所有受影響的人士致以最深切的慰問。願逝者安息，生者堅強。',
+    emergencyDialTitle: '緊急求助熱線',
+    emergencyDialDescription: '輕觸下方號碼即可撥打',
+    casualtyEnquiry: '傷亡查詢',
+    mentalHealthSupport: '心理支援熱線'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -126,7 +130,11 @@ export const translations = {
     legendOpen: 'Open Now',
     legendClosed: 'Closed',
     legendNoHours: 'Always Available',
-    memorialMessage: 'Our deepest condolences to those affected. May the departed rest in peace and the survivors find strength.'
+    memorialMessage: 'Our deepest condolences to those affected. May the departed rest in peace and the survivors find strength.',
+    emergencyDialTitle: 'Emergency Hotlines',
+    emergencyDialDescription: 'Tap numbers below to call instantly',
+    casualtyEnquiry: 'Casualty Enquiry',
+    mentalHealthSupport: 'Mental Health Hotline'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -186,7 +194,11 @@ export const translations = {
     legendOpen: 'Bukas Ngayon',
     legendClosed: 'Sarado',
     legendNoHours: 'Palaging Bukas',
-    memorialMessage: 'Ang aming taos-pusong pakikiramay sa lahat ng naapektuhan. Nawa ang mga yumaong ay makapahinga nang payapa at ang mga nakaligtas ay magkaroon ng lakas.'
+    memorialMessage: 'Ang aming taos-pusong pakikiramay sa lahat ng naapektuhan. Nawa ang mga yumaong ay makapahinga nang payapa at ang mga nakaligtas ay magkaroon ng lakas.',
+    emergencyDialTitle: 'Emergency Hotline',
+    emergencyDialDescription: 'I-tap ang numero para tumawag',
+    casualtyEnquiry: 'Casualty Enquiry',
+    mentalHealthSupport: 'Mental Health Hotline'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -246,7 +258,11 @@ export const translations = {
     legendOpen: 'Buka Sekarang',
     legendClosed: 'Tutup',
     legendNoHours: 'Selalu Tersedia',
-    memorialMessage: 'Belasungkawa terdalam kami kepada semua yang terkena dampak. Semoga yang telah tiada beristirahat dengan tenang dan yang selamat menemukan kekuatan.'
+    memorialMessage: 'Belasungkawa terdalam kami kepada semua yang terkena dampak. Semoga yang telah tiada beristirahat dengan tenang dan yang selamat menemukan kekuatan.',
+    emergencyDialTitle: 'Hotline Darurat',
+    emergencyDialDescription: 'Ketuk nomor untuk menelepon',
+    casualtyEnquiry: 'Pertanyaan Korban',
+    mentalHealthSupport: 'Hotline Kesehatan Mental'
   }
 };
 

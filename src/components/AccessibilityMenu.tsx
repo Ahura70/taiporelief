@@ -88,7 +88,7 @@ export const AccessibilityMenu = ({
         <Button
           variant="outline"
           size="icon"
-          className="fixed top-24 right-5 z-40 bg-card shadow-md"
+          className="fixed top-32 right-5 z-40 bg-card shadow-md"
           aria-label={title}
         >
           <Settings className="h-5 w-5" />

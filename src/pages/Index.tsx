@@ -5,7 +5,6 @@ import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { ResourceDetail } from '@/components/ResourceDetail';
 import { NewsBanner } from '@/components/NewsBanner';
-import { PWAInstallPrompt } from '@/components/PWAInstallPrompt';
 import { Language, translations, resources, Resource } from '@/lib/translations';
 
 const Index = () => {
@@ -69,12 +68,6 @@ const Index = () => {
           copyLinkText={t.copyLink}
         />
       )}
-
-      <PWAInstallPrompt
-        installText={t.installTitle}
-        installDesc={t.installDesc}
-        installBtn={t.installBtn}
-      />
     </div>
   );
 };

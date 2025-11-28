@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
       "@radix-ui/react-tooltip": path.resolve(__dirname, "./src/shims/radix-tooltip-shim.tsx"),
+      "@tanstack/react-query": path.resolve(__dirname, "./src/shims/react-query-shim.tsx"),
     },
     dedupe: ["react", "react-dom"],
   },

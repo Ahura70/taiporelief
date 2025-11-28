@@ -10,6 +10,7 @@ import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { NotificationToggle } from '@/components/NotificationToggle';
 import { SkipToContent } from '@/components/SkipToContent';
 import { FeedbackForm } from '@/components/FeedbackForm';
+import { DonationTracker } from '@/components/DonationTracker';
 import { Language, translations, resources, Resource } from '@/lib/translations';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
@@ -87,6 +88,16 @@ const Index = () => {
         )}
 
         <QuickActions resources={currentResources} onSelectResource={handleSelectResource} />
+
+        <div className="mt-6">
+          <DonationTracker
+            title={t.donationTitle}
+            raised={t.donationRaised}
+            goal={t.donationGoal}
+            currency={t.donationCurrency}
+            milestones={t.donationMilestones}
+          />
+        </div>
 
         <div className="mt-6">
           <NotificationToggle

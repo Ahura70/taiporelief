@@ -29,7 +29,8 @@ export const translations = {
     share: '分享',
     whatsapp: 'WhatsApp',
     sms: '短訊',
-    copyLink: '複製內容'
+    copyLink: '複製內容',
+    offlineMode: '🔌 離線模式 - 正在顯示快取內容'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -52,7 +53,8 @@ export const translations = {
     share: 'Share',
     whatsapp: 'WhatsApp',
     sms: 'SMS',
-    copyLink: 'Copy Info'
+    copyLink: 'Copy Info',
+    offlineMode: '🔌 Offline Mode - Viewing Cached Content'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -75,7 +77,8 @@ export const translations = {
     share: 'Ibahagi',
     whatsapp: 'WhatsApp',
     sms: 'SMS',
-    copyLink: 'Kopyahin'
+    copyLink: 'Kopyahin',
+    offlineMode: '🔌 Offline Mode - Nakikita ang Cached Content'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -98,7 +101,8 @@ export const translations = {
     share: 'Bagikan',
     whatsapp: 'WhatsApp',
     sms: 'SMS',
-    copyLink: 'Salin Info'
+    copyLink: 'Salin Info',
+    offlineMode: '🔌 Mode Offline - Melihat Konten Cache'
   }
 };
 

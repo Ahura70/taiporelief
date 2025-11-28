@@ -455,7 +455,7 @@ export const SearchBox = ({
             aria-live="polite"
             aria-atomic="true"
           >
-            <Mic className="w-3.5 h-3.5 flex-shrink-0" />
+            <Mic className="w-3.5 h-3.5 flex-shrink-0 animate-pulse-subtle text-primary" />
             <span className="font-medium">{hints[currentHint]}</span>
           </div>
         )}

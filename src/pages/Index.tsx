@@ -4,6 +4,7 @@ import { EmergencyBanner } from '@/components/EmergencyBanner';
 import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { ResourceDetail } from '@/components/ResourceDetail';
+import { ResourceMap } from '@/components/ResourceMap';
 import { NewsBanner } from '@/components/NewsBanner';
 import { FeedbackForm } from '@/components/FeedbackForm';
 import { Language, translations, resources, Resource } from '@/lib/translations';
@@ -48,6 +49,14 @@ const Index = () => {
         />
 
         <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
+
+        <div className="mt-8">
+          <ResourceMap 
+            resources={currentResources} 
+            onResourceClick={setSelectedResource}
+            mapTitle={t.mapTitle}
+          />
+        </div>
       </main>
 
       <NewsBanner title={t.newsTitle} />

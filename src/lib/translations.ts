@@ -25,6 +25,7 @@ export const translations = {
     lastUpdate: '最後更新：2025年11月29日',
     listening: '聆聽中...',
     newsTitle: '📰 最新消息',
+    mapTitle: '資源地圖',
     wcagCompliance: '本網站符合 WCAG 2.2 無障礙標準',
     share: '分享',
     shareWhatsApp: 'WhatsApp',
@@ -69,6 +70,7 @@ export const translations = {
     lastUpdate: 'Last Updated: Nov 29, 2025',
     listening: 'Listening...',
     newsTitle: '📰 Latest News',
+    mapTitle: 'Resource Map',
     wcagCompliance: 'WCAG 2.2 Compliant',
     share: 'Share',
     shareWhatsApp: 'WhatsApp',
@@ -113,6 +115,7 @@ export const translations = {
     lastUpdate: 'Huling Update: Nov 29, 2025',
     listening: 'Nakikinig...',
     newsTitle: '📰 Latest News',
+    mapTitle: 'Mapa ng Resources',
     wcagCompliance: 'WCAG 2.2 Compliant',
     share: 'Ibahagi',
     shareWhatsApp: 'WhatsApp',
@@ -157,6 +160,7 @@ export const translations = {
     lastUpdate: 'Terakhir Diperbarui: 29 Nov 2025',
     listening: 'Mendengarkan...',
     newsTitle: '📰 Latest News',
+    mapTitle: 'Peta Sumber Daya',
     wcagCompliance: 'WCAG 2.2 Compliant',
     share: 'Bagikan',
     shareWhatsApp: 'WhatsApp',
@@ -194,6 +198,7 @@ export interface Resource {
   keywords: string[];
   contacts: Array<{ l: string; v: string }>;
   info?: string[];
+  coordinates?: [number, number]; // [latitude, longitude]
 }
 
 export const resources: Record<Language, Resource[]> = {
@@ -206,7 +211,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: '港幣', v: '中國銀行 012-875-2-190159-7' },
         { l: '其他貨幣', v: '中國銀行 012-875-2-190160-7' }
-      ]
+      ],
+      coordinates: [22.4461, 114.1639] // Wang Fuk Court area
     },
     {
       icon: '🎓',
@@ -216,7 +222,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: '地點', v: '教大 E 座室內運動場' },
         { l: '開放時間', v: '08:30 - 18:30' }
-      ]
+      ],
+      coordinates: [22.4366, 114.1781] // EdUHK
     },
     {
       icon: '❤️',
@@ -230,7 +237,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: '電話查詢', v: '3488 4933' },
         { l: '電郵', v: 'relief@redcross.org.hk' }
       ],
-      info: ['提供即時慰問金及每月生活津貼', '透過 Shall We Talk 提供心理支援服務']
+      info: ['提供即時慰問金及每月生活津貼', '透過 Shall We Talk 提供心理支援服務'],
+      coordinates: [22.3193, 114.1694] // HK Red Cross HQ (West Kowloon)
     },
     {
       icon: '🙏',
@@ -254,7 +262,8 @@ export const resources: Record<Language, Resource[]> = {
         '網上捐款：https://www.caritas.org.hk/en/e_donation',
         '支票抬頭：Caritas - Hong Kong',
         '直接存款：ICBC 072-721-010001-606 或 HSBC 004-502-476914-001'
-      ]
+      ],
+      coordinates: [22.4472, 114.1680] // Caritas Fu Heng Home for the Aged (Tai Po)
     },
     {
       icon: '🧠',
@@ -274,7 +283,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: '緊急熱線', v: '6503 9730' }
       ],
-      info: ['即時提供住宿', '設於樂禾東寓及啟德東寓']
+      info: ['即時提供住宿', '設於樂禾東寓及啟德東寓'],
+      coordinates: [22.4520, 114.1670] // Approximate Tai Po location
     },
     {
       icon: '📱',
@@ -287,7 +297,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: '網上行/HKT', v: '1000' },
         { l: 'Now TV', v: '1833 888' }
       ],
-      info: ['csl 大埔門市 24 小時開放至 11 月 30 日', '提供免費數據卡、充電、路由器借用']
+      info: ['csl 大埔門市 24 小時開放至 11 月 30 日', '提供免費數據卡、充電、路由器借用'],
+      coordinates: [22.4498, 114.1655] // CSL Tai Po Shop
     },
     {
       icon: '🏠',
@@ -336,7 +347,8 @@ export const resources: Record<Language, Resource[]> = {
       title: 'Govt Relief Fund',
       desc: 'Direct donation to victims',
       keywords: ['donate', 'money', 'fund'],
-      contacts: [{ l: 'HKD Account', v: 'Bank of China 012-875-2-190159-7' }]
+      contacts: [{ l: 'HKD Account', v: 'Bank of China 012-875-2-190159-7' }],
+      coordinates: [22.4461, 114.1639]
     },
     {
       icon: '🎓',
@@ -346,7 +358,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'Location', v: 'EdUHK Block E Sports Hall' },
         { l: 'Hours', v: '08:30 - 18:30' }
-      ]
+      ],
+      coordinates: [22.4366, 114.1781]
     },
     {
       icon: '❤️',
@@ -360,7 +373,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Phone', v: '3488 4933' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
       ],
-      info: ['Immediate relief funds + monthly living allowance', 'Shall We Talk psychological support service']
+      info: ['Immediate relief funds + monthly living allowance', 'Shall We Talk psychological support service'],
+      coordinates: [22.3193, 114.1694]
     },
     {
       icon: '🙏',
@@ -384,7 +398,8 @@ export const resources: Record<Language, Resource[]> = {
         'Online Donation: https://www.caritas.org.hk/en/e_donation',
         'Cheque to: Caritas - Hong Kong',
         'Bank: ICBC 072-721-010001-606 or HSBC 004-502-476914-001'
-      ]
+      ],
+      coordinates: [22.4472, 114.1680]
     },
     {
       icon: '🧠',
@@ -404,7 +419,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'Emergency Hotline', v: '6503 9730' }
       ],
-      info: ['Immediate accommodation available', 'Joyful & Kai Tak Dwellings projects']
+      info: ['Immediate accommodation available', 'Joyful & Kai Tak Dwellings projects'],
+      coordinates: [22.4520, 114.1670]
     },
     {
       icon: '📱',
@@ -417,7 +433,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Netvigator/HKT', v: '1000' },
         { l: 'Now TV', v: '1833 888' }
       ],
-      info: ['csl Tai Po Store 24/7 until Nov 30', 'Free SIM cards, charging, router loan']
+      info: ['csl Tai Po Store 24/7 until Nov 30', 'Free SIM cards, charging, router loan'],
+      coordinates: [22.4498, 114.1655]
     },
     {
       icon: '🏠',
@@ -466,7 +483,8 @@ export const resources: Record<Language, Resource[]> = {
       title: 'Pondo ng Gobyerno',
       desc: 'Direktang donasyon sa mga biktima',
       keywords: ['donate', 'pera', 'fund'],
-      contacts: [{ l: 'HKD Account', v: 'Bank of China 012-875-2-190159-7' }]
+      contacts: [{ l: 'HKD Account', v: 'Bank of China 012-875-2-190159-7' }],
+      coordinates: [22.4461, 114.1639]
     },
     {
       icon: '🎓',
@@ -476,7 +494,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'Lokasyon', v: 'EdUHK Block E Sports Hall' },
         { l: 'Oras', v: '08:30 - 18:30' }
-      ]
+      ],
+      coordinates: [22.4366, 114.1781]
     },
     {
       icon: '❤️',
@@ -490,7 +509,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Telepono', v: '3488 4933' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
       ],
-      info: ['Agarang tulong pinansyal + buwanang allowance', 'Shall We Talk serbisyong sikolohikal']
+      info: ['Agarang tulong pinansyal + buwanang allowance', 'Shall We Talk serbisyong sikolohikal'],
+      coordinates: [22.3193, 114.1694]
     },
     {
       icon: '🙏',
@@ -514,7 +534,8 @@ export const resources: Record<Language, Resource[]> = {
         'Online na Donasyon: https://www.caritas.org.hk/en/e_donation',
         'Tseke: Caritas - Hong Kong',
         'Bangko: ICBC 072-721-010001-606 o HSBC 004-502-476914-001'
-      ]
+      ],
+      coordinates: [22.4472, 114.1680]
     },
     {
       icon: '🧠',
@@ -534,7 +555,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'Emergency Hotline', v: '6503 9730' }
       ],
-      info: ['Kaagad na accommodations', 'Joyful & Kai Tak Dwellings']
+      info: ['Kaagad na accommodations', 'Joyful & Kai Tak Dwellings'],
+      coordinates: [22.4520, 114.1670]
     },
     {
       icon: '📱',
@@ -547,7 +569,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Netvigator/HKT', v: '1000' },
         { l: 'Now TV', v: '1833 888' }
       ],
-      info: ['csl Tai Po Store 24/7 hanggang Nov 30', 'Libreng SIM, charging, router']
+      info: ['csl Tai Po Store 24/7 hanggang Nov 30', 'Libreng SIM, charging, router'],
+      coordinates: [22.4498, 114.1655]
     },
     {
       icon: '🏠',
@@ -596,7 +619,8 @@ export const resources: Record<Language, Resource[]> = {
       title: 'Dana Bantuan Pemerintah',
       desc: 'Donasi langsung untuk korban',
       keywords: ['donasi', 'uang', 'dana'],
-      contacts: [{ l: 'Rekening HKD', v: 'Bank of China 012-875-2-190159-7' }]
+      contacts: [{ l: 'Rekening HKD', v: 'Bank of China 012-875-2-190159-7' }],
+      coordinates: [22.4461, 114.1639]
     },
     {
       icon: '🎓',
@@ -606,7 +630,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'Lokasi', v: 'EdUHK Block E Sports Hall' },
         { l: 'Jam', v: '08:30 - 18:30' }
-      ]
+      ],
+      coordinates: [22.4366, 114.1781]
     },
     {
       icon: '❤️',
@@ -620,7 +645,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Telepon', v: '3488 4933' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
       ],
-      info: ['Dana bantuan segera + tunjangan bulanan', 'Layanan dukungan psikologis Shall We Talk']
+      info: ['Dana bantuan segera + tunjangan bulanan', 'Layanan dukungan psikologis Shall We Talk'],
+      coordinates: [22.3193, 114.1694]
     },
     {
       icon: '🙏',
@@ -644,7 +670,8 @@ export const resources: Record<Language, Resource[]> = {
         'Donasi Online: https://www.caritas.org.hk/en/e_donation',
         'Cek: Caritas - Hong Kong',
         'Bank: ICBC 072-721-010001-606 atau HSBC 004-502-476914-001'
-      ]
+      ],
+      coordinates: [22.4472, 114.1680]
     },
     {
       icon: '🧠',
@@ -664,7 +691,8 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'Hotline Darurat', v: '6503 9730' }
       ],
-      info: ['Akomodasi tersedia segera', 'Proyek Joyful & Kai Tak Dwellings']
+      info: ['Akomodasi tersedia segera', 'Proyek Joyful & Kai Tak Dwellings'],
+      coordinates: [22.4520, 114.1670]
     },
     {
       icon: '📱',
@@ -677,7 +705,8 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Netvigator/HKT', v: '1000' },
         { l: 'Now TV', v: '1833 888' }
       ],
-      info: ['Toko csl Tai Po 24/7 hingga 30 Nov', 'SIM gratis, charging, pinjaman router']
+      info: ['Toko csl Tai Po 24/7 hingga 30 Nov', 'SIM gratis, charging, pinjaman router'],
+      coordinates: [22.4498, 114.1655]
     },
     {
       icon: '🏠',

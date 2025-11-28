@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Resource } from '@/lib/translations';
+import { openDirections } from '@/lib/mapsHelper';
 
 // Fix default marker icon issue with Leaflet + Vite
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -39,18 +40,30 @@ export const ResourceMap = ({ resources, onResourceClick, mapTitle }: ResourceMa
       if (resource.coordinates) {
         const marker = L.marker(resource.coordinates).addTo(map);
         
-        // Create popup content
-        const popupContent = `
-          <div class="p-2">
-            <h3 class="font-semibold text-sm mb-1">${resource.icon} ${resource.title}</h3>
-            <p class="text-xs text-muted-foreground mb-2">${resource.desc}</p>
-            ${resource.contacts.slice(0, 2).map(c => `
-              <div class="text-xs">
-                <strong>${c.l}:</strong> ${c.v}
-              </div>
-            `).join('')}
-          </div>
+        // Create popup content with directions button
+        const popupContent = document.createElement('div');
+        popupContent.className = 'p-2';
+        popupContent.innerHTML = `
+          <h3 class="font-semibold text-sm mb-1">${resource.icon} ${resource.title}</h3>
+          <p class="text-xs text-muted-foreground mb-2">${resource.desc}</p>
+          ${resource.contacts.slice(0, 2).map(c => `
+            <div class="text-xs">
+              <strong>${c.l}:</strong> ${c.v}
+            </div>
+          `).join('')}
+          <button class="mt-2 w-full text-xs bg-primary text-primary-foreground px-3 py-1.5 rounded hover:bg-primary/90">
+            📍 Get Directions
+          </button>
         `;
+        
+        // Add click handler to directions button
+        const directionsBtn = popupContent.querySelector('button');
+        if (directionsBtn) {
+          directionsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openDirections(resource);
+          });
+        }
         
         marker.bindPopup(popupContent);
         

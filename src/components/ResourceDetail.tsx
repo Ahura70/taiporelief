@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Resource } from '@/lib/translations';
-import { X, Share2, MessageCircle, Mail, Link2 } from 'lucide-react';
+import { X, Share2, MessageCircle, Mail, Link2, Navigation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import { openDirections } from '@/lib/mapsHelper';
 
 interface ResourceDetailProps {
   resource: Resource | null;
@@ -15,6 +16,7 @@ interface ResourceDetailProps {
   shareSMSText: string;
   shareLinkText: string;
   linkCopiedText: string;
+  getDirectionsText: string;
 }
 
 export const ResourceDetail = ({
@@ -27,7 +29,8 @@ export const ResourceDetail = ({
   shareWhatsAppText,
   shareSMSText,
   shareLinkText,
-  linkCopiedText
+  linkCopiedText,
+  getDirectionsText
 }: ResourceDetailProps) => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const { toast } = useToast();
@@ -165,6 +168,19 @@ export const ResourceDetail = ({
               </div>
             );
           })}
+
+          {resource.coordinates && (
+            <div className="mb-4">
+              <Button
+                onClick={() => openDirections(resource)}
+                className="w-full gap-2 bg-primary hover:bg-primary/90"
+                size="lg"
+              >
+                <Navigation className="w-5 h-5" />
+                {getDirectionsText}
+              </Button>
+            </div>
+          )}
 
           <div className="border-t border-border pt-4 mt-4">
             <div className="text-sm font-semibold text-muted-foreground mb-3 flex items-center gap-2">

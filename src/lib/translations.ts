@@ -126,7 +126,7 @@ export const translations = {
     legendOpen: 'Open Now',
     legendClosed: 'Closed',
     legendNoHours: 'Always Available',
-    memorialMessage: 'Our deepest condolences to all those affected. May the departed rest in peace and the survivors find strength.'
+    memorialMessage: 'Our deepest condolences to those affected. May the departed rest in peace and the survivors find strength.'
   },
   tl: {
     title: 'Tulong sa Sunog',

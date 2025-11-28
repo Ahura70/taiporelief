@@ -105,7 +105,7 @@ export const SearchBox = ({
           <div className="text-xs text-primary mt-2 min-h-[18px]">{voiceStatus}</div>
         )}
         {suggestions.length > 0 && (
-          <div className="absolute z-50 w-full mt-2 bg-card border border-border rounded-xl shadow-xl overflow-hidden">
+          <div className="mt-2 bg-card border border-border rounded-xl shadow-md overflow-hidden">
             {suggestions.map((suggestion, idx) => (
               <button
                 key={idx}
@@ -114,13 +114,10 @@ export const SearchBox = ({
                   setSearchValue('');
                   setSuggestions([]);
                 }}
-                className="w-full px-4 py-3 text-left flex items-start gap-3 hover:bg-secondary transition-colors border-b border-border last:border-0"
+                className="w-full px-4 py-3 text-left flex items-center gap-3 hover:bg-secondary transition-colors border-b border-border last:border-0"
               >
-                <span className="text-2xl flex-shrink-0">{suggestion.icon}</span>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-semibold text-foreground">{suggestion.title}</div>
-                  <div className="text-xs text-muted-foreground mt-0.5 line-clamp-1">{suggestion.desc}</div>
-                </div>
+                <span className="text-2xl">{suggestion.icon}</span>
+                <span className="text-sm font-medium">{suggestion.title}</span>
               </button>
             ))}
           </div>

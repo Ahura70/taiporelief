@@ -62,10 +62,6 @@ const Index = () => {
           copyText={t.copy}
           copiedText={t.copied}
           closeText={t.close}
-          shareText={t.share}
-          whatsappText={t.whatsapp}
-          smsText={t.sms}
-          copyLinkText={t.copyLink}
         />
       )}
     </div>

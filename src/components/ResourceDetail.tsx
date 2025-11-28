@@ -128,10 +128,7 @@ export const ResourceDetail = ({
                 fallback={resource.icon}
               />
             ) : (
-              <div 
-                className={`text-4xl flex-shrink-0 ${resource.icon === '✚' ? 'text-red-600' : ''}`} 
-                aria-hidden="true"
-              >
+              <div className="text-4xl flex-shrink-0" aria-hidden="true">
                 {resource.icon}
               </div>
             )}

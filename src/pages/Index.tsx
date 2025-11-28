@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { MemorialBanner } from '@/components/MemorialBanner';
 import { EmergencyBanner } from '@/components/EmergencyBanner';
 import { EmergencyDialButton } from '@/components/EmergencyDialButton';
+import { AccessibilityMenu } from '@/components/AccessibilityMenu';
 import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { ResourceDetail } from '@/components/ResourceDetail';
@@ -64,6 +65,13 @@ const Index = () => {
       <div className="fixed top-20 right-5 z-40">
         <DarkModeToggle />
       </div>
+      <AccessibilityMenu
+        title={t.accessibilityTitle}
+        fontSizeLabel={t.fontSizeLabel}
+        highContrastLabel={t.highContrastLabel}
+        reduceMotionLabel={t.reduceMotionLabel}
+        lineSpacingLabel={t.lineSpacingLabel}
+      />
       <MemorialBanner message={t.memorialMessage} />
       <EmergencyBanner text={t.emergency} />
 

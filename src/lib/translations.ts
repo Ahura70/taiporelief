@@ -70,7 +70,12 @@ export const translations = {
     emergencyDialTitle: '緊急求助熱線',
     emergencyDialDescription: '輕觸下方號碼即可撥打',
     casualtyEnquiry: '傷亡查詢',
-    mentalHealthSupport: '心理支援熱線'
+    mentalHealthSupport: '心理支援熱線',
+    accessibilityTitle: '無障礙設定',
+    fontSizeLabel: '字體大小',
+    highContrastLabel: '高對比度',
+    reduceMotionLabel: '減少動畫',
+    lineSpacingLabel: '行距'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -134,7 +139,12 @@ export const translations = {
     emergencyDialTitle: 'Emergency Hotlines',
     emergencyDialDescription: 'Tap numbers below to call instantly',
     casualtyEnquiry: 'Casualty Enquiry',
-    mentalHealthSupport: 'Mental Health Hotline'
+    mentalHealthSupport: 'Mental Health Hotline',
+    accessibilityTitle: 'Accessibility',
+    fontSizeLabel: 'Text Size',
+    highContrastLabel: 'High Contrast',
+    reduceMotionLabel: 'Reduce Motion',
+    lineSpacingLabel: 'Line Spacing'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -198,7 +208,12 @@ export const translations = {
     emergencyDialTitle: 'Emergency Hotline',
     emergencyDialDescription: 'I-tap ang numero para tumawag',
     casualtyEnquiry: 'Casualty Enquiry',
-    mentalHealthSupport: 'Mental Health Hotline'
+    mentalHealthSupport: 'Mental Health Hotline',
+    accessibilityTitle: 'Accessibility',
+    fontSizeLabel: 'Laki ng Text',
+    highContrastLabel: 'Mataas na Contrast',
+    reduceMotionLabel: 'Bawasan ang Galaw',
+    lineSpacingLabel: 'Espasyo ng Linya'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -262,7 +277,12 @@ export const translations = {
     emergencyDialTitle: 'Hotline Darurat',
     emergencyDialDescription: 'Ketuk nomor untuk menelepon',
     casualtyEnquiry: 'Pertanyaan Korban',
-    mentalHealthSupport: 'Hotline Kesehatan Mental'
+    mentalHealthSupport: 'Hotline Kesehatan Mental',
+    accessibilityTitle: 'Aksesibilitas',
+    fontSizeLabel: 'Ukuran Teks',
+    highContrastLabel: 'Kontras Tinggi',
+    reduceMotionLabel: 'Kurangi Gerakan',
+    lineSpacingLabel: 'Spasi Baris'
   }
 };
 

@@ -10,7 +10,8 @@ import { MapLegend } from './MapLegend';
 
 // Create custom marker icons with status badges
 const createCustomIcon = (isOpen: boolean, hasHours: boolean) => {
-  const color = !hasHours ? '#3b82f6' : isOpen ? '#22c55e' : '#ef4444'; // blue for no hours, green for open, red for closed
+  // Using grayscale colors: lighter gray for no hours, dark gray for open, medium gray for closed
+  const color = !hasHours ? 'hsl(0, 0%, 60%)' : isOpen ? 'hsl(0, 0%, 25%)' : 'hsl(0, 0%, 45%)';
   const statusText = !hasHours ? '' : isOpen ? 'OPEN' : 'CLOSED';
   
   const html = `

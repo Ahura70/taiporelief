@@ -51,6 +51,16 @@ export const translations = {
       { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: '最新報導' },
       { name: '政府資訊', url: 'https://www.info.gov.hk/', desc: '官方更新' },
       { name: '醫管局', url: 'https://www.ha.org.hk/', desc: '醫療更新' }
+    ],
+    donationTitle: '💰 救災基金進度',
+    donationRaised: '已籌得',
+    donationGoal: '達成目標',
+    donationCurrency: 'HK$',
+    donationMilestones: [
+      { label: '初步目標' },
+      { label: '半程達成' },
+      { label: '接近目標' },
+      { label: '目標達成' }
     ]
   },
   en: {
@@ -96,6 +106,16 @@ export const translations = {
       { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: 'Latest News Coverage' },
       { name: 'Govt Info', url: 'https://www.info.gov.hk/', desc: 'Official Updates' },
       { name: 'Hospital Authority', url: 'https://www.ha.org.hk/', desc: 'Medical Updates' }
+    ],
+    donationTitle: '💰 Relief Fund Progress',
+    donationRaised: 'Raised',
+    donationGoal: 'of Goal',
+    donationCurrency: 'HK$',
+    donationMilestones: [
+      { label: 'Initial Target' },
+      { label: 'Halfway There' },
+      { label: 'Almost There' },
+      { label: 'Goal Reached' }
     ]
   },
   tl: {
@@ -141,6 +161,16 @@ export const translations = {
       { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: 'Pinakabagong Balita' },
       { name: 'Govt Info', url: 'https://www.info.gov.hk/', desc: 'Opisyal na Update' },
       { name: 'Hospital Authority', url: 'https://www.ha.org.hk/', desc: 'Medikal na Update' }
+    ],
+    donationTitle: '💰 Progress ng Relief Fund',
+    donationRaised: 'Nakolekta',
+    donationGoal: 'ng Target',
+    donationCurrency: 'HK$',
+    donationMilestones: [
+      { label: 'Unang Target' },
+      { label: 'Kalahati Na' },
+      { label: 'Malapit Na' },
+      { label: 'Target Naabot' }
     ]
   },
   id: {
@@ -186,6 +216,16 @@ export const translations = {
       { name: 'SCMP', url: 'https://www.scmp.com/topics/hong-kongs-tai-po-fire-tragedy?module=breadcrumb&pgtype=article', desc: 'Berita Terbaru' },
       { name: 'Info Pemerintah', url: 'https://www.info.gov.hk/', desc: 'Pembaruan Resmi' },
       { name: 'Hospital Authority', url: 'https://www.ha.org.hk/', desc: 'Pembaruan Medis' }
+    ],
+    donationTitle: '💰 Progress Dana Bantuan',
+    donationRaised: 'Terkumpul',
+    donationGoal: 'dari Target',
+    donationCurrency: 'HK$',
+    donationMilestones: [
+      { label: 'Target Awal' },
+      { label: 'Setengah Jalan' },
+      { label: 'Hampir Sampai' },
+      { label: 'Target Tercapai' }
     ]
   }
 };

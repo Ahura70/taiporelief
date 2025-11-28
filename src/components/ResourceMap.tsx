@@ -191,7 +191,7 @@ export const ResourceMap = ({
   }, [showOpenOnly, resources]);
 
   return (
-    <div className="w-full bg-card rounded-lg shadow-lg overflow-hidden border border-border">
+    <div className="w-full bg-card rounded-lg shadow-lg overflow-hidden border border-border relative z-0">
       <div className="p-4 bg-muted/50 border-b border-border flex items-center justify-between">
         <h2 className="text-xl font-bold text-foreground" id="map-title">🗺️ {mapTitle}</h2>
         <Button
@@ -206,16 +206,16 @@ export const ResourceMap = ({
           {showOpenOnlyText}
         </Button>
       </div>
-      <div className="relative">
+      <div className="relative z-0">
         <div 
           ref={mapContainerRef} 
-          className="w-full h-[500px]"
+          className="w-full h-[500px] relative z-0"
           style={{ background: 'hsl(var(--muted))' }}
           role="application"
           aria-label="Interactive map of emergency resources"
           aria-describedby="map-title"
         />
-        <div className="absolute bottom-4 right-4 z-[1000]">
+        <div className="absolute bottom-4 right-4 z-10 pointer-events-none">
           <MapLegend 
             openText={legendOpen}
             closedText={legendClosed}

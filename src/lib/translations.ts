@@ -1,6 +1,3 @@
-import hkRedCrossLogo from '@/assets/hk-red-cross.jpg';
-import caritasLogo from '@/assets/caritas-logo.png';
-
 export type Language = 'zh' | 'en' | 'tl' | 'id';
 
 export const languages = {
@@ -292,7 +289,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
-      iconImage: hkRedCrossLogo,
       title: '紅十字會',
       desc: '緊急現金援助及心理支援',
       keywords: ['紅十字會', '急救', '現金', '心理'],
@@ -307,7 +303,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: caritasLogo,
       title: '明愛',
       desc: '全面災民支援服務',
       keywords: ['明愛', 'caritas', '支援'],
@@ -431,7 +426,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
-      iconImage: hkRedCrossLogo,
       title: 'Red Cross',
       desc: 'Emergency Cash Aid & Psychological Support',
       keywords: ['red cross', 'help', 'cash', 'mental health'],
@@ -446,7 +440,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: caritasLogo,
       title: 'Caritas Hong Kong',
       desc: 'Comprehensive Victim Support',
       keywords: ['caritas', 'support', 'help'],
@@ -570,7 +563,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
-      iconImage: hkRedCrossLogo,
       title: 'Pula na Krus',
       desc: 'Tulong sa Cash at Suportang Sikolohikal',
       keywords: ['red cross', 'tulong', 'pera', 'mental health'],
@@ -585,7 +577,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: caritasLogo,
       title: 'Caritas Hong Kong',
       desc: 'Kumpletong Suporta sa Biktima',
       keywords: ['caritas', 'suporta', 'tulong'],
@@ -709,7 +700,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '❤️',
-      iconImage: hkRedCrossLogo,
       title: 'Palang Merah',
       desc: 'Bantuan Tunai Darurat & Dukungan Psikologis',
       keywords: ['red cross', 'bantuan', 'uang', 'mental'],
@@ -724,7 +714,6 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🙏',
-      iconImage: caritasLogo,
       title: 'Caritas Hong Kong',
       desc: 'Dukungan Korban Komprehensif',
       keywords: ['caritas', 'dukungan', 'bantuan'],
@@ -735,14 +724,14 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Pusat Dukungan Pengasuh', v: '3892 0100' },
         { l: 'Fu Heng Home - Tai Po', v: '2660 6125' },
         { l: 'Ning An Scheme', v: '5239 1035' },
-        { l: 'Bengkel Komputer', v: '2716 6875' },
-        { l: 'WhatsApp Bengkel Komputer', v: '5520 9507' },
+        { l: 'Computer Workshop', v: '2716 6875' },
+        { l: 'WhatsApp Computer Workshop', v: '5520 9507' },
         { l: 'Pertanyaan Umum', v: '2843 4638' }
       ],
       info: [
-        'Layanan: Dukungan emosional, perawatan lansia, bantuan pembantu, bantuan pemakaman, komputer, setup rumah',
+        'Layanan: Dukungan emosional, perawatan lansia, bantuan pembantu, bantuan pemakaman, komputer, pengaturan rumah',
         'Donasi Online: https://www.caritas.org.hk/en/e_donation',
-        'Cek: Caritas - Hong Kong',
+        'Cek ke: Caritas - Hong Kong',
         'Bank: ICBC 072-721-010001-606 atau HSBC 004-502-476914-001'
       ],
       coordinates: [22.4472, 114.1680]

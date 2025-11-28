@@ -148,6 +148,18 @@ All colors MUST be HSL.
     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
 
+  /* Grayscale all icons */
+  svg {
+    filter: grayscale(100%);
+  }
+
+  img[class*="icon"],
+  img[alt*="logo"],
+  img[alt*="Logo"],
+  .icon-image {
+    filter: grayscale(100%);
+  }
+
   /* Screen reader only content */
   .sr-only {
     position: absolute;

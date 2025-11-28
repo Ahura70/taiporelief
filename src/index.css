@@ -73,6 +73,9 @@ All colors MUST be HSL.
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 0 0% 80%;
+
+    --success: 0 0% 70%;
+    --warning: 0 0% 80%;
   }
 }
 

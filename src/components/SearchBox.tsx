@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Resource, Language, languages } from '@/lib/translations';
-import { Mic, AlertCircle } from 'lucide-react';
+import { Mic, AlertCircle, HelpCircle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 interface SearchBoxProps {
   label: string;
@@ -28,6 +29,55 @@ export const SearchBox = ({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [voiceMatchedIndex, setVoiceMatchedIndex] = useState<number | null>(null);
   const [isVoiceMatch, setIsVoiceMatch] = useState(false);
+  const [showCommandsHelp, setShowCommandsHelp] = useState(false);
+
+  // Voice commands for tooltip
+  const getVoiceCommandsHelp = () => {
+    switch (currentLang) {
+      case 'zh':
+        return {
+          title: '語音指令快捷鍵',
+          commands: [
+            { category: '捐款', examples: ['捐款', '紅十字', '明愛'] },
+            { category: '義工', examples: ['義工', '志願者'] },
+            { category: '支援', examples: ['幫助', '支援', '住宿', '食物', '輔導'] },
+            { category: '緊急', examples: ['緊急', '熱線'] }
+          ]
+        };
+      case 'tl':
+        return {
+          title: 'Voice Command Shortcuts',
+          commands: [
+            { category: 'Donasyon', examples: ['donate', 'magbigay', 'pulang krus'] },
+            { category: 'Boluntaryo', examples: ['volunteer', 'boluntaryo'] },
+            { category: 'Tulong', examples: ['help', 'tulong', 'tirahan', 'pagkain'] },
+            { category: 'Emerhensya', examples: ['emergency', 'emerhensya', 'telepono'] }
+          ]
+        };
+      case 'id':
+        return {
+          title: 'Pintasan Perintah Suara',
+          commands: [
+            { category: 'Donasi', examples: ['donate', 'donasi', 'palang merah'] },
+            { category: 'Sukarelawan', examples: ['volunteer', 'sukarelawan'] },
+            { category: 'Bantuan', examples: ['help', 'bantuan', 'tempat tinggal', 'makanan'] },
+            { category: 'Darurat', examples: ['emergency', 'darurat', 'saluran'] }
+          ]
+        };
+      default:
+        return {
+          title: 'Voice Command Shortcuts',
+          commands: [
+            { category: 'Donations', examples: ['donate', 'red cross', 'caritas'] },
+            { category: 'Volunteer', examples: ['volunteer', 'help out'] },
+            { category: 'Support', examples: ['help', 'support', 'shelter', 'food', 'counseling'] },
+            { category: 'Emergency', examples: ['emergency', 'urgent', 'hotline'] }
+          ]
+        };
+    }
+  };
+
+  const commandsHelp = getVoiceCommandsHelp();
 
   useEffect(() => {
     if (!searchValue) {
@@ -246,6 +296,64 @@ export const SearchBox = ({
             className="flex-1 px-4 py-3 bg-secondary border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary focus:shadow-md transition-all duration-200 hover:bg-muted hover:border-muted-foreground/20"
             aria-label={label}
           />
+          
+          <Popover open={showCommandsHelp} onOpenChange={setShowCommandsHelp}>
+            <PopoverTrigger asChild>
+              <button
+                className="p-3 rounded-xl transition-all duration-200 bg-secondary text-muted-foreground hover:bg-accent hover:text-foreground hover:shadow-sm hover:scale-105 focus-visible:ring-2 focus-visible:ring-ring active:scale-95"
+                aria-label={currentLang === 'zh' ? '查看語音指令' : currentLang === 'tl' ? 'Tingnan ang voice commands' : currentLang === 'id' ? 'Lihat perintah suara' : 'View voice commands'}
+                title={currentLang === 'zh' ? '可用的語音指令' : currentLang === 'tl' ? 'Available voice commands' : currentLang === 'id' ? 'Perintah suara yang tersedia' : 'Available voice commands'}
+              >
+                <HelpCircle className="w-5 h-5" />
+              </button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80 p-4 bg-card border-2 border-border shadow-xl" align="end">
+              <div className="space-y-3">
+                <h3 className="font-bold text-base text-foreground flex items-center gap-2">
+                  <Mic className="w-4 h-4" />
+                  {commandsHelp.title}
+                </h3>
+                <div className="text-xs text-muted-foreground">
+                  {currentLang === 'zh' 
+                    ? '說出以下任何關鍵詞以快速打開資源：'
+                    : currentLang === 'tl'
+                    ? 'Sabihin ang alinman sa mga keyword upang mabilis na buksan:'
+                    : currentLang === 'id'
+                    ? 'Ucapkan salah satu kata kunci untuk membuka cepat:'
+                    : 'Say any of these keywords to quickly open resources:'
+                  }
+                </div>
+                <div className="space-y-3">
+                  {commandsHelp.commands.map((cmd, idx) => (
+                    <div key={idx} className="space-y-1">
+                      <div className="font-semibold text-sm text-primary">{cmd.category}</div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {cmd.examples.map((example, exIdx) => (
+                          <span
+                            key={exIdx}
+                            className="inline-block px-2 py-1 bg-secondary text-foreground text-xs rounded-md font-mono"
+                          >
+                            "{example}"
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="pt-2 border-t border-border text-xs text-muted-foreground">
+                  {currentLang === 'zh' 
+                    ? '💡 提示：也可以輸入資源名稱進行搜尋'
+                    : currentLang === 'tl'
+                    ? '💡 Tip: Maaari ka ring mag-type ng resource name para maghanap'
+                    : currentLang === 'id'
+                    ? '💡 Tips: Anda juga bisa mengetik nama resource untuk mencari'
+                    : '💡 Tip: You can also type resource names to search'
+                  }
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
+          
           <button
             onClick={handleVoiceSearch}
             className={`p-3 rounded-xl transition-all duration-200 ${

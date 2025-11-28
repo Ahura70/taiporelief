@@ -18,13 +18,13 @@ export const QuickActions = ({ resources, onSelectResource }: QuickActionsProps)
           onClick={() => onSelectResource(resource)}
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
-          className={`flex flex-col items-center gap-2 p-4 bg-card rounded-xl shadow transition-all ${
+          className={`flex flex-col items-center gap-2 p-4 bg-card rounded-xl shadow transition-all duration-300 ${
             hoveredIndex === idx 
-              ? 'shadow-md scale-105' 
+              ? 'shadow-lg scale-105 bg-accent ring-2 ring-ring/20' 
               : hoveredIndex !== null 
-              ? 'opacity-40 scale-95' 
-              : 'hover:shadow-md hover:scale-105'
-          } active:scale-95`}
+              ? 'opacity-30 scale-95' 
+              : 'hover:shadow-lg hover:scale-105 hover:bg-accent'
+          } focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-95`}
           aria-label={resource.title}
         >
           {resource.iconImage ? (

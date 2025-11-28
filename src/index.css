@@ -86,6 +86,27 @@ All colors MUST be HSL.
     line-height: var(--line-height-base, 1.5);
   }
 
+  /* Enhanced interactive element states */
+  .interactive-card {
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-lg hover:scale-[1.02];
+    @apply focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2;
+    @apply active:scale-[0.98];
+  }
+
+  .interactive-button {
+    @apply transition-all duration-200 ease-out;
+    @apply hover:brightness-110 hover:shadow-md;
+    @apply focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    @apply active:scale-95;
+  }
+
+  .interactive-link {
+    @apply transition-all duration-200 ease-out;
+    @apply hover:text-primary hover:translate-x-0.5;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded;
+  }
+
   /* High contrast mode */
   .high-contrast {
     --background: 0 0% 100%;

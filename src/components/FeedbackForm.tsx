@@ -120,7 +120,7 @@ export const FeedbackForm = ({ onClose, translations: t }: FeedbackFormProps) =>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-secondary rounded-full transition-colors"
+            className="p-2 hover:bg-accent hover:shadow-sm rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring active:scale-90"
           >
             <X className="w-5 h-5" />
           </button>

@@ -139,7 +139,7 @@ export const ResourceDetail = ({
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-secondary rounded-full transition-colors flex-shrink-0"
+            className="p-2 hover:bg-accent hover:shadow-sm rounded-full transition-all duration-200 flex-shrink-0 focus-visible:ring-2 focus-visible:ring-ring active:scale-90"
             aria-label={closeText}
           >
             <X className="w-5 h-5" aria-hidden="true" />
@@ -159,7 +159,7 @@ export const ResourceDetail = ({
             const linkInfo = formatContactLink(contact.v, contact.l);
             
             return (
-              <div key={idx} className="w-full bg-secondary hover:bg-accent rounded-xl p-4 transition-all">
+              <div key={idx} className="w-full bg-secondary hover:bg-accent hover:shadow-sm rounded-xl p-4 transition-all duration-200 focus-within:ring-2 focus-within:ring-ring">
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex-1">
                     <div className="text-xs uppercase text-muted-foreground mb-1">
@@ -170,7 +170,7 @@ export const ResourceDetail = ({
                         href={linkInfo.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-card-foreground hover:text-primary underline"
+                        className="font-semibold text-card-foreground hover:text-primary hover:translate-x-0.5 underline transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded"
                       >
                         {linkInfo.display}
                       </a>
@@ -197,7 +197,7 @@ export const ResourceDetail = ({
             <div className="mb-4">
               <Button
                 onClick={() => openDirections(resource)}
-                className="w-full gap-2 bg-primary hover:bg-primary/90"
+                className="w-full gap-2 bg-primary hover:bg-primary-hover hover:shadow-md hover:scale-[1.02] transition-all duration-200 active:scale-95"
                 size="lg"
               >
                 <Navigation className="w-5 h-5" />

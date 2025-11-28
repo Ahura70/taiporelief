@@ -39,7 +39,7 @@ export const LanguageNotification = ({ message, currentLang }: LanguageNotificat
           <span className="text-sm">{message}</span>
           <button
             onClick={handleDismiss}
-            className="flex-shrink-0 p-1 hover:bg-secondary rounded-full transition-colors"
+            className="flex-shrink-0 p-1 hover:bg-accent hover:shadow-sm rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring active:scale-90"
             aria-label="Close notification"
           >
             <X className="h-4 w-4" />

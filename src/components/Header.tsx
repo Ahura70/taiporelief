@@ -41,7 +41,7 @@ export const Header = ({ title, subtitle, currentLang, onLanguageChange }: Heade
         <div className="relative" ref={menuRef}>
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className="flex items-center justify-center gap-1.5 bg-background/15 text-background px-3 py-2 rounded-full transition-colors hover:bg-background/25"
+            className="flex items-center justify-center gap-1.5 bg-background/15 text-background px-3 py-2 rounded-full transition-all duration-200 hover:bg-background/30 hover:scale-105 focus-visible:ring-2 focus-visible:ring-background focus-visible:ring-offset-2 active:scale-95"
             aria-label="Change language"
           >
             <Globe size={20} strokeWidth={2.5} />
@@ -56,11 +56,11 @@ export const Header = ({ title, subtitle, currentLang, onLanguageChange }: Heade
                     onLanguageChange(code as Language);
                     setShowMenu(false);
                   }}
-                  className={`flex flex-col items-center justify-center gap-1 px-4 py-3 rounded-xl transition-all min-w-[60px] ${
+                  className={`flex flex-col items-center justify-center gap-1 px-4 py-3 rounded-xl transition-all duration-200 min-w-[60px] ${
                     currentLang === code
                       ? 'bg-primary text-primary-foreground font-bold shadow-md scale-105'
-                      : 'bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:scale-105'
-                  }`}
+                      : 'bg-secondary text-secondary-foreground hover:bg-muted hover:shadow-sm hover:scale-105 focus-visible:ring-2 focus-visible:ring-ring'
+                  } active:scale-95`}
                   aria-label={lang.name}
                 >
                   <span className="text-2xl font-bold">{languageIcons[code as Language]}</span>

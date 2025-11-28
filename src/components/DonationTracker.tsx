@@ -1,7 +1,6 @@
 import { Progress } from '@/components/ui/progress';
 import { CheckCircle2, Circle } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { useDonationStats } from '@/hooks/useDonationStats';
 
 interface Milestone {
   amount: number;
@@ -24,9 +23,10 @@ export const DonationTracker = ({
   currency,
   milestones: milestoneLabels,
 }: DonationTrackerProps) => {
-  const { totalRaised, loading } = useDonationStats();
+  // Example data - in production this would come from an API
+  const raisedAmount = 28500000; // HKD 28.5M
   const goalAmount = 50000000; // HKD 50M goal
-  const percentage = Math.min((totalRaised / goalAmount) * 100, 100);
+  const percentage = Math.min((raisedAmount / goalAmount) * 100, 100);
   
   const [animatedProgress, setAnimatedProgress] = useState(0);
 
@@ -55,26 +55,17 @@ export const DonationTracker = ({
     <div className="bg-gradient-to-br from-primary/5 via-background to-accent/5 border border-border rounded-2xl p-6 animate-fade-in">
       <div className="mb-6">
         <h2 className="text-xl font-bold text-foreground mb-2">{title}</h2>
-        {loading ? (
-          <div className="animate-pulse">
-            <div className="h-10 bg-secondary rounded w-48 mb-2"></div>
-            <div className="h-4 bg-secondary rounded w-32"></div>
-          </div>
-        ) : (
-          <>
-            <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-bold text-primary">
-                {currency}{formatAmount(totalRaised)}
-              </span>
-              <span className="text-sm text-muted-foreground">
-                / {currency}{formatAmount(goalAmount)}
-              </span>
-            </div>
-            <p className="text-sm text-muted-foreground mt-1">
-              {raised} • {percentage.toFixed(1)}% {goal}
-            </p>
-          </>
-        )}
+        <div className="flex items-baseline gap-2">
+          <span className="text-3xl font-bold text-primary">
+            {currency}{formatAmount(raisedAmount)}
+          </span>
+          <span className="text-sm text-muted-foreground">
+            / {currency}{formatAmount(goalAmount)}
+          </span>
+        </div>
+        <p className="text-sm text-muted-foreground mt-1">
+          {raised} • {percentage.toFixed(1)}% {goal}
+        </p>
       </div>
 
       <div className="space-y-4">

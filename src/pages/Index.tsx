@@ -13,7 +13,6 @@ import { FeedbackForm } from '@/components/FeedbackForm';
 import { DonationTracker } from '@/components/DonationTracker';
 import { Map } from '@/components/Map';
 import { LiveUpdatesFeed } from '@/components/LiveUpdatesFeed';
-import { OrganizationsTable } from '@/components/OrganizationsTable';
 import { Language, translations, resources, Resource } from '@/lib/translations';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
@@ -139,14 +138,6 @@ const Index = () => {
             permissionDeniedText={t.notifyDenied}
             testNotificationTitle={t.notifyTestTitle}
             testNotificationBody={t.notifyTestBody}
-          />
-        </div>
-
-        <div className="mt-6">
-          <OrganizationsTable
-            title={t.organizationsTitle}
-            organizations={t.organizations}
-            headers={t.organizationsHeaders}
           />
         </div>
       </main>

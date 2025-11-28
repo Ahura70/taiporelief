@@ -35,15 +35,15 @@ export const NewsBanner = ({ title }: NewsBannerProps) => {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-secondary hover:bg-accent p-3 rounded-lg transition-all group"
+            className="flex items-center gap-2 bg-secondary hover:bg-accent hover:shadow-sm p-3 rounded-lg transition-all duration-200 group focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.98]"
           >
             <div className="flex-1">
-              <div className="font-semibold text-foreground group-hover:text-primary transition-colors">
+              <div className="font-semibold text-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200">
                 {link.name}
               </div>
               <div className="text-xs text-muted-foreground">{link.desc}</div>
             </div>
-            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200" />
           </a>
         ))}
       </div>

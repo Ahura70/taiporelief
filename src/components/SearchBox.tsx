@@ -143,16 +143,16 @@ export const SearchBox = ({
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder={placeholder}
-            className="flex-1 px-4 py-3 bg-secondary border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+            className="flex-1 px-4 py-3 bg-secondary border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary focus:shadow-md transition-all duration-200 hover:bg-muted hover:border-muted-foreground/20"
             aria-label={label}
           />
           <button
             onClick={handleVoiceSearch}
-            className={`p-3 rounded-xl transition-all ${
+            className={`p-3 rounded-xl transition-all duration-200 ${
               isListening
-                ? 'bg-primary text-primary-foreground animate-pulse'
-                : 'bg-secondary text-foreground hover:bg-accent'
-            }`}
+                ? 'bg-primary text-primary-foreground animate-pulse shadow-md'
+                : 'bg-secondary text-foreground hover:bg-accent hover:shadow-sm hover:scale-105 focus-visible:ring-2 focus-visible:ring-ring'
+            } active:scale-95`}
             aria-label={currentLang === 'zh' ? '語音搜尋' : currentLang === 'tl' ? 'Voice search' : currentLang === 'id' ? 'Pencarian suara' : 'Voice search'}
             title={currentLang === 'zh' ? '語音搜尋 (Chrome/Safari)' : currentLang === 'tl' ? 'Voice search (Chrome/Safari)' : currentLang === 'id' ? 'Pencarian suara (Chrome/Safari)' : 'Voice search (Chrome/Safari)'}
           >
@@ -186,13 +186,13 @@ export const SearchBox = ({
                 }}
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className={`w-full px-4 py-3 text-left flex items-center gap-3 transition-all border-b border-border last:border-0 ${
+                className={`w-full px-4 py-3 text-left flex items-center gap-3 transition-all duration-200 border-b border-border last:border-0 ${
                   hoveredIndex === idx 
-                    ? 'bg-secondary scale-[1.02]' 
+                    ? 'bg-accent shadow-sm scale-[1.02]' 
                     : hoveredIndex !== null 
-                    ? 'opacity-40' 
-                    : 'hover:bg-secondary'
-                }`}
+                    ? 'opacity-30' 
+                    : 'hover:bg-accent hover:shadow-sm'
+                } focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset focus-visible:outline-none`}
                 role="option"
                 aria-selected={hoveredIndex === idx}
               >

@@ -88,13 +88,13 @@ export const AccessibilityMenu = ({
         <Button
           variant="outline"
           size="icon"
-          className="fixed top-32 right-5 z-40 bg-card shadow-md"
+          className="fixed bottom-24 left-5 z-40 bg-card shadow-md"
           aria-label={title}
         >
           <Settings className="h-5 w-5" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-80" align="end">
+      <PopoverContent className="w-80" align="start" side="top">
         <div className="space-y-4">
           <h3 className="font-semibold text-lg">{title}</h3>
 

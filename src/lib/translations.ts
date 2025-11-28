@@ -288,7 +288,7 @@ export const resources: Record<Language, Resource[]> = {
       hours: { open: '08:30', close: '18:30', days: 'Daily' }
     },
     {
-      icon: '❤️',
+      icon: '⚕️',
       title: '紅十字會',
       desc: '緊急現金援助及心理支援',
       keywords: ['紅十字會', '急救', '現金', '心理'],
@@ -425,7 +425,7 @@ export const resources: Record<Language, Resource[]> = {
       hours: { open: '08:30', close: '18:30', days: 'Daily' }
     },
     {
-      icon: '❤️',
+      icon: '⚕️',
       title: 'Red Cross',
       desc: 'Emergency Cash Aid & Psychological Support',
       keywords: ['red cross', 'help', 'cash', 'mental health'],
@@ -562,7 +562,7 @@ export const resources: Record<Language, Resource[]> = {
       hours: { open: '08:30', close: '18:30', days: 'Daily' }
     },
     {
-      icon: '❤️',
+      icon: '⚕️',
       title: 'Pula na Krus',
       desc: 'Tulong sa Cash at Suportang Sikolohikal',
       keywords: ['red cross', 'tulong', 'pera', 'mental health'],
@@ -699,7 +699,7 @@ export const resources: Record<Language, Resource[]> = {
       hours: { open: '08:30', close: '18:30', days: 'Daily' }
     },
     {
-      icon: '❤️',
+      icon: '⚕️',
       title: 'Palang Merah',
       desc: 'Bantuan Tunai Darurat & Dukungan Psikologis',
       keywords: ['red cross', 'bantuan', 'uang', 'mental'],

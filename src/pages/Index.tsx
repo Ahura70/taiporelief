@@ -6,7 +6,6 @@ import { QuickActions } from '@/components/QuickActions';
 import { ResourceDetail } from '@/components/ResourceDetail';
 import { NewsBanner } from '@/components/NewsBanner';
 import { PWAInstallPrompt } from '@/components/PWAInstallPrompt';
-import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { Language, translations, resources, Resource } from '@/lib/translations';
 
 const Index = () => {
@@ -27,7 +26,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      <OfflineIndicator text={t.offlineMode} />
       <Header
         title={t.title}
         subtitle={t.subtitle}

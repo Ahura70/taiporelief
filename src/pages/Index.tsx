@@ -15,17 +15,39 @@ import { InstallPrompt } from '@/components/InstallPrompt';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { ConnectionStatus } from '@/components/ConnectionStatus';
+import { ChangelogModal } from '@/components/ChangelogModal';
 import { translations, resources, Resource } from '@/lib/translations';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+const LAST_SEEN_BUILD_KEY = 'taiporelief_last_seen_build';
+
 const Index = () => {
   const { currentLang, changeLanguage } = useLanguage();
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+  const [showChangelog, setShowChangelog] = useState(false);
   const searchBoxRef = useRef<HTMLDivElement>(null);
+
+  // Check if build timestamp has changed
+  useEffect(() => {
+    const lastSeenBuild = localStorage.getItem(LAST_SEEN_BUILD_KEY);
+    const currentBuild = __BUILD_TIMESTAMP__;
+
+    if (lastSeenBuild && lastSeenBuild !== currentBuild) {
+      // Build has changed, show changelog
+      setShowChangelog(true);
+    }
+
+    // Update last seen build
+    localStorage.setItem(LAST_SEEN_BUILD_KEY, currentBuild);
+  }, []);
+
+  const handleCloseChangelog = () => {
+    setShowChangelog(false);
+  };
 
   // Keyboard shortcuts
   useKeyboardShortcuts([
@@ -138,12 +160,16 @@ const Index = () => {
           <div>{t.lastUpdate}</div>
           <div className="flex items-center justify-center gap-2 text-[11px] text-muted-foreground/80">
             <span aria-hidden="true">⏱</span>
-            <span>
+            <button
+              onClick={() => setShowChangelog(true)}
+              className="hover:text-primary transition-colors cursor-pointer underline decoration-dotted"
+              title={currentLang === 'zh' ? '查看更新內容' : currentLang === 'tl' ? 'Tingnan ang mga update' : currentLang === 'id' ? 'Lihat pembaruan' : 'View updates'}
+            >
               {currentLang === 'zh' && `發佈時間：${buildTimestamp}`}
               {currentLang === 'en' && `Published: ${buildTimestamp}`}
               {currentLang === 'tl' && `Na-publish: ${buildTimestamp}`}
               {currentLang === 'id' && `Dipublikasikan: ${buildTimestamp}`}
-            </span>
+            </button>
           </div>
           <div>{t.wcagCompliance}</div>
         </div>
@@ -216,6 +242,12 @@ const Index = () => {
       
       <LanguageNotification 
         message={t.languageNotification}
+        currentLang={currentLang}
+      />
+
+      <ChangelogModal
+        open={showChangelog}
+        onClose={handleCloseChangelog}
         currentLang={currentLang}
       />
     </div>

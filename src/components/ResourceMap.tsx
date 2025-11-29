@@ -7,6 +7,7 @@ import { isResourceOpen, getStatusText } from '@/lib/hoursHelper';
 import { Button } from '@/components/ui/button';
 import { Filter } from 'lucide-react';
 import { MapLegend } from './MapLegend';
+import { useHousingOccupancy } from '@/hooks/useHousingOccupancy';
 import {
   Select,
   SelectContent,
@@ -86,6 +87,7 @@ export const ResourceMap = ({
   const [showOpenOnly, setShowOpenOnly] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const markersRef = useRef<Map<string, L.Marker>>(new Map());
+  const { getOccupancy, getAvailableUnits } = useHousingOccupancy();
 
   // Extract unique categories from resources
   const categories = useMemo(() => {
@@ -140,8 +142,33 @@ export const ResourceMap = ({
           </div>
         ` : '';
         
+        // Get occupancy info if this is a housing location
+        const occupancy = getOccupancy(resource.title);
+        const availableUnits = getAvailableUnits(resource.title);
+        const isHousing = resource.icon === '🏠';
+        
+        const occupancyBadge = isHousing && occupancy ? `
+          <div style="
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            margin-bottom: 8px;
+            background: ${availableUnits && availableUnits > 0 ? '#22c55e' : '#ef4444'};
+            color: white;
+            font-weight: 600;
+          ">
+            <div style="font-weight: bold; margin-bottom: 2px;">
+              ${availableUnits} / ${occupancy.total_units} Units Available
+            </div>
+            <div style="font-size: 9px; opacity: 0.9;">
+              ${occupancy.occupied_units} occupied
+            </div>
+          </div>
+        ` : '';
+        
         popupContent.innerHTML = `
           ${statusBadge}
+          ${occupancyBadge}
           <h3 class="font-semibold text-sm mb-1">${resource.icon} ${resource.title}</h3>
           <p class="text-xs text-muted-foreground mb-2">${resource.desc}</p>
           ${hasHours ? `

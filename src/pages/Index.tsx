@@ -9,6 +9,8 @@ import { LanguageNotification } from '@/components/LanguageNotification';
 import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { CommunityResources } from '@/components/CommunityResources';
+import { EmergencyContactCard } from '@/components/EmergencyContactCard';
+import { DocumentChecklistHelper } from '@/components/DocumentChecklistHelper';
 import { ResourceDetail } from '@/components/ResourceDetail';
 import { ResourceMap } from '@/components/ResourceMap';
 import { FeedbackForm } from '@/components/FeedbackForm';
@@ -175,6 +177,25 @@ const Index = () => {
             missingReportsLabel={t.missingReportsLabel}
             liveStatusLabel={t.liveStatusLabel}
           />
+        </div>
+
+        {/* Emergency Contact & Document Checklist */}
+        <div className="mt-8">
+          <div className="grid gap-4 md:grid-cols-2">
+            <EmergencyContactCard
+              title={t.emergencyContactTitle}
+              description={t.emergencyContactDesc}
+              philippinesLabel={t.philippinesEmergency}
+              indonesiaLabel={t.indonesiaEmergency}
+            />
+            <DocumentChecklistHelper
+              title={t.documentChecklistTitle}
+              description={t.documentChecklistDesc}
+              philippinesTitle={t.philippinesPassport}
+              indonesiaTitle={t.indonesiaPassport}
+              currentLang={currentLang}
+            />
+          </div>
         </div>
 
         <div className="mt-8">

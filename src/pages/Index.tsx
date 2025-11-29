@@ -17,6 +17,7 @@ import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { ConnectionStatus } from '@/components/ConnectionStatus';
 import { ChangelogModal } from '@/components/ChangelogModal';
+import { BackToTop } from '@/components/BackToTop';
 import { translations, resources, Resource } from '@/lib/translations';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
@@ -273,6 +274,8 @@ const Index = () => {
         onClose={handleCloseChangelog}
         currentLang={currentLang}
       />
+
+      <BackToTop label={t.backToTop} />
     </div>
   );
 };

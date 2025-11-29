@@ -20,7 +20,7 @@ export const useHousingOccupancy = () => {
         .select('*');
 
       if (error) {
-        console.error('Error fetching housing occupancy:', error);
+        console.error('Failed to fetch housing occupancy');
         setLoading(false);
         return;
       }

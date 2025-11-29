@@ -134,6 +134,39 @@ export type Database = {
         }
         Relationships: []
       }
+      housing_occupancy_history: {
+        Row: {
+          available_units: number
+          created_at: string
+          id: string
+          location_name: string
+          occupancy_rate: number
+          occupied_units: number
+          recorded_at: string
+          total_units: number
+        }
+        Insert: {
+          available_units: number
+          created_at?: string
+          id?: string
+          location_name: string
+          occupancy_rate: number
+          occupied_units: number
+          recorded_at?: string
+          total_units: number
+        }
+        Update: {
+          available_units?: number
+          created_at?: string
+          id?: string
+          location_name?: string
+          occupancy_rate?: number
+          occupied_units?: number
+          recorded_at?: string
+          total_units?: number
+        }
+        Relationships: []
+      }
       volunteer_registrations: {
         Row: {
           availability: string | null

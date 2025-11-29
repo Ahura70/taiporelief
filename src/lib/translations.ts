@@ -76,7 +76,8 @@ export const translations = {
     highContrastLabel: '高對比度',
     reduceMotionLabel: '減少動畫',
     lineSpacingLabel: '行距',
-    languageNotification: '我們已根據您的瀏覽器設定自動選擇語言。您可以隨時使用右上角的語言選擇器更改語言。'
+    languageNotification: '我們已根據您的瀏覽器設定自動選擇語言。您可以隨時使用右上角的語言選擇器更改語言。',
+    newsTicker: '💔 至少128人於大埔火災中罹難，包括7名印尼籍家庭傭工'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -84,6 +85,7 @@ export const translations = {
     label: 'I want to...',
     placeholder: 'Search: Donate, Volunteer, Supplies...',
     emergency: '🚨 Casualty Enquiry 1878 999 | Mental Health 18111',
+    newsTicker: '💔 At least 128 confirmed dead in Tai Po fire, including 7 migrant domestic workers from Indonesia',
     installTitle: 'Install App',
     installDesc: 'Works offline, faster access',
     installBtn: 'Install',
@@ -216,7 +218,8 @@ export const translations = {
     highContrastLabel: 'Mataas na Contrast',
     reduceMotionLabel: 'Bawasan ang Galaw',
     lineSpacingLabel: 'Espasyo ng Linya',
-    languageNotification: 'Awtomatiko naming pinili ang iyong wika batay sa iyong browser settings. Maaari mo itong baguhin anumang oras gamit ang language selector sa kanang itaas.'
+    languageNotification: 'Awtomatiko naming pinili ang iyong wika batay sa iyong browser settings. Maaari mo itong baguhin anumang oras gamit ang language selector sa kanang itaas.',
+    newsTicker: '💔 Hindi bababa sa 128 napatunayan na namatay sa sunog sa Tai Po, kasama ang 7 migranteng kasambahay mula sa Indonesia'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -224,6 +227,7 @@ export const translations = {
     label: 'Saya ingin...',
     placeholder: 'Cari: Donasi, Relawan...',
     emergency: '🚨 Pertanyaan Korban 1878 999 | Mental 18111',
+    newsTicker: '💔 Setidaknya 128 dikonfirmasi meninggal dalam kebakaran Tai Po, termasuk 7 pekerja rumah tangga migran dari Indonesia',
     installTitle: 'Instal App',
     installDesc: 'Akses offline cepat',
     installBtn: 'Instal',
@@ -426,14 +430,70 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '👷‍♀️',
-      title: '外傭支援',
-      desc: '多語言協助熱線',
-      keywords: ['外傭', '工人', 'helper'],
+      title: '外傭支援 HELP',
+      desc: '多語言協助、心理輔導、緊急庇護',
+      keywords: ['外傭', '工人', 'helper', 'indonesia', 'philippines'],
       contacts: [
-        { l: 'HELP Hotline', v: '2523 4020' },
-        { l: '勞工處', v: '2157 9537' },
-        { l: 'WhatsApp 支援', v: '+852 5936 3780' }
+        { l: 'HELP 熱線', v: '2523 4020' },
+        { l: 'WhatsApp 支援', v: '+852 5936 3780' },
+        { l: '勞工處', v: '2157 9537' }
+      ],
+      info: [
+        '提供：心理健康輔導、緊急庇護、證件更換協助、領事館協調',
+        '專為受影響的外籍家庭傭工提供支援'
       ]
+    },
+    {
+      icon: '🌐',
+      title: '宏福苑報平安',
+      desc: '即時安全狀態追蹤系統',
+      keywords: ['報平安', '安全', '追蹤', '狀態', 'wangfuk'],
+      contacts: [
+        { l: '主網站', v: 'https://taipo-fire.web.app/' },
+        { l: '報平安表格', v: 'forms.gle/safety' },
+        { l: '報告失蹤', v: 'forms.gle/missing' },
+        { l: '物資地圖', v: 'arcgis.com/supplies' },
+        { l: '政府網站', v: 'taipofire.gov.hk' }
+      ],
+      info: ['為宏福苑居民提供即時安全狀態追蹤']
+    },
+    {
+      icon: '🐾',
+      title: 'SPCA 寵物救援',
+      desc: '受災寵物救援及照顧服務',
+      keywords: ['寵物', '動物', 'pet', 'spca', '貓', '狗'],
+      contacts: [
+        { l: '電話', v: '95036229' },
+        { l: '登記號碼', v: '60406624' },
+        { l: '集合點', v: '保良局鄧碧雲幼稚園公園區域' },
+        { l: '地圖', v: 'maps.app.goo.gl/S5KTaB6F751uLA5D8' }
+      ],
+      info: ['協助受災家庭的寵物救援及臨時照顧'],
+      coordinates: [22.4475, 114.1665]
+    },
+    {
+      icon: '🤝',
+      title: '大埔義工組 (英語)',
+      desc: '消防員支援及物資協調',
+      keywords: ['義工', 'volunteer', '物資', '捐贈'],
+      contacts: [
+        { l: 'WhatsApp 群組', v: 'chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
+        { l: '物資交收點', v: 'The Hive Causeway Bay 9/F' },
+        { l: '地址', v: 'V-Point, 18 Tang Lung Street' }
+      ],
+      info: [
+        '需要物資：能量啫喱、能量棒、能量飲品、紙內褲、襪子、香蕉、獨立包裝麵包、乾糧、Pocari Sweat (< 500ml)'
+      ]
+    },
+    {
+      icon: '📋',
+      title: '大埔物資救援組',
+      desc: 'Telegram 物資協調群組',
+      keywords: ['物資', '救援', 'telegram', '捐贈'],
+      contacts: [
+        { l: 'Telegram', v: 't.me/+7PObuQ5xWiI2ZGFl' }
+      ],
+      info: ['⚠️ 暫停接收 - 正在清點庫存']
     },
     {
       icon: '🚨',
@@ -563,14 +623,70 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '👷‍♀️',
-      title: 'Helper Support',
-      desc: 'Multilingual Assistance',
-      keywords: ['helper', 'fdh', 'maid'],
+      title: 'HELP for Domestic Workers',
+      desc: 'Multilingual Support, Counseling, Emergency Shelter',
+      keywords: ['helper', 'fdh', 'maid', 'indonesia', 'philippines', 'domestic worker'],
       contacts: [
         { l: 'HELP Hotline', v: '2523 4020' },
-        { l: 'Labour Dept', v: '2157 9537' },
-        { l: 'WhatsApp Support', v: '+852 5936 3780' }
+        { l: 'WhatsApp Support', v: '+852 5936 3780' },
+        { l: 'Labour Dept', v: '2157 9537' }
+      ],
+      info: [
+        'Services: Mental health counseling, emergency shelter, document replacement assistance, consulate coordination',
+        'Support for affected migrant domestic workers'
       ]
+    },
+    {
+      icon: '🌐',
+      title: 'Wang Fuk Court Safety Tracking',
+      desc: 'Real-time safety status tracking system',
+      keywords: ['safety', 'tracking', 'status', 'wangfuk', 'report'],
+      contacts: [
+        { l: 'Main Website', v: 'https://taipo-fire.web.app/' },
+        { l: 'Report Safety', v: 'forms.gle/safety' },
+        { l: 'Report Missing', v: 'forms.gle/missing' },
+        { l: 'Supplies Map', v: 'arcgis.com/supplies' },
+        { l: 'Govt Website', v: 'taipofire.gov.hk' }
+      ],
+      info: ['Real-time safety status tracking for Wang Fuk Court residents']
+    },
+    {
+      icon: '🐾',
+      title: 'SPCA Pet Rescue',
+      desc: 'Pet rescue and care services',
+      keywords: ['pet', 'animal', 'spca', 'cat', 'dog', 'rescue'],
+      contacts: [
+        { l: 'Phone', v: '95036229' },
+        { l: 'Registration No.', v: '60406624' },
+        { l: 'Meeting Point', v: 'Po Leung Kuk Tang Pik Wan Kindergarten park area' },
+        { l: 'Map', v: 'maps.app.goo.gl/S5KTaB6F751uLA5D8' }
+      ],
+      info: ['Assistance for pet rescue and temporary care for affected families'],
+      coordinates: [22.4475, 114.1665]
+    },
+    {
+      icon: '🤝',
+      title: 'TAI PO MANPOWER Volunteer (ENGLISH)',
+      desc: 'Firefighter support and supply coordination',
+      keywords: ['volunteer', 'supplies', 'donation', 'firefighter'],
+      contacts: [
+        { l: 'WhatsApp Group', v: 'chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
+        { l: 'Drop-off Location', v: 'The Hive Causeway Bay 9/F' },
+        { l: 'Address', v: 'V-Point, 18 Tang Lung Street' }
+      ],
+      info: [
+        'Needed items: Energy gels, bars, drinks, paper underwear, socks, bananas, individually wrapped bread, dry food, Pocari Sweat (< 500ml bottles)'
+      ]
+    },
+    {
+      icon: '📋',
+      title: 'Tai Po Supplies Rescue',
+      desc: 'Telegram supply coordination group',
+      keywords: ['supplies', 'rescue', 'telegram', 'donation'],
+      contacts: [
+        { l: 'Telegram', v: 't.me/+7PObuQ5xWiI2ZGFl' }
+      ],
+      info: ['⚠️ Temporarily suspended - taking inventory']
     },
     {
       icon: '🚨',
@@ -700,14 +816,70 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '👷‍♀️',
-      title: 'Suporta para sa Helper',
-      desc: 'Tulong sa Maraming Wika',
-      keywords: ['helper', 'fdh', 'katulong'],
+      title: 'HELP para sa Domestic Workers',
+      desc: 'Tulong sa Maraming Wika, Counseling, Emergency Shelter',
+      keywords: ['helper', 'fdh', 'katulong', 'indonesia', 'philippines', 'domestic worker'],
       contacts: [
         { l: 'HELP Hotline', v: '2523 4020' },
-        { l: 'Labour Dept', v: '2157 9537' },
-        { l: 'WhatsApp Support', v: '+852 5936 3780' }
+        { l: 'WhatsApp Support', v: '+852 5936 3780' },
+        { l: 'Labour Dept', v: '2157 9537' }
+      ],
+      info: [
+        'Serbisyo: Mental health counseling, emergency shelter, tulong sa document replacement, consulate coordination',
+        'Suporta para sa mga apektadong migrant domestic workers'
       ]
+    },
+    {
+      icon: '🌐',
+      title: 'Wang Fuk Court Safety Tracking',
+      desc: 'Real-time safety status tracking system',
+      keywords: ['safety', 'tracking', 'status', 'wangfuk', 'report'],
+      contacts: [
+        { l: 'Main Website', v: 'https://taipo-fire.web.app/' },
+        { l: 'Report Safety', v: 'forms.gle/safety' },
+        { l: 'Report Missing', v: 'forms.gle/missing' },
+        { l: 'Supplies Map', v: 'arcgis.com/supplies' },
+        { l: 'Govt Website', v: 'taipofire.gov.hk' }
+      ],
+      info: ['Real-time safety tracking para sa Wang Fuk Court residents']
+    },
+    {
+      icon: '🐾',
+      title: 'SPCA Pet Rescue',
+      desc: 'Pet rescue at pag-aalaga',
+      keywords: ['pet', 'animal', 'spca', 'pusa', 'aso', 'rescue'],
+      contacts: [
+        { l: 'Telepono', v: '95036229' },
+        { l: 'Registration No.', v: '60406624' },
+        { l: 'Meeting Point', v: 'Po Leung Kuk Tang Pik Wan Kindergarten park area' },
+        { l: 'Mapa', v: 'maps.app.goo.gl/S5KTaB6F751uLA5D8' }
+      ],
+      info: ['Tulong para sa pet rescue at pansamantalang pag-aalaga'],
+      coordinates: [22.4475, 114.1665]
+    },
+    {
+      icon: '🤝',
+      title: 'TAI PO MANPOWER Volunteer (ENGLISH)',
+      desc: 'Suporta sa firefighters at koordinasyon ng supplies',
+      keywords: ['volunteer', 'supplies', 'donasyon', 'firefighter'],
+      contacts: [
+        { l: 'WhatsApp Group', v: 'chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
+        { l: 'Drop-off Location', v: 'The Hive Causeway Bay 9/F' },
+        { l: 'Address', v: 'V-Point, 18 Tang Lung Street' }
+      ],
+      info: [
+        'Kailangan: Energy gels, bars, drinks, paper underwear, medyas, saging, naka-wrap na tinapay, dry food, Pocari Sweat (< 500ml)'
+      ]
+    },
+    {
+      icon: '📋',
+      title: 'Tai Po Supplies Rescue',
+      desc: 'Telegram supply coordination group',
+      keywords: ['supplies', 'rescue', 'telegram', 'donasyon'],
+      contacts: [
+        { l: 'Telegram', v: 't.me/+7PObuQ5xWiI2ZGFl' }
+      ],
+      info: ['⚠️ Pansamantalang nakatigil - nag-iinventory']
     },
     {
       icon: '🚨',
@@ -837,14 +1009,70 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '👷‍♀️',
-      title: 'Dukungan Helper',
-      desc: 'Bantuan Multibahasa',
-      keywords: ['helper', 'fdh', 'pembantu'],
+      title: 'HELP untuk Pekerja Rumah Tangga',
+      desc: 'Dukungan Multibahasa, Konseling, Shelter Darurat',
+      keywords: ['helper', 'fdh', 'pembantu', 'indonesia', 'philippines', 'domestic worker'],
       contacts: [
         { l: 'HELP Hotline', v: '2523 4020' },
-        { l: 'Dept Tenaga Kerja', v: '2157 9537' },
-        { l: 'Dukungan WhatsApp', v: '+852 5936 3780' }
+        { l: 'Dukungan WhatsApp', v: '+852 5936 3780' },
+        { l: 'Dept Tenaga Kerja', v: '2157 9537' }
+      ],
+      info: [
+        'Layanan: Konseling kesehatan mental, shelter darurat, bantuan penggantian dokumen, koordinasi konsulat',
+        'Dukungan untuk pekerja rumah tangga migran yang terkena dampak'
       ]
+    },
+    {
+      icon: '🌐',
+      title: 'Wang Fuk Court Safety Tracking',
+      desc: 'Sistem pelacakan status keselamatan real-time',
+      keywords: ['safety', 'tracking', 'status', 'wangfuk', 'laporan'],
+      contacts: [
+        { l: 'Website Utama', v: 'https://taipo-fire.web.app/' },
+        { l: 'Laporkan Keselamatan', v: 'forms.gle/safety' },
+        { l: 'Laporkan Hilang', v: 'forms.gle/missing' },
+        { l: 'Peta Persediaan', v: 'arcgis.com/supplies' },
+        { l: 'Website Pemerintah', v: 'taipofire.gov.hk' }
+      ],
+      info: ['Pelacakan status keselamatan real-time untuk penduduk Wang Fuk Court']
+    },
+    {
+      icon: '🐾',
+      title: 'SPCA Pet Rescue',
+      desc: 'Penyelamatan dan perawatan hewan peliharaan',
+      keywords: ['pet', 'animal', 'spca', 'kucing', 'anjing', 'rescue'],
+      contacts: [
+        { l: 'Telepon', v: '95036229' },
+        { l: 'No. Registrasi', v: '60406624' },
+        { l: 'Titik Pertemuan', v: 'Po Leung Kuk Tang Pik Wan Kindergarten park area' },
+        { l: 'Peta', v: 'maps.app.goo.gl/S5KTaB6F751uLA5D8' }
+      ],
+      info: ['Bantuan untuk penyelamatan hewan peliharaan dan perawatan sementara'],
+      coordinates: [22.4475, 114.1665]
+    },
+    {
+      icon: '🤝',
+      title: 'TAI PO MANPOWER Volunteer (ENGLISH)',
+      desc: 'Dukungan petugas pemadam kebakaran dan koordinasi persediaan',
+      keywords: ['volunteer', 'supplies', 'donasi', 'firefighter'],
+      contacts: [
+        { l: 'WhatsApp Group', v: 'chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
+        { l: 'Lokasi Drop-off', v: 'The Hive Causeway Bay 9/F' },
+        { l: 'Alamat', v: 'V-Point, 18 Tang Lung Street' }
+      ],
+      info: [
+        'Barang yang dibutuhkan: Energy gels, bars, drinks, pakaian dalam kertas, kaus kaki, pisang, roti bungkus, makanan kering, Pocari Sweat (< 500ml)'
+      ]
+    },
+    {
+      icon: '📋',
+      title: 'Tai Po Supplies Rescue',
+      desc: 'Grup koordinasi persediaan Telegram',
+      keywords: ['supplies', 'rescue', 'telegram', 'donasi'],
+      contacts: [
+        { l: 'Telegram', v: 't.me/+7PObuQ5xWiI2ZGFl' }
+      ],
+      info: ['⚠️ Sementara ditangguhkan - sedang inventarisasi']
     },
     {
       icon: '🚨',

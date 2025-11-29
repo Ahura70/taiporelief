@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { MemorialBanner } from '@/components/MemorialBanner';
 import { EmergencyBanner } from '@/components/EmergencyBanner';
+import { NewsTicker } from '@/components/NewsTicker';
 import { EmergencyDialButton } from '@/components/EmergencyDialButton';
 import { AccessibilityMenu } from '@/components/AccessibilityMenu';
 import { LanguageNotification } from '@/components/LanguageNotification';
@@ -77,7 +78,9 @@ const Index = () => {
       <EmergencyBanner text={t.emergency} />
 
       <main id="main-content" className="max-w-4xl mx-auto px-5 py-6">
-        <div ref={searchBoxRef}>
+        <NewsTicker text={t.newsTicker} />
+        
+        <div ref={searchBoxRef} className="mt-6">
           <SearchBox
             label={t.label}
             placeholder={t.placeholder}

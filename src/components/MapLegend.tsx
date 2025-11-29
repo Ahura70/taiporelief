@@ -14,15 +14,15 @@ export const MapLegend = ({ openText, closedText, noHoursText }: MapLegendProps)
       <h3 className="text-sm font-semibold mb-2 text-foreground">Legend</h3>
       <div className="space-y-1.5">
         <div className="flex items-center gap-2 text-xs">
-          <div className="w-4 h-4 rounded-full bg-[#22c55e] border-2 border-white shadow-sm" aria-hidden="true" />
+          <div className="w-4 h-4 rounded-full border-2 border-white shadow-sm" style={{ background: 'hsl(0, 0%, 25%)' }} aria-hidden="true" />
           <span className="text-foreground">{openText}</span>
         </div>
         <div className="flex items-center gap-2 text-xs">
-          <div className="w-4 h-4 rounded-full bg-[#ef4444] border-2 border-white shadow-sm" aria-hidden="true" />
+          <div className="w-4 h-4 rounded-full border-2 border-white shadow-sm" style={{ background: 'hsl(0, 0%, 45%)' }} aria-hidden="true" />
           <span className="text-foreground">{closedText}</span>
         </div>
         <div className="flex items-center gap-2 text-xs">
-          <div className="w-4 h-4 rounded-full bg-[#3b82f6] border-2 border-white shadow-sm" aria-hidden="true" />
+          <div className="w-4 h-4 rounded-full border-2 border-white shadow-sm" style={{ background: 'hsl(0, 0%, 60%)' }} aria-hidden="true" />
           <span className="text-foreground">{noHoursText}</span>
         </div>
       </div>

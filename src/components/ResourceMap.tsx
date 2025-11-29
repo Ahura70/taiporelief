@@ -8,8 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Filter } from 'lucide-react';
 import { MapLegend } from './MapLegend';
 
-// Create custom marker icons with status badges
-const createCustomIcon = (isOpen: boolean, hasHours: boolean) => {
+// Create custom marker icons with status badges and resource icons
+const createCustomIcon = (isOpen: boolean, hasHours: boolean, resourceIcon: string) => {
   // Using grayscale colors: lighter gray for no hours, dark gray for open, medium gray for closed
   const color = !hasHours ? 'hsl(0, 0%, 60%)' : isOpen ? 'hsl(0, 0%, 25%)' : 'hsl(0, 0%, 45%)';
   const statusText = !hasHours ? '' : isOpen ? 'OPEN' : 'CLOSED';
@@ -19,8 +19,13 @@ const createCustomIcon = (isOpen: boolean, hasHours: boolean) => {
       <svg width="32" height="42" viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg">
         <path d="M16 0C7.163 0 0 7.163 0 16c0 11 16 26 16 26s16-15 16-26c0-8.837-7.163-16-16-16z" 
               fill="${color}" stroke="#fff" stroke-width="2"/>
-        <circle cx="16" cy="16" r="6" fill="#fff"/>
       </svg>
+      <div style="
+        position: absolute;
+        top: 4px;
+        font-size: 16px;
+        filter: grayscale(100%);
+      ">${resourceIcon}</div>
       ${statusText ? `
         <div style="
           position: absolute;
@@ -93,7 +98,7 @@ export const ResourceMap = ({
       if (resource.coordinates) {
         const isOpen = isResourceOpen(resource);
         const hasHours = !!resource.hours;
-        const customIcon = createCustomIcon(isOpen, hasHours);
+        const customIcon = createCustomIcon(isOpen, hasHours, resource.icon);
         
         const marker = L.marker(resource.coordinates, { icon: customIcon }).addTo(map);
         markersRef.current.set(`${resource.title}-${index}`, marker);
@@ -174,7 +179,7 @@ export const ResourceMap = ({
         const hasHours = !!resource.hours;
         
         // Update marker icon to reflect current status
-        const customIcon = createCustomIcon(isOpen, hasHours);
+        const customIcon = createCustomIcon(isOpen, hasHours, resource.icon);
         marker.setIcon(customIcon);
         
         if (showOpenOnly && !isOpen) {

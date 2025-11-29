@@ -337,7 +337,13 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_safety_report_counts: {
+        Args: never
+        Returns: {
+          count: number
+          report_type: string
+        }[]
+      }
     }
     Enums: {
       alert_type: "donation" | "volunteer" | "alert"

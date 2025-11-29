@@ -538,10 +538,10 @@ export const resources: Record<Language, Resource[]> = {
       keywords: ['報平安', '安全', '追蹤', '狀態', 'wangfuk'],
       contacts: [
         { l: '主網站', v: 'https://taipo-fire.web.app/' },
-        { l: '報平安表格', v: 'forms.gle/safety' },
-        { l: '報告失蹤', v: 'forms.gle/missing' },
-        { l: '物資地圖', v: 'arcgis.com/supplies' },
-        { l: '政府網站', v: 'taipofire.gov.hk' }
+        { l: '報平安表格', v: 'https://docs.google.com/forms/d/e/1FAIpQLSc64NpaVIcAkg92fanI5W34xXwpoTnxXu0QozccOiRf3cAZYw/viewform' },
+        { l: '報告失蹤', v: 'https://forms.gle/RpSpL7KiXcuD3eN89' },
+        { l: '物資地圖', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace' },
+        { l: '政府網站', v: 'https://www.taipofire.gov.hk/' }
       ],
       info: ['為宏福苑居民提供即時安全狀態追蹤']
     },
@@ -554,7 +554,7 @@ export const resources: Record<Language, Resource[]> = {
         { l: '電話', v: '95036229' },
         { l: '登記號碼', v: '60406624' },
         { l: '集合點', v: '保良局鄧碧雲幼稚園公園區域' },
-        { l: '地圖', v: 'maps.app.goo.gl/S5KTaB6F751uLA5D8' }
+        { l: '地圖', v: 'https://maps.app.goo.gl/S5KTaB6F751uLA5D8' }
       ],
       info: ['協助受災家庭的寵物救援及臨時照顧'],
       coordinates: [22.4475, 114.1665],
@@ -566,7 +566,7 @@ export const resources: Record<Language, Resource[]> = {
       desc: '消防員支援及物資協調',
       keywords: ['義工', 'volunteer', '物資', '捐贈'],
       contacts: [
-        { l: 'WhatsApp 群組', v: 'chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
+        { l: 'WhatsApp 群組', v: 'https://chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
         { l: '物資交收點', v: 'The Hive Causeway Bay 9/F' },
         { l: '地址', v: 'V-Point, 18 Tang Lung Street' }
       ],
@@ -580,7 +580,7 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Telegram 物資協調群組',
       keywords: ['物資', '救援', 'telegram', '捐贈'],
       contacts: [
-        { l: 'Telegram', v: 't.me/+7PObuQ5xWiI2ZGFl' }
+        { l: 'Telegram', v: 'https://t.me/+7PObuQ5xWiI2ZGFl' }
       ],
       info: ['⚠️ 暫停接收 - 正在清點庫存']
     },
@@ -805,10 +805,10 @@ export const resources: Record<Language, Resource[]> = {
       keywords: ['safety', 'tracking', 'status', 'wangfuk', 'report'],
       contacts: [
         { l: 'Main Website', v: 'https://taipo-fire.web.app/' },
-        { l: 'Report Safety', v: 'forms.gle/safety' },
-        { l: 'Report Missing', v: 'forms.gle/missing' },
-        { l: 'Supplies Map', v: 'arcgis.com/supplies' },
-        { l: 'Govt Website', v: 'taipofire.gov.hk' }
+        { l: 'Report Safety', v: 'https://docs.google.com/forms/d/e/1FAIpQLSc64NpaVIcAkg92fanI5W34xXwpoTnxXu0QozccOiRf3cAZYw/viewform' },
+        { l: 'Report Missing', v: 'https://forms.gle/RpSpL7KiXcuD3eN89' },
+        { l: 'Supplies Map', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace' },
+        { l: 'Govt Website', v: 'https://www.taipofire.gov.hk/' }
       ],
       info: ['Real-time safety status tracking for Wang Fuk Court residents']
     },
@@ -821,7 +821,7 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Phone', v: '95036229' },
         { l: 'Registration No.', v: '60406624' },
         { l: 'Meeting Point', v: 'Po Leung Kuk Tang Pik Wan Kindergarten park area' },
-        { l: 'Map', v: 'maps.app.goo.gl/S5KTaB6F751uLA5D8' }
+        { l: 'Map', v: 'https://maps.app.goo.gl/S5KTaB6F751uLA5D8' }
       ],
       info: ['Assistance for pet rescue and temporary care for affected families'],
       coordinates: [22.4475, 114.1665],
@@ -833,7 +833,7 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Firefighter support and supply coordination',
       keywords: ['volunteer', 'supplies', 'donation', 'firefighter'],
       contacts: [
-        { l: 'WhatsApp Group', v: 'chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
+        { l: 'WhatsApp Group', v: 'https://chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
         { l: 'Drop-off Location', v: 'The Hive Causeway Bay 9/F' },
         { l: 'Address', v: 'V-Point, 18 Tang Lung Street' }
       ],
@@ -847,7 +847,7 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Telegram supply coordination group',
       keywords: ['supplies', 'rescue', 'telegram', 'donation'],
       contacts: [
-        { l: 'Telegram', v: 't.me/+7PObuQ5xWiI2ZGFl' }
+        { l: 'Telegram', v: 'https://t.me/+7PObuQ5xWiI2ZGFl' }
       ],
       info: ['⚠️ Temporarily suspended - taking inventory']
     },
@@ -1072,10 +1072,10 @@ export const resources: Record<Language, Resource[]> = {
       keywords: ['safety', 'tracking', 'status', 'wangfuk', 'report'],
       contacts: [
         { l: 'Main Website', v: 'https://taipo-fire.web.app/' },
-        { l: 'Report Safety', v: 'forms.gle/safety' },
-        { l: 'Report Missing', v: 'forms.gle/missing' },
-        { l: 'Supplies Map', v: 'arcgis.com/supplies' },
-        { l: 'Govt Website', v: 'taipofire.gov.hk' }
+        { l: 'Report Safety', v: 'https://docs.google.com/forms/d/e/1FAIpQLSc64NpaVIcAkg92fanI5W34xXwpoTnxXu0QozccOiRf3cAZYw/viewform' },
+        { l: 'Report Missing', v: 'https://forms.gle/RpSpL7KiXcuD3eN89' },
+        { l: 'Supplies Map', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace' },
+        { l: 'Govt Website', v: 'https://www.taipofire.gov.hk/' }
       ],
       info: ['Real-time safety tracking para sa Wang Fuk Court residents']
     },
@@ -1088,7 +1088,7 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Telepono', v: '95036229' },
         { l: 'Registration No.', v: '60406624' },
         { l: 'Meeting Point', v: 'Po Leung Kuk Tang Pik Wan Kindergarten park area' },
-        { l: 'Mapa', v: 'maps.app.goo.gl/S5KTaB6F751uLA5D8' }
+        { l: 'Mapa', v: 'https://maps.app.goo.gl/S5KTaB6F751uLA5D8' }
       ],
       info: ['Tulong para sa pet rescue at pansamantalang pag-aalaga'],
       coordinates: [22.4475, 114.1665],
@@ -1100,7 +1100,7 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Suporta sa firefighters at koordinasyon ng supplies',
       keywords: ['volunteer', 'supplies', 'donasyon', 'firefighter'],
       contacts: [
-        { l: 'WhatsApp Group', v: 'chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
+        { l: 'WhatsApp Group', v: 'https://chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
         { l: 'Drop-off Location', v: 'The Hive Causeway Bay 9/F' },
         { l: 'Address', v: 'V-Point, 18 Tang Lung Street' }
       ],
@@ -1114,7 +1114,7 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Telegram supply coordination group',
       keywords: ['supplies', 'rescue', 'telegram', 'donasyon'],
       contacts: [
-        { l: 'Telegram', v: 't.me/+7PObuQ5xWiI2ZGFl' }
+        { l: 'Telegram', v: 'https://t.me/+7PObuQ5xWiI2ZGFl' }
       ],
       info: ['⚠️ Pansamantalang nakatigil - nag-iinventory']
     },
@@ -1339,10 +1339,10 @@ export const resources: Record<Language, Resource[]> = {
       keywords: ['safety', 'tracking', 'status', 'wangfuk', 'laporan'],
       contacts: [
         { l: 'Website Utama', v: 'https://taipo-fire.web.app/' },
-        { l: 'Laporkan Keselamatan', v: 'forms.gle/safety' },
-        { l: 'Laporkan Hilang', v: 'forms.gle/missing' },
-        { l: 'Peta Persediaan', v: 'arcgis.com/supplies' },
-        { l: 'Website Pemerintah', v: 'taipofire.gov.hk' }
+        { l: 'Laporkan Keselamatan', v: 'https://docs.google.com/forms/d/e/1FAIpQLSc64NpaVIcAkg92fanI5W34xXwpoTnxXu0QozccOiRf3cAZYw/viewform' },
+        { l: 'Laporkan Hilang', v: 'https://forms.gle/RpSpL7KiXcuD3eN89' },
+        { l: 'Peta Persediaan', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace' },
+        { l: 'Website Pemerintah', v: 'https://www.taipofire.gov.hk/' }
       ],
       info: ['Pelacakan status keselamatan real-time untuk penduduk Wang Fuk Court']
     },
@@ -1355,7 +1355,7 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Telepon', v: '95036229' },
         { l: 'No. Registrasi', v: '60406624' },
         { l: 'Titik Pertemuan', v: 'Po Leung Kuk Tang Pik Wan Kindergarten park area' },
-        { l: 'Peta', v: 'maps.app.goo.gl/S5KTaB6F751uLA5D8' }
+        { l: 'Peta', v: 'https://maps.app.goo.gl/S5KTaB6F751uLA5D8' }
       ],
       info: ['Bantuan untuk penyelamatan hewan peliharaan dan perawatan sementara'],
       coordinates: [22.4475, 114.1665],
@@ -1367,7 +1367,7 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Dukungan petugas pemadam kebakaran dan koordinasi persediaan',
       keywords: ['volunteer', 'supplies', 'donasi', 'firefighter'],
       contacts: [
-        { l: 'WhatsApp Group', v: 'chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
+        { l: 'WhatsApp Group', v: 'https://chat.whatsapp.com/ELpksjt4CCM2Is4GTswO8u' },
         { l: 'Lokasi Drop-off', v: 'The Hive Causeway Bay 9/F' },
         { l: 'Alamat', v: 'V-Point, 18 Tang Lung Street' }
       ],
@@ -1381,7 +1381,7 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Grup koordinasi persediaan Telegram',
       keywords: ['supplies', 'rescue', 'telegram', 'donasi'],
       contacts: [
-        { l: 'Telegram', v: 't.me/+7PObuQ5xWiI2ZGFl' }
+        { l: 'Telegram', v: 'https://t.me/+7PObuQ5xWiI2ZGFl' }
       ],
       info: ['⚠️ Sementara ditangguhkan - sedang inventarisasi']
     },

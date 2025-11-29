@@ -77,7 +77,7 @@ export const translations = {
     reduceMotionLabel: '減少動畫',
     lineSpacingLabel: '行距',
     languageNotification: '我們已根據您的瀏覽器設定自動選擇語言。您可以隨時使用右上角的語言選擇器更改語言。',
-    whatsappRegister: '透過 WhatsApp +85292132388 登記捐款',
+    whatsappRegister: '透過 WhatsApp 登記向香港特別行政區政府捐款',
     newsItems: [
       { text: '至少128人於大埔宏福苑火災中罹難，包括7名印尼籍家庭傭工', source: '香港政府' },
       { text: '救援行動持續進行，消防處正努力撲滅餘火並搜救被困居民', source: 'SCMP' },
@@ -156,7 +156,7 @@ export const translations = {
     reduceMotionLabel: 'Reduce Motion',
     lineSpacingLabel: 'Line Spacing',
     languageNotification: 'We automatically selected your language based on your browser settings. You can change it anytime using the language selector in the top right.',
-    whatsappRegister: 'Register via WhatsApp at +85292132388 to donate',
+    whatsappRegister: 'Register via WhatsApp to donate via the HKSAR Govt.',
     newsItems: [
       { text: 'At least 128 confirmed dead in Tai Po Wang Fuk Court fire, including 7 Indonesian domestic workers', source: 'HK Govt' },
       { text: 'Rescue operations ongoing as firefighters battle remaining flames and search for trapped residents', source: 'SCMP' },
@@ -234,7 +234,7 @@ export const translations = {
     reduceMotionLabel: 'Bawasan ang Galaw',
     lineSpacingLabel: 'Espasyo ng Linya',
     languageNotification: 'Awtomatiko naming pinili ang iyong wika batay sa iyong browser settings. Maaari mo itong baguhin anumang oras gamit ang language selector sa kanang itaas.',
-    whatsappRegister: 'Magrehistro sa WhatsApp +85292132388 para mag-donate',
+    whatsappRegister: 'Magrehistro sa WhatsApp para mag-donate sa HKSAR Govt.',
     newsItems: [
       { text: 'Hindi bababa sa 128 namatay sa sunog sa Tai Po Wang Fuk Court, kasama ang 7 Indonesian domestic workers', source: 'HK Govt' },
       { text: 'Patuloy ang rescue operations habang nilalabanan ng mga bumbero ang natitirang apoy', source: 'SCMP' },
@@ -313,7 +313,7 @@ export const translations = {
     reduceMotionLabel: 'Kurangi Gerakan',
     lineSpacingLabel: 'Spasi Baris',
     languageNotification: 'Kami secara otomatis memilih bahasa Anda berdasarkan pengaturan browser. Anda dapat mengubahnya kapan saja menggunakan pemilih bahasa di kanan atas.',
-    whatsappRegister: 'Daftar melalui WhatsApp +85292132388 untuk donasi',
+    whatsappRegister: 'Daftar melalui WhatsApp untuk donasi melalui HKSAR Govt.',
     newsItems: [
       { text: 'Setidaknya 128 tewas dalam kebakaran Tai Po Wang Fuk Court, termasuk 7 pekerja rumah tangga Indonesia', source: 'HK Govt' },
       { text: 'Operasi penyelamatan terus berlanjut saat petugas pemadam kebakaran memadamkan api', source: 'SCMP' },
@@ -353,19 +353,6 @@ export const resources: Record<Language, Resource[]> = {
         { l: '其他貨幣', v: '中國銀行 012-875-2-190160-7' }
       ],
       coordinates: [22.4461, 114.1639], // Wang Fuk Court area
-      category: 'Emergency Relief'
-    },
-    {
-      icon: '🎓',
-      title: '教大臨時支援中心',
-      desc: '為受影響學生及家庭提供支援',
-      keywords: ['教大', 'eduhk', '學生', '大學'],
-      contacts: [
-        { l: '地點', v: '教大 E 座室內運動場' },
-        { l: '開放時間', v: '08:30 - 18:30' }
-      ],
-      coordinates: [22.4366, 114.1781], // EdUHK
-      hours: { open: '08:30', close: '18:30', days: 'Daily' },
       category: 'Emergency Relief'
     },
     {
@@ -456,6 +443,19 @@ export const resources: Record<Language, Resource[]> = {
       ],
       info: ['大埔區過渡性房屋項目', '政府正協調加強交通服務'],
       coordinates: [22.4460, 114.1640],
+      category: 'Housing'
+    },
+    {
+      icon: '🎓',
+      title: '教大臨時支援中心',
+      desc: '為受影響學生及家庭提供支援',
+      keywords: ['教大', 'eduhk', '學生', '大學'],
+      contacts: [
+        { l: '地點', v: '教大 E 座室內運動場' },
+        { l: '開放時間', v: '08:30 - 18:30' }
+      ],
+      coordinates: [22.4366, 114.1781], // EdUHK
+      hours: { open: '08:30', close: '18:30', days: 'Daily' },
       category: 'Housing'
     },
     {
@@ -583,19 +583,6 @@ export const resources: Record<Language, Resource[]> = {
       category: 'Emergency Relief'
     },
     {
-      icon: '🎓',
-      title: 'EdUHK Support Centre',
-      desc: 'Support for affected students/families',
-      keywords: ['eduhk', 'student', 'university'],
-      contacts: [
-        { l: 'Location', v: 'EdUHK Block E Sports Hall' },
-        { l: 'Hours', v: '08:30 - 18:30' }
-      ],
-      coordinates: [22.4366, 114.1781],
-      hours: { open: '08:30', close: '18:30', days: 'Daily' },
-      category: 'Emergency Relief'
-    },
-    {
       icon: '✚',
       title: 'Red Cross',
       desc: 'Emergency Cash Aid & Psychological Support',
@@ -683,6 +670,19 @@ export const resources: Record<Language, Resource[]> = {
       ],
       info: ['Tai Po transitional housing project', 'Government coordinating enhanced transport'],
       coordinates: [22.4460, 114.1640],
+      category: 'Housing'
+    },
+    {
+      icon: '🎓',
+      title: 'EdUHK Support Centre',
+      desc: 'Support for affected students/families',
+      keywords: ['eduhk', 'student', 'university'],
+      contacts: [
+        { l: 'Location', v: 'EdUHK Block E Sports Hall' },
+        { l: 'Hours', v: '08:30 - 18:30' }
+      ],
+      coordinates: [22.4366, 114.1781],
+      hours: { open: '08:30', close: '18:30', days: 'Daily' },
       category: 'Housing'
     },
     {
@@ -810,19 +810,6 @@ export const resources: Record<Language, Resource[]> = {
       category: 'Emergency Relief'
     },
     {
-      icon: '🎓',
-      title: 'EdUHK Support Centre',
-      desc: 'Suporta para sa mga estudyante/pamilya',
-      keywords: ['eduhk', 'estudyante', 'unibersidad'],
-      contacts: [
-        { l: 'Lokasyon', v: 'EdUHK Block E Sports Hall' },
-        { l: 'Oras', v: '08:30 - 18:30' }
-      ],
-      coordinates: [22.4366, 114.1781],
-      hours: { open: '08:30', close: '18:30', days: 'Daily' },
-      category: 'Emergency Relief'
-    },
-    {
       icon: '✚',
       title: 'Pula na Krus',
       desc: 'Tulong sa Cash at Suportang Sikolohikal',
@@ -910,6 +897,19 @@ export const resources: Record<Language, Resource[]> = {
       ],
       info: ['Tai Po transitional housing project', 'Gobyerno ay nag-coordinate ng pinahusay na transportasyon'],
       coordinates: [22.4460, 114.1640],
+      category: 'Housing'
+    },
+    {
+      icon: '🎓',
+      title: 'EdUHK Support Centre',
+      desc: 'Suporta para sa mga estudyante/pamilya',
+      keywords: ['eduhk', 'estudyante', 'unibersidad'],
+      contacts: [
+        { l: 'Lokasyon', v: 'EdUHK Block E Sports Hall' },
+        { l: 'Oras', v: '08:30 - 18:30' }
+      ],
+      coordinates: [22.4366, 114.1781],
+      hours: { open: '08:30', close: '18:30', days: 'Daily' },
       category: 'Housing'
     },
     {
@@ -1037,19 +1037,6 @@ export const resources: Record<Language, Resource[]> = {
       category: 'Emergency Relief'
     },
     {
-      icon: '🎓',
-      title: 'Pusat Dukungan EdUHK',
-      desc: 'Dukungan untuk mahasiswa/keluarga',
-      keywords: ['eduhk', 'mahasiswa', 'universitas'],
-      contacts: [
-        { l: 'Lokasi', v: 'EdUHK Block E Sports Hall' },
-        { l: 'Jam', v: '08:30 - 18:30' }
-      ],
-      coordinates: [22.4366, 114.1781],
-      hours: { open: '08:30', close: '18:30', days: 'Daily' },
-      category: 'Emergency Relief'
-    },
-    {
       icon: '✚',
       title: 'Palang Merah',
       desc: 'Bantuan Tunai Darurat & Dukungan Psikologis',
@@ -1137,6 +1124,19 @@ export const resources: Record<Language, Resource[]> = {
       ],
       info: ['Proyek perumahan transisi Tai Po', 'Pemerintah mengkoordinasikan peningkatan transportasi'],
       coordinates: [22.4460, 114.1640],
+      category: 'Housing'
+    },
+    {
+      icon: '🎓',
+      title: 'Pusat Dukungan EdUHK',
+      desc: 'Dukungan untuk mahasiswa/keluarga',
+      keywords: ['eduhk', 'mahasiswa', 'universitas'],
+      contacts: [
+        { l: 'Lokasi', v: 'EdUHK Block E Sports Hall' },
+        { l: 'Jam', v: '08:30 - 18:30' }
+      ],
+      coordinates: [22.4366, 114.1781],
+      hours: { open: '08:30', close: '18:30', days: 'Daily' },
       category: 'Housing'
     },
     {

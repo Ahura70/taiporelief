@@ -612,6 +612,53 @@ export const resources: Record<Language, Resource[]> = {
       ]
     },
     {
+      icon: '🇵🇭',
+      title: '菲律賓駐港總領事館',
+      desc: '為菲律賓國民提供領事服務及緊急援助',
+      keywords: ['菲律賓', '領事館', 'philippines', 'consulate', '護照', '證件'],
+      contacts: [
+        { l: '總機', v: '+852 2823 8500' },
+        { l: '緊急熱線 (24/7)', v: '+852 9451 4678' },
+        { l: '傳真', v: '+852 2866 9885' },
+        { l: '電郵', v: 'consular.pcghk@gmail.com' },
+        { l: '地址', v: '中環康樂廣場 6 號 14 樓' },
+        { l: '大埔專櫃', v: '大埔鄉事會街 8 號大埔綜合大樓' }
+      ],
+      info: [
+        '辦公時間：星期一至五 09:00-17:00',
+        '大埔專櫃：11月30日 10:00-16:00',
+        '服務：護照更換、證件補領、公證服務、緊急援助',
+        '緊急熱線 24/7 全天候服務'
+      ],
+      coordinates: [22.2818, 114.1582], // Central, Hong Kong
+      hours: { open: '09:00', close: '17:00', days: 'Mon-Fri' },
+      category: 'Consular Services'
+    },
+    {
+      icon: '🇮🇩',
+      title: '印尼駐港總領事館',
+      desc: '為印尼國民提供領事服務及緊急援助',
+      keywords: ['印尼', '領事館', 'indonesia', 'consulate', '護照', '證件'],
+      contacts: [
+        { l: '總機', v: '+852 2890 4421' },
+        { l: '緊急熱線 (24/7)', v: '+852 9154 4327' },
+        { l: '領事部', v: '+852 2890 4431' },
+        { l: '傳真', v: '+852 2890 4435' },
+        { l: '電郵', v: 'konsuler.kbrihkg@gmail.com' },
+        { l: '地址', v: '灣仔告士打道 127-129 號 6-8 樓' },
+        { l: 'WhatsApp', v: '+852 9154 4327' }
+      ],
+      info: [
+        '辦公時間：星期一至五 09:00-17:00',
+        '領事部：星期一至五 09:00-12:00, 14:00-16:00',
+        '服務：護照更換、證件補領、公證服務、緊急援助、勞工協助',
+        '緊急熱線及 WhatsApp 24/7 全天候服務'
+      ],
+      coordinates: [22.2775, 114.1726], // Wan Chai
+      hours: { open: '09:00', close: '17:00', days: 'Mon-Fri' },
+      category: 'Consular Services'
+    },
+    {
       icon: '🌐',
       title: '宏福苑報平安',
       desc: '即時安全狀態追蹤系統',
@@ -902,6 +949,53 @@ export const resources: Record<Language, Resource[]> = {
         'Services: Mental health counseling, emergency shelter, document replacement assistance, consulate coordination',
         'Support for affected migrant domestic workers'
       ]
+    },
+    {
+      icon: '🇵🇭',
+      title: 'Philippine Consulate General',
+      desc: 'Consular services and emergency assistance for Philippine nationals',
+      keywords: ['philippines', 'consulate', 'embassy', 'passport', 'documents'],
+      contacts: [
+        { l: 'Main Line', v: '+852 2823 8500' },
+        { l: 'Emergency Hotline (24/7)', v: '+852 9451 4678' },
+        { l: 'Fax', v: '+852 2866 9885' },
+        { l: 'Email', v: 'consular.pcghk@gmail.com' },
+        { l: 'Address', v: '14/F, United Centre, 95 Queensway, Admiralty' },
+        { l: 'Tai Po Counter', v: 'Tai Po Complex, 8 Heung Sze Hui Street' }
+      ],
+      info: [
+        'Office Hours: Mon-Fri 09:00-17:00',
+        'Tai Po Special Counter: Nov 30, 10:00-16:00',
+        'Services: Passport renewal, document replacement, notarial services, emergency assistance',
+        'Emergency hotline available 24/7'
+      ],
+      coordinates: [22.2818, 114.1582],
+      hours: { open: '09:00', close: '17:00', days: 'Mon-Fri' },
+      category: 'Consular Services'
+    },
+    {
+      icon: '🇮🇩',
+      title: 'Indonesian Consulate General',
+      desc: 'Consular services and emergency assistance for Indonesian nationals',
+      keywords: ['indonesia', 'consulate', 'embassy', 'passport', 'documents'],
+      contacts: [
+        { l: 'Main Line', v: '+852 2890 4421' },
+        { l: 'Emergency Hotline (24/7)', v: '+852 9154 4327' },
+        { l: 'Consular Section', v: '+852 2890 4431' },
+        { l: 'Fax', v: '+852 2890 4435' },
+        { l: 'Email', v: 'konsuler.kbrihkg@gmail.com' },
+        { l: 'Address', v: '6-8/F, Gloucester Tower, 127-129 Gloucester Road, Wan Chai' },
+        { l: 'WhatsApp', v: '+852 9154 4327' }
+      ],
+      info: [
+        'Office Hours: Mon-Fri 09:00-17:00',
+        'Consular Section: Mon-Fri 09:00-12:00, 14:00-16:00',
+        'Services: Passport renewal, document replacement, notarial services, emergency assistance, labour assistance',
+        'Emergency hotline & WhatsApp available 24/7'
+      ],
+      coordinates: [22.2775, 114.1726],
+      hours: { open: '09:00', close: '17:00', days: 'Mon-Fri' },
+      category: 'Consular Services'
     },
     {
       icon: '🌐',
@@ -1196,6 +1290,53 @@ export const resources: Record<Language, Resource[]> = {
       ]
     },
     {
+      icon: '🇵🇭',
+      title: 'Philippine Consulate General',
+      desc: 'Serbisyong konsular at emergency assistance para sa mga Pilipino',
+      keywords: ['pilipinas', 'konsulado', 'embassy', 'passport', 'dokumento'],
+      contacts: [
+        { l: 'Main Line', v: '+852 2823 8500' },
+        { l: 'Emergency Hotline (24/7)', v: '+852 9451 4678' },
+        { l: 'Fax', v: '+852 2866 9885' },
+        { l: 'Email', v: 'consular.pcghk@gmail.com' },
+        { l: 'Address', v: '14/F, United Centre, 95 Queensway, Admiralty' },
+        { l: 'Tai Po Counter', v: 'Tai Po Complex, 8 Heung Sze Hui Street' }
+      ],
+      info: [
+        'Oras ng Opisina: Lunes-Biyernes 09:00-17:00',
+        'Espesyal na Counter sa Tai Po: Nov 30, 10:00-16:00',
+        'Serbisyo: Pag-renew ng passport, pagpapalit ng dokumento, notarial services, emergency assistance',
+        'Emergency hotline available 24/7'
+      ],
+      coordinates: [22.2818, 114.1582],
+      hours: { open: '09:00', close: '17:00', days: 'Mon-Fri' },
+      category: 'Consular Services'
+    },
+    {
+      icon: '🇮🇩',
+      title: 'Indonesian Consulate General',
+      desc: 'Serbisyong konsular at emergency assistance para sa mga Indonesian',
+      keywords: ['indonesia', 'konsulado', 'embassy', 'passport', 'dokumento'],
+      contacts: [
+        { l: 'Main Line', v: '+852 2890 4421' },
+        { l: 'Emergency Hotline (24/7)', v: '+852 9154 4327' },
+        { l: 'Consular Section', v: '+852 2890 4431' },
+        { l: 'Fax', v: '+852 2890 4435' },
+        { l: 'Email', v: 'konsuler.kbrihkg@gmail.com' },
+        { l: 'Address', v: '6-8/F, Gloucester Tower, 127-129 Gloucester Road, Wan Chai' },
+        { l: 'WhatsApp', v: '+852 9154 4327' }
+      ],
+      info: [
+        'Oras ng Opisina: Lunes-Biyernes 09:00-17:00',
+        'Consular Section: Lunes-Biyernes 09:00-12:00, 14:00-16:00',
+        'Serbisyo: Pag-renew ng passport, pagpapalit ng dokumento, notarial services, emergency assistance, labour assistance',
+        'Emergency hotline at WhatsApp available 24/7'
+      ],
+      coordinates: [22.2775, 114.1726],
+      hours: { open: '09:00', close: '17:00', days: 'Mon-Fri' },
+      category: 'Consular Services'
+    },
+    {
       icon: '🌐',
       title: 'Wang Fuk Court Safety Tracking',
       desc: 'Real-time safety status tracking system',
@@ -1486,6 +1627,53 @@ export const resources: Record<Language, Resource[]> = {
         'Layanan: Konseling kesehatan mental, shelter darurat, bantuan penggantian dokumen, koordinasi konsulat',
         'Dukungan untuk pekerja rumah tangga migran yang terkena dampak'
       ]
+    },
+    {
+      icon: '🇵🇭',
+      title: 'Konsulat Jenderal Filipina',
+      desc: 'Layanan konsuler dan bantuan darurat untuk warga Filipina',
+      keywords: ['filipina', 'konsulat', 'kedutaan', 'paspor', 'dokumen'],
+      contacts: [
+        { l: 'Main Line', v: '+852 2823 8500' },
+        { l: 'Hotline Darurat (24/7)', v: '+852 9451 4678' },
+        { l: 'Fax', v: '+852 2866 9885' },
+        { l: 'Email', v: 'consular.pcghk@gmail.com' },
+        { l: 'Alamat', v: '14/F, United Centre, 95 Queensway, Admiralty' },
+        { l: 'Meja Tai Po', v: 'Tai Po Complex, 8 Heung Sze Hui Street' }
+      ],
+      info: [
+        'Jam Kantor: Senin-Jumat 09:00-17:00',
+        'Meja Khusus Tai Po: 30 Nov, 10:00-16:00',
+        'Layanan: Perpanjangan paspor, penggantian dokumen, layanan notaris, bantuan darurat',
+        'Hotline darurat tersedia 24/7'
+      ],
+      coordinates: [22.2818, 114.1582],
+      hours: { open: '09:00', close: '17:00', days: 'Mon-Fri' },
+      category: 'Consular Services'
+    },
+    {
+      icon: '🇮🇩',
+      title: 'Konsulat Jenderal Indonesia',
+      desc: 'Layanan konsuler dan bantuan darurat untuk warga Indonesia',
+      keywords: ['indonesia', 'konsulat', 'kedutaan', 'paspor', 'dokumen', 'kbri'],
+      contacts: [
+        { l: 'Main Line', v: '+852 2890 4421' },
+        { l: 'Hotline Darurat (24/7)', v: '+852 9154 4327' },
+        { l: 'Bagian Konsuler', v: '+852 2890 4431' },
+        { l: 'Fax', v: '+852 2890 4435' },
+        { l: 'Email', v: 'konsuler.kbrihkg@gmail.com' },
+        { l: 'Alamat', v: '6-8/F, Gloucester Tower, 127-129 Gloucester Road, Wan Chai' },
+        { l: 'WhatsApp', v: '+852 9154 4327' }
+      ],
+      info: [
+        'Jam Kantor: Senin-Jumat 09:00-17:00',
+        'Bagian Konsuler: Senin-Jumat 09:00-12:00, 14:00-16:00',
+        'Layanan: Perpanjangan paspor, penggantian dokumen, layanan notaris, bantuan darurat, bantuan tenaga kerja',
+        'Hotline darurat & WhatsApp tersedia 24/7'
+      ],
+      coordinates: [22.2775, 114.1726],
+      hours: { open: '09:00', close: '17:00', days: 'Mon-Fri' },
+      category: 'Consular Services'
     },
     {
       icon: '🌐',

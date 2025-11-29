@@ -13,6 +13,36 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '1.3.0',
+    date: '2025-11-29',
+    changes: {
+      zh: [
+        '🔒 加強私隱保護 - 報平安資料不再公開顯示個人資訊',
+        '🔐 提升後端安全性 - 新聞更新功能需要驗證',
+        '📄 更新菲律賓領事館服務資訊 - 11月30日於大埔太和邨社區中心設立服務中心',
+        '✨ 證件補領資訊改版為「證件補領資訊」'
+      ],
+      en: [
+        '🔒 Enhanced privacy protection - Safety reports no longer expose personal information publicly',
+        '🔐 Improved backend security - News update function now requires authentication',
+        '📄 Updated Philippine Consulate service info - Service center opening Nov. 30 at Tai Po Tai Wo Estate Community Centre',
+        '✨ Updated document section to "Document Replacement Information"'
+      ],
+      tl: [
+        '🔒 Pinahusay ang proteksyon sa privacy - Ang safety reports ay hindi na nagpapakita ng personal na impormasyon sa publiko',
+        '🔐 Pinabuti ang seguridad ng backend - Ang news update function ay nangangailangan na ng authentication',
+        '📄 Na-update ang impormasyon ng serbisyo ng Philippine Consulate - Magbubukas ng service center sa Nov. 30 sa Tai Po Tai Wo Estate Community Centre',
+        '✨ Na-update ang seksyon ng dokumento sa "Document Replacement Information"'
+      ],
+      id: [
+        '🔒 Meningkatkan perlindungan privasi - Laporan keselamatan tidak lagi menampilkan informasi pribadi secara publik',
+        '🔐 Meningkatkan keamanan backend - Fungsi pembaruan berita sekarang memerlukan autentikasi',
+        '📄 Memperbarui informasi layanan Konsulat Filipina - Pusat layanan dibuka 30 Nov di Tai Po Tai Wo Estate Community Centre',
+        '✨ Memperbarui bagian dokumen menjadi "Informasi Penggantian Dokumen"'
+      ]
+    }
+  },
+  {
     version: '1.2.0',
     date: '2025-11-29',
     changes: {

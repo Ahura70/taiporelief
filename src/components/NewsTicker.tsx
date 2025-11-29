@@ -36,7 +36,7 @@ export const NewsTicker = ({ newsItems }: NewsTickerProps) => {
           }
         }
         .animate-scroll {
-          animation: scroll 60s linear infinite;
+          animation: scroll 30s linear infinite;
         }
         .animate-scroll:hover {
           animation-play-state: paused;

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Resource } from '@/lib/translations';
@@ -7,11 +7,18 @@ import { isResourceOpen, getStatusText } from '@/lib/hoursHelper';
 import { Button } from '@/components/ui/button';
 import { Filter } from 'lucide-react';
 import { MapLegend } from './MapLegend';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 // Create custom marker icons with status badges and resource icons
 const createCustomIcon = (isOpen: boolean, hasHours: boolean, resourceIcon: string) => {
-  // Using grayscale colors: lighter gray for no hours, dark gray for open, medium gray for closed
-  const color = !hasHours ? 'hsl(0, 0%, 60%)' : isOpen ? 'hsl(0, 0%, 25%)' : 'hsl(0, 0%, 45%)';
+  // Using colors: blue for no hours, green for open, red for closed
+  const color = !hasHours ? '#3b82f6' : isOpen ? '#22c55e' : '#ef4444';
   const statusText = !hasHours ? '' : isOpen ? 'OPEN' : 'CLOSED';
   
   const html = `
@@ -24,7 +31,6 @@ const createCustomIcon = (isOpen: boolean, hasHours: boolean, resourceIcon: stri
         position: absolute;
         top: 4px;
         font-size: 16px;
-        filter: grayscale(100%);
       ">${resourceIcon}</div>
       ${statusText ? `
         <div style="
@@ -78,7 +84,19 @@ export const ResourceMap = ({
   const mapRef = useRef<L.Map | null>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const [showOpenOnly, setShowOpenOnly] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const markersRef = useRef<Map<string, L.Marker>>(new Map());
+
+  // Extract unique categories from resources
+  const categories = useMemo(() => {
+    const categorySet = new Set<string>();
+    resources.forEach(resource => {
+      if (resource.category) {
+        categorySet.add(resource.category);
+      }
+    });
+    return Array.from(categorySet).sort();
+  }, [resources]);
 
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current) return;
@@ -166,7 +184,7 @@ export const ResourceMap = ({
     };
   }, [resources, onResourceClick]);
 
-  // Filter markers based on open/closed status and update marker icons
+  // Filter markers based on open/closed status, category, and update marker icons
   useEffect(() => {
     if (!mapRef.current) return;
 
@@ -182,34 +200,55 @@ export const ResourceMap = ({
         const customIcon = createCustomIcon(isOpen, hasHours, resource.icon);
         marker.setIcon(customIcon);
         
-        if (showOpenOnly && !isOpen) {
-          // Hide closed resources when filter is on
-          marker.remove();
-        } else {
-          // Show all resources when filter is off, or open resources when filter is on
+        // Filter by open/closed status
+        const passesOpenFilter = !showOpenOnly || isOpen;
+        
+        // Filter by category
+        const passesCategoryFilter = selectedCategory === 'all' || resource.category === selectedCategory;
+        
+        if (passesOpenFilter && passesCategoryFilter) {
+          // Show resources that pass both filters
           if (!mapRef.current.hasLayer(marker)) {
             marker.addTo(mapRef.current);
           }
+        } else {
+          // Hide resources that don't pass filters
+          marker.remove();
         }
       }
     });
-  }, [showOpenOnly, resources]);
+  }, [showOpenOnly, selectedCategory, resources]);
 
   return (
     <div className="w-full bg-card rounded-lg shadow-lg overflow-hidden border border-border relative z-0">
-      <div className="p-4 bg-muted/50 border-b border-border flex items-center justify-between">
+      <div className="p-4 bg-muted/50 border-b border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <h2 className="text-xl font-bold text-foreground" id="map-title">🗺️ {mapTitle}</h2>
-        <Button
-          variant={showOpenOnly ? "default" : "outline"}
-          size="sm"
-          onClick={() => setShowOpenOnly(!showOpenOnly)}
-          className="gap-2"
-          aria-pressed={showOpenOnly}
-          aria-label={`Filter: ${showOpenOnlyText}`}
-        >
-          <Filter className="w-4 h-4" aria-hidden="true" />
-          {showOpenOnlyText}
-        </Button>
+        <div className="flex items-center gap-2 flex-wrap">
+          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+            <SelectTrigger className="w-[200px] bg-background">
+              <SelectValue placeholder="All Categories" />
+            </SelectTrigger>
+            <SelectContent className="bg-background z-[9999]">
+              <SelectItem value="all">All Categories</SelectItem>
+              {categories.map((category) => (
+                <SelectItem key={category} value={category}>
+                  {category}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Button
+            variant={showOpenOnly ? "default" : "outline"}
+            size="sm"
+            onClick={() => setShowOpenOnly(!showOpenOnly)}
+            className="gap-2"
+            aria-pressed={showOpenOnly}
+            aria-label={`Filter: ${showOpenOnlyText}`}
+          >
+            <Filter className="w-4 h-4" aria-hidden="true" />
+            {showOpenOnlyText}
+          </Button>
+        </div>
       </div>
       <div className="relative z-0">
         <div 

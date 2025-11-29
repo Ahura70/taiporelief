@@ -195,7 +195,6 @@ const Index = () => {
               indonesiaTitle={t.indonesiaPassport}
               philippinesCenterNote={t.philippinesCenterNote}
               indonesiaClarificationNote={t.indonesiaClarificationNote}
-              currentLang={currentLang}
               shareLabel={t.share}
               shareWhatsApp={t.shareWhatsApp}
               shareLink={t.shareLink}

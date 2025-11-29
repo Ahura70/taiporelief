@@ -10,7 +10,6 @@ import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { ResourceDetail } from '@/components/ResourceDetail';
 import { ResourceMap } from '@/components/ResourceMap';
-import { NewsBanner } from '@/components/NewsBanner';
 import { FeedbackForm } from '@/components/FeedbackForm';
 import { InstallPrompt } from '@/components/InstallPrompt';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
@@ -78,7 +77,7 @@ const Index = () => {
       <EmergencyBanner text={t.emergency} />
 
       <main id="main-content" className="max-w-4xl mx-auto px-5 py-6">
-        <NewsTicker text={t.newsTicker} />
+        <NewsTicker newsItems={t.newsItems} />
         
         <div ref={searchBoxRef} className="mt-6">
           <SearchBox
@@ -106,8 +105,6 @@ const Index = () => {
           />
         </div>
       </main>
-
-      <NewsBanner title={t.newsTitle} />
 
       <div className="max-w-4xl mx-auto px-5">
         <div className="text-center mt-6 text-xs text-muted-foreground space-y-1">

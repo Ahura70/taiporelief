@@ -193,6 +193,8 @@ const Index = () => {
               description={t.documentChecklistDesc}
               philippinesTitle={t.philippinesPassport}
               indonesiaTitle={t.indonesiaPassport}
+              philippinesCenterNote={t.philippinesCenterNote}
+              indonesiaClarificationNote={t.indonesiaClarificationNote}
               currentLang={currentLang}
             />
           </div>

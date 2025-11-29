@@ -15,6 +15,8 @@ interface DocumentChecklistHelperProps {
   description: string;
   philippinesTitle: string;
   indonesiaTitle: string;
+  philippinesCenterNote: string;
+  indonesiaClarificationNote: string;
   currentLang: string;
 }
 
@@ -110,6 +112,8 @@ export const DocumentChecklistHelper = ({
   description,
   philippinesTitle,
   indonesiaTitle,
+  philippinesCenterNote,
+  indonesiaClarificationNote,
   currentLang
 }: DocumentChecklistHelperProps) => {
   const [philippinesChecked, setPhilippinesChecked] = useState<boolean[]>(
@@ -167,6 +171,11 @@ export const DocumentChecklistHelper = ({
               </div>
             </AccordionTrigger>
             <AccordionContent>
+              <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <p className="text-sm text-blue-900 dark:text-blue-100 whitespace-pre-line">
+                  {philippinesCenterNote}
+                </p>
+              </div>
               <div className="space-y-3 pt-2">
                 {philippinesList.map((item, index) => (
                   <div
@@ -201,6 +210,11 @@ export const DocumentChecklistHelper = ({
               </div>
             </AccordionTrigger>
             <AccordionContent>
+              <div className="mb-4 p-3 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg">
+                <p className="text-sm text-amber-900 dark:text-amber-100 whitespace-pre-line">
+                  {indonesiaClarificationNote}
+                </p>
+              </div>
               <div className="space-y-3 pt-2">
                 {indonesiaList.map((item, index) => (
                   <div

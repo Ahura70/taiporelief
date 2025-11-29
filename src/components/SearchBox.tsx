@@ -37,6 +37,8 @@ export const SearchBox = ({
   const [showHint, setShowHint] = useState(true);
   const [showPermissionRequest, setShowPermissionRequest] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isReadingAll, setIsReadingAll] = useState(false);
+  const [currentReadingIndex, setCurrentReadingIndex] = useState(0);
 
   // Voice commands for tooltip
   const getVoiceCommandsHelp = () => {
@@ -48,7 +50,9 @@ export const SearchBox = ({
             { category: '捐款', examples: ['捐款', '紅十字', '明愛'] },
             { category: '義工', examples: ['義工', '志願者'] },
             { category: '支援', examples: ['幫助', '支援', '住宿', '食物', '輔導'] },
-            { category: '緊急', examples: ['緊急', '熱線'] }
+            { category: '緊急', examples: ['緊急', '熱線'] },
+            { category: '播放全部', examples: ['播放全部', '全部播放'] },
+            { category: '停止', examples: ['停止', '停止播放'] }
           ]
         };
       case 'tl':
@@ -58,7 +62,9 @@ export const SearchBox = ({
             { category: 'Donasyon', examples: ['donate', 'magbigay', 'pulang krus'] },
             { category: 'Boluntaryo', examples: ['volunteer', 'boluntaryo'] },
             { category: 'Tulong', examples: ['help', 'tulong', 'tirahan', 'pagkain'] },
-            { category: 'Emerhensya', examples: ['emergency', 'emerhensya', 'telepono'] }
+            { category: 'Emerhensya', examples: ['emergency', 'emerhensya', 'telepono'] },
+            { category: 'Basahin Lahat', examples: ['basahin lahat', 'basahin lahat'] },
+            { category: 'Ihinto', examples: ['ihinto', 'ihinto na'] }
           ]
         };
       case 'id':
@@ -68,7 +74,9 @@ export const SearchBox = ({
             { category: 'Donasi', examples: ['donate', 'donasi', 'palang merah'] },
             { category: 'Sukarelawan', examples: ['volunteer', 'sukarelawan'] },
             { category: 'Bantuan', examples: ['help', 'bantuan', 'tempat tinggal', 'makanan'] },
-            { category: 'Darurat', examples: ['emergency', 'darurat', 'saluran'] }
+            { category: 'Darurat', examples: ['emergency', 'darurat', 'saluran'] },
+            { category: 'Baca Semua', examples: ['baca semua', 'baca semuanya'] },
+            { category: 'Hentikan', examples: ['hentikan', 'berhenti'] }
           ]
         };
       default:
@@ -78,7 +86,9 @@ export const SearchBox = ({
             { category: 'Donations', examples: ['donate', 'red cross', 'caritas'] },
             { category: 'Volunteer', examples: ['volunteer', 'help out'] },
             { category: 'Support', examples: ['help', 'support', 'shelter', 'food', 'counseling'] },
-            { category: 'Emergency', examples: ['emergency', 'urgent', 'hotline'] }
+            { category: 'Emergency', examples: ['emergency', 'urgent', 'hotline'] },
+            { category: 'Read All', examples: ['read all', 'read everything'] },
+            { category: 'Stop', examples: ['stop', 'stop reading'] }
           ]
         };
     }
@@ -131,7 +141,7 @@ export const SearchBox = ({
   const hints = getVoiceHints();
 
   // Text-to-speech function for voice confirmation
-  const speak = useCallback((text: string) => {
+  const speak = useCallback((text: string, onEnd?: () => void) => {
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel(); // Cancel any ongoing speech
       const utterance = new SpeechSynthesisUtterance(text);
@@ -140,12 +150,119 @@ export const SearchBox = ({
       utterance.pitch = 1;
       
       utterance.onstart = () => setIsSpeaking(true);
-      utterance.onend = () => setIsSpeaking(false);
-      utterance.onerror = () => setIsSpeaking(false);
+      utterance.onend = () => {
+        setIsSpeaking(false);
+        if (onEnd) onEnd();
+      };
+      utterance.onerror = () => {
+        setIsSpeaking(false);
+        if (onEnd) onEnd();
+      };
       
       window.speechSynthesis.speak(utterance);
+    } else if (onEnd) {
+      onEnd();
     }
   }, [currentLang]);
+
+  // Stop all speech
+  const stopSpeaking = useCallback(() => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    setIsSpeaking(false);
+    setIsReadingAll(false);
+    setCurrentReadingIndex(0);
+  }, []);
+
+  // Read all emergency contacts sequentially
+  const readAllContacts = useCallback(() => {
+    if (!('speechSynthesis' in window)) {
+      toast({
+        title: currentLang === 'zh' ? '不支援' : currentLang === 'tl' ? 'Hindi suportado' : currentLang === 'id' ? 'Tidak didukung' : 'Not supported',
+        description: currentLang === 'zh' 
+          ? '您的瀏覽器不支援語音播放。'
+          : currentLang === 'tl'
+          ? 'Ang iyong browser ay hindi sumusuporta sa voice playback.'
+          : currentLang === 'id'
+          ? 'Browser Anda tidak mendukung pemutaran suara.'
+          : 'Your browser does not support voice playback.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    setIsReadingAll(true);
+    setCurrentReadingIndex(0);
+
+    // Filter emergency contacts (red cross, caritas, emergency lines, etc.)
+    const emergencyResources = resources.filter(r => 
+      r.icon === '✚' || 
+      r.icon === '🙏' || 
+      r.icon === '🚨' ||
+      r.icon === '🧠' ||
+      r.keywords.some(k => k.toLowerCase().includes('emergency') || k.toLowerCase().includes('緊急') || k.toLowerCase().includes('emerhensya') || k.toLowerCase().includes('darurat'))
+    );
+
+    const introMsg = currentLang === 'zh'
+      ? `正在播放 ${emergencyResources.length} 個緊急聯絡資訊`
+      : currentLang === 'tl'
+      ? `Nagbabasa ng ${emergencyResources.length} emergency contact`
+      : currentLang === 'id'
+      ? `Membaca ${emergencyResources.length} kontak darurat`
+      : `Reading ${emergencyResources.length} emergency contacts`;
+
+    toast({
+      title: currentLang === 'zh' ? '緊急聯絡資訊' : currentLang === 'tl' ? 'Emergency Contacts' : currentLang === 'id' ? 'Kontak Darurat' : 'Emergency Contacts',
+      description: introMsg,
+      duration: 3000,
+    });
+
+    const readNext = (index: number) => {
+      if (index >= emergencyResources.length) {
+        setIsReadingAll(false);
+        setCurrentReadingIndex(0);
+        const doneMsg = currentLang === 'zh'
+          ? '已完成播放所有緊急聯絡資訊'
+          : currentLang === 'tl'
+          ? 'Natapos na ang pagbabasa ng lahat ng emergency contact'
+          : currentLang === 'id'
+          ? 'Selesai membaca semua kontak darurat'
+          : 'Finished reading all emergency contacts';
+        speak(doneMsg);
+        return;
+      }
+
+      setCurrentReadingIndex(index);
+      const resource = emergencyResources[index];
+      
+      // Build message
+      const contactParts: string[] = [];
+      resource.contacts.forEach((contact, idx) => {
+        if (idx < 3) { // Read first 3 contacts only
+          contactParts.push(`${contact.l}: ${contact.v}`);
+        }
+      });
+
+      const message = currentLang === 'zh'
+        ? `${resource.title}。${contactParts.join('。')}`
+        : currentLang === 'tl'
+        ? `${resource.title}. ${contactParts.join('. ')}`
+        : currentLang === 'id'
+        ? `${resource.title}. ${contactParts.join('. ')}`
+        : `${resource.title}. ${contactParts.join('. ')}`;
+
+      speak(message, () => {
+        // Brief pause between contacts
+        setTimeout(() => readNext(index + 1), 800);
+      });
+    };
+
+    // Start with intro then first contact
+    speak(introMsg, () => {
+      setTimeout(() => readNext(0), 500);
+    });
+  }, [resources, currentLang, speak, toast]);
 
   // Request microphone permission
   const requestMicrophonePermission = async () => {
@@ -261,6 +378,41 @@ export const SearchBox = ({
       const transcript = event.results[0][0].transcript;
       const val = transcript.toLowerCase().trim();
       
+      // Check for "read all" command first
+      const readAllKeywords = ['read all', 'read everything', '播放全部', '全部播放', 'basahin lahat', 'baca semua'];
+      if (readAllKeywords.some(keyword => val.includes(keyword))) {
+        const confirmMsg = currentLang === 'zh'
+          ? '正在播放所有緊急聯絡資訊'
+          : currentLang === 'tl'
+          ? 'Babasahin ang lahat ng emergency contact'
+          : currentLang === 'id'
+          ? 'Membaca semua kontak darurat'
+          : 'Reading all emergency contacts';
+        
+        setVoiceStatus(confirmMsg);
+        setTimeout(() => {
+          readAllContacts();
+          setVoiceStatus('');
+        }, 500);
+        return;
+      }
+
+      // Check for "stop" command
+      const stopKeywords = ['stop', 'stop reading', '停止', '停止播放', 'ihinto', 'hentikan'];
+      if (stopKeywords.some(keyword => val.includes(keyword))) {
+        stopSpeaking();
+        const stoppedMsg = currentLang === 'zh'
+          ? '已停止播放'
+          : currentLang === 'tl'
+          ? 'Tumigil na'
+          : currentLang === 'id'
+          ? 'Berhenti'
+          : 'Stopped';
+        setVoiceStatus(stoppedMsg);
+        setTimeout(() => setVoiceStatus(''), 2000);
+        return;
+      }
+      
       // Voice confirmation - speak back what was heard
       const heardMsg = currentLang === 'zh' 
         ? `聽到：${transcript}`
@@ -331,9 +483,9 @@ export const SearchBox = ({
         const contactMsg = currentLang === 'zh'
           ? `打開 ${matchedResource.title}。${firstContact ? `${firstContact.l}：${firstContact.v}` : ''}`
           : currentLang === 'tl'
-          ? `Binuksan ang ${matchedResource.title}。${firstContact ? `${firstContact.l}: ${firstContact.v}` : ''}`
+          ? `Binuksan ang ${matchedResource.title}. ${firstContact ? `${firstContact.l}: ${firstContact.v}` : ''}`
           : currentLang === 'id'
-          ? `Membuka ${matchedResource.title}。${firstContact ? `${firstContact.l}: ${firstContact.v}` : ''}`
+          ? `Membuka ${matchedResource.title}. ${firstContact ? `${firstContact.l}: ${firstContact.v}` : ''}`
           : `Opening ${matchedResource.title}. ${firstContact ? `${firstContact.l}: ${firstContact.v}` : ''}`;
         
         setTimeout(() => speak(contactMsg), 800);
@@ -553,6 +705,34 @@ export const SearchBox = ({
         {voiceStatus && (
           <div className="text-xs text-primary mt-2 min-h-[18px] font-medium animate-pulse" role="status" aria-live="polite">
             {voiceStatus}
+          </div>
+        )}
+
+        {isReadingAll && (
+          <div className="mt-3 p-3 bg-primary/10 border border-primary/20 rounded-lg" role="status" aria-live="polite">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2 flex-1">
+                <Volume2 className="w-4 h-4 text-primary animate-pulse" />
+                <div className="text-xs font-medium text-foreground">
+                  {currentLang === 'zh' 
+                    ? `正在播放緊急聯絡 ${currentReadingIndex + 1}`
+                    : currentLang === 'tl'
+                    ? `Binabasa ang emergency contact ${currentReadingIndex + 1}`
+                    : currentLang === 'id'
+                    ? `Membaca kontak darurat ${currentReadingIndex + 1}`
+                    : `Reading emergency contact ${currentReadingIndex + 1}`
+                  }
+                </div>
+              </div>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={stopSpeaking}
+                className="h-7 text-xs"
+              >
+                {currentLang === 'zh' ? '停止' : currentLang === 'tl' ? 'Ihinto' : currentLang === 'id' ? 'Hentikan' : 'Stop'}
+              </Button>
+            </div>
           </div>
         )}
         

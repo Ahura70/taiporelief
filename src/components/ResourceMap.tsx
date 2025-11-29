@@ -7,6 +7,12 @@ import { isResourceOpen, getStatusText } from '@/lib/hoursHelper';
 import { Button } from '@/components/ui/button';
 import { Filter } from 'lucide-react';
 import { MapLegend } from './MapLegend';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuCheckboxItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 // Create custom marker icons with status badges and resource icons
 const createCustomIcon = (isOpen: boolean, hasHours: boolean, resourceIcon: string) => {
@@ -54,6 +60,20 @@ const createCustomIcon = (isOpen: boolean, hasHours: boolean, resourceIcon: stri
   });
 };
 
+// Category mapping based on resource icons
+const getResourceCategory = (resource: Resource): string => {
+  const icon = resource.icon;
+  if (icon === '🏥' || icon === '❤️') return 'emergency';
+  if (icon === '👩') return 'migrant';
+  if (icon === '🐾') return 'animal';
+  if (icon === '🤝' || icon === '📋') return 'volunteer';
+  if (icon === '🏠') return 'shelter';
+  if (icon === '📦' || icon === '🏦') return 'supplies';
+  if (icon === '🌐') return 'information';
+  if (icon === '🚨' || icon === '☎️') return 'hotline';
+  return 'other';
+};
+
 interface ResourceMapProps {
   resources: Resource[];
   onResourceClick?: (resource: Resource) => void;
@@ -63,6 +83,16 @@ interface ResourceMapProps {
   legendOpen?: string;
   legendClosed?: string;
   legendNoHours?: string;
+  filterCategoriesText?: string;
+  allCategoriesText?: string;
+  categoryEmergency?: string;
+  categoryMigrant?: string;
+  categoryAnimal?: string;
+  categoryVolunteer?: string;
+  categoryShelter?: string;
+  categorySupplies?: string;
+  categoryInformation?: string;
+  categoryHotline?: string;
 }
 
 export const ResourceMap = ({ 
@@ -73,12 +103,42 @@ export const ResourceMap = ({
   currentLang,
   legendOpen = 'Open Now',
   legendClosed = 'Closed',
-  legendNoHours = 'Always Available'
+  legendNoHours = 'Always Available',
+  filterCategoriesText = 'Filter Categories',
+  allCategoriesText = 'All Categories',
+  categoryEmergency = 'Emergency Relief',
+  categoryMigrant = 'Migrant Worker Support',
+  categoryAnimal = 'Animal Welfare',
+  categoryVolunteer = 'Volunteer Groups',
+  categoryShelter = 'Shelter Services',
+  categorySupplies = 'Supplies & Donations',
+  categoryInformation = 'Information Hub',
+  categoryHotline = 'Hotlines'
 }: ResourceMapProps) => {
   const mapRef = useRef<L.Map | null>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const [showOpenOnly, setShowOpenOnly] = useState(false);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const markersRef = useRef<Map<string, L.Marker>>(new Map());
+
+  const categories = [
+    { id: 'emergency', label: categoryEmergency },
+    { id: 'migrant', label: categoryMigrant },
+    { id: 'animal', label: categoryAnimal },
+    { id: 'volunteer', label: categoryVolunteer },
+    { id: 'shelter', label: categoryShelter },
+    { id: 'supplies', label: categorySupplies },
+    { id: 'information', label: categoryInformation },
+    { id: 'hotline', label: categoryHotline },
+  ];
+
+  const toggleCategory = (categoryId: string) => {
+    setSelectedCategories(prev =>
+      prev.includes(categoryId)
+        ? prev.filter(id => id !== categoryId)
+        : [...prev, categoryId]
+    );
+  };
 
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current) return;
@@ -166,7 +226,7 @@ export const ResourceMap = ({
     };
   }, [resources, onResourceClick]);
 
-  // Filter markers based on open/closed status and update marker icons
+  // Filter markers based on open/closed status, categories, and update marker icons
   useEffect(() => {
     if (!mapRef.current) return;
 
@@ -177,39 +237,74 @@ export const ResourceMap = ({
       if (marker && resource.coordinates) {
         const isOpen = isResourceOpen(resource);
         const hasHours = !!resource.hours;
+        const resourceCategory = getResourceCategory(resource);
         
         // Update marker icon to reflect current status
         const customIcon = createCustomIcon(isOpen, hasHours, resource.icon);
         marker.setIcon(customIcon);
         
-        if (showOpenOnly && !isOpen) {
-          // Hide closed resources when filter is on
+        // Determine if marker should be visible
+        const shouldShow = 
+          (!showOpenOnly || isOpen) && 
+          (selectedCategories.length === 0 || selectedCategories.includes(resourceCategory));
+        
+        if (!shouldShow) {
           marker.remove();
         } else {
-          // Show all resources when filter is off, or open resources when filter is on
           if (!mapRef.current.hasLayer(marker)) {
             marker.addTo(mapRef.current);
           }
         }
       }
     });
-  }, [showOpenOnly, resources]);
+  }, [showOpenOnly, selectedCategories, resources]);
 
   return (
     <div className="w-full bg-card rounded-lg shadow-lg overflow-hidden border border-border relative z-0">
-      <div className="p-4 bg-muted/50 border-b border-border flex items-center justify-between">
+      <div className="p-4 bg-muted/50 border-b border-border flex items-center justify-between flex-wrap gap-2">
         <h2 className="text-xl font-bold text-foreground" id="map-title">🗺️ {mapTitle}</h2>
-        <Button
-          variant={showOpenOnly ? "default" : "outline"}
-          size="sm"
-          onClick={() => setShowOpenOnly(!showOpenOnly)}
-          className="gap-2"
-          aria-pressed={showOpenOnly}
-          aria-label={`Filter: ${showOpenOnlyText}`}
-        >
-          <Filter className="w-4 h-4" aria-hidden="true" />
-          {showOpenOnlyText}
-        </Button>
+        <div className="flex gap-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2"
+              >
+                <Filter className="w-4 h-4" aria-hidden="true" />
+                {filterCategoriesText}
+                {selectedCategories.length > 0 && (
+                  <span className="ml-1 bg-primary text-primary-foreground rounded-full w-5 h-5 text-xs flex items-center justify-center">
+                    {selectedCategories.length}
+                  </span>
+                )}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56 bg-card border-border z-50">
+              {categories.map(category => (
+                <DropdownMenuCheckboxItem
+                  key={category.id}
+                  checked={selectedCategories.includes(category.id)}
+                  onCheckedChange={() => toggleCategory(category.id)}
+                  className="cursor-pointer"
+                >
+                  {category.label}
+                </DropdownMenuCheckboxItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Button
+            variant={showOpenOnly ? "default" : "outline"}
+            size="sm"
+            onClick={() => setShowOpenOnly(!showOpenOnly)}
+            className="gap-2"
+            aria-pressed={showOpenOnly}
+            aria-label={`Filter: ${showOpenOnlyText}`}
+          >
+            <Filter className="w-4 h-4" aria-hidden="true" />
+            {showOpenOnlyText}
+          </Button>
+        </div>
       </div>
       <div className="relative z-0">
         <div 

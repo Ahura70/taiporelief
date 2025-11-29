@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { MemorialBanner } from '@/components/MemorialBanner';
 import { EmergencyBanner } from '@/components/EmergencyBanner';
 import { NewsTicker } from '@/components/NewsTicker';
+import { FilipinoCasualtyStats } from '@/components/FilipinoCasualtyStats';
 import { EmergencyDialButton } from '@/components/EmergencyDialButton';
 import { AccessibilityMenu } from '@/components/AccessibilityMenu';
 import { LanguageNotification } from '@/components/LanguageNotification';
@@ -79,6 +80,18 @@ const Index = () => {
 
       <main id="main-content" className="max-w-4xl mx-auto px-5 py-6">
         <NewsTicker text={t.newsTicker} />
+        
+        <div className="mt-6">
+          <FilipinoCasualtyStats
+            title={t.filipinoStatsTitle}
+            safeLabel={t.filipinoStatsSafe}
+            injuredLabel={t.filipinoStatsInjured}
+            missingLabel={t.filipinoStatsMissing}
+            verificationLabel={t.filipinoStatsVerification}
+            sourceLabel={t.filipinoStatsSource}
+            lastUpdatedLabel={t.filipinoStatsLastUpdated}
+          />
+        </div>
         
         <div ref={searchBoxRef} className="mt-6">
           <SearchBox

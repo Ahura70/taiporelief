@@ -1,3 +1,5 @@
+import { MessageCircle } from 'lucide-react';
+
 interface EmergencyBannerProps {
   text: string;
   whatsappText: string;
@@ -15,7 +17,7 @@ export const EmergencyBanner = ({ text, whatsappText }: EmergencyBannerProps) =>
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
         >
-          <span>📱</span>
+          <MessageCircle className="w-4 h-4" strokeWidth={2.5} />
           <span>{whatsappText}</span>
         </a>
       </div>

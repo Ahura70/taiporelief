@@ -42,18 +42,32 @@ export const EmergencyContactCard = ({
           </div>
         </Button>
         
-        <Button
-          variant="default"
-          size="lg"
-          className="w-full justify-start gap-3 bg-destructive hover:bg-destructive/90 text-white h-auto py-4"
-          onClick={() => callNumber('+85291544327')}
-        >
-          <Phone className="w-5 h-5" />
-          <div className="flex flex-col items-start">
-            <span className="font-semibold">{indonesiaLabel}</span>
-            <span className="text-sm opacity-90">+852 9154 4327</span>
-          </div>
-        </Button>
+        <div className="space-y-2">
+          <Button
+            variant="default"
+            size="lg"
+            className="w-full justify-start gap-3 bg-destructive hover:bg-destructive/90 text-white h-auto py-3"
+            onClick={() => callNumber('+85252422240')}
+          >
+            <Phone className="w-5 h-5" />
+            <div className="flex flex-col items-start">
+              <span className="font-semibold">{indonesiaLabel}</span>
+              <span className="text-xs opacity-90">Emergency: +852 5242 2240</span>
+            </div>
+          </Button>
+          <Button
+            variant="default"
+            size="lg"
+            className="w-full justify-start gap-3 bg-destructive hover:bg-destructive/90 text-white h-auto py-3"
+            onClick={() => callNumber('+85267730466')}
+          >
+            <Phone className="w-5 h-5" />
+            <div className="flex flex-col items-start">
+              <span className="font-semibold">{indonesiaLabel}</span>
+              <span className="text-xs opacity-90">Support: +852 6773 0466</span>
+            </div>
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );

@@ -104,7 +104,7 @@ export const translations = {
     philippinesPassport: '菲律賓護照',
     indonesiaPassport: '印尼護照',
     philippinesCenterNote: '📍 菲律賓領事館將於11月30日上午10時至下午4時在大埔綜合大樓設立服務中心\n地址：香城司徒街8號',
-    indonesiaClarificationNote: '⏳ 進一步詳情等待確認中',
+    indonesiaClarificationNote: '📞 移工請致電領事館查詢地點詳情\n緊急熱線：+852 5242 2240\n支援熱線：+852 6773 0466',
     newsItems: [
       { text: '至少128人於大埔宏福苑火災中確認罹難，包括1名消防員及7名家庭傭工。79人受傷，包括12名消防員。約150人下落不明', source: 'SCMP/香港政府/印尼領事館' },
       { text: '受影響的外傭僱主/外傭可致電勞工處 3582 8987 (有關外傭事宜) 或 2929 4054', source: '香港勞工處' },
@@ -209,7 +209,7 @@ export const translations = {
     philippinesPassport: 'Philippine Passport',
     indonesiaPassport: 'Indonesian Passport',
     philippinesCenterNote: '📍 The Philippine Consulate will open a service center on Nov. 30 between 10:00 AM and 4:00 PM at the Tai Po Complex, 8 Heung Sze Hui Street',
-    indonesiaClarificationNote: '⏳ Further clarification awaited',
+    indonesiaClarificationNote: '📞 Migrant Workers are requested to check the venue in addition to calling the consulate\nEmergency: +852 5242 2240\nSupport: +852 6773 0466',
     newsItems: [
       { text: 'At least 128 people, including a firefighter and 7 domestic migrant workers confirmed dead in Tai Po Wang Fuk Court fire. 79 injured, including 12 firefighters. Some 150 people are unaccounted for', source: 'SCMP/HK Govt./Indonesian consulate' },
       { text: 'Affected MDW employers/MDWs can call the HK Labour Department at 3582 8987 (for FDH-related matters), or 2929 4054', source: 'HK Labour Dept.' },
@@ -313,7 +313,7 @@ export const translations = {
     philippinesPassport: 'Philippine Passport',
     indonesiaPassport: 'Indonesian Passport',
     philippinesCenterNote: '📍 Ang Philippine Consulate ay magbubukas ng service center sa Nov. 30 mula 10:00 AM hanggang 4:00 PM sa Tai Po Complex, 8 Heung Sze Hui Street',
-    indonesiaClarificationNote: '⏳ Hinihintay ang karagdagang paglilinaw',
+    indonesiaClarificationNote: '📞 Hinihiling sa mga Migrant Workers na suriin ang venue bilang karagdagan sa pagtawag sa consulate\nEmergency: +852 5242 2240\nSupport: +852 6773 0466',
     newsItems: [
       { text: 'Hindi bababa sa 128 katao, kasama ang isang bumbero at 7 domestic migrant workers, napatunayan nang namatay sa sunog sa Tai Po Wang Fuk Court. 79 ang nasugatan, kasama ang 12 bumbero. Humigit-kumulang 150 ang hindi pa napapatunayang kinaroroonan', source: 'SCMP/HK Govt./Indonesian consulate' },
       { text: 'Ang mga apektadong employer/MDW ng FDH ay maaaring tumawag sa HK Labour Department sa 3582 8987 (para sa mga bagay na may kaugnayan sa FDH), o 2929 4054', source: 'HK Labour Dept.' },
@@ -418,7 +418,7 @@ export const translations = {
     philippinesPassport: 'Paspor Filipina',
     indonesiaPassport: 'Paspor Indonesia',
     philippinesCenterNote: '📍 Konsulat Filipina akan membuka pusat layanan pada 30 Nov dari pukul 10:00 AM hingga 4:00 PM di Tai Po Complex, 8 Heung Sze Hui Street',
-    indonesiaClarificationNote: '⏳ Menunggu klarifikasi lebih lanjut',
+    indonesiaClarificationNote: '📞 Pekerja Migran diminta untuk memeriksa tempat selain menelepon konsulat\nDarurat: +852 5242 2240\nDukungan: +852 6773 0466',
     newsItems: [
       { text: 'Setidaknya 128 orang, termasuk seorang pemadam kebakaran dan 7 pekerja migran rumah tangga, dikonfirmasi tewas dalam kebakaran Tai Po Wang Fuk Court. 79 terluka, termasuk 12 petugas pemadam kebakaran. Sekitar 150 orang masih belum ditemukan', source: 'SCMP/HK Govt./Indonesian consulate' },
       { text: 'Employer/MDW yang terdampak dapat menghubungi Departemen Tenaga Kerja HK di 3582 8987 (untuk urusan FDH), atau 2929 4054', source: 'HK Labour Dept.' },

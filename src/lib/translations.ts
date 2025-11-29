@@ -95,6 +95,8 @@ export const translations = {
     safeReportsLabel: '報平安',
     missingReportsLabel: '失蹤報告',
     liveStatusLabel: '即時更新',
+    timelineTitle: '災難應對時間軸',
+    timelineLoading: '載入中...',
     newsItems: [
       { text: '至少128人於大埔宏福苑火災中確認罹難，包括1名消防員及7名家庭傭工。79人受傷，包括12名消防員。約150人下落不明', source: 'SCMP/香港政府/印尼領事館' }
     ]
@@ -187,6 +189,8 @@ export const translations = {
     safeReportsLabel: 'Reported Safe',
     missingReportsLabel: 'Missing Reports',
     liveStatusLabel: 'Live Updates',
+    timelineTitle: 'Disaster Response Timeline',
+    timelineLoading: 'Loading...',
     newsItems: [
       { text: 'At least 128 people, including a firefighter and 7 domestic migrant workers confirmed dead in Tai Po Wang Fuk Court fire. 79 injured, including 12 firefighters. Some 150 people are unaccounted for', source: 'SCMP/HK Govt./Indonesian consulate' }
     ]
@@ -278,6 +282,8 @@ export const translations = {
     safeReportsLabel: 'Nag-report ng Ligtas',
     missingReportsLabel: 'Mga Nawawala',
     liveStatusLabel: 'Live na Update',
+    timelineTitle: 'Timeline ng Disaster Response',
+    timelineLoading: 'Nag-loload...',
     newsItems: [
       { text: 'Hindi bababa sa 128 katao, kasama ang isang bumbero at 7 domestic migrant workers, napatunayan nang namatay sa sunog sa Tai Po Wang Fuk Court. 79 ang nasugatan, kasama ang 12 bumbero. Humigit-kumulang 150 ang hindi pa napapatunayang kinaroroonan', source: 'SCMP/HK Govt./Indonesian consulate' }
     ]
@@ -370,6 +376,8 @@ export const translations = {
     safeReportsLabel: 'Melaporkan Aman',
     missingReportsLabel: 'Laporan Hilang',
     liveStatusLabel: 'Update Langsung',
+    timelineTitle: 'Timeline Respons Bencana',
+    timelineLoading: 'Memuat...',
     newsItems: [
       { text: 'Setidaknya 128 orang, termasuk seorang pemadam kebakaran dan 7 pekerja migran rumah tangga, dikonfirmasi tewas dalam kebakaran Tai Po Wang Fuk Court. 79 terluka, termasuk 12 petugas pemadam kebakaran. Sekitar 150 orang masih belum ditemukan', source: 'SCMP/HK Govt./Indonesian consulate' }
     ]

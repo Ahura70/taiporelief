@@ -626,6 +626,31 @@ export const resources: Record<Language, Resource[]> = {
       info: ['為宏福苑居民提供即時安全狀態追蹤']
     },
     {
+      icon: '🗺️',
+      title: '社區資源互動地圖',
+      desc: '大埔火災社區支援資源地圖 - 醫療、喪葬、住宿、物資、義工、文件補領',
+      keywords: ['地圖', '資源', '醫療', '喪葬', '住宿', '物資', '義工', '文件', '災民證', '現金支援', '兒童託管', '社區', '店鋪'],
+      contacts: [
+        { l: '互動地圖', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace' },
+        { l: '新增/更新資訊', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace/page/ADD-UPDATE' }
+      ],
+      info: [
+        '提供以下分類資源位置：',
+        '• 災民領取資助：文件補領及災民證',
+        '• 災民領取資助：即時現金支援或其他',
+        '• 醫療服務 (人/動物)',
+        '• 喪葬支援',
+        '• 社福/社區資源',
+        '• 義工服務',
+        '• 臨時收容',
+        '• 民間/店鋪支援',
+        '• 兒童託管',
+        '• 認領遺體/公布罹難名單',
+        '注意：每個地點的最新情況未必是最新'
+      ],
+      category: 'Community Resources'
+    },
+    {
       icon: '🐾',
       title: 'SPCA 寵物救援',
       desc: '受災寵物救援及照顧服務',
@@ -891,6 +916,31 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Govt Website', v: 'https://www.taipofire.gov.hk/' }
       ],
       info: ['Real-time safety status tracking for Wang Fuk Court residents']
+    },
+    {
+      icon: '🗺️',
+      title: 'Community Resource Interactive Map',
+      desc: 'Tai Po Fire Community Support Resources - Medical, Funeral, Housing, Supplies, Volunteers, Documents',
+      keywords: ['map', 'resources', 'medical', 'funeral', 'housing', 'supplies', 'volunteer', 'documents', 'victim certificate', 'cash support', 'childcare', 'community', 'shops'],
+      contacts: [
+        { l: 'Interactive Map', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace' },
+        { l: 'Add/Update Info', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace/page/ADD-UPDATE' }
+      ],
+      info: [
+        'Provides locations for the following resource categories:',
+        '• Victim assistance: Document replacement & victim certificates',
+        '• Victim assistance: Immediate cash support or other',
+        '• Medical services (human/animal)',
+        '• Funeral support',
+        '• Social welfare/community resources',
+        '• Volunteer services',
+        '• Temporary accommodation',
+        '• Community/shop support',
+        '• Childcare',
+        '• Body identification/casualty list announcements',
+        'Note: Latest information at each location may not be fully updated'
+      ],
+      category: 'Community Resources'
     },
     {
       icon: '🐾',
@@ -1160,6 +1210,31 @@ export const resources: Record<Language, Resource[]> = {
       info: ['Real-time safety tracking para sa Wang Fuk Court residents']
     },
     {
+      icon: '🗺️',
+      title: 'Interactive na Mapa ng Community Resources',
+      desc: 'Tai Po Fire Community Support Resources - Medical, Libing, Tirahan, Supplies, Volunteers, Dokumento',
+      keywords: ['mapa', 'resources', 'medical', 'libing', 'tirahan', 'supplies', 'volunteer', 'dokumento', 'victim certificate', 'cash support', 'childcare', 'community', 'tindahan'],
+      contacts: [
+        { l: 'Interactive Map', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace' },
+        { l: 'Magdagdag/Update Info', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace/page/ADD-UPDATE' }
+      ],
+      info: [
+        'Nagbibigay ng lokasyon para sa mga sumusunod na kategorya ng resources:',
+        '• Tulong sa biktima: Pagpapalit ng dokumento at victim certificates',
+        '• Tulong sa biktima: Agarang cash support o iba pa',
+        '• Medical services (tao/hayop)',
+        '• Suporta sa libing',
+        '• Social welfare/community resources',
+        '• Serbisyo ng volunteer',
+        '• Pansamantalang tirahan',
+        '• Suporta ng komunidad/tindahan',
+        '• Pag-aalaga ng bata',
+        '• Pag-identify ng katawan/anunsyo ng casualty list',
+        'Paalala: Ang pinakabagong impormasyon sa bawat lokasyon ay maaaring hindi pa fully updated'
+      ],
+      category: 'Community Resources'
+    },
+    {
       icon: '🐾',
       title: 'SPCA Pet Rescue',
       desc: 'Pet rescue at pag-aalaga',
@@ -1425,6 +1500,31 @@ export const resources: Record<Language, Resource[]> = {
         { l: 'Website Pemerintah', v: 'https://www.taipofire.gov.hk/' }
       ],
       info: ['Pelacakan status keselamatan real-time untuk penduduk Wang Fuk Court']
+    },
+    {
+      icon: '🗺️',
+      title: 'Peta Interaktif Sumber Daya Komunitas',
+      desc: 'Sumber Daya Dukungan Komunitas Kebakaran Tai Po - Medis, Pemakaman, Perumahan, Persediaan, Relawan, Dokumen',
+      keywords: ['peta', 'sumber daya', 'medis', 'pemakaman', 'perumahan', 'persediaan', 'relawan', 'dokumen', 'sertifikat korban', 'dukungan tunai', 'penitipan anak', 'komunitas', 'toko'],
+      contacts: [
+        { l: 'Peta Interaktif', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace' },
+        { l: 'Tambah/Update Info', v: 'https://experience.arcgis.com/experience/22b9d309e69548f28d2f4055d4de5ace/page/ADD-UPDATE' }
+      ],
+      info: [
+        'Menyediakan lokasi untuk kategori sumber daya berikut:',
+        '• Bantuan korban: Penggantian dokumen & sertifikat korban',
+        '• Bantuan korban: Dukungan tunai langsung atau lainnya',
+        '• Layanan medis (manusia/hewan)',
+        '• Dukungan pemakaman',
+        '• Sumber daya kesejahteraan sosial/komunitas',
+        '• Layanan relawan',
+        '• Akomodasi sementara',
+        '• Dukungan komunitas/toko',
+        '• Penitipan anak',
+        '• Identifikasi jenazah/pengumuman daftar korban',
+        'Catatan: Informasi terbaru di setiap lokasi mungkin belum sepenuhnya diperbarui'
+      ],
+      category: 'Community Resources'
     },
     {
       icon: '🐾',

@@ -22,6 +22,7 @@ import { ScrollProgressBar } from '@/components/ScrollProgressBar';
 import { translations, resources, Resource } from '@/lib/translations';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
+import { useNewsUpdates } from '@/hooks/useNewsUpdates';
 import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -33,6 +34,9 @@ const Index = () => {
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
   const [showChangelog, setShowChangelog] = useState(false);
   const searchBoxRef = useRef<HTMLDivElement>(null);
+
+  // Fetch dynamic news updates
+  const { data: dynamicNews } = useNewsUpdates(currentLang);
 
   // Check if build timestamp has changed
   useEffect(() => {
@@ -73,6 +77,12 @@ const Index = () => {
 
   const t = translations[currentLang];
   const currentResources = resources[currentLang];
+
+  // Combine static news with dynamic news from database
+  const allNews = [
+    ...t.newsItems,
+    ...(dynamicNews || [])
+  ];
 
   // Format build timestamp based on language
   const formatBuildTimestamp = (isoString: string) => {
@@ -130,7 +140,7 @@ const Index = () => {
       <EmergencyBanner text={t.emergency} whatsappText={t.whatsappRegister} />
 
       <main id="main-content" className="max-w-4xl mx-auto px-5 py-6">
-        <NewsTicker newsItems={t.newsItems} />
+        <NewsTicker newsItems={allNews} />
         
         <div ref={searchBoxRef} className="mt-6">
           <SearchBox

@@ -1,6 +1,7 @@
 interface NewsItem {
   text: string;
   source?: string;
+  link?: string;
 }
 
 interface NewsTickerProps {
@@ -15,9 +16,20 @@ export const NewsTicker = ({ newsItems }: NewsTickerProps) => {
         {[...newsItems, ...newsItems].map((item, idx) => (
           <div key={idx} className="inline-flex items-center gap-2 px-4">
             <span className="text-sm font-bold text-destructive">🔴</span>
-            <span className="text-sm font-medium text-destructive">
-              {item.text}
-            </span>
+            {item.link ? (
+              <a 
+                href={item.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-destructive hover:underline"
+              >
+                {item.text}
+              </a>
+            ) : (
+              <span className="text-sm font-medium text-destructive">
+                {item.text}
+              </span>
+            )}
             {item.source && (
               <span className="text-xs text-destructive/70 font-semibold">
                 [{item.source}]

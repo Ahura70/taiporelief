@@ -97,7 +97,8 @@ export const translations = {
     liveStatusLabel: '即時更新',
     newsItems: [
       { text: '至少128人於大埔宏福苑火災中確認罹難，包括1名消防員及7名家庭傭工。79人受傷，包括12名消防員。約150人下落不明', source: 'SCMP/香港政府/印尼領事館' },
-      { text: '受影響的外傭僱主/外傭可致電勞工處 3582 8987 (有關外傭事宜) 或 2929 4054', source: '香港勞工處' }
+      { text: '受影響的外傭僱主/外傭可致電勞工處 3582 8987 (有關外傭事宜) 或 2929 4054', source: '香港勞工處' },
+      { text: '菲律賓總領事館將於11月30日上午10時至下午4時在大埔商業中心香思慧街8號設立特別查詢櫃台，為受大埔火災影響的菲律賓人提供協助', source: '菲律賓總領事館' }
     ],
     backToTop: '返回頂部'
   },
@@ -191,7 +192,8 @@ export const translations = {
     liveStatusLabel: 'Live Updates',
     newsItems: [
       { text: 'At least 128 people, including a firefighter and 7 domestic migrant workers confirmed dead in Tai Po Wang Fuk Court fire. 79 injured, including 12 firefighters. Some 150 people are unaccounted for', source: 'SCMP/HK Govt./Indonesian consulate' },
-      { text: 'Affected MDW employers/MDWs can call the HK Labour Department at 3582 8987 (for FDH-related matters), or 2929 4054', source: 'HK Labour Dept.' }
+      { text: 'Affected MDW employers/MDWs can call the HK Labour Department at 3582 8987 (for FDH-related matters), or 2929 4054', source: 'HK Labour Dept.' },
+      { text: 'Philippines Consulate General to set up special enquiry counter in Tai Po Complex, 8 Heung Sze Hui Street on Nov. 30 from 10:00 A.M. to 4:00 P.M., to provide assistance to Filipinos affected by the fire in Tai Po', source: 'Philippines Consulate' }
     ],
     backToTop: 'Back to Top'
   },
@@ -284,7 +286,8 @@ export const translations = {
     liveStatusLabel: 'Live na Update',
     newsItems: [
       { text: 'Hindi bababa sa 128 katao, kasama ang isang bumbero at 7 domestic migrant workers, napatunayan nang namatay sa sunog sa Tai Po Wang Fuk Court. 79 ang nasugatan, kasama ang 12 bumbero. Humigit-kumulang 150 ang hindi pa napapatunayang kinaroroonan', source: 'SCMP/HK Govt./Indonesian consulate' },
-      { text: 'Ang mga apektadong employer/MDW ng FDH ay maaaring tumawag sa HK Labour Department sa 3582 8987 (para sa mga bagay na may kaugnayan sa FDH), o 2929 4054', source: 'HK Labour Dept.' }
+      { text: 'Ang mga apektadong employer/MDW ng FDH ay maaaring tumawag sa HK Labour Department sa 3582 8987 (para sa mga bagay na may kaugnayan sa FDH), o 2929 4054', source: 'HK Labour Dept.' },
+      { text: 'Ang Philippines Consulate General ay magtatayo ng special enquiry counter sa Tai Po Complex, 8 Heung Sze Hui Street noong Nov. 30 mula 10:00 A.M. hanggang 4:00 P.M., upang magbigay ng tulong sa mga Pilipinong apektado ng sunog sa Tai Po', source: 'Philippines Consulate' }
     ],
     backToTop: 'Bumalik sa Taas'
   },
@@ -378,7 +381,8 @@ export const translations = {
     liveStatusLabel: 'Update Langsung',
     newsItems: [
       { text: 'Setidaknya 128 orang, termasuk seorang pemadam kebakaran dan 7 pekerja migran rumah tangga, dikonfirmasi tewas dalam kebakaran Tai Po Wang Fuk Court. 79 terluka, termasuk 12 petugas pemadam kebakaran. Sekitar 150 orang masih belum ditemukan', source: 'SCMP/HK Govt./Indonesian consulate' },
-      { text: 'Employer/MDW yang terdampak dapat menghubungi Departemen Tenaga Kerja HK di 3582 8987 (untuk urusan FDH), atau 2929 4054', source: 'HK Labour Dept.' }
+      { text: 'Employer/MDW yang terdampak dapat menghubungi Departemen Tenaga Kerja HK di 3582 8987 (untuk urusan FDH), atau 2929 4054', source: 'HK Labour Dept.' },
+      { text: 'Konsulat Jenderal Filipina akan membuka meja informasi khusus di Tai Po Complex, 8 Heung Sze Hui Street pada 30 Nov dari pukul 10:00 pagi hingga 4:00 sore, untuk memberikan bantuan kepada warga Filipina yang terkena dampak kebakaran di Tai Po', source: 'Philippines Consulate' }
     ],
     backToTop: 'Kembali ke Atas'
   }

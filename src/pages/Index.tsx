@@ -49,6 +49,33 @@ const Index = () => {
   const t = translations[currentLang];
   const currentResources = resources[currentLang];
 
+  // Format build timestamp based on language
+  const formatBuildTimestamp = (isoString: string) => {
+    const date = new Date(isoString);
+    
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    };
+
+    switch (currentLang) {
+      case 'zh':
+        return date.toLocaleString('zh-HK', options);
+      case 'tl':
+        return date.toLocaleString('tl-PH', options);
+      case 'id':
+        return date.toLocaleString('id-ID', options);
+      default:
+        return date.toLocaleString('en-US', options);
+    }
+  };
+
+  const buildTimestamp = formatBuildTimestamp(__BUILD_TIMESTAMP__);
+
   return (
     <div className="min-h-screen bg-background pb-20">
       <a href="#main-content" className="skip-link">
@@ -111,7 +138,12 @@ const Index = () => {
           <div>{t.lastUpdate}</div>
           <div className="flex items-center justify-center gap-2 text-[11px] text-muted-foreground/80">
             <span aria-hidden="true">⏱</span>
-            <span>{t.lastPublished}</span>
+            <span>
+              {currentLang === 'zh' && `發佈時間：${buildTimestamp}`}
+              {currentLang === 'en' && `Published: ${buildTimestamp}`}
+              {currentLang === 'tl' && `Na-publish: ${buildTimestamp}`}
+              {currentLang === 'id' && `Dipublikasikan: ${buildTimestamp}`}
+            </span>
           </div>
           <div>{t.wcagCompliance}</div>
         </div>

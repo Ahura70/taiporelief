@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Resource, Language, languages } from '@/lib/translations';
-import { Mic, AlertCircle, HelpCircle } from 'lucide-react';
+import { Mic, AlertCircle, HelpCircle, Volume2 } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/components/ui/use-toast';
 
 interface SearchBoxProps {
   label: string;
@@ -21,6 +23,7 @@ export const SearchBox = ({
   currentLang,
   listeningText
 }: SearchBoxProps) => {
+  const { toast } = useToast();
   const [searchValue, setSearchValue] = useState('');
   const [suggestions, setSuggestions] = useState<Resource[]>([]);
   const [isListening, setIsListening] = useState(false);
@@ -32,6 +35,8 @@ export const SearchBox = ({
   const [showCommandsHelp, setShowCommandsHelp] = useState(false);
   const [currentHint, setCurrentHint] = useState(0);
   const [showHint, setShowHint] = useState(true);
+  const [showPermissionRequest, setShowPermissionRequest] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
 
   // Voice commands for tooltip
   const getVoiceCommandsHelp = () => {
@@ -125,6 +130,55 @@ export const SearchBox = ({
 
   const hints = getVoiceHints();
 
+  // Text-to-speech function for voice confirmation
+  const speak = useCallback((text: string) => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel(); // Cancel any ongoing speech
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = languages[currentLang].code;
+      utterance.rate = 0.9;
+      utterance.pitch = 1;
+      
+      utterance.onstart = () => setIsSpeaking(true);
+      utterance.onend = () => setIsSpeaking(false);
+      utterance.onerror = () => setIsSpeaking(false);
+      
+      window.speechSynthesis.speak(utterance);
+    }
+  }, [currentLang]);
+
+  // Request microphone permission
+  const requestMicrophonePermission = async () => {
+    try {
+      await navigator.mediaDevices.getUserMedia({ audio: true });
+      setShowPermissionRequest(false);
+      setVoiceError('');
+      
+      const successMsg = currentLang === 'zh' 
+        ? '✓ 麥克風權限已授予。請再次點擊語音按鈕。'
+        : currentLang === 'tl'
+        ? '✓ Binigyan ng microphone permission. I-click ang voice button muli.'
+        : currentLang === 'id'
+        ? '✓ Izin mikrofon diberikan. Klik tombol suara lagi.'
+        : '✓ Microphone permission granted. Click the voice button again.';
+      
+      toast({
+        title: currentLang === 'zh' ? '成功' : currentLang === 'tl' ? 'Tagumpay' : currentLang === 'id' ? 'Berhasil' : 'Success',
+        description: successMsg,
+      });
+    } catch (error) {
+      const errorMsg = currentLang === 'zh'
+        ? '無法獲得麥克風權限。請檢查瀏覽器設定。'
+        : currentLang === 'tl'
+        ? 'Hindi makuha ang microphone permission. Suriin ang browser settings.'
+        : currentLang === 'id'
+        ? 'Tidak dapat memperoleh izin mikrofon. Periksa pengaturan browser.'
+        : 'Unable to obtain microphone permission. Please check browser settings.';
+      
+      setVoiceError(errorMsg);
+    }
+  };
+
   useEffect(() => {
     if (!searchValue) {
       setSuggestions([]);
@@ -207,6 +261,16 @@ export const SearchBox = ({
       const transcript = event.results[0][0].transcript;
       const val = transcript.toLowerCase().trim();
       
+      // Voice confirmation - speak back what was heard
+      const heardMsg = currentLang === 'zh' 
+        ? `聽到：${transcript}`
+        : currentLang === 'tl'
+        ? `Narinig: ${transcript}`
+        : currentLang === 'id'
+        ? `Mendengar: ${transcript}`
+        : `I heard: ${transcript}`;
+      speak(heardMsg);
+      
       // Define voice command shortcuts (multilingual)
       const commandMap: Record<string, string[]> = {
         // Donation commands
@@ -262,6 +326,18 @@ export const SearchBox = ({
         setSearchValue('');
         setIsVoiceMatch(false);
         
+        // Speak resource name and first contact
+        const firstContact = matchedResource.contacts[0];
+        const contactMsg = currentLang === 'zh'
+          ? `打開 ${matchedResource.title}。${firstContact ? `${firstContact.l}：${firstContact.v}` : ''}`
+          : currentLang === 'tl'
+          ? `Binuksan ang ${matchedResource.title}。${firstContact ? `${firstContact.l}: ${firstContact.v}` : ''}`
+          : currentLang === 'id'
+          ? `Membuka ${matchedResource.title}。${firstContact ? `${firstContact.l}: ${firstContact.v}` : ''}`
+          : `Opening ${matchedResource.title}. ${firstContact ? `${firstContact.l}: ${firstContact.v}` : ''}`;
+        
+        setTimeout(() => speak(contactMsg), 800);
+        
         // Execute command immediately
         setTimeout(() => {
           onSelectResource(matchedResource!);
@@ -312,6 +388,8 @@ export const SearchBox = ({
       setVoiceStatus('');
       
       let errorMsg = '';
+      let showPermission = false;
+      
       if (event.error === 'no-speech') {
         errorMsg = currentLang === 'zh' 
           ? '未檢測到語音。請再試一次。'
@@ -321,13 +399,14 @@ export const SearchBox = ({
           ? 'Tidak ada ucapan yang terdeteksi. Coba lagi.'
           : 'No speech detected. Please try again.';
       } else if (event.error === 'not-allowed') {
+        showPermission = true;
         errorMsg = currentLang === 'zh'
-          ? '需要麥克風權限。請在瀏覽器設定中啟用。'
+          ? '需要麥克風權限才能使用語音搜尋。'
           : currentLang === 'tl'
-          ? 'Kailangan ng microphone permission. Paganahin sa browser settings.'
+          ? 'Kailangan ng microphone permission para sa voice search.'
           : currentLang === 'id'
-          ? 'Izin mikrofon diperlukan. Aktifkan di pengaturan browser.'
-          : 'Microphone permission required. Enable in browser settings.';
+          ? 'Izin mikrofon diperlukan untuk pencarian suara.'
+          : 'Microphone permission is required for voice search.';
       } else {
         errorMsg = currentLang === 'zh'
           ? '語音搜尋失敗。請重試或使用文字輸入。'
@@ -338,6 +417,7 @@ export const SearchBox = ({
           : 'Voice search failed. Please try again or use text input.';
       }
       setVoiceError(errorMsg);
+      setShowPermissionRequest(showPermission);
     };
 
     try {
@@ -433,15 +513,25 @@ export const SearchBox = ({
           
           <button
             onClick={handleVoiceSearch}
-            className={`p-3 rounded-xl transition-all duration-200 ${
+            className={`p-4 rounded-xl transition-all duration-200 min-w-[52px] min-h-[52px] flex items-center justify-center ${
               isListening
                 ? 'bg-primary text-primary-foreground animate-pulse shadow-md'
+                : isSpeaking
+                ? 'bg-accent text-accent-foreground'
                 : 'bg-secondary text-foreground hover:bg-accent hover:shadow-sm hover:scale-105 focus-visible:ring-2 focus-visible:ring-ring'
             } active:scale-95`}
-            aria-label={currentLang === 'zh' ? '語音搜尋' : currentLang === 'tl' ? 'Voice search' : currentLang === 'id' ? 'Pencarian suara' : 'Voice search'}
-            title={currentLang === 'zh' ? '語音搜尋 (Chrome/Safari)' : currentLang === 'tl' ? 'Voice search (Chrome/Safari)' : currentLang === 'id' ? 'Pencarian suara (Chrome/Safari)' : 'Voice search (Chrome/Safari)'}
+            aria-label={
+              isListening 
+                ? (currentLang === 'zh' ? '聆聽中' : currentLang === 'tl' ? 'Nakikinig' : currentLang === 'id' ? 'Mendengarkan' : 'Listening')
+                : isSpeaking
+                ? (currentLang === 'zh' ? '播放中' : currentLang === 'tl' ? 'Nagsasalita' : currentLang === 'id' ? 'Berbicara' : 'Speaking')
+                : (currentLang === 'zh' ? '開始語音搜尋' : currentLang === 'tl' ? 'Simulan ang voice search' : currentLang === 'id' ? 'Mulai pencarian suara' : 'Start voice search')
+            }
+            aria-live="polite"
+            aria-atomic="true"
+            title={currentLang === 'zh' ? '點擊開始語音搜尋' : currentLang === 'tl' ? 'I-click upang simulan ang voice search' : currentLang === 'id' ? 'Klik untuk memulai pencarian suara' : 'Click to start voice search'}
           >
-            <Mic className="w-5 h-5" />
+            {isSpeaking ? <Volume2 className="w-6 h-6" /> : <Mic className="w-6 h-6" />}
           </button>
         </div>
         
@@ -480,9 +570,61 @@ export const SearchBox = ({
         )}
         
         {voiceError && (
-          <Alert variant="destructive" className="mt-2">
+          <Alert variant="destructive" className="mt-3">
             <AlertCircle className="h-4 w-4" />
-            <AlertDescription className="text-xs">{voiceError}</AlertDescription>
+            <AlertDescription className="text-sm space-y-3">
+              <div>{voiceError}</div>
+              {showPermissionRequest && (
+                <div className="flex flex-col gap-2 pt-2">
+                  <Button
+                    onClick={requestMicrophonePermission}
+                    size="sm"
+                    className="w-full text-sm font-semibold"
+                    variant="default"
+                  >
+                    {currentLang === 'zh' 
+                      ? '🎤 允許麥克風存取'
+                      : currentLang === 'tl'
+                      ? '🎤 Payagan ang Microphone Access'
+                      : currentLang === 'id'
+                      ? '🎤 Izinkan Akses Mikrofon'
+                      : '🎤 Allow Microphone Access'
+                    }
+                  </Button>
+                  <div className="text-xs text-muted-foreground space-y-1">
+                    {currentLang === 'zh' ? (
+                      <>
+                        <p className="font-semibold">如何啟用：</p>
+                        <p>1. 點擊上方按鈕</p>
+                        <p>2. 在彈出視窗中選擇「允許」</p>
+                        <p>3. 或前往瀏覽器設定 → 隱私權 → 麥克風</p>
+                      </>
+                    ) : currentLang === 'tl' ? (
+                      <>
+                        <p className="font-semibold">Paano paganahin:</p>
+                        <p>1. I-click ang button sa itaas</p>
+                        <p>2. Piliin "Allow" sa popup</p>
+                        <p>3. O pumunta sa browser settings → Privacy → Microphone</p>
+                      </>
+                    ) : currentLang === 'id' ? (
+                      <>
+                        <p className="font-semibold">Cara mengaktifkan:</p>
+                        <p>1. Klik tombol di atas</p>
+                        <p>2. Pilih "Allow" di popup</p>
+                        <p>3. Atau buka pengaturan browser → Privasi → Mikrofon</p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="font-semibold">How to enable:</p>
+                        <p>1. Click the button above</p>
+                        <p>2. Select "Allow" in the popup</p>
+                        <p>3. Or go to browser settings → Privacy → Microphone</p>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+            </AlertDescription>
           </Alert>
         )}
         

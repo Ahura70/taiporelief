@@ -196,6 +196,10 @@ const Index = () => {
               philippinesCenterNote={t.philippinesCenterNote}
               indonesiaClarificationNote={t.indonesiaClarificationNote}
               currentLang={currentLang}
+              shareLabel={t.share}
+              shareWhatsApp={t.shareWhatsApp}
+              shareLink={t.shareLink}
+              linkCopied={t.linkCopied}
             />
           </div>
         </div>

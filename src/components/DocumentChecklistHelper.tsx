@@ -1,8 +1,15 @@
 import { useState } from 'react';
-import { FileText, CheckCircle2, Circle } from 'lucide-react';
+import { FileText, CheckCircle2, Circle, Share2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { useToast } from '@/hooks/use-toast';
 import {
   Accordion,
   AccordionContent,
@@ -18,6 +25,10 @@ interface DocumentChecklistHelperProps {
   philippinesCenterNote: string;
   indonesiaClarificationNote: string;
   currentLang: string;
+  shareLabel: string;
+  shareWhatsApp: string;
+  shareLink: string;
+  linkCopied: string;
 }
 
 const checklistItems = {
@@ -114,8 +125,13 @@ export const DocumentChecklistHelper = ({
   indonesiaTitle,
   philippinesCenterNote,
   indonesiaClarificationNote,
-  currentLang
+  currentLang,
+  shareLabel,
+  shareWhatsApp,
+  shareLink,
+  linkCopied
 }: DocumentChecklistHelperProps) => {
+  const { toast } = useToast();
   const [philippinesChecked, setPhilippinesChecked] = useState<boolean[]>(
     new Array(checklistItems.philippines[currentLang as keyof typeof checklistItems.philippines].length).fill(false)
   );
@@ -145,6 +161,21 @@ export const DocumentChecklistHelper = ({
   const philippinesProgress = philippinesChecked.filter(Boolean).length;
   const indonesiaProgress = indonesiaChecked.filter(Boolean).length;
 
+  const handleShare = (method: 'whatsapp' | 'copy') => {
+    const url = window.location.href;
+    const text = `${title}\n\n${philippinesTitle}:\n${philippinesCenterNote}\n\n${indonesiaTitle}:\n${indonesiaClarificationNote}\n\n${url}`;
+    
+    if (method === 'whatsapp') {
+      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      window.open(whatsappUrl, '_blank');
+    } else if (method === 'copy') {
+      navigator.clipboard.writeText(text);
+      toast({
+        description: linkCopied,
+      });
+    }
+  };
+
   return (
     <Card className="border-primary/20">
       <CardHeader>
@@ -153,9 +184,27 @@ export const DocumentChecklistHelper = ({
             <FileText className="w-5 h-5 text-primary" />
             <CardTitle className="text-lg">{title}</CardTitle>
           </div>
-          <Button variant="ghost" size="sm" onClick={resetChecklists}>
-            {currentLang === 'zh' ? '重設' : currentLang === 'tl' ? 'I-reset' : currentLang === 'id' ? 'Reset' : 'Reset'}
-          </Button>
+          <div className="flex items-center gap-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm">
+                  <Share2 className="w-4 h-4 mr-1" />
+                  {shareLabel}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => handleShare('whatsapp')}>
+                  {shareWhatsApp}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleShare('copy')}>
+                  {shareLink}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Button variant="ghost" size="sm" onClick={resetChecklists}>
+              {currentLang === 'zh' ? '重設' : currentLang === 'tl' ? 'I-reset' : currentLang === 'id' ? 'Reset' : 'Reset'}
+            </Button>
+          </div>
         </div>
         <CardDescription>{description}</CardDescription>
       </CardHeader>

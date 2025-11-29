@@ -103,7 +103,7 @@ export const translations = {
     documentChecklistDesc: '護照更換資訊',
     philippinesPassport: '菲律賓護照',
     indonesiaPassport: '印尼護照',
-    philippinesCenterNote: '📍 菲律賓領事館將於11月30日在大埔設立服務中心\n地址：大埔太和邨社區中心 (地下)\n時間：上午9時至下午6時',
+    philippinesCenterNote: '📍 菲律賓領事館將於11月30日在大埔太和邨社區中心（地下）設立服務中心\n時間：上午9時至下午6時',
     indonesiaClarificationNote: '⏳ 進一步詳情等待確認中',
     newsItems: [
       { text: '至少128人於大埔宏福苑火災中確認罹難，包括1名消防員及7名家庭傭工。79人受傷，包括12名消防員。約150人下落不明', source: 'SCMP/香港政府/印尼領事館' },
@@ -208,7 +208,7 @@ export const translations = {
     documentChecklistDesc: 'Passport renewal information',
     philippinesPassport: 'Philippine Passport',
     indonesiaPassport: 'Indonesian Passport',
-    philippinesCenterNote: '📍 Philippine Consulate will open a service center in Tai Po on Nov. 30\nAddress: Tai Po Tai Wo Estate Community Centre (Ground Floor)\nTime: 9:00 AM - 6:00 PM',
+    philippinesCenterNote: '📍 The Philippine Consulate will open a service center in Tai Po on Nov. 30 at the Tai Po Tai Wo Estate Community Centre (Ground Floor) between 9:00 AM to 6:00 PM',
     indonesiaClarificationNote: '⏳ Further clarification awaited',
     newsItems: [
       { text: 'At least 128 people, including a firefighter and 7 domestic migrant workers confirmed dead in Tai Po Wang Fuk Court fire. 79 injured, including 12 firefighters. Some 150 people are unaccounted for', source: 'SCMP/HK Govt./Indonesian consulate' },
@@ -312,7 +312,7 @@ export const translations = {
     documentChecklistDesc: 'Passport renewal information',
     philippinesPassport: 'Philippine Passport',
     indonesiaPassport: 'Indonesian Passport',
-    philippinesCenterNote: '📍 Ang Philippine Consulate ay magbubukas ng service center sa Tai Po sa Nov. 30\nAddress: Tai Po Tai Wo Estate Community Centre (Ground Floor)\nOras: 9:00 AM - 6:00 PM',
+    philippinesCenterNote: '📍 Ang Philippine Consulate ay magbubukas ng service center sa Tai Po sa Nov. 30 sa Tai Po Tai Wo Estate Community Centre (Ground Floor) mula 9:00 AM hanggang 6:00 PM',
     indonesiaClarificationNote: '⏳ Hinihintay ang karagdagang paglilinaw',
     newsItems: [
       { text: 'Hindi bababa sa 128 katao, kasama ang isang bumbero at 7 domestic migrant workers, napatunayan nang namatay sa sunog sa Tai Po Wang Fuk Court. 79 ang nasugatan, kasama ang 12 bumbero. Humigit-kumulang 150 ang hindi pa napapatunayang kinaroroonan', source: 'SCMP/HK Govt./Indonesian consulate' },
@@ -417,7 +417,7 @@ export const translations = {
     documentChecklistDesc: 'Informasi perpanjangan paspor',
     philippinesPassport: 'Paspor Filipina',
     indonesiaPassport: 'Paspor Indonesia',
-    philippinesCenterNote: '📍 Konsulat Filipina akan membuka pusat layanan di Tai Po pada 30 Nov\nAlamat: Tai Po Tai Wo Estate Community Centre (Lantai Dasar)\nWaktu: 9:00 AM - 6:00 PM',
+    philippinesCenterNote: '📍 Konsulat Filipina akan membuka pusat layanan di Tai Po pada 30 Nov di Tai Po Tai Wo Estate Community Centre (Lantai Dasar) dari pukul 9:00 AM hingga 6:00 PM',
     indonesiaClarificationNote: '⏳ Menunggu klarifikasi lebih lanjut',
     newsItems: [
       { text: 'Setidaknya 128 orang, termasuk seorang pemadam kebakaran dan 7 pekerja migran rumah tangga, dikonfirmasi tewas dalam kebakaran Tai Po Wang Fuk Court. 79 terluka, termasuk 12 petugas pemadam kebakaran. Sekitar 150 orang masih belum ditemukan', source: 'SCMP/HK Govt./Indonesian consulate' },

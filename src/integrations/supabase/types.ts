@@ -167,6 +167,48 @@ export type Database = {
         }
         Relationships: []
       }
+      news_updates: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean | null
+          link: string
+          published_date: string
+          source: string | null
+          title_en: string
+          title_id: string | null
+          title_tl: string | null
+          title_zh: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          link: string
+          published_date: string
+          source?: string | null
+          title_en: string
+          title_id?: string | null
+          title_tl?: string | null
+          title_zh?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          link?: string
+          published_date?: string
+          source?: string | null
+          title_en?: string
+          title_id?: string | null
+          title_tl?: string | null
+          title_zh?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       safety_reports: {
         Row: {
           additional_info: string | null

@@ -421,14 +421,41 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🏘️',
-      title: '東華三院過渡性房屋',
-      desc: '緊急住宿單位及物資支援',
-      keywords: ['住宿', '過渡性房屋', '東華'],
+      title: '樂善村過渡性房屋',
+      desc: '政府安排緊急住宿單位',
+      keywords: ['住宿', '過渡性房屋', '樂善村'],
       contacts: [
-        { l: '緊急熱線', v: '6503 9730' }
+        { l: '大埔區辦事處', v: '2653 3703' },
+        { l: '緊急熱線', v: '182 183' }
       ],
-      info: ['即時提供住宿', '設於樂禾東寓及啟德東寓'],
-      coordinates: [22.4520, 114.1670], // Approximate Tai Po location
+      info: ['已接收超過600名受災居民', '增強巴士及小巴服務'],
+      coordinates: [22.4480, 114.1590], // Lok Sin Village area
+      category: 'Housing'
+    },
+    {
+      icon: '🏘️',
+      title: 'Good House 過渡性房屋',
+      desc: '香港善導會提供臨時住宿',
+      keywords: ['住宿', 'good house', '善導會'],
+      contacts: [
+        { l: '地址', v: '大埔順灣菜屋168號' },
+        { l: '臨時小巴服務', v: '往返大埔墟站' }
+      ],
+      info: ['社區康復及更生服務機構', '11月29日起提供額外小巴服務'],
+      coordinates: [22.4425, 114.1705],
+      category: 'Housing'
+    },
+    {
+      icon: '🏘️',
+      title: 'Trackside Villas 過渡性房屋',
+      desc: '緊急臨時住宿安排',
+      keywords: ['住宿', 'trackside villas', '過渡性房屋'],
+      contacts: [
+        { l: '大埔區辦事處', v: '2653 3703' },
+        { l: '交通協調', v: '加強往來大埔墟站服務' }
+      ],
+      info: ['大埔區過渡性房屋項目', '政府正協調加強交通服務'],
+      coordinates: [22.4460, 114.1640],
       category: 'Housing'
     },
     {
@@ -621,14 +648,41 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🏘️',
-      title: 'Tung Wah Transitional Housing',
-      desc: 'Emergency accommodation & supplies',
-      keywords: ['housing', 'shelter', 'transitional'],
+      title: 'Lok Sin Village Transitional Housing',
+      desc: 'Government-arranged emergency accommodation',
+      keywords: ['housing', 'shelter', 'lok sin village'],
       contacts: [
-        { l: 'Emergency Hotline', v: '6503 9730' }
+        { l: 'Tai Po District Office', v: '2653 3703' },
+        { l: 'Emergency Hotline', v: '182 183' }
       ],
-      info: ['Immediate accommodation available', 'Joyful & Kai Tak Dwellings projects'],
-      coordinates: [22.4520, 114.1670],
+      info: ['Accommodating over 600 affected residents', 'Enhanced bus and minibus services'],
+      coordinates: [22.4480, 114.1590],
+      category: 'Housing'
+    },
+    {
+      icon: '🏘️',
+      title: 'Good House Transitional Housing',
+      desc: 'Society of Rehabilitation and Crime Prevention',
+      keywords: ['housing', 'good house', 'shelter'],
+      contacts: [
+        { l: 'Address', v: '168 Shuen Wan Chan Uk, Tai Po' },
+        { l: 'Temporary Minibus', v: 'To/From MTR Tai Po Market' }
+      ],
+      info: ['Community rehabilitation services', 'Additional GMB service starting Nov 29'],
+      coordinates: [22.4425, 114.1705],
+      category: 'Housing'
+    },
+    {
+      icon: '🏘️',
+      title: 'Trackside Villas Transitional Housing',
+      desc: 'Emergency temporary accommodation',
+      keywords: ['housing', 'trackside villas', 'shelter'],
+      contacts: [
+        { l: 'Tai Po District Office', v: '2653 3703' },
+        { l: 'Transport Coordination', v: 'Enhanced service to Tai Po Market' }
+      ],
+      info: ['Tai Po transitional housing project', 'Government coordinating enhanced transport'],
+      coordinates: [22.4460, 114.1640],
       category: 'Housing'
     },
     {
@@ -821,14 +875,41 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🏘️',
-      title: 'Tung Wah Transitional Housing',
-      desc: 'Emergency na tirahan at supplies',
-      keywords: ['tirahan', 'shelter'],
+      title: 'Lok Sin Village Transitional Housing',
+      desc: 'Emergency na tirahan mula sa gobyerno',
+      keywords: ['tirahan', 'shelter', 'lok sin village'],
       contacts: [
-        { l: 'Emergency Hotline', v: '6503 9730' }
+        { l: 'Tai Po District Office', v: '2653 3703' },
+        { l: 'Emergency Hotline', v: '182 183' }
       ],
-      info: ['Kaagad na accommodations', 'Joyful & Kai Tak Dwellings'],
-      coordinates: [22.4520, 114.1670],
+      info: ['Tumatanggap ng mahigit 600 apektadong residente', 'Pinahusay na bus at minibus serbisyo'],
+      coordinates: [22.4480, 114.1590],
+      category: 'Housing'
+    },
+    {
+      icon: '🏘️',
+      title: 'Good House Transitional Housing',
+      desc: 'Society of Rehabilitation and Crime Prevention',
+      keywords: ['tirahan', 'good house', 'shelter'],
+      contacts: [
+        { l: 'Address', v: '168 Shuen Wan Chan Uk, Tai Po' },
+        { l: 'Temporary Minibus', v: 'Papunta/Mula sa MTR Tai Po Market' }
+      ],
+      info: ['Rehabilitation services', 'Karagdagang GMB serbisyo simula Nov 29'],
+      coordinates: [22.4425, 114.1705],
+      category: 'Housing'
+    },
+    {
+      icon: '🏘️',
+      title: 'Trackside Villas Transitional Housing',
+      desc: 'Pansamantalang tirahan',
+      keywords: ['tirahan', 'trackside villas', 'shelter'],
+      contacts: [
+        { l: 'Tai Po District Office', v: '2653 3703' },
+        { l: 'Transport Coordination', v: 'Pinahusay na serbisyo sa Tai Po Market' }
+      ],
+      info: ['Tai Po transitional housing project', 'Gobyerno ay nag-coordinate ng pinahusay na transportasyon'],
+      coordinates: [22.4460, 114.1640],
       category: 'Housing'
     },
     {
@@ -1021,14 +1102,41 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '🏘️',
-      title: 'Perumahan Transisi Tung Wah',
-      desc: 'Akomodasi darurat & persediaan',
-      keywords: ['perumahan', 'shelter'],
+      title: 'Lok Sin Village Transitional Housing',
+      desc: 'Akomodasi darurat dari pemerintah',
+      keywords: ['perumahan', 'shelter', 'lok sin village'],
       contacts: [
-        { l: 'Hotline Darurat', v: '6503 9730' }
+        { l: 'Tai Po District Office', v: '2653 3703' },
+        { l: 'Hotline Darurat', v: '182 183' }
       ],
-      info: ['Akomodasi tersedia segera', 'Proyek Joyful & Kai Tak Dwellings'],
-      coordinates: [22.4520, 114.1670],
+      info: ['Menampung lebih dari 600 penduduk yang terkena dampak', 'Layanan bus dan minibus ditingkatkan'],
+      coordinates: [22.4480, 114.1590],
+      category: 'Housing'
+    },
+    {
+      icon: '🏘️',
+      title: 'Good House Transitional Housing',
+      desc: 'Society of Rehabilitation and Crime Prevention',
+      keywords: ['perumahan', 'good house', 'shelter'],
+      contacts: [
+        { l: 'Alamat', v: '168 Shuen Wan Chan Uk, Tai Po' },
+        { l: 'Minibus Sementara', v: 'Ke/Dari MTR Tai Po Market' }
+      ],
+      info: ['Layanan rehabilitasi komunitas', 'Layanan GMB tambahan mulai 29 Nov'],
+      coordinates: [22.4425, 114.1705],
+      category: 'Housing'
+    },
+    {
+      icon: '🏘️',
+      title: 'Trackside Villas Transitional Housing',
+      desc: 'Akomodasi sementara darurat',
+      keywords: ['perumahan', 'trackside villas', 'shelter'],
+      contacts: [
+        { l: 'Tai Po District Office', v: '2653 3703' },
+        { l: 'Koordinasi Transportasi', v: 'Layanan ditingkatkan ke Tai Po Market' }
+      ],
+      info: ['Proyek perumahan transisi Tai Po', 'Pemerintah mengkoordinasikan peningkatan transportasi'],
+      coordinates: [22.4460, 114.1640],
       category: 'Housing'
     },
     {

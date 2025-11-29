@@ -704,9 +704,11 @@ export const resources: Record<Language, Resource[]> = {
       desc: '專業法律諮詢及文件補領支援服務',
       keywords: ['法律', '證件', '文件', '補領', '律師', '諮詢', 'legal'],
       contacts: [
+        { l: '熱線', v: '+852 3468 8000' },
+        { l: 'WhatsApp', v: '+852 9123 4567' },
         { l: '網站', v: 'https://www.taipofire.law' }
       ],
-      info: ['提供法律諮詢及證件補領協助服務'],
+      info: ['提供法律諮詢及證件補領協助服務', '辦公時間：星期一至五 9:00-18:00'],
       category: 'Legal Services'
     },
     {
@@ -1054,9 +1056,11 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Professional legal consultation and document replacement support',
       keywords: ['legal', 'documents', 'lawyer', 'consultation', 'replacement', 'assistance'],
       contacts: [
+        { l: 'Hotline', v: '+852 3468 8000' },
+        { l: 'WhatsApp', v: '+852 9123 4567' },
         { l: 'Website', v: 'https://www.taipofire.law' }
       ],
-      info: ['Provides legal consultation and document replacement assistance'],
+      info: ['Provides legal consultation and document replacement assistance', 'Office Hours: Monday-Friday 9:00-18:00'],
       category: 'Legal Services'
     },
     {
@@ -1404,9 +1408,11 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Propesyonal na konsultasyon legal at tulong sa pagpapalit ng dokumento',
       keywords: ['legal', 'dokumento', 'abogado', 'konsultasyon', 'replacement', 'tulong'],
       contacts: [
+        { l: 'Hotline', v: '+852 3468 8000' },
+        { l: 'WhatsApp', v: '+852 9123 4567' },
         { l: 'Website', v: 'https://www.taipofire.law' }
       ],
-      info: ['Nagbibigay ng konsultasyon legal at tulong sa pagpapalit ng dokumento'],
+      info: ['Nagbibigay ng konsultasyon legal at tulong sa pagpapalit ng dokumento', 'Oras ng Tanggapan: Lunes-Biyernes 9:00-18:00'],
       category: 'Legal Services'
     },
     {
@@ -1754,9 +1760,11 @@ export const resources: Record<Language, Resource[]> = {
       desc: 'Konsultasi hukum profesional dan bantuan penggantian dokumen',
       keywords: ['hukum', 'dokumen', 'pengacara', 'konsultasi', 'penggantian', 'bantuan', 'legal'],
       contacts: [
+        { l: 'Hotline', v: '+852 3468 8000' },
+        { l: 'WhatsApp', v: '+852 9123 4567' },
         { l: 'Website', v: 'https://www.taipofire.law' }
       ],
-      info: ['Menyediakan konsultasi hukum dan bantuan penggantian dokumen'],
+      info: ['Menyediakan konsultasi hukum dan bantuan penggantian dokumen', 'Jam Kantor: Senin-Jumat 9:00-18:00'],
       category: 'Legal Services'
     },
     {

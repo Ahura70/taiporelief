@@ -8,6 +8,7 @@ import { AccessibilityMenu } from '@/components/AccessibilityMenu';
 import { LanguageNotification } from '@/components/LanguageNotification';
 import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
+import { CommunityResources } from '@/components/CommunityResources';
 import { ResourceDetail } from '@/components/ResourceDetail';
 import { ResourceMap } from '@/components/ResourceMap';
 import { FeedbackForm } from '@/components/FeedbackForm';
@@ -142,7 +143,26 @@ const Index = () => {
         <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
 
         <div className="mt-8">
-          <ResourceMap 
+          <CommunityResources
+            title={t.communityResourcesTitle}
+            safetyTrackingTitle={t.safetyTrackingTitle}
+            safetyTrackingDesc={t.safetyTrackingDesc}
+            volunteerTitle={t.volunteerCoordTitle}
+            volunteerDesc={t.volunteerCoordDesc}
+            reportSafetyLabel={t.reportSafetyLabel}
+            reportMissingLabel={t.reportMissingLabel}
+            suppliesMapLabel={t.suppliesMapLabel}
+            govtWebsiteLabel={t.govtWebsiteLabel}
+            mainWebsiteLabel={t.mainWebsiteLabel}
+            volunteerEnglishLabel={t.volunteerEnglishLabel}
+            volunteerTelegramLabel={t.volunteerTelegramLabel}
+            dropOffLabel={t.dropOffLabel}
+            statusLabel={t.statusSuspended}
+          />
+        </div>
+
+        <div className="mt-8">
+          <ResourceMap
             resources={currentResources} 
             onResourceClick={setSelectedResource}
             mapTitle={t.mapTitle}

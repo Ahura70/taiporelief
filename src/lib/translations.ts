@@ -78,6 +78,20 @@ export const translations = {
     lineSpacingLabel: '行距',
     languageNotification: '我們已根據您的瀏覽器設定自動選擇語言。您可以隨時使用右上角的語言選擇器更改語言。',
     whatsappRegister: '透過 WhatsApp 登記向香港特別行政區政府捐款',
+    communityResourcesTitle: '社區資源',
+    safetyTrackingTitle: '宏福苑報平安',
+    safetyTrackingDesc: '即時安全狀態追蹤系統',
+    volunteerCoordTitle: '義工協調群組',
+    volunteerCoordDesc: '消防員支援及物資協調',
+    reportSafetyLabel: '報平安',
+    reportMissingLabel: '報告失蹤',
+    suppliesMapLabel: '物資地圖',
+    govtWebsiteLabel: '政府網站',
+    mainWebsiteLabel: '主網站',
+    volunteerEnglishLabel: 'TAI PO MANPOWER (英語)',
+    volunteerTelegramLabel: '大埔物資救援組 (Telegram)',
+    dropOffLabel: '物資交收點',
+    statusSuspended: '暫停接收 - 正在清點庫存',
     newsItems: [
       { text: '至少128人於大埔宏福苑火災中確認罹難，包括1名消防員及7名家庭傭工。79人受傷，包括12名消防員。約150人下落不明', source: 'SCMP/香港政府/印尼領事館' }
     ]
@@ -153,6 +167,20 @@ export const translations = {
     lineSpacingLabel: 'Line Spacing',
     languageNotification: 'We automatically selected your language based on your browser settings. You can change it anytime using the language selector in the top right.',
     whatsappRegister: 'Register via WhatsApp to donate via the HKSAR Govt.',
+    communityResourcesTitle: 'Community Resources',
+    safetyTrackingTitle: 'Wang Fuk Court Safety Tracking',
+    safetyTrackingDesc: 'Real-time safety status tracking system',
+    volunteerCoordTitle: 'Volunteer Coordination',
+    volunteerCoordDesc: 'Firefighter support and supply coordination',
+    reportSafetyLabel: 'Report Safety',
+    reportMissingLabel: 'Report Missing Person',
+    suppliesMapLabel: 'Supplies Map',
+    govtWebsiteLabel: 'Government Website',
+    mainWebsiteLabel: 'Main Website',
+    volunteerEnglishLabel: 'TAI PO MANPOWER (English)',
+    volunteerTelegramLabel: 'Tai Po Supplies Rescue (Telegram)',
+    dropOffLabel: 'Drop-off Location',
+    statusSuspended: 'Temporarily suspended - taking inventory',
     newsItems: [
       { text: 'At least 128 people, including a firefighter and 7 domestic migrant workers confirmed dead in Tai Po Wang Fuk Court fire. 79 injured, including 12 firefighters. Some 150 people are unaccounted for', source: 'SCMP/HK Govt./Indonesian consulate' }
     ]
@@ -227,6 +255,20 @@ export const translations = {
     lineSpacingLabel: 'Espasyo ng Linya',
     languageNotification: 'Awtomatiko naming pinili ang iyong wika batay sa iyong browser settings. Maaari mo itong baguhin anumang oras gamit ang language selector sa kanang itaas.',
     whatsappRegister: 'Magrehistro sa WhatsApp para mag-donate sa HKSAR Govt.',
+    communityResourcesTitle: 'Community Resources',
+    safetyTrackingTitle: 'Wang Fuk Court Safety Tracking',
+    safetyTrackingDesc: 'Real-time safety status tracking system',
+    volunteerCoordTitle: 'Koordinasyon ng Volunteer',
+    volunteerCoordDesc: 'Suporta sa firefighters at koordinasyon ng supplies',
+    reportSafetyLabel: 'Mag-report ng Kaligtasan',
+    reportMissingLabel: 'Mag-report ng Nawawala',
+    suppliesMapLabel: 'Mapa ng Supplies',
+    govtWebsiteLabel: 'Government Website',
+    mainWebsiteLabel: 'Main Website',
+    volunteerEnglishLabel: 'TAI PO MANPOWER (English)',
+    volunteerTelegramLabel: 'Tai Po Supplies Rescue (Telegram)',
+    dropOffLabel: 'Drop-off Location',
+    statusSuspended: 'Pansamantalang nakatigil - nag-iinventory',
     newsItems: [
       { text: 'Hindi bababa sa 128 katao, kasama ang isang bumbero at 7 domestic migrant workers, napatunayan nang namatay sa sunog sa Tai Po Wang Fuk Court. 79 ang nasugatan, kasama ang 12 bumbero. Humigit-kumulang 150 ang hindi pa napapatunayang kinaroroonan', source: 'SCMP/HK Govt./Indonesian consulate' }
     ]
@@ -302,6 +344,20 @@ export const translations = {
     lineSpacingLabel: 'Spasi Baris',
     languageNotification: 'Kami secara otomatis memilih bahasa Anda berdasarkan pengaturan browser. Anda dapat mengubahnya kapan saja menggunakan pemilih bahasa di kanan atas.',
     whatsappRegister: 'Daftar melalui WhatsApp untuk donasi melalui HKSAR Govt.',
+    communityResourcesTitle: 'Sumber Daya Komunitas',
+    safetyTrackingTitle: 'Wang Fuk Court Safety Tracking',
+    safetyTrackingDesc: 'Sistem pelacakan status keselamatan real-time',
+    volunteerCoordTitle: 'Koordinasi Relawan',
+    volunteerCoordDesc: 'Dukungan petugas pemadam kebakaran dan koordinasi persediaan',
+    reportSafetyLabel: 'Laporkan Keselamatan',
+    reportMissingLabel: 'Laporkan Orang Hilang',
+    suppliesMapLabel: 'Peta Persediaan',
+    govtWebsiteLabel: 'Website Pemerintah',
+    mainWebsiteLabel: 'Website Utama',
+    volunteerEnglishLabel: 'TAI PO MANPOWER (English)',
+    volunteerTelegramLabel: 'Tai Po Supplies Rescue (Telegram)',
+    dropOffLabel: 'Lokasi Drop-off',
+    statusSuspended: 'Sementara ditangguhkan - sedang inventarisasi',
     newsItems: [
       { text: 'Setidaknya 128 orang, termasuk seorang pemadam kebakaran dan 7 pekerja migran rumah tangga, dikonfirmasi tewas dalam kebakaran Tai Po Wang Fuk Court. 79 terluka, termasuk 12 petugas pemadam kebakaran. Sekitar 150 orang masih belum ditemukan', source: 'SCMP/HK Govt./Indonesian consulate' }
     ]

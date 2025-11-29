@@ -18,6 +18,7 @@ import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { ConnectionStatus } from '@/components/ConnectionStatus';
 import { ChangelogModal } from '@/components/ChangelogModal';
 import { BackToTop } from '@/components/BackToTop';
+import { ScrollProgressBar } from '@/components/ScrollProgressBar';
 import { translations, resources, Resource } from '@/lib/translations';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
@@ -102,6 +103,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background pb-20">
+      <ScrollProgressBar />
       <a href="#main-content" className="skip-link">
         {t.skipToContent}
       </a>

@@ -74,7 +74,7 @@ const Index = () => {
         lineSpacingLabel={t.lineSpacingLabel}
       />
       <MemorialBanner message={t.memorialMessage} />
-      <EmergencyBanner text={t.emergency} />
+      <EmergencyBanner text={t.emergency} whatsappText={t.whatsappRegister} />
 
       <main id="main-content" className="max-w-4xl mx-auto px-5 py-6">
         <NewsTicker newsItems={t.newsItems} />

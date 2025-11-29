@@ -182,6 +182,19 @@ const Index = () => {
         <div className="max-w-4xl mx-auto px-5">
         <div className="text-center mt-6 text-xs text-muted-foreground space-y-1">
           <div>{t.wcagCompliance}</div>
+          <div className="flex items-center justify-center gap-2 text-[11px] text-muted-foreground/80">
+            <span aria-hidden="true">⏱</span>
+            <button
+              onClick={() => setShowChangelog(true)}
+              className="hover:text-primary transition-colors cursor-pointer underline decoration-dotted"
+              title={currentLang === 'zh' ? '查看更新內容' : currentLang === 'tl' ? 'Tingnan ang mga update' : currentLang === 'id' ? 'Lihat pembaruan' : 'View updates'}
+            >
+              {currentLang === 'zh' && `最後更新：${buildTimestamp}`}
+              {currentLang === 'en' && `Last Updated: ${buildTimestamp}`}
+              {currentLang === 'tl' && `Huling Update: ${buildTimestamp}`}
+              {currentLang === 'id' && `Terakhir Diperbarui: ${buildTimestamp}`}
+            </button>
+          </div>
         </div>
 
         <div className="mt-6 flex justify-center">

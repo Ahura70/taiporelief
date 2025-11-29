@@ -37,7 +37,7 @@ export const EmergencyContactCard = ({
           <Button variant="default" size="lg" className="w-full justify-start gap-3 bg-destructive hover:bg-destructive/90 text-white h-auto py-4" onClick={() => callNumber('+85252422240')}>
             <Phone className="w-5 h-5" />
             <div className="flex flex-col items-start">
-              <span className="font-semibold">Emergency</span>
+              <span className="font-semibold">Indonesia Consulate Emergency</span>
               <span className="text-sm opacity-90">+852 5242 2240</span>
             </div>
           </Button>

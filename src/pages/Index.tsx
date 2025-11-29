@@ -15,6 +15,7 @@ import { InstallPrompt } from '@/components/InstallPrompt';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { ConnectionStatus } from '@/components/ConnectionStatus';
+import { HousingAnalytics } from '@/components/HousingAnalytics';
 import { translations, resources, Resource } from '@/lib/translations';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
@@ -102,6 +103,14 @@ const Index = () => {
             legendOpen={t.legendOpen}
             legendClosed={t.legendClosed}
             legendNoHours={t.legendNoHours}
+          />
+        </div>
+
+        <div className="mt-8">
+          <HousingAnalytics 
+            locationNames={['Lok Sin Village', 'Good House', 'Trackside Villas']}
+            title={currentLang === 'zh' ? '房屋入住趨勢' : currentLang === 'tl' ? 'Mga Kalakaran ng Pag-okupa ng Tirahan' : currentLang === 'id' ? 'Tren Okupansi Perumahan' : 'Housing Occupancy Trends'}
+            description={currentLang === 'zh' ? '追踪入住率和可用性隨時間變化' : currentLang === 'tl' ? 'Subaybayan ang mga rate ng pag-okupa at availability sa paglipas ng panahon' : currentLang === 'id' ? 'Lacak tingkat okupansi dan ketersediaan dari waktu ke waktu' : 'Track occupancy rates and availability over time'}
           />
         </div>
       </main>

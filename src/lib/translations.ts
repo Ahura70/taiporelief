@@ -88,7 +88,14 @@ export const translations = {
     categorySupplies: '物資捐贈',
     categoryInformation: '資訊平台',
     categoryHotline: '熱線電話',
-    categoryFinancial: '財務支援'
+    categoryFinancial: '財務支援',
+    filipinoStatsTitle: '受影響菲籍人士統計',
+    filipinoStatsSafe: '安全',
+    filipinoStatsInjured: '受傷',
+    filipinoStatsMissing: '失蹤',
+    filipinoStatsVerification: '待核實',
+    filipinoStatsSource: '資料來源',
+    filipinoStatsLastUpdated: '最後更新'
   },
   en: {
     title: 'Wang Fuk Court Relief',
@@ -170,7 +177,14 @@ export const translations = {
     highContrastLabel: 'High Contrast',
     reduceMotionLabel: 'Reduce Motion',
     lineSpacingLabel: 'Line Spacing',
-    languageNotification: 'We automatically selected your language based on your browser settings. You can change it anytime using the language selector in the top right.'
+    languageNotification: 'We automatically selected your language based on your browser settings. You can change it anytime using the language selector in the top right.',
+    filipinoStatsTitle: 'Affected Filipinos Status',
+    filipinoStatsSafe: 'Safe',
+    filipinoStatsInjured: 'Injured',
+    filipinoStatsMissing: 'Missing',
+    filipinoStatsVerification: 'For Verification',
+    filipinoStatsSource: 'Source',
+    filipinoStatsLastUpdated: 'Last Updated'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -252,7 +266,14 @@ export const translations = {
     categorySupplies: 'Supplies at Donasyon',
     categoryInformation: 'Impormasyon',
     categoryHotline: 'Hotlines',
-    categoryFinancial: 'Financial Support'
+    categoryFinancial: 'Financial Support',
+    filipinoStatsTitle: 'Katayuan ng Apektadong Pilipino',
+    filipinoStatsSafe: 'Ligtas',
+    filipinoStatsInjured: 'Nasugatan',
+    filipinoStatsMissing: 'Nawawala',
+    filipinoStatsVerification: 'Para sa Verification',
+    filipinoStatsSource: 'Pinagmulan',
+    filipinoStatsLastUpdated: 'Huling Update'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -272,6 +293,13 @@ export const translations = {
     categoryInformation: 'Pusat Informasi',
     categoryHotline: 'Hotlines',
     categoryFinancial: 'Dukungan Finansial',
+    filipinoStatsTitle: 'Status Warga Filipina yang Terdampak',
+    filipinoStatsSafe: 'Aman',
+    filipinoStatsInjured: 'Terluka',
+    filipinoStatsMissing: 'Hilang',
+    filipinoStatsVerification: 'Untuk Verifikasi',
+    filipinoStatsSource: 'Sumber',
+    filipinoStatsLastUpdated: 'Terakhir Diperbarui',
     installTitle: 'Instal App',
     installDesc: 'Akses offline cepat',
     installBtn: 'Instal',

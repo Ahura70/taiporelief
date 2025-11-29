@@ -203,6 +203,57 @@ export type Database = {
         }
         Relationships: []
       }
+      timeline_events: {
+        Row: {
+          created_at: string
+          description_en: string | null
+          description_id: string | null
+          description_tl: string | null
+          description_zh: string | null
+          event_time: string
+          event_type: string
+          id: string
+          is_critical: boolean | null
+          priority: number
+          title_en: string
+          title_id: string
+          title_tl: string
+          title_zh: string
+        }
+        Insert: {
+          created_at?: string
+          description_en?: string | null
+          description_id?: string | null
+          description_tl?: string | null
+          description_zh?: string | null
+          event_time: string
+          event_type: string
+          id?: string
+          is_critical?: boolean | null
+          priority?: number
+          title_en: string
+          title_id: string
+          title_tl: string
+          title_zh: string
+        }
+        Update: {
+          created_at?: string
+          description_en?: string | null
+          description_id?: string | null
+          description_tl?: string | null
+          description_zh?: string | null
+          event_time?: string
+          event_type?: string
+          id?: string
+          is_critical?: boolean | null
+          priority?: number
+          title_en?: string
+          title_id?: string
+          title_tl?: string
+          title_zh?: string
+        }
+        Relationships: []
+      }
       volunteer_registrations: {
         Row: {
           availability: string | null

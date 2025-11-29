@@ -9,7 +9,6 @@ import { LanguageNotification } from '@/components/LanguageNotification';
 import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { CommunityResources } from '@/components/CommunityResources';
-import { DisasterTimeline } from '@/components/DisasterTimeline';
 import { ResourceDetail } from '@/components/ResourceDetail';
 import { ResourceMap } from '@/components/ResourceMap';
 import { FeedbackForm } from '@/components/FeedbackForm';
@@ -166,13 +165,6 @@ const Index = () => {
         </div>
 
         <div className="mt-8">
-          <DisasterTimeline 
-            title={t.timelineTitle}
-            loadingText={t.timelineLoading}
-          />
-        </div>
-
-        <div className="mt-8">
           <ResourceMap
             resources={currentResources} 
             onResourceClick={setSelectedResource}
@@ -183,6 +175,18 @@ const Index = () => {
             legendClosed={t.legendClosed}
             legendNoHours={t.legendNoHours}
           />
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <Button
+            onClick={() => window.open('https://wangfukcourt.hk', '_blank')}
+            variant="outline"
+            size="sm"
+            className="gap-2"
+          >
+            <span>📊</span>
+            {t.timelineLink}
+          </Button>
         </div>
       </main>
 
@@ -196,10 +200,10 @@ const Index = () => {
               className="hover:text-primary transition-colors cursor-pointer underline decoration-dotted"
               title={currentLang === 'zh' ? '查看更新內容' : currentLang === 'tl' ? 'Tingnan ang mga update' : currentLang === 'id' ? 'Lihat pembaruan' : 'View updates'}
             >
-              {currentLang === 'zh' && `發佈時間：${buildTimestamp}`}
-              {currentLang === 'en' && `Published: ${buildTimestamp}`}
-              {currentLang === 'tl' && `Na-publish: ${buildTimestamp}`}
-              {currentLang === 'id' && `Dipublikasikan: ${buildTimestamp}`}
+              {currentLang === 'zh' && `最後更新：${buildTimestamp}`}
+              {currentLang === 'en' && `Last Updated: ${buildTimestamp}`}
+              {currentLang === 'tl' && `Huling Update: ${buildTimestamp}`}
+              {currentLang === 'id' && `Terakhir Diperbarui: ${buildTimestamp}`}
             </button>
           </div>
           <div>{t.wcagCompliance}</div>

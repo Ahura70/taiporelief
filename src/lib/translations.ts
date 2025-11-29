@@ -429,7 +429,7 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [{ l: '政府熱線', v: '9213 2388' }]
     },
     {
-      icon: '👷‍♀️',
+      icon: '👩',
       title: '外傭支援 HELP',
       desc: '多語言協助、心理輔導、緊急庇護',
       keywords: ['外傭', '工人', 'helper', 'indonesia', 'philippines'],
@@ -622,7 +622,7 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [{ l: 'Govt Hotline', v: '9213 2388' }]
     },
     {
-      icon: '👷‍♀️',
+      icon: '👩',
       title: 'HELP for Domestic Workers',
       desc: 'Multilingual Support, Counseling, Emergency Shelter',
       keywords: ['helper', 'fdh', 'maid', 'indonesia', 'philippines', 'domestic worker'],
@@ -815,7 +815,7 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [{ l: 'Govt Hotline', v: '9213 2388' }]
     },
     {
-      icon: '👷‍♀️',
+      icon: '👩',
       title: 'HELP para sa Domestic Workers',
       desc: 'Tulong sa Maraming Wika, Counseling, Emergency Shelter',
       keywords: ['helper', 'fdh', 'katulong', 'indonesia', 'philippines', 'domestic worker'],
@@ -1008,7 +1008,7 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [{ l: 'Hotline Pemerintah', v: '9213 2388' }]
     },
     {
-      icon: '👷‍♀️',
+      icon: '👩',
       title: 'HELP untuk Pekerja Rumah Tangga',
       desc: 'Dukungan Multibahasa, Konseling, Shelter Darurat',
       keywords: ['helper', 'fdh', 'pembantu', 'indonesia', 'philippines', 'domestic worker'],

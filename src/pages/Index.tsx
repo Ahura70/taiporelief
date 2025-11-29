@@ -158,6 +158,9 @@ const Index = () => {
             volunteerTelegramLabel={t.volunteerTelegramLabel}
             dropOffLabel={t.dropOffLabel}
             statusLabel={t.statusSuspended}
+            safeReportsLabel={t.safeReportsLabel}
+            missingReportsLabel={t.missingReportsLabel}
+            liveStatusLabel={t.liveStatusLabel}
           />
         </div>
 

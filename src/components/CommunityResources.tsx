@@ -1,10 +1,8 @@
-import { ExternalLink, Users, MapPin, FileSearch, Globe, MessageCircle, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { ExternalLink, Users, MapPin, FileSearch, Globe, MessageCircle, Send, CheckCircle2, AlertCircle, AlertTriangle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/hooks/useLanguage';
-import { useSafetyReports } from '@/hooks/useSafetyReports';
-import { Skeleton } from '@/components/ui/skeleton';
 
 interface CommunityResourcesProps {
   title: string;
@@ -46,7 +44,13 @@ export const CommunityResources = ({
   liveStatusLabel
 }: CommunityResourcesProps) => {
   const { currentLang } = useLanguage();
-  const { counts, isLoading } = useSafetyReports();
+  
+  // Manual safety tracking numbers (updated manually)
+  const safetyStats = {
+    safe: 146,
+    lookingFor: 1,
+    critical: 8
+  };
 
   const openLink = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -68,44 +72,45 @@ export const CommunityResources = ({
                 <Globe className="w-5 h-5 text-primary" />
                 <CardTitle className="text-lg">{safetyTrackingTitle}</CardTitle>
               </div>
-              <Badge variant="outline" className="bg-primary/10 text-primary border-primary/30">
-                {currentLang === 'zh' ? '即時' : currentLang === 'tl' ? 'Real-time' : currentLang === 'id' ? 'Real-time' : 'Real-time'}
+              <Badge variant="outline" className="bg-muted text-muted-foreground border-border">
+                {currentLang === 'zh' ? '手動更新' : currentLang === 'tl' ? 'Manual' : currentLang === 'id' ? 'Manual' : 'Manual'}
               </Badge>
             </div>
             <CardDescription>{safetyTrackingDesc}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
-            {/* Live Status Indicators */}
-            <div className="grid grid-cols-2 gap-2 p-3 rounded-lg bg-muted/50 border border-border">
+            {/* Manual Status Indicators */}
+            <div className="grid grid-cols-3 gap-2 p-3 rounded-lg bg-muted/50 border border-border">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
                 <div className="flex flex-col">
                   <span className="text-xs text-muted-foreground">{safeReportsLabel}</span>
-                  {isLoading ? (
-                    <Skeleton className="h-6 w-12" />
-                  ) : (
-                    <span className="text-lg font-bold text-green-600 dark:text-green-400">
-                      {counts.safe}
-                    </span>
-                  )}
+                  <span className="text-lg font-bold text-green-600 dark:text-green-400">
+                    {safetyStats.safe}
+                  </span>
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-orange-600 dark:text-orange-400 flex-shrink-0" />
+                <AlertCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <span className="text-xs text-muted-foreground">{missingReportsLabel}</span>
-                  {isLoading ? (
-                    <Skeleton className="h-6 w-12" />
-                  ) : (
-                    <span className="text-lg font-bold text-orange-600 dark:text-orange-400">
-                      {counts.missing}
-                    </span>
-                  )}
+                  <span className="text-xs text-muted-foreground">
+                    {currentLang === 'zh' ? '尋人' : currentLang === 'tl' ? 'Hinahanap' : currentLang === 'id' ? 'Mencari' : 'Looking For'}
+                  </span>
+                  <span className="text-lg font-bold text-blue-600 dark:text-blue-400">
+                    {safetyStats.lookingFor}
+                  </span>
                 </div>
               </div>
-              <div className="col-span-2 flex items-center justify-center gap-1 mt-1 pt-2 border-t border-border/50">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-xs text-muted-foreground">{liveStatusLabel}</span>
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-xs text-muted-foreground">
+                    {currentLang === 'zh' ? '危急' : currentLang === 'tl' ? 'Kritikal' : currentLang === 'id' ? 'Kritis' : 'Critical'}
+                  </span>
+                  <span className="text-lg font-bold text-red-600 dark:text-red-400">
+                    {safetyStats.critical}
+                  </span>
+                </div>
               </div>
             </div>
             

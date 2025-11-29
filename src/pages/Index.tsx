@@ -177,17 +177,6 @@ const Index = () => {
           />
         </div>
 
-        <div className="mt-6 flex justify-center">
-          <Button
-            onClick={() => window.open('https://wangfukcourt.hk', '_blank')}
-            variant="outline"
-            size="sm"
-            className="gap-2"
-          >
-            <span>📊</span>
-            {t.timelineLink}
-          </Button>
-        </div>
       </main>
 
         <div className="max-w-4xl mx-auto px-5">

@@ -18,20 +18,19 @@ export const useSafetyReports = () => {
   const fetchCounts = async () => {
     try {
       const { data, error } = await supabase
-        .from('safety_reports')
-        .select('report_type');
+        .rpc('get_safety_report_counts');
 
       if (error) {
         console.error('Error fetching safety reports:', error);
         return;
       }
 
-      const safeCounts = data?.filter(r => r.report_type === 'safe').length || 0;
-      const missingCounts = data?.filter(r => r.report_type === 'missing').length || 0;
+      const safeCounts = data?.find(r => r.report_type === 'safe')?.count || 0;
+      const missingCounts = data?.find(r => r.report_type === 'missing')?.count || 0;
 
       setCounts({
-        safe: safeCounts,
-        missing: missingCounts,
+        safe: Number(safeCounts),
+        missing: Number(missingCounts),
         lastUpdated: new Date()
       });
     } catch (error) {

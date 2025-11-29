@@ -699,6 +699,17 @@ export const resources: Record<Language, Resource[]> = {
       category: 'Consular Services'
     },
     {
+      icon: '⚖️',
+      title: '法律及證件補領協助',
+      desc: '專業法律諮詢及文件補領支援服務',
+      keywords: ['法律', '證件', '文件', '補領', '律師', '諮詢', 'legal'],
+      contacts: [
+        { l: '網站', v: 'https://www.taipofire.law' }
+      ],
+      info: ['提供法律諮詢及證件補領協助服務'],
+      category: 'Legal Services'
+    },
+    {
       icon: '🌐',
       title: '宏福苑報平安',
       desc: '即時安全狀態追蹤系統',
@@ -1036,6 +1047,17 @@ export const resources: Record<Language, Resource[]> = {
       coordinates: [22.2775, 114.1726],
       hours: { open: '09:00', close: '17:00', days: 'Mon-Fri' },
       category: 'Consular Services'
+    },
+    {
+      icon: '⚖️',
+      title: 'Legal & Documentation Assistance',
+      desc: 'Professional legal consultation and document replacement support',
+      keywords: ['legal', 'documents', 'lawyer', 'consultation', 'replacement', 'assistance'],
+      contacts: [
+        { l: 'Website', v: 'https://www.taipofire.law' }
+      ],
+      info: ['Provides legal consultation and document replacement assistance'],
+      category: 'Legal Services'
     },
     {
       icon: '🌐',
@@ -1377,6 +1399,17 @@ export const resources: Record<Language, Resource[]> = {
       category: 'Consular Services'
     },
     {
+      icon: '⚖️',
+      title: 'Tulong sa Legal at Dokumento',
+      desc: 'Propesyonal na konsultasyon legal at tulong sa pagpapalit ng dokumento',
+      keywords: ['legal', 'dokumento', 'abogado', 'konsultasyon', 'replacement', 'tulong'],
+      contacts: [
+        { l: 'Website', v: 'https://www.taipofire.law' }
+      ],
+      info: ['Nagbibigay ng konsultasyon legal at tulong sa pagpapalit ng dokumento'],
+      category: 'Legal Services'
+    },
+    {
       icon: '🌐',
       title: 'Wang Fuk Court Safety Tracking',
       desc: 'Real-time safety status tracking system',
@@ -1714,6 +1747,17 @@ export const resources: Record<Language, Resource[]> = {
       coordinates: [22.2775, 114.1726],
       hours: { open: '09:00', close: '17:00', days: 'Mon-Fri' },
       category: 'Consular Services'
+    },
+    {
+      icon: '⚖️',
+      title: 'Bantuan Hukum & Dokumen',
+      desc: 'Konsultasi hukum profesional dan bantuan penggantian dokumen',
+      keywords: ['hukum', 'dokumen', 'pengacara', 'konsultasi', 'penggantian', 'bantuan', 'legal'],
+      contacts: [
+        { l: 'Website', v: 'https://www.taipofire.law' }
+      ],
+      info: ['Menyediakan konsultasi hukum dan bantuan penggantian dokumen'],
+      category: 'Legal Services'
     },
     {
       icon: '🌐',

@@ -3,7 +3,6 @@ import { Header } from '@/components/Header';
 import { MemorialBanner } from '@/components/MemorialBanner';
 import { EmergencyBanner } from '@/components/EmergencyBanner';
 import { NewsTicker } from '@/components/NewsTicker';
-import { FilipinoCasualtyStats } from '@/components/FilipinoCasualtyStats';
 import { EmergencyDialButton } from '@/components/EmergencyDialButton';
 import { AccessibilityMenu } from '@/components/AccessibilityMenu';
 import { LanguageNotification } from '@/components/LanguageNotification';
@@ -11,7 +10,7 @@ import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
 import { ResourceDetail } from '@/components/ResourceDetail';
 import { ResourceMap } from '@/components/ResourceMap';
-
+import { NewsBanner } from '@/components/NewsBanner';
 import { FeedbackForm } from '@/components/FeedbackForm';
 import { InstallPrompt } from '@/components/InstallPrompt';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
@@ -81,18 +80,6 @@ const Index = () => {
       <main id="main-content" className="max-w-4xl mx-auto px-5 py-6">
         <NewsTicker text={t.newsTicker} />
         
-        <div className="mt-6">
-          <FilipinoCasualtyStats
-            title={t.filipinoStatsTitle}
-            safeLabel={t.filipinoStatsSafe}
-            injuredLabel={t.filipinoStatsInjured}
-            missingLabel={t.filipinoStatsMissing}
-            verificationLabel={t.filipinoStatsVerification}
-            sourceLabel={t.filipinoStatsSource}
-            lastUpdatedLabel={t.filipinoStatsLastUpdated}
-          />
-        </div>
-        
         <div ref={searchBoxRef} className="mt-6">
           <SearchBox
             label={t.label}
@@ -116,19 +103,11 @@ const Index = () => {
             legendOpen={t.legendOpen}
             legendClosed={t.legendClosed}
             legendNoHours={t.legendNoHours}
-            filterCategoriesText={t.filterCategories}
-            allCategoriesText={t.allCategories}
-            categoryEmergency={t.categoryEmergency}
-            categoryMigrant={t.categoryMigrantSupport}
-            categoryAnimal={t.categoryAnimalWelfare}
-            categoryVolunteer={t.categoryVolunteer}
-            categoryShelter={t.categoryShelter}
-            categorySupplies={t.categorySupplies}
-            categoryInformation={t.categoryInformation}
-            categoryHotline={t.categoryHotline}
           />
         </div>
       </main>
+
+      <NewsBanner title={t.newsTitle} />
 
       <div className="max-w-4xl mx-auto px-5">
         <div className="text-center mt-6 text-xs text-muted-foreground space-y-1">

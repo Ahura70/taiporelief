@@ -210,6 +210,11 @@ All colors MUST be HSL.
   z-index: 1 !important;
 }
 
+/* Ensure map markers are not grayscaled */
+.custom-marker-icon svg {
+  filter: none !important;
+}
+
 /* Ensure Leaflet popups don't overlay modals */
 .leaflet-popup-pane {
   z-index: 2 !important;

@@ -109,6 +109,10 @@ const Index = () => {
       <div className="max-w-4xl mx-auto px-5">
         <div className="text-center mt-6 text-xs text-muted-foreground space-y-1">
           <div>{t.lastUpdate}</div>
+          <div className="flex items-center justify-center gap-2 text-[11px] text-muted-foreground/80">
+            <span aria-hidden="true">⏱</span>
+            <span>{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+          </div>
           <div>{t.wcagCompliance}</div>
         </div>
 

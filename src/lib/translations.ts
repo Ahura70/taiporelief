@@ -363,7 +363,7 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'FPS 轉數快', v: '164279317' },
         { l: 'WhatsApp 支援', v: '9175 1433' },
-        { l: '電話查詢', v: '3488 4933' },
+        { l: '電話查詢', v: '2802 0021' },
         { l: '電郵', v: 'relief@redcross.org.hk' }
       ],
       info: ['提供即時慰問金及每月生活津貼', '透過 Shall We Talk 提供心理支援服務'],
@@ -393,6 +393,46 @@ export const resources: Record<Language, Resource[]> = {
         '直接存款：ICBC 072-721-010001-606 或 HSBC 004-502-476914-001'
       ],
       coordinates: [22.4472, 114.1680], // Caritas Fu Heng Home for the Aged (Tai Po)
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '⛪',
+      title: '香港聖公會福利協會',
+      desc: '全面社會服務及支援',
+      keywords: ['聖公會', '社會服務', '福利'],
+      contacts: [
+        { l: '電話', v: '8209 8122' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '👨‍👩‍👧‍👦',
+      title: '香港家庭福利會',
+      desc: '家庭支援及輔導服務',
+      keywords: ['家庭', '福利會', '輔導'],
+      contacts: [
+        { l: '電話', v: '2772 2322' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '🏛️',
+      title: '保良局',
+      desc: '社會福利及援助服務',
+      keywords: ['保良局', '社會福利', '援助'],
+      contacts: [
+        { l: '電話', v: '2277 8500' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '🍲',
+      title: 'Feeding Hong Kong',
+      desc: '食物援助及緊急物資',
+      keywords: ['食物', '食物銀行', 'feeding'],
+      contacts: [
+        { l: '電話', v: '2205 6568' }
+      ],
       category: 'Emergency Relief'
     },
     {
@@ -590,7 +630,7 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'FPS ID', v: '164279317' },
         { l: 'WhatsApp Support', v: '9175 1433' },
-        { l: 'Phone', v: '3488 4933' },
+        { l: 'Phone', v: '2802 0021' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
       ],
       info: ['Immediate relief funds + monthly living allowance', 'Shall We Talk psychological support service'],
@@ -620,6 +660,46 @@ export const resources: Record<Language, Resource[]> = {
         'Bank: ICBC 072-721-010001-606 or HSBC 004-502-476914-001'
       ],
       coordinates: [22.4472, 114.1680],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '⛪',
+      title: 'HK Sheng Kung Hui Welfare Council',
+      desc: 'Comprehensive social services & support',
+      keywords: ['sheng kung hui', 'social services', 'welfare'],
+      contacts: [
+        { l: 'Phone', v: '8209 8122' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '👨‍👩‍👧‍👦',
+      title: 'Hong Kong Family Welfare Society',
+      desc: 'Family support & counseling services',
+      keywords: ['family', 'welfare society', 'counseling'],
+      contacts: [
+        { l: 'Phone', v: '2772 2322' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '🏛️',
+      title: 'Po Leung Kuk',
+      desc: 'Social welfare & assistance services',
+      keywords: ['po leung kuk', 'social welfare', 'assistance'],
+      contacts: [
+        { l: 'Phone', v: '2277 8500' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '🍲',
+      title: 'Feeding Hong Kong',
+      desc: 'Food assistance & emergency supplies',
+      keywords: ['food', 'food bank', 'feeding'],
+      contacts: [
+        { l: 'Phone', v: '2205 6568' }
+      ],
       category: 'Emergency Relief'
     },
     {
@@ -817,7 +897,7 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'FPS ID', v: '164279317' },
         { l: 'WhatsApp Support', v: '9175 1433' },
-        { l: 'Telepono', v: '3488 4933' },
+        { l: 'Telepono', v: '2802 0021' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
       ],
       info: ['Agarang tulong pinansyal + buwanang allowance', 'Shall We Talk serbisyong sikolohikal'],
@@ -847,6 +927,46 @@ export const resources: Record<Language, Resource[]> = {
         'Bangko: ICBC 072-721-010001-606 o HSBC 004-502-476914-001'
       ],
       coordinates: [22.4472, 114.1680],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '⛪',
+      title: 'HK Sheng Kung Hui Welfare Council',
+      desc: 'Komprehensibong serbisyong panlipunan',
+      keywords: ['sheng kung hui', 'social services', 'welfare'],
+      contacts: [
+        { l: 'Telepono', v: '8209 8122' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '👨‍👩‍👧‍👦',
+      title: 'Hong Kong Family Welfare Society',
+      desc: 'Suportang pampamilya at counseling',
+      keywords: ['pamilya', 'welfare society', 'counseling'],
+      contacts: [
+        { l: 'Telepono', v: '2772 2322' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '🏛️',
+      title: 'Po Leung Kuk',
+      desc: 'Serbisyong pangkapakanan at tulong',
+      keywords: ['po leung kuk', 'social welfare', 'tulong'],
+      contacts: [
+        { l: 'Telepono', v: '2277 8500' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '🍲',
+      title: 'Feeding Hong Kong',
+      desc: 'Tulong sa pagkain at emergency supplies',
+      keywords: ['pagkain', 'food bank', 'feeding'],
+      contacts: [
+        { l: 'Telepono', v: '2205 6568' }
+      ],
       category: 'Emergency Relief'
     },
     {
@@ -1044,7 +1164,7 @@ export const resources: Record<Language, Resource[]> = {
       contacts: [
         { l: 'FPS ID', v: '164279317' },
         { l: 'WhatsApp Support', v: '9175 1433' },
-        { l: 'Telepon', v: '3488 4933' },
+        { l: 'Telepon', v: '2802 0021' },
         { l: 'Email', v: 'relief@redcross.org.hk' }
       ],
       info: ['Dana bantuan segera + tunjangan bulanan', 'Layanan dukungan psikologis Shall We Talk'],
@@ -1074,6 +1194,46 @@ export const resources: Record<Language, Resource[]> = {
         'Bank: ICBC 072-721-010001-606 atau HSBC 004-502-476914-001'
       ],
       coordinates: [22.4472, 114.1680],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '⛪',
+      title: 'HK Sheng Kung Hui Welfare Council',
+      desc: 'Layanan sosial komprehensif & dukungan',
+      keywords: ['sheng kung hui', 'layanan sosial', 'kesejahteraan'],
+      contacts: [
+        { l: 'Telepon', v: '8209 8122' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '👨‍👩‍👧‍👦',
+      title: 'Hong Kong Family Welfare Society',
+      desc: 'Dukungan keluarga & layanan konseling',
+      keywords: ['keluarga', 'welfare society', 'konseling'],
+      contacts: [
+        { l: 'Telepon', v: '2772 2322' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '🏛️',
+      title: 'Po Leung Kuk',
+      desc: 'Layanan kesejahteraan & bantuan sosial',
+      keywords: ['po leung kuk', 'kesejahteraan sosial', 'bantuan'],
+      contacts: [
+        { l: 'Telepon', v: '2277 8500' }
+      ],
+      category: 'Emergency Relief'
+    },
+    {
+      icon: '🍲',
+      title: 'Feeding Hong Kong',
+      desc: 'Bantuan makanan & persediaan darurat',
+      keywords: ['makanan', 'bank makanan', 'feeding'],
+      contacts: [
+        { l: 'Telepon', v: '2205 6568' }
+      ],
       category: 'Emergency Relief'
     },
     {

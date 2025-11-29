@@ -92,6 +92,9 @@ export const translations = {
     volunteerTelegramLabel: '大埔物資救援組 (Telegram)',
     dropOffLabel: '物資交收點',
     statusSuspended: '暫停接收 - 正在清點庫存',
+    safeReportsLabel: '報平安',
+    missingReportsLabel: '失蹤報告',
+    liveStatusLabel: '即時更新',
     newsItems: [
       { text: '至少128人於大埔宏福苑火災中確認罹難，包括1名消防員及7名家庭傭工。79人受傷，包括12名消防員。約150人下落不明', source: 'SCMP/香港政府/印尼領事館' }
     ]
@@ -181,6 +184,9 @@ export const translations = {
     volunteerTelegramLabel: 'Tai Po Supplies Rescue (Telegram)',
     dropOffLabel: 'Drop-off Location',
     statusSuspended: 'Temporarily suspended - taking inventory',
+    safeReportsLabel: 'Reported Safe',
+    missingReportsLabel: 'Missing Reports',
+    liveStatusLabel: 'Live Updates',
     newsItems: [
       { text: 'At least 128 people, including a firefighter and 7 domestic migrant workers confirmed dead in Tai Po Wang Fuk Court fire. 79 injured, including 12 firefighters. Some 150 people are unaccounted for', source: 'SCMP/HK Govt./Indonesian consulate' }
     ]
@@ -269,6 +275,9 @@ export const translations = {
     volunteerTelegramLabel: 'Tai Po Supplies Rescue (Telegram)',
     dropOffLabel: 'Drop-off Location',
     statusSuspended: 'Pansamantalang nakatigil - nag-iinventory',
+    safeReportsLabel: 'Nag-report ng Ligtas',
+    missingReportsLabel: 'Mga Nawawala',
+    liveStatusLabel: 'Live na Update',
     newsItems: [
       { text: 'Hindi bababa sa 128 katao, kasama ang isang bumbero at 7 domestic migrant workers, napatunayan nang namatay sa sunog sa Tai Po Wang Fuk Court. 79 ang nasugatan, kasama ang 12 bumbero. Humigit-kumulang 150 ang hindi pa napapatunayang kinaroroonan', source: 'SCMP/HK Govt./Indonesian consulate' }
     ]
@@ -358,6 +367,9 @@ export const translations = {
     volunteerTelegramLabel: 'Tai Po Supplies Rescue (Telegram)',
     dropOffLabel: 'Lokasi Drop-off',
     statusSuspended: 'Sementara ditangguhkan - sedang inventarisasi',
+    safeReportsLabel: 'Melaporkan Aman',
+    missingReportsLabel: 'Laporan Hilang',
+    liveStatusLabel: 'Update Langsung',
     newsItems: [
       { text: 'Setidaknya 128 orang, termasuk seorang pemadam kebakaran dan 7 pekerja migran rumah tangga, dikonfirmasi tewas dalam kebakaran Tai Po Wang Fuk Court. 79 terluka, termasuk 12 petugas pemadam kebakaran. Sekitar 150 orang masih belum ditemukan', source: 'SCMP/HK Govt./Indonesian consulate' }
     ]

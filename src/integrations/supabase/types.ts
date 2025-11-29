@@ -167,6 +167,42 @@ export type Database = {
         }
         Relationships: []
       }
+      safety_reports: {
+        Row: {
+          additional_info: string | null
+          block: string | null
+          contact_info: string | null
+          created_at: string
+          flat_number: string | null
+          id: string
+          name: string | null
+          report_type: string
+          reported_at: string
+        }
+        Insert: {
+          additional_info?: string | null
+          block?: string | null
+          contact_info?: string | null
+          created_at?: string
+          flat_number?: string | null
+          id?: string
+          name?: string | null
+          report_type: string
+          reported_at?: string
+        }
+        Update: {
+          additional_info?: string | null
+          block?: string | null
+          contact_info?: string | null
+          created_at?: string
+          flat_number?: string | null
+          id?: string
+          name?: string | null
+          report_type?: string
+          reported_at?: string
+        }
+        Relationships: []
+      }
       volunteer_registrations: {
         Row: {
           availability: string | null

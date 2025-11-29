@@ -598,7 +598,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '👩',
-      title: '外傭支援 HELP',
+      title: '外傭',
       desc: '多語言協助、心理輔導、緊急庇護',
       keywords: ['外傭', '工人', 'helper', 'indonesia', 'philippines'],
       contacts: [
@@ -890,7 +890,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '👩',
-      title: 'HELP for Domestic Workers',
+      title: 'Domestic Workers',
       desc: 'Multilingual Support, Counseling, Emergency Shelter',
       keywords: ['helper', 'fdh', 'maid', 'indonesia', 'philippines', 'domestic worker'],
       contacts: [
@@ -1182,7 +1182,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '👩',
-      title: 'HELP para sa Domestic Workers',
+      title: 'Domestic Workers',
       desc: 'Tulong sa Maraming Wika, Counseling, Emergency Shelter',
       keywords: ['helper', 'fdh', 'katulong', 'indonesia', 'philippines', 'domestic worker'],
       contacts: [
@@ -1474,7 +1474,7 @@ export const resources: Record<Language, Resource[]> = {
     },
     {
       icon: '👩',
-      title: 'HELP untuk Pekerja Rumah Tangga',
+      title: 'Pekerja Rumah Tangga',
       desc: 'Dukungan Multibahasa, Konseling, Shelter Darurat',
       keywords: ['helper', 'fdh', 'pembantu', 'indonesia', 'philippines', 'domestic worker'],
       contacts: [

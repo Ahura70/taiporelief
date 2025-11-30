@@ -7,23 +7,27 @@
     <meta name="theme-color" content="#f0f0f0" media="(prefers-color-scheme: light)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Tai Po Relief" />
+    <meta name="apple-mobile-web-app-title" content="Tai Po Fire Relief" />
     <link rel="apple-touch-icon" href="/pwa-192x192.png" />
     <link rel="canonical" href="https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/" />
     
-    <title>大埔宏福苑火災援助 | Wang Fuk Court Fire Relief | Emergency Support Hub</title>
-    <meta name="description" content="Multilingual emergency relief hub for Wang Fuk Court Fire victims. Access financial aid, temporary housing, counseling services in Traditional Chinese, English, Tagalog & Bahasa Indonesian. Available 24/7 with offline support." />
-    <meta name="keywords" content="Tai Po relief, Wang Fuk Court, fire relief, emergency services, Hong Kong disaster support, multilingual aid, HK Red Cross, Caritas Hong Kong" />
+    <title>Tai Po Fire Relief | Hong Kong Fire Emergency Support | Wang Fuk Court Fire Aid</title>
+    <meta name="description" content="Official Tai Po fire relief hub for Hong Kong fire emergency victims. 24/7 multilingual support for Wang Fuk Court fire survivors. Find financial aid, temporary housing, medical assistance, and counseling services in Traditional Chinese, English, Tagalog & Bahasa Indonesian." />
+    <meta name="keywords" content="Tai Po fire relief, Hong Kong fire, Wang Fuk Court fire, Tai Po fire emergency, Hong Kong fire relief, fire disaster support, emergency financial aid Hong Kong, fire victim support, Tai Po emergency services, Hong Kong Red Cross fire aid, Caritas Hong Kong fire relief, domestic worker fire support, fire emergency housing, disaster relief Hong Kong, Tai Po disaster support, fire victim counseling, multilingual fire relief, 大埔火災救援, 香港火災援助" />
     <meta name="author" content="Tai Po Relief" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🆘</text></svg>" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/" />
-    <meta property="og:title" content="大埔宏福苑火災援助 | Wang Fuk Court Fire Relief" />
-    <meta property="og:description" content="24/7 multilingual emergency support hub. Find financial aid, housing, counseling & volunteer opportunities. Works offline." />
+    <meta property="og:site_name" content="Tai Po Fire Relief" />
+    <meta property="og:title" content="Tai Po Fire Relief | Hong Kong Fire Emergency Support Hub" />
+    <meta property="og:description" content="24/7 multilingual emergency support for Tai Po fire and Hong Kong fire victims. Financial aid, housing, counseling & volunteer opportunities. Works offline." />
     <meta property="og:image" content="/pwa-512x512.png" />
+    <meta property="og:image:alt" content="Tai Po Fire Relief Emergency Support Hub" />
     <meta property="og:locale" content="zh_HK" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:locale:alternate" content="tl_PH" />
@@ -32,23 +36,33 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/" />
-    <meta name="twitter:title" content="Tai Po Relief - Wang Fuk Court Fire Support" />
-    <meta name="twitter:description" content="Emergency relief hub with 24/7 multilingual support. Financial aid, housing, counseling available." />
+    <meta name="twitter:title" content="Tai Po Fire Relief | Hong Kong Fire Emergency Support" />
+    <meta name="twitter:description" content="Emergency relief hub for Tai Po fire and Hong Kong fire victims. 24/7 multilingual support: financial aid, housing, counseling available." />
     <meta name="twitter:image" content="/pwa-512x512.png" />
+    <meta name="twitter:image:alt" content="Tai Po Fire Relief Emergency Support Hub" />
 
     <!-- Structured Data - Emergency Service -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "GovernmentService",
-      "name": "Tai Po Relief - Wang Fuk Court Fire Support",
-      "description": "Multilingual disaster relief information hub for Tai Po district providing emergency support information and resources",
-      "serviceType": "Emergency Relief Services",
+      "name": "Tai Po Fire Relief - Hong Kong Fire Emergency Support",
+      "description": "Multilingual disaster relief information hub for Tai Po fire and Hong Kong fire emergencies, providing emergency support information and resources for Wang Fuk Court fire victims",
+      "serviceType": "Emergency Fire Relief Services",
       "areaServed": {
         "@type": "Place",
-        "name": "Tai Po, Hong Kong"
+        "name": "Tai Po, Hong Kong",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tai Po",
+          "addressRegion": "Hong Kong"
+        }
       },
       "availableLanguage": ["zh-HK", "en", "tl", "id"],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Fire disaster victims, domestic workers, residents"
+      },
       "provider": [
         {
           "@type": "Organization",
@@ -67,7 +81,8 @@
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "HKD"
-      }
+      },
+      "keywords": "Tai Po fire relief, Hong Kong fire, fire emergency support, disaster relief, financial aid, temporary housing"
     }
     </script>
 
@@ -76,19 +91,31 @@
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Tai Po Relief",
+      "name": "Tai Po Fire Relief",
+      "alternateName": "Hong Kong Fire Emergency Support Hub",
       "url": "https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/",
+      "description": "Comprehensive emergency relief portal for Tai Po fire and Hong Kong fire victims with multilingual support",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Works offline.",
       "offers": {
         "@type": "Offer",
         "price": "0"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "ratingCount": "1"
-      }
+      "featureList": "Multilingual support, Offline access, Emergency contacts, Financial aid information, Housing assistance, Volunteer coordination",
+      "inLanguage": ["zh-HK", "en", "tl", "id"]
+    }
+    </script>
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tai Po Fire Relief",
+      "description": "Emergency support hub for Tai Po fire and Hong Kong fire disaster victims",
+      "url": "https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/",
+      "keywords": "Tai Po fire, Hong Kong fire relief, emergency support, disaster relief"
     }
     </script>
   </head>

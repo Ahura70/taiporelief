@@ -23,6 +23,7 @@ import { BackToTop } from '@/components/BackToTop';
 import { ScrollProgressBar } from '@/components/ScrollProgressBar';
 import { SocialShare } from '@/components/SocialShare';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { OfflineSyncStatus } from '@/components/OfflineSyncStatus';
 import { translations, resources, Resource } from '@/lib/translations';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
@@ -134,6 +135,7 @@ const Index = () => {
       </a>
       <OfflineIndicator />
       <ConnectionStatus />
+      <OfflineSyncStatus />
       <InstallPrompt />
       <Header
         title={t.title}

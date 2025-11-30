@@ -24,6 +24,7 @@ import { ScrollProgressBar } from '@/components/ScrollProgressBar';
 import { SocialShare } from '@/components/SocialShare';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { OfflineSyncStatus } from '@/components/OfflineSyncStatus';
+import { UpdateNotification } from '@/components/UpdateNotification';
 import { translations, resources, Resource } from '@/lib/translations';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
@@ -130,6 +131,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background pb-20">
       <ScrollProgressBar />
+      <UpdateNotification />
       <a href="#main-content" className="skip-link">
         {t.skipToContent}
       </a>

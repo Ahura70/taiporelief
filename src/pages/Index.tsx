@@ -21,6 +21,7 @@ import { ConnectionStatus } from '@/components/ConnectionStatus';
 import { ChangelogModal } from '@/components/ChangelogModal';
 import { BackToTop } from '@/components/BackToTop';
 import { ScrollProgressBar } from '@/components/ScrollProgressBar';
+import { SocialShare } from '@/components/SocialShare';
 import { translations, resources, Resource } from '@/lib/translations';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
@@ -128,7 +129,8 @@ const Index = () => {
         currentLang={currentLang}
         onLanguageChange={changeLanguage}
       />
-      <div className="fixed top-20 right-5 z-40">
+      <div className="fixed top-20 right-5 z-40 flex flex-col gap-2">
+        <SocialShare />
         <DarkModeToggle />
       </div>
       <AccessibilityMenu

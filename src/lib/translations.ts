@@ -106,6 +106,7 @@ export const translations = {
     philippinesCenterNote: '📍 菲律賓領事館將於11月30日上午10時至下午4時在大埔綜合大樓設立服務中心\n地址：香城司徒街8號',
     indonesiaClarificationNote: '📞 移工請前往大埔綜合大樓（地下）服務台查詢',
     newsItems: [
+      { text: '💰 香港特區政府提供緊急現金津貼：每戶$10,000、每名死者$200,000 及每個受影響家庭生活津貼$50,000', source: '香港特區政府' },
       { text: '至少128人於大埔宏福苑火災中確認罹難，包括1名消防員及7名家庭傭工。79人受傷，包括12名消防員。約150人下落不明', source: 'SCMP/香港政府/印尼領事館' },
       { text: '受影響的外傭僱主/外傭可致電勞工處 3582 8987 (有關外傭事宜) 或 2929 4054', source: '香港勞工處' },
       { text: '菲律賓領事館將於11月30日上午10時至下午4時在大埔綜合大樓（香城司徒街8號）設立服務中心', source: '菲律賓總領事館' }
@@ -215,6 +216,7 @@ export const translations = {
     philippinesCenterNote: '📍 The Philippine Consulate will open a service center on Nov. 30 between 10:00 AM and 4:00 PM at the Tai Po Complex, 8 Heung Sze Hui Street',
     indonesiaClarificationNote: '📞 Migrant Workers are requested to check with the service desk at the Tai Po Complex (Ground Floor)',
     newsItems: [
+      { text: '💰 HKSAR Govt. emergency cash subsidy: HK$10,000/house, HK$200,000 for each deceased, and HK$50,000 living allowance per affected household', source: 'HKSAR Government' },
       { text: 'At least 128 people, including a firefighter and 7 domestic migrant workers confirmed dead in Tai Po Wang Fuk Court fire. 79 injured, including 12 firefighters. Some 150 people are unaccounted for', source: 'SCMP/HK Govt./Indonesian consulate' },
       { text: 'Affected MDW employers/MDWs can call the HK Labour Department at 3582 8987 (for FDH-related matters), or 2929 4054', source: 'HK Labour Dept.' },
       { text: 'The Philippine Consulate will open a service center on Nov. 30 between 10:00 AM and 4:00 PM at the Tai Po Complex, 8 Heung Sze Hui Street', source: 'Philippine Consulate General' }
@@ -323,6 +325,7 @@ export const translations = {
     philippinesCenterNote: '📍 Ang Philippine Consulate ay magbubukas ng service center sa Nov. 30 mula 10:00 AM hanggang 4:00 PM sa Tai Po Complex, 8 Heung Sze Hui Street',
     indonesiaClarificationNote: '📞 Hinihiling sa mga Migrant Workers na magtanong sa service desk sa Tai Po Complex (Ground Floor)',
     newsItems: [
+      { text: '💰 Emergency cash subsidy mula sa HKSAR Govt.: HK$10,000/bahay, HK$200,000 para sa bawat namatay, at HK$50,000 living allowance bawat apektadong sambahayan', source: 'HKSAR Government' },
       { text: 'Hindi bababa sa 128 katao, kasama ang isang bumbero at 7 domestic migrant workers, napatunayan nang namatay sa sunog sa Tai Po Wang Fuk Court. 79 ang nasugatan, kasama ang 12 bumbero. Humigit-kumulang 150 ang hindi pa napapatunayang kinaroroonan', source: 'SCMP/HK Govt./Indonesian consulate' },
       { text: 'Ang mga apektadong employer/MDW ng FDH ay maaaring tumawag sa HK Labour Department sa 3582 8987 (para sa mga bagay na may kaugnayan sa FDH), o 2929 4054', source: 'HK Labour Dept.' },
       { text: 'Ang Philippine Consulate ay magbubukas ng service center sa Nov. 30 mula 10:00 AM hanggang 4:00 PM sa Tai Po Complex, 8 Heung Sze Hui Street', source: 'Philippine Consulate General' }
@@ -432,6 +435,7 @@ export const translations = {
     philippinesCenterNote: '📍 Konsulat Filipina akan membuka pusat layanan pada 30 Nov dari pukul 10:00 AM hingga 4:00 PM di Tai Po Complex, 8 Heung Sze Hui Street',
     indonesiaClarificationNote: '📞 Pekerja Migran diminta untuk menanyakan di meja layanan di Tai Po Complex (Lantai Dasar)',
     newsItems: [
+      { text: '💰 Subsidi tunai darurat dari HKSAR Govt.: HK$10,000/rumah, HK$200,000 untuk setiap orang yang meninggal, dan HK$50,000 tunjangan hidup per rumah tangga yang terdampak', source: 'HKSAR Government' },
       { text: 'Setidaknya 128 orang, termasuk seorang pemadam kebakaran dan 7 pekerja migran rumah tangga, dikonfirmasi tewas dalam kebakaran Tai Po Wang Fuk Court. 79 terluka, termasuk 12 petugas pemadam kebakaran. Sekitar 150 orang masih belum ditemukan', source: 'SCMP/HK Govt./Indonesian consulate' },
       { text: 'Employer/MDW yang terdampak dapat menghubungi Departemen Tenaga Kerja HK di 3582 8987 (untuk urusan FDH), atau 2929 4054', source: 'HK Labour Dept.' },
       { text: 'Konsulat Filipina akan membuka pusat layanan pada 30 Nov dari pukul 10:00 AM hingga 4:00 PM di Tai Po Complex, 8 Heung Sze Hui Street', source: 'Philippine Consulate General' }

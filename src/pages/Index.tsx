@@ -14,6 +14,7 @@ import { DocumentChecklistHelper } from '@/components/DocumentChecklistHelper';
 import { ResourceDetail } from '@/components/ResourceDetail';
 import { ResourceMap } from '@/components/ResourceMap';
 import { FeedbackForm } from '@/components/FeedbackForm';
+import { FinancialAid } from '@/components/FinancialAid';
 import { InstallPrompt } from '@/components/InstallPrompt';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
@@ -210,8 +211,13 @@ const Index = () => {
           />
         </div>
 
+        {/* Financial Aid Section */}
+        <div className="mt-12">
+          <FinancialAid title={t.financialAidTitle} />
+        </div>
+
         {/* Emergency Contact & Document Checklist */}
-        <div id="emergency-contacts" className="mt-8 scroll-mt-32">
+        <div id="emergency-contacts" className="mt-12 scroll-mt-32">
           <div className="grid gap-4 md:grid-cols-2">
             <EmergencyContactCard
               title={t.emergencyContactTitle}

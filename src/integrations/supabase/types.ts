@@ -107,6 +107,75 @@ export type Database = {
         }
         Relationships: []
       }
+      financial_aid_applications: {
+        Row: {
+          additional_info: string | null
+          applicant_email: string
+          applicant_hkid: string
+          applicant_name: string
+          applicant_phone: string
+          application_type: string
+          bank_account_number: string | null
+          created_at: string
+          current_address: string | null
+          death_certificate_number: string | null
+          deceased_hkid: string | null
+          deceased_name: string | null
+          household_address: string | null
+          household_size: number | null
+          id: string
+          relationship_to_deceased: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          additional_info?: string | null
+          applicant_email: string
+          applicant_hkid: string
+          applicant_name: string
+          applicant_phone: string
+          application_type: string
+          bank_account_number?: string | null
+          created_at?: string
+          current_address?: string | null
+          death_certificate_number?: string | null
+          deceased_hkid?: string | null
+          deceased_name?: string | null
+          household_address?: string | null
+          household_size?: number | null
+          id?: string
+          relationship_to_deceased?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          additional_info?: string | null
+          applicant_email?: string
+          applicant_hkid?: string
+          applicant_name?: string
+          applicant_phone?: string
+          application_type?: string
+          bank_account_number?: string | null
+          created_at?: string
+          current_address?: string | null
+          death_certificate_number?: string | null
+          deceased_hkid?: string | null
+          deceased_name?: string | null
+          household_address?: string | null
+          household_size?: number | null
+          id?: string
+          relationship_to_deceased?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       housing_occupancy: {
         Row: {
           created_at: string

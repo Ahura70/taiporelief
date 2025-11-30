@@ -22,10 +22,12 @@ import { ChangelogModal } from '@/components/ChangelogModal';
 import { BackToTop } from '@/components/BackToTop';
 import { ScrollProgressBar } from '@/components/ScrollProgressBar';
 import { SocialShare } from '@/components/SocialShare';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { translations, resources, Resource } from '@/lib/translations';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import { useNewsUpdates } from '@/hooks/useNewsUpdates';
+import { useScrollSpy } from '@/hooks/useScrollSpy';
 import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -80,6 +82,16 @@ const Index = () => {
 
   const t = translations[currentLang];
   const currentResources = resources[currentLang];
+
+  // Define sections for scroll spy and breadcrumb
+  const sections = [
+    { id: 'community-resources', label: t.breadcrumbCommunity },
+    { id: 'emergency-contacts', label: t.breadcrumbEmergency },
+    { id: 'resource-map', label: t.breadcrumbMap },
+  ];
+
+  // Track active section for breadcrumb
+  const activeSection = useScrollSpy(sections, 180);
 
   // Combine static news with dynamic news from database
   const allNews = [
@@ -143,6 +155,19 @@ const Index = () => {
       <MemorialBanner message={t.memorialMessage} />
       <EmergencyBanner text={t.emergency} whatsappText={t.whatsappRegister} />
 
+      {/* Breadcrumb Navigation */}
+      {activeSection && (
+        <Breadcrumb
+          items={[
+            {
+              label: sections.find(s => s.id === activeSection)?.label || '',
+              href: `#${activeSection}`,
+              current: true,
+            },
+          ]}
+        />
+      )}
+
       <main id="main-content" className="max-w-4xl mx-auto px-5 py-6">
         <NewsTicker newsItems={allNews} />
         
@@ -159,7 +184,7 @@ const Index = () => {
 
         <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
 
-        <div className="mt-8">
+        <div id="community-resources" className="mt-8 scroll-mt-32">
           <CommunityResources
             title={t.communityResourcesTitle}
             safetyTrackingTitle={t.safetyTrackingTitle}
@@ -182,7 +207,7 @@ const Index = () => {
         </div>
 
         {/* Emergency Contact & Document Checklist */}
-        <div className="mt-8">
+        <div id="emergency-contacts" className="mt-8 scroll-mt-32">
           <div className="grid gap-4 md:grid-cols-2">
             <EmergencyContactCard
               title={t.emergencyContactTitle}
@@ -205,7 +230,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div id="resource-map" className="mt-8 scroll-mt-32">
           <ResourceMap
             resources={currentResources} 
             onResourceClick={setSelectedResource}

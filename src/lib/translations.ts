@@ -113,7 +113,7 @@ export const translations = {
     backToTop: '返回頂部'
   },
   en: {
-    title: 'Wang Fuk Court Relief',
+    title: 'Tai Po Fire Relief',
     subtitle: 'Support Information Hub',
     label: 'I want to...',
     placeholder: 'Search: Donate, Volunteer, Supplies...',
@@ -219,7 +219,7 @@ export const translations = {
   },
   tl: {
     title: 'Tulong sa Sunog',
-    subtitle: 'Wang Fuk Court Relief',
+    subtitle: 'Tai Po Fire Relief',
     label: 'Gusto ko...',
     placeholder: 'Maghanap: Donasyon, Tulong...',
     emergency: '🚨 Casualty Enquiry 1878 999 | Mental Health 18111',
@@ -323,7 +323,7 @@ export const translations = {
   },
   id: {
     title: 'Bantuan Kebakaran',
-    subtitle: 'Wang Fuk Court Relief',
+    subtitle: 'Tai Po Fire Relief',
     label: 'Saya ingin...',
     placeholder: 'Cari: Donasi, Relawan...',
     emergency: '🚨 Pertanyaan Korban 1878 999 | Mental 18111',

@@ -1,14 +1,36 @@
+# Tai Po Fire Relief - Emergency Support Hub
+# Optimized for search engine crawling
+
+# Allow all bots for emergency information accessibility
+User-agent: *
+Allow: /
+
+# Major search engine bots
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
 
+User-agent: Slurp
+Allow: /
+
+# Social media bots for better sharing
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: WhatsApp
 Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/sitemap.xml
+
+# No disallow rules - all emergency content should be accessible

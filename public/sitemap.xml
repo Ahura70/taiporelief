@@ -1,15 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main Homepage - Highest Priority -->
   <url>
     <loc>https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/</loc>
-    <lastmod>2025-11-29</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>hourly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/?lang=tl" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/?lang=id" />
   </url>
+
+  <!-- Emergency Resources -->
   <url>
-    <loc>https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/voice-test</loc>
-    <lastmod>2025-11-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/#emergency-contacts</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Community Resources -->
+  <url>
+    <loc>https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/#community-resources</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Resource Map -->
+  <url>
+    <loc>https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/#resource-map</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Feedback Form -->
+  <url>
+    <loc>https://e0109b97-7007-4cd0-ba9f-569085ba16ca.lovableproject.com/#feedback</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

@@ -33,15 +33,22 @@ export const InstallPrompt = () => {
       return;
     }
 
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    
-    if (outcome === 'accepted') {
-      toast.success('App installed successfully!');
+    try {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      
+      if (outcome === 'accepted') {
+        toast.success('App installed successfully!');
+      } else {
+        toast.info('Installation cancelled');
+      }
+    } catch (error) {
+      console.error('Installation error:', error);
+      toast.error('Failed to install app. Please try again.');
+    } finally {
+      setDeferredPrompt(null);
+      setShowPrompt(false);
     }
-    
-    setDeferredPrompt(null);
-    setShowPrompt(false);
   };
 
   const handleDismiss = () => {

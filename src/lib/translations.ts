@@ -110,7 +110,11 @@ export const translations = {
       { text: '受影響的外傭僱主/外傭可致電勞工處 3582 8987 (有關外傭事宜) 或 2929 4054', source: '香港勞工處' },
       { text: '菲律賓領事館將於11月30日上午10時至下午4時在大埔綜合大樓（香城司徒街8號）設立服務中心', source: '菲律賓總領事館' }
     ],
-    backToTop: '返回頂部'
+    backToTop: '返回頂部',
+    breadcrumbEmergency: '緊急聯絡',
+    breadcrumbCommunity: '社區資源',
+    breadcrumbMap: '資源地圖',
+    breadcrumbFeedback: '意見反饋'
   },
   en: {
     title: 'Tai Po Fire Relief',
@@ -215,7 +219,11 @@ export const translations = {
       { text: 'Affected MDW employers/MDWs can call the HK Labour Department at 3582 8987 (for FDH-related matters), or 2929 4054', source: 'HK Labour Dept.' },
       { text: 'The Philippine Consulate will open a service center on Nov. 30 between 10:00 AM and 4:00 PM at the Tai Po Complex, 8 Heung Sze Hui Street', source: 'Philippine Consulate General' }
     ],
-    backToTop: 'Back to Top'
+    backToTop: 'Back to Top',
+    breadcrumbEmergency: 'Emergency Contacts',
+    breadcrumbCommunity: 'Community Resources',
+    breadcrumbMap: 'Resource Map',
+    breadcrumbFeedback: 'Feedback'
   },
   tl: {
     title: 'Tulong sa Sunog',
@@ -319,7 +327,11 @@ export const translations = {
       { text: 'Ang mga apektadong employer/MDW ng FDH ay maaaring tumawag sa HK Labour Department sa 3582 8987 (para sa mga bagay na may kaugnayan sa FDH), o 2929 4054', source: 'HK Labour Dept.' },
       { text: 'Ang Philippine Consulate ay magbubukas ng service center sa Nov. 30 mula 10:00 AM hanggang 4:00 PM sa Tai Po Complex, 8 Heung Sze Hui Street', source: 'Philippine Consulate General' }
     ],
-    backToTop: 'Bumalik sa Taas'
+    backToTop: 'Bumalik sa Taas',
+    breadcrumbEmergency: 'Emergency Contacts',
+    breadcrumbCommunity: 'Community Resources',
+    breadcrumbMap: 'Resource Map',
+    breadcrumbFeedback: 'Feedback'
   },
   id: {
     title: 'Bantuan Kebakaran',
@@ -424,7 +436,11 @@ export const translations = {
       { text: 'Employer/MDW yang terdampak dapat menghubungi Departemen Tenaga Kerja HK di 3582 8987 (untuk urusan FDH), atau 2929 4054', source: 'HK Labour Dept.' },
       { text: 'Konsulat Filipina akan membuka pusat layanan pada 30 Nov dari pukul 10:00 AM hingga 4:00 PM di Tai Po Complex, 8 Heung Sze Hui Street', source: 'Philippine Consulate General' }
     ],
-    backToTop: 'Kembali ke Atas'
+    backToTop: 'Kembali ke Atas',
+    breadcrumbEmergency: 'Kontak Darurat',
+    breadcrumbCommunity: 'Sumber Daya Komunitas',
+    breadcrumbMap: 'Peta Sumber Daya',
+    breadcrumbFeedback: 'Masukan'
   }
 };
 

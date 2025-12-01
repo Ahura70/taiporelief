@@ -8,7 +8,7 @@ import { AccessibilityMenu } from '@/components/AccessibilityMenu';
 import { LanguageNotification } from '@/components/LanguageNotification';
 import { SearchBox } from '@/components/SearchBox';
 import { QuickActions } from '@/components/QuickActions';
-import { CommunityResources } from '@/components/CommunityResources';
+import { LatestUpdates } from '@/components/LatestUpdates';
 import { EmergencyContactCard } from '@/components/EmergencyContactCard';
 import { DocumentChecklistHelper } from '@/components/DocumentChecklistHelper';
 import { ResourceDetail } from '@/components/ResourceDetail';
@@ -190,24 +190,62 @@ const Index = () => {
         <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
 
         <div id="community-resources" className="mt-8 scroll-mt-32">
-          <CommunityResources
-            title={t.communityResourcesTitle}
-            safetyTrackingTitle={t.safetyTrackingTitle}
-            safetyTrackingDesc={t.safetyTrackingDesc}
-            volunteerTitle={t.volunteerCoordTitle}
-            volunteerDesc={t.volunteerCoordDesc}
-            reportSafetyLabel={t.reportSafetyLabel}
-            reportMissingLabel={t.reportMissingLabel}
-            suppliesMapLabel={t.suppliesMapLabel}
-            govtWebsiteLabel={t.govtWebsiteLabel}
-            mainWebsiteLabel={t.mainWebsiteLabel}
-            volunteerEnglishLabel={t.volunteerEnglishLabel}
-            volunteerTelegramLabel={t.volunteerTelegramLabel}
-            dropOffLabel={t.dropOffLabel}
-            statusLabel={t.statusSuspended}
-            safeReportsLabel={t.safeReportsLabel}
-            missingReportsLabel={t.missingReportsLabel}
-            liveStatusLabel={t.liveStatusLabel}
+          <LatestUpdates
+            title={t.latestUpdatesTitle}
+            lastUpdated={t.latestUpdatesLastUpdated}
+            casualties={{
+              title: t.casualtiesTitle,
+              deaths: t.casualtiesDeaths,
+              injured: t.casualtiesInjured
+            }}
+            financialAssistance={{
+              title: t.financialAssistanceTitle,
+              emergency: t.financialEmergency,
+              solidarity: t.financialSolidarity,
+              living: t.financialLiving,
+              funeral: t.financialFuneral
+            }}
+            supportFund={{
+              title: t.supportFundTitle,
+              total: t.supportFundTotal,
+              purpose: t.supportFundPurpose
+            }}
+            housing={{
+              title: t.housingTitle,
+              hostels: t.housingHostels,
+              transitional: t.housingTransitional,
+              shelters: t.housingShelters,
+              enquire: t.housingEnquire,
+              shuttle: t.housingShuttle
+            }}
+            socialHealth={{
+              title: t.socialHealthTitle,
+              socialWorker: t.socialHealthWorker,
+              notContacted: t.socialHealthNotContacted,
+              healthcare: t.socialHealthHealthcare
+            }}
+            donations={{
+              title: t.donationsTitle,
+              platform: t.donationsPlatform,
+              collection: t.donationsCollection
+            }}
+            buildingSafety={{
+              title: t.buildingSafetyTitle,
+              inspections: t.buildingSafetyInspections,
+              remaining: t.buildingSafetyRemaining,
+              renovation: t.buildingSafetyRenovation,
+              territoryWide: t.buildingSafetyTerritoryWide
+            }}
+            funeral={{
+              title: t.funeralTitle,
+              support: t.funeralSupport
+            }}
+            website={{
+              title: t.websiteTitle,
+              url: t.websiteUrl,
+              description: t.websiteDescription
+            }}
+            closingMessage={t.closingMessage}
           />
         </div>
 

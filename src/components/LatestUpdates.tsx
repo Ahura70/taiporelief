@@ -1,6 +1,6 @@
-import { Info, DollarSign, Home, Heart, Building, Phone, Globe } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Info, DollarSign, Home, Heart, Building, Phone, Globe } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 interface LatestUpdatesProps {
   title: string;
@@ -72,10 +72,10 @@ export const LatestUpdates = ({
   buildingSafety,
   funeral,
   website,
-  closingMessage
+  closingMessage,
 }: LatestUpdatesProps) => {
   const openLink = (url: string) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -90,7 +90,7 @@ export const LatestUpdates = ({
           <div className="flex items-start justify-between">
             <CardTitle className="text-lg">{lastUpdated}</CardTitle>
             <Badge variant="outline" className="bg-muted text-muted-foreground border-border">
-              {lastUpdated.includes('Dec') || lastUpdated.includes('12') ? '1 Dec 2025' : '1 Dec 2025'}
+              {lastUpdated.includes("Dec") || lastUpdated.includes("12") ? "As of Nov. 30. 4 pm" : "1 Dec 2025"}
             </Badge>
           </div>
         </CardHeader>
@@ -210,9 +210,7 @@ export const LatestUpdates = ({
           </div>
 
           {/* Closing Message */}
-          <p className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
-            {closingMessage}
-          </p>
+          <p className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">{closingMessage}</p>
         </CardContent>
       </Card>
     </div>

@@ -81,7 +81,7 @@ export const translations = {
     latestUpdatesTitle: '最新消息',
     latestUpdatesLastUpdated: '大埔宏福苑火災 – 最新消息（2025年12月1日）',
     casualtiesTitle: '傷亡人數（截至12月1日00:56 HKT）',
-    casualtiesDeaths: '確認死亡：146人',
+    casualtiesDeaths: '確認死亡：151人',
     casualtiesInjured: '受傷：79人',
     financialAssistanceTitle: '財政援助',
     financialEmergency: '緊急現金津貼：每個受影響家庭$10,000（截至11月30日下午1時已發放給1,420個家庭）',
@@ -127,7 +127,7 @@ export const translations = {
     indonesiaClarificationNote: '📞 移工請前往大埔綜合大樓（地下）服務台查詢',
     newsItems: [
       { text: '💰 香港特區政府提供緊急現金津貼：每戶$10,000、每名死者$200,000 及每個受影響家庭生活津貼$50,000', source: '香港特區政府' },
-      { text: '大埔火災死亡人數升至146人，包括1名消防員、9名印尼家庭傭工及1名菲律賓家庭傭工', source: 'SCMP/官方消息' },
+      { text: '大埔火災死亡人數升至151人：SCMP', source: 'SCMP' },
       { text: '受影響的外傭僱主/外傭可致電勞工處 3582 8987 (有關外傭事宜) 或 2929 4054', source: '香港勞工處' },
       { text: '菲律賓領事館將於11月30日上午10時至下午4時在大埔綜合大樓（香城司徒街8號）設立服務中心', source: '菲律賓總領事館' }
     ],
@@ -261,7 +261,7 @@ export const translations = {
     latestUpdatesTitle: 'Latest Updates',
     latestUpdatesLastUpdated: 'Tai Po Wang Fuk Court Fire – Latest Update (1 Dec 2025)',
     casualtiesTitle: 'Casualties (as of Dec. 1, 0056 HKT)',
-    casualtiesDeaths: 'Confirmed deaths: 146',
+    casualtiesDeaths: 'Confirmed deaths: 151',
     casualtiesInjured: 'Injured: 79',
     financialAssistanceTitle: 'Financial Assistance',
     financialEmergency: 'Emergency cash subsidy: $10,000 per affected household (1,420 households received as of 1pm, 30 Nov)',
@@ -307,7 +307,7 @@ export const translations = {
     indonesiaClarificationNote: '📞 Migrant Workers are requested to check with the service desk at the Tai Po Complex (Ground Floor)',
     newsItems: [
       { text: '💰 HKSAR Govt. emergency cash subsidy: HK$10,000/house, HK$200,000 for each deceased, and HK$50,000 living allowance per affected household', source: 'HKSAR Government' },
-      { text: 'Death toll at Tai Po fire rises to 146, including a firefighter, nine Indonesian domestic workers and one Filipina domestic worker', source: 'Official sources/SCMP' },
+      { text: 'Death toll rises to 151: SCMP', source: 'SCMP' },
       { text: 'Affected MDW employers/MDWs can call the HK Labour Department at 3582 8987 (for FDH-related matters), or 2929 4054', source: 'HK Labour Dept.' },
       { text: 'The Philippine Consulate will open a service center on Nov. 30 between 10:00 AM and 4:00 PM at the Tai Po Complex, 8 Heung Sze Hui Street', source: 'Philippine Consulate General' }
     ],
@@ -440,7 +440,7 @@ export const translations = {
     latestUpdatesTitle: 'Pinakabagong Update',
     latestUpdatesLastUpdated: 'Sunog sa Tai Po Wang Fuk Court – Pinakabagong Update (1 Dis 2025)',
     casualtiesTitle: 'Bilang ng Nasawi (hanggang Dis. 1, 0056 HKT)',
-    casualtiesDeaths: 'Nakumpirmang namatay: 146',
+    casualtiesDeaths: 'Nakumpirmang namatay: 151',
     casualtiesInjured: 'Nasugatan: 79',
     financialAssistanceTitle: 'Tulong Pinansyal',
     financialEmergency: 'Emergency cash subsidy: $10,000 bawat apektadong sambahayan (1,420 sambahayan ang nakatanggap hanggang 1pm, 30 Nob)',
@@ -492,7 +492,7 @@ export const translations = {
     indonesiaClarificationNote: '📞 Hinihiling sa mga Migrant Workers na magtanong sa service desk sa Tai Po Complex (Ground Floor)',
     newsItems: [
       { text: '💰 Emergency cash subsidy mula sa HKSAR Govt.: HK$10,000/bahay, HK$200,000 para sa bawat namatay, at HK$50,000 living allowance bawat apektadong sambahayan', source: 'HKSAR Government' },
-      { text: 'Bilang ng namatay sa sunog sa Tai Po umabot na sa 146, kasama ang isang bumbero, siyam na Indonesian domestic workers at isang Filipina domestic worker', source: 'Official sources/SCMP' },
+      { text: 'Bilang ng namatay tumaas sa 151: SCMP', source: 'SCMP' },
       { text: 'Ang mga apektadong employer/MDW ng FDH ay maaaring tumawag sa HK Labour Department sa 3582 8987 (para sa mga bagay na may kaugnayan sa FDH), o 2929 4054', source: 'HK Labour Dept.' },
       { text: 'Ang Philippine Consulate ay magbubukas ng service center sa Nov. 30 mula 10:00 AM hanggang 4:00 PM sa Tai Po Complex, 8 Heung Sze Hui Street', source: 'Philippine Consulate General' }
     ],
@@ -626,7 +626,7 @@ export const translations = {
     latestUpdatesTitle: 'Update Terbaru',
     latestUpdatesLastUpdated: 'Kebakaran Tai Po Wang Fuk Court – Update Terbaru (1 Des 2025)',
     casualtiesTitle: 'Korban (hingga 1 Des, 0056 HKT)',
-    casualtiesDeaths: 'Kematian terkonfirmasi: 146',
+    casualtiesDeaths: 'Kematian terkonfirmasi: 151',
     casualtiesInjured: 'Terluka: 79',
     financialAssistanceTitle: 'Bantuan Keuangan',
     financialEmergency: 'Subsidi tunai darurat: $10,000 per rumah tangga yang terdampak (1,420 rumah tangga menerima hingga 1pm, 30 Nov)',
@@ -684,7 +684,7 @@ export const translations = {
     indonesiaClarificationNote: '📞 Pekerja Migran diminta untuk menanyakan di meja layanan di Tai Po Complex (Lantai Dasar)',
     newsItems: [
       { text: '💰 Subsidi tunai darurat dari HKSAR Govt.: HK$10,000/rumah, HK$200,000 untuk setiap orang yang meninggal, dan HK$50,000 tunjangan hidup per rumah tangga yang terdampak', source: 'HKSAR Government' },
-      { text: 'Jumlah korban tewas kebakaran Tai Po naik menjadi 146, termasuk seorang pemadam kebakaran, sembilan pekerja rumah tangga Indonesia dan satu pekerja rumah tangga Filipina', source: 'Official sources/SCMP' },
+      { text: 'Jumlah korban tewas naik menjadi 151: SCMP', source: 'SCMP' },
       { text: 'Employer/MDW yang terdampak dapat menghubungi Departemen Tenaga Kerja HK di 3582 8987 (untuk urusan FDH), atau 2929 4054', source: 'HK Labour Dept.' },
       { text: 'Konsulat Filipina akan membuka pusat layanan pada 30 Nov dari pukul 10:00 AM hingga 4:00 PM di Tai Po Complex, 8 Heung Sze Hui Street', source: 'Philippine Consulate General' }
     ],

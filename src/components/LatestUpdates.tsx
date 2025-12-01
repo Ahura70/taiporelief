@@ -1,7 +1,6 @@
 import { Info, DollarSign, Home, Heart, Building, Phone, Globe } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
 interface LatestUpdatesProps {
   title: string;
   lastUpdated: string;
@@ -59,7 +58,6 @@ interface LatestUpdatesProps {
   };
   closingMessage: string;
 }
-
 export const LatestUpdates = ({
   title,
   lastUpdated,
@@ -72,28 +70,19 @@ export const LatestUpdates = ({
   buildingSafety,
   funeral,
   website,
-  closingMessage,
+  closingMessage
 }: LatestUpdatesProps) => {
   const openLink = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
-
-  return (
-    <div className="space-y-4">
+  return <div className="space-y-4">
       <div className="flex items-center gap-2">
         <Info className="w-6 h-6 text-primary" />
         <h2 className="text-2xl font-bold text-foreground">{title}</h2>
       </div>
 
       <Card className="border-primary/20 bg-gradient-to-br from-background to-muted/30">
-        <CardHeader>
-          <div className="flex items-start justify-between">
-            <CardTitle className="text-lg">{lastUpdated}</CardTitle>
-            <Badge variant="outline" className="bg-muted text-muted-foreground border-border">
-              {lastUpdated.includes("Dec") || lastUpdated.includes("12") ? "As of Nov. 30. 4 pm" : "1 Dec 2025"}
-            </Badge>
-          </div>
-        </CardHeader>
+        
         <CardContent className="space-y-6">
           {/* Casualties */}
           <div className="space-y-2">
@@ -201,10 +190,7 @@ export const LatestUpdates = ({
               {website.title}
             </h3>
             <p className="text-sm text-muted-foreground">{website.description}</p>
-            <button
-              onClick={() => openLink(website.url)}
-              className="text-sm font-semibold text-primary hover:underline"
-            >
+            <button onClick={() => openLink(website.url)} className="text-sm font-semibold text-primary hover:underline">
               {website.url}
             </button>
           </div>
@@ -213,6 +199,5 @@ export const LatestUpdates = ({
           <p className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">{closingMessage}</p>
         </CardContent>
       </Card>
-    </div>
-  );
+    </div>;
 };

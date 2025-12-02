@@ -8,13 +8,14 @@ interface LatestUpdatesProps {
     title: string;
     deaths: string;
     injured: string;
+    searches: string;
   };
   financialAssistance: {
     title: string;
     emergency: string;
-    solidarity: string;
-    living: string;
-    funeral: string;
+    payments: string;
+    additionalSubsidies: string;
+    swd: string;
   };
   supportFund: {
     title: string;
@@ -26,26 +27,44 @@ interface LatestUpdatesProps {
     hostels: string;
     transitional: string;
     shelters: string;
-    enquire: string;
-    shuttle: string;
+    visits: string;
   };
   socialHealth: {
     title: string;
-    socialWorker: string;
-    notContacted: string;
-    healthcare: string;
+    contacted: string;
+    registered: string;
+    hotline: string;
   };
   donations: {
     title: string;
     platform: string;
-    collection: string;
+    distribution: string;
+  };
+  medical: {
+    title: string;
+    feeWaivers: string;
+    residentWaivers: string;
+  };
+  identityDocs: {
+    title: string;
+    replacements: string;
+    services: string;
+  };
+  transport: {
+    title: string;
+    freeTaxis: string;
+    details: string;
   };
   buildingSafety: {
     title: string;
     inspections: string;
-    remaining: string;
-    renovation: string;
-    territoryWide: string;
+    netsInspection: string;
+    bdChecks: string;
+    ldInspections: string;
+  };
+  investigations: {
+    title: string;
+    arrests: string;
   };
   funeral: {
     title: string;
@@ -67,7 +86,11 @@ export const LatestUpdates = ({
   housing,
   socialHealth,
   donations,
+  medical,
+  identityDocs,
+  transport,
   buildingSafety,
+  investigations,
   funeral,
   website,
   closingMessage
@@ -93,6 +116,7 @@ export const LatestUpdates = ({
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
               <li>{casualties.deaths}</li>
               <li>{casualties.injured}</li>
+              <li>{casualties.searches}</li>
             </ul>
           </div>
 
@@ -104,9 +128,9 @@ export const LatestUpdates = ({
             </h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
               <li>{financialAssistance.emergency}</li>
-              <li>{financialAssistance.solidarity}</li>
-              <li>{financialAssistance.living}</li>
-              <li>{financialAssistance.funeral}</li>
+              <li>{financialAssistance.payments}</li>
+              <li>{financialAssistance.additionalSubsidies}</li>
+              <li>{financialAssistance.swd}</li>
             </ul>
           </div>
 
@@ -130,8 +154,7 @@ export const LatestUpdates = ({
               <li>{housing.hostels}</li>
               <li>{housing.transitional}</li>
               <li>{housing.shelters}</li>
-              <li>{housing.enquire}</li>
-              <li>{housing.shuttle}</li>
+              <li>{housing.visits}</li>
             </ul>
           </div>
 
@@ -142,9 +165,9 @@ export const LatestUpdates = ({
               {socialHealth.title}
             </h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
-              <li>{socialHealth.socialWorker}</li>
-              <li>{socialHealth.notContacted}</li>
-              <li>{socialHealth.healthcare}</li>
+              <li>{socialHealth.contacted}</li>
+              <li>{socialHealth.registered}</li>
+              <li>{socialHealth.hotline}</li>
             </ul>
           </div>
 
@@ -156,7 +179,43 @@ export const LatestUpdates = ({
             </h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
               <li>{donations.platform}</li>
-              <li>{donations.collection}</li>
+              <li>{donations.distribution}</li>
+            </ul>
+          </div>
+
+          {/* Medical Services */}
+          <div className="space-y-2">
+            <h3 className="font-semibold text-foreground flex items-center gap-2">
+              <Heart className="w-4 h-4 text-primary" />
+              {medical.title}
+            </h3>
+            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
+              <li>{medical.feeWaivers}</li>
+              <li>{medical.residentWaivers}</li>
+            </ul>
+          </div>
+
+          {/* Identity Documents */}
+          <div className="space-y-2">
+            <h3 className="font-semibold text-foreground flex items-center gap-2">
+              <Building className="w-4 h-4 text-primary" />
+              {identityDocs.title}
+            </h3>
+            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
+              <li>{identityDocs.replacements}</li>
+              <li>{identityDocs.services}</li>
+            </ul>
+          </div>
+
+          {/* Transport Services */}
+          <div className="space-y-2">
+            <h3 className="font-semibold text-foreground flex items-center gap-2">
+              <Building className="w-4 h-4 text-primary" />
+              {transport.title}
+            </h3>
+            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
+              <li>{transport.freeTaxis}</li>
+              <li>{transport.details}</li>
             </ul>
           </div>
 
@@ -168,10 +227,19 @@ export const LatestUpdates = ({
             </h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
               <li>{buildingSafety.inspections}</li>
-              <li>{buildingSafety.remaining}</li>
-              <li>{buildingSafety.renovation}</li>
-              <li>{buildingSafety.territoryWide}</li>
+              <li>{buildingSafety.netsInspection}</li>
+              <li>{buildingSafety.bdChecks}</li>
+              <li>{buildingSafety.ldInspections}</li>
             </ul>
+          </div>
+
+          {/* Investigations */}
+          <div className="space-y-2">
+            <h3 className="font-semibold text-foreground flex items-center gap-2">
+              <Building className="w-4 h-4 text-destructive" />
+              {investigations.title}
+            </h3>
+            <p className="text-sm text-muted-foreground ml-6">{investigations.arrests}</p>
           </div>
 
           {/* Funeral */}

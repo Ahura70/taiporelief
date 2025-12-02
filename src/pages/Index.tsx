@@ -160,50 +160,82 @@ const Index = () => {
         <QuickActions resources={currentResources} onSelectResource={setSelectedResource} />
 
         <div id="community-resources" className="mt-8 scroll-mt-32">
-          <LatestUpdates title={t.latestUpdatesTitle} lastUpdated={t.latestUpdatesLastUpdated} casualties={{
-          title: t.casualtiesTitle,
-          deaths: t.casualtiesDeaths,
-          injured: t.casualtiesInjured
-        }} financialAssistance={{
-          title: t.financialAssistanceTitle,
-          emergency: t.financialEmergency,
-          solidarity: t.financialSolidarity,
-          living: t.financialLiving,
-          funeral: t.financialFuneral
-        }} supportFund={{
-          title: t.supportFundTitle,
-          total: t.supportFundTotal,
-          purpose: t.supportFundPurpose
-        }} housing={{
-          title: t.housingTitle,
-          hostels: t.housingHostels,
-          transitional: t.housingTransitional,
-          shelters: t.housingShelters,
-          enquire: t.housingEnquire,
-          shuttle: t.housingShuttle
-        }} socialHealth={{
-          title: t.socialHealthTitle,
-          socialWorker: t.socialHealthWorker,
-          notContacted: t.socialHealthNotContacted,
-          healthcare: t.socialHealthHealthcare
-        }} donations={{
-          title: t.donationsTitle,
-          platform: t.donationsPlatform,
-          collection: t.donationsCollection
-        }} buildingSafety={{
-          title: t.buildingSafetyTitle,
-          inspections: t.buildingSafetyInspections,
-          remaining: t.buildingSafetyRemaining,
-          renovation: t.buildingSafetyRenovation,
-          territoryWide: t.buildingSafetyTerritoryWide
-        }} funeral={{
-          title: t.funeralTitle,
-          support: t.funeralSupport
-        }} website={{
-          title: t.websiteTitle,
-          url: t.websiteUrl,
-          description: t.websiteDescription
-        }} closingMessage={t.closingMessage} />
+          <LatestUpdates 
+            title={t.latestUpdatesTitle} 
+            lastUpdated={t.latestUpdatesLastUpdated} 
+            casualties={{
+              title: t.casualtiesTitle,
+              deaths: t.casualtiesDeaths,
+              injured: t.casualtiesInjured,
+              searches: t.casualtiesSearches
+            }} 
+            financialAssistance={{
+              title: t.financialAssistanceTitle,
+              emergency: t.financialEmergency,
+              payments: t.financialPayments,
+              additionalSubsidies: t.financialAdditionalSubsidies,
+              swd: t.financialSwd
+            }} 
+            supportFund={{
+              title: t.supportFundTitle,
+              total: t.supportFundTotal,
+              purpose: t.supportFundPurpose
+            }} 
+            housing={{
+              title: t.housingTitle,
+              hostels: t.housingHostels,
+              transitional: t.housingTransitional,
+              shelters: t.housingShelters,
+              visits: t.housingVisits
+            }} 
+            socialHealth={{
+              title: t.socialHealthTitle,
+              contacted: t.socialHealthContacted,
+              registered: t.socialHealthRegistered,
+              hotline: t.socialHealthHotline
+            }} 
+            donations={{
+              title: t.donationsTitle,
+              platform: t.donationsPlatform,
+              distribution: t.donationsDistribution
+            }}
+            medical={{
+              title: t.medicalTitle,
+              feeWaivers: t.medicalFeeWaivers,
+              residentWaivers: t.medicalResidentWaivers
+            }}
+            identityDocs={{
+              title: t.identityDocsTitle,
+              replacements: t.identityDocsReplacements,
+              services: t.identityDocsServices
+            }}
+            transport={{
+              title: t.transportTitle,
+              freeTaxis: t.transportFreeTaxis,
+              details: t.transportDetails
+            }}
+            buildingSafety={{
+              title: t.buildingSafetyTitle,
+              inspections: t.buildingSafetyInspections,
+              netsInspection: t.buildingSafetyNetsInspection,
+              bdChecks: t.buildingSafetyBdChecks,
+              ldInspections: t.buildingSafetyLdInspections
+            }}
+            investigations={{
+              title: t.investigationsTitle,
+              arrests: t.investigationsArrests
+            }}
+            funeral={{
+              title: t.funeralTitle,
+              support: t.funeralSupport
+            }} 
+            website={{
+              title: t.websiteTitle,
+              url: t.websiteUrl,
+              description: t.websiteDescription
+            }} 
+            closingMessage={t.closingMessage} 
+          />
         </div>
 
         {/* Financial Aid Section */}

@@ -167,8 +167,9 @@ const Index = () => {
               title: t.casualtiesTitle,
               deaths: t.casualtiesDeaths,
               injured: t.casualtiesInjured,
+              awaiting: t.casualtiesAwaiting,
               searches: t.casualtiesSearches
-            }} 
+            }}
             financialAssistance={{
               title: t.financialAssistanceTitle,
               emergency: t.financialEmergency,

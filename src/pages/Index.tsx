@@ -162,32 +162,38 @@ const Index = () => {
         <div id="community-resources" className="mt-8 scroll-mt-32">
           <LatestUpdates 
             title={t.latestUpdatesTitle} 
-            lastUpdated={t.latestUpdatesLastUpdated} 
+            lastUpdated={t.latestUpdatesLastUpdated}
+            independentInquiry={{
+              title: t.independentInquiryTitle,
+              committee: t.independentInquiryCommittee,
+              goal: t.independentInquiryGoal
+            }}
             casualties={{
               title: t.casualtiesTitle,
               deaths: t.casualtiesDeaths,
               injured: t.casualtiesInjured,
-              awaiting: t.casualtiesAwaiting,
+              identification: t.casualtiesIdentification,
+              missing: t.casualtiesMissing,
               searches: t.casualtiesSearches
             }}
             financialAssistance={{
               title: t.financialAssistanceTitle,
               emergency: t.financialEmergency,
-              payments: t.financialPayments,
-              additionalSubsidies: t.financialAdditionalSubsidies,
+              deceased: t.financialDeceased,
+              living: t.financialLiving,
               swd: t.financialSwd
             }} 
             supportFund={{
               title: t.supportFundTitle,
               total: t.supportFundTotal,
-              purpose: t.supportFundPurpose
+              disbursements: t.supportFundDisbursements
             }} 
             housing={{
               title: t.housingTitle,
-              hostels: t.housingHostels,
+              temporary: t.housingTemporary,
               transitional: t.housingTransitional,
               shelters: t.housingShelters,
-              visits: t.housingVisits
+              total: t.housingTotal
             }} 
             socialHealth={{
               title: t.socialHealthTitle,
@@ -198,7 +204,19 @@ const Index = () => {
             donations={{
               title: t.donationsTitle,
               platform: t.donationsPlatform,
+              whatsapp: t.donationsWhatsapp,
               distribution: t.donationsDistribution
+            }}
+            funeral={{
+              title: t.funeralTitle,
+              assistance: t.funeralAssistance,
+              support: t.funeralSupport
+            }}
+            education={{
+              title: t.educationTitle,
+              school: t.educationSchool,
+              funding: t.educationFunding,
+              counseling: t.educationCounseling
             }}
             medical={{
               title: t.medicalTitle,
@@ -217,19 +235,16 @@ const Index = () => {
             }}
             buildingSafety={{
               title: t.buildingSafetyTitle,
-              inspections: t.buildingSafetyInspections,
-              netsInspection: t.buildingSafetyNetsInspection,
+              fsdPolice: t.buildingSafetyFsdPolice,
+              wangFuk: t.buildingSafetyWangFuk,
               bdChecks: t.buildingSafetyBdChecks,
               ldInspections: t.buildingSafetyLdInspections
             }}
             investigations={{
               title: t.investigationsTitle,
-              arrests: t.investigationsArrests
+              arrests: t.investigationsArrests,
+              icac: t.investigationsIcac
             }}
-            funeral={{
-              title: t.funeralTitle,
-              support: t.funeralSupport
-            }} 
             website={{
               title: t.websiteTitle,
               url: t.websiteUrl,

@@ -8,6 +8,7 @@ interface LatestUpdatesProps {
     title: string;
     deaths: string;
     injured: string;
+    awaiting: string;
     searches: string;
   };
   financialAssistance: {
@@ -116,6 +117,7 @@ export const LatestUpdates = ({
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
               <li>{casualties.deaths}</li>
               <li>{casualties.injured}</li>
+              <li>{casualties.awaiting}</li>
               <li>{casualties.searches}</li>
             </ul>
           </div>

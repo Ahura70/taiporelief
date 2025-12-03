@@ -1,34 +1,41 @@
-import { Info, DollarSign, Home, Heart, Building, Phone, Globe } from "lucide-react";
+import { Info, DollarSign, Home, Heart, Building, Phone, Globe, Scale, GraduationCap } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
 interface LatestUpdatesProps {
   title: string;
   lastUpdated: string;
+  independentInquiry: {
+    title: string;
+    committee: string;
+    goal: string;
+  };
   casualties: {
     title: string;
     deaths: string;
     injured: string;
-    awaiting: string;
+    identification: string;
     searches: string;
+    missing: string;
   };
   financialAssistance: {
     title: string;
     emergency: string;
-    payments: string;
-    additionalSubsidies: string;
+    deceased: string;
+    living: string;
     swd: string;
   };
   supportFund: {
     title: string;
     total: string;
-    purpose: string;
+    disbursements: string;
   };
   housing: {
     title: string;
-    hostels: string;
+    temporary: string;
     transitional: string;
     shelters: string;
-    visits: string;
+    total: string;
   };
   socialHealth: {
     title: string;
@@ -39,7 +46,19 @@ interface LatestUpdatesProps {
   donations: {
     title: string;
     platform: string;
+    whatsapp: string;
     distribution: string;
+  };
+  funeral: {
+    title: string;
+    assistance: string;
+    support: string;
+  };
+  education: {
+    title: string;
+    school: string;
+    funding: string;
+    counseling: string;
   };
   medical: {
     title: string;
@@ -58,18 +77,15 @@ interface LatestUpdatesProps {
   };
   buildingSafety: {
     title: string;
-    inspections: string;
-    netsInspection: string;
+    fsdPolice: string;
+    wangFuk: string;
     bdChecks: string;
     ldInspections: string;
   };
   investigations: {
     title: string;
     arrests: string;
-  };
-  funeral: {
-    title: string;
-    support: string;
+    icac: string;
   };
   website: {
     title: string;
@@ -78,36 +94,58 @@ interface LatestUpdatesProps {
   };
   closingMessage: string;
 }
+
 export const LatestUpdates = ({
   title,
   lastUpdated,
+  independentInquiry,
   casualties,
   financialAssistance,
   supportFund,
   housing,
   socialHealth,
   donations,
+  funeral,
+  education,
   medical,
   identityDocs,
   transport,
   buildingSafety,
   investigations,
-  funeral,
   website,
   closingMessage
 }: LatestUpdatesProps) => {
   const openLink = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
-  return <div className="space-y-4">
+
+  return (
+    <div className="space-y-4">
       <div className="flex items-center gap-2">
         <Info className="w-6 h-6 text-primary" />
         <h2 className="text-2xl font-bold text-foreground">{title}</h2>
       </div>
 
       <Card className="border-primary/20 bg-gradient-to-br from-background to-muted/30">
+        <CardHeader className="pb-2">
+          <Badge variant="outline" className="w-fit text-xs">
+            {lastUpdated}
+          </Badge>
+        </CardHeader>
         
         <CardContent className="space-y-6">
+          {/* Independent Inquiry - NEW */}
+          <div className="space-y-2 p-4 rounded-lg bg-destructive/10 border border-destructive/20">
+            <h3 className="font-semibold text-foreground flex items-center gap-2">
+              <Scale className="w-4 h-4 text-destructive" />
+              {independentInquiry.title}
+            </h3>
+            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
+              <li>{independentInquiry.committee}</li>
+              <li>{independentInquiry.goal}</li>
+            </ul>
+          </div>
+
           {/* Casualties */}
           <div className="space-y-2">
             <h3 className="font-semibold text-foreground flex items-center gap-2">
@@ -117,7 +155,8 @@ export const LatestUpdates = ({
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
               <li>{casualties.deaths}</li>
               <li>{casualties.injured}</li>
-              <li>{casualties.awaiting}</li>
+              <li>{casualties.identification}</li>
+              <li>{casualties.missing}</li>
               <li>{casualties.searches}</li>
             </ul>
           </div>
@@ -130,8 +169,8 @@ export const LatestUpdates = ({
             </h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
               <li>{financialAssistance.emergency}</li>
-              <li>{financialAssistance.payments}</li>
-              <li>{financialAssistance.additionalSubsidies}</li>
+              <li>{financialAssistance.deceased}</li>
+              <li>{financialAssistance.living}</li>
               <li>{financialAssistance.swd}</li>
             </ul>
           </div>
@@ -142,8 +181,10 @@ export const LatestUpdates = ({
               <Heart className="w-4 h-4 text-primary" />
               {supportFund.title}
             </h3>
-            <p className="text-sm text-muted-foreground ml-6">{supportFund.total}</p>
-            <p className="text-sm text-muted-foreground ml-6">{supportFund.purpose}</p>
+            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
+              <li>{supportFund.total}</li>
+              <li>{supportFund.disbursements}</li>
+            </ul>
           </div>
 
           {/* Housing */}
@@ -153,10 +194,10 @@ export const LatestUpdates = ({
               {housing.title}
             </h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
-              <li>{housing.hostels}</li>
+              <li>{housing.temporary}</li>
               <li>{housing.transitional}</li>
               <li>{housing.shelters}</li>
-              <li>{housing.visits}</li>
+              <li>{housing.total}</li>
             </ul>
           </div>
 
@@ -181,7 +222,33 @@ export const LatestUpdates = ({
             </h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
               <li>{donations.platform}</li>
+              <li>{donations.whatsapp}</li>
               <li>{donations.distribution}</li>
+            </ul>
+          </div>
+
+          {/* Funeral Services */}
+          <div className="space-y-2">
+            <h3 className="font-semibold text-foreground flex items-center gap-2">
+              <Heart className="w-4 h-4 text-primary" />
+              {funeral.title}
+            </h3>
+            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
+              <li>{funeral.assistance}</li>
+              <li>{funeral.support}</li>
+            </ul>
+          </div>
+
+          {/* Education Support - NEW */}
+          <div className="space-y-2">
+            <h3 className="font-semibold text-foreground flex items-center gap-2">
+              <GraduationCap className="w-4 h-4 text-primary" />
+              {education.title}
+            </h3>
+            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
+              <li>{education.school}</li>
+              <li>{education.funding}</li>
+              <li>{education.counseling}</li>
             </ul>
           </div>
 
@@ -228,8 +295,8 @@ export const LatestUpdates = ({
               {buildingSafety.title}
             </h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
-              <li>{buildingSafety.inspections}</li>
-              <li>{buildingSafety.netsInspection}</li>
+              <li>{buildingSafety.fsdPolice}</li>
+              <li>{buildingSafety.wangFuk}</li>
               <li>{buildingSafety.bdChecks}</li>
               <li>{buildingSafety.ldInspections}</li>
             </ul>
@@ -241,16 +308,10 @@ export const LatestUpdates = ({
               <Building className="w-4 h-4 text-destructive" />
               {investigations.title}
             </h3>
-            <p className="text-sm text-muted-foreground ml-6">{investigations.arrests}</p>
-          </div>
-
-          {/* Funeral */}
-          <div className="space-y-2">
-            <h3 className="font-semibold text-foreground flex items-center gap-2">
-              <Heart className="w-4 h-4 text-primary" />
-              {funeral.title}
-            </h3>
-            <p className="text-sm text-muted-foreground ml-6">{funeral.support}</p>
+            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-6">
+              <li>{investigations.arrests}</li>
+              <li>{investigations.icac}</li>
+            </ul>
           </div>
 
           {/* Website */}
@@ -269,5 +330,6 @@ export const LatestUpdates = ({
           <p className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">{closingMessage}</p>
         </CardContent>
       </Card>
-    </div>;
+    </div>
+  );
 };
